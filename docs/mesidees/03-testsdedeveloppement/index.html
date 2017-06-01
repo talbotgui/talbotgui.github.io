@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.6.1">
+    <meta name="description" content="Tests de développement">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Tests de développement :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Tests de développement">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/03-testsdedeveloppement/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Tests de développement :: Guillaume TALBOT">
+    <meta property="og:description" content="Tests de développement">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="name" content="Tests de développement :: Guillaume TALBOT">
+    <meta itemprop="description" content="Tests de développement">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="245">
+    <title>Tests de développement :: Guillaume TALBOT</title>
+    <link href="/mesidees/03-testsdedeveloppement/index.print.html" rel="alternate" type="text/html" title="Tests de développement :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780601809" rel="stylesheet">
+    <link href="/css/theme.min.css?1780601809" rel="stylesheet">
+    <link href="/css/format-html.min.css?1780601809" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/mesidees\/03-testsdedeveloppement\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.contentLangs=['fr'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support html" data-url="/mesidees/03-testsdedeveloppement/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-coup-de-gueule-en-introduction">1/ Coup de gueule en introduction</a></li>
+    <li><a href="#2-discutons">2/ Discutons</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Tests de développement</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/03-testsdedeveloppement/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/02-pratiques/index.html" title="Liens sur des pratiques utiles (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/04-consolehibernate/index.html" title="Créer une console Hibernate (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tests-de-développement">Tests de développement</h1>
+
+<h2 id="1-coup-de-gueule-en-introduction">1/ Coup de gueule en introduction</h2>
+<p>J&rsquo;en ai ras le bol de ce débat stérile sur les <em>tests unitaires</em>. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&rsquo;adjectif unitaire.</p>
+<h2 id="2-discutons">2/ Discutons</h2>
+<p>D&rsquo;un côté, les tests sont unitaires quand le SUT (System Under Test) se limite à une classe voire une méthode. L&rsquo;avantage de ces tests est qu&rsquo;ils sont assez simples à rédiger car le code à tester se limite à celui de la classe (inutile de connaître le comportement de tous les autres composants du système qui peuvent être mis en jeu). Le problème est qu&rsquo;il faut justement arriver à isoler le SUT et donc utiliser des techniques de bouchonnage (encore un framework que les collaborateurs du projet doivent apprendre à maîtriser).</p>
+<p>De l&rsquo;autre côté, les tests sont unitaires du moment qu&rsquo;ils participent à la construction de l&rsquo;application durant les travaux du développeur (j&rsquo;aime les chefs de projet définissant un nombre de jours de &ldquo;programmation et tests unitaires&rdquo;). Dans cette définition, n&rsquo;est pas pris en compte la granularité du SUT.</p>
+<p>La troisième définition (la pire à mon sens) est le test basé sur JUnit.</p>
+<p>Et si, pour se simplifier la vie, on parlait de tests de développement utilisant des TU, TI et TA ?</p>
+<p>Et là, on me pose la question “Et les tests de non-régression ?”. Ma réponse est simple “Un test de non-régression a été un test de développement mais le développement est fini et le test est resté.”</p>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/mesidees/index.html"><a class="padding" href="/mesidees/index.html">Mes idées</a><ul id="R-subsections-f33312b94d7209735d86dea9324bf52f" class="collapsible-menu">
+            <li class="" data-nav-id="/mesidees/01-dettetechnique/index.html"><a class="padding" href="/mesidees/01-dettetechnique/index.html">Dette technique</a></li>
+            <li class="" data-nav-id="/mesidees/02-pratiques/index.html"><a class="padding" href="/mesidees/02-pratiques/index.html">Liens sur des pratiques utiles</a></li>
+            <li class="active " data-nav-id="/mesidees/03-testsdedeveloppement/index.html"><a class="padding" href="/mesidees/03-testsdedeveloppement/index.html">Tests de développement</a></li>
+            <li class="" data-nav-id="/mesidees/04-consolehibernate/index.html"><a class="padding" href="/mesidees/04-consolehibernate/index.html">Créer une console Hibernate</a></li>
+            <li class="" data-nav-id="/mesidees/05-retryenjava/index.html"><a class="padding" href="/mesidees/05-retryenjava/index.html">Coder des ré-essais en Java</a></li>
+            <li class="" data-nav-id="/mesidees/06-relecturedecode/index.html"><a class="padding" href="/mesidees/06-relecturedecode/index.html">Relecture, revue et audit de code</a></li>
+            <li class="" data-nav-id="/mesidees/07-hugoetgithubpages/index.html"><a class="padding" href="/mesidees/07-hugoetgithubpages/index.html">Hugo et GitHub:Pages</a></li>
+            <li class="" data-nav-id="/mesidees/08-creationavechugo/index.html"><a class="padding" href="/mesidees/08-creationavechugo/index.html">Création d&#39;un site avec Hugo</a></li>
+            <li class="" data-nav-id="/mesidees/09-objectmother/index.html"><a class="padding" href="/mesidees/09-objectmother/index.html">Object Mother</a></li>
+            <li class="" data-nav-id="/mesidees/10-guidedudev/index.html"><a class="padding" href="/mesidees/10-guidedudev/index.html">Guide Du Développeur</a></li>
+            <li class="" data-nav-id="/mesidees/11-programmationdefensive/index.html"><a class="padding" href="/mesidees/11-programmationdefensive/index.html">Programmation défensive</a></li>
+            <li class="" data-nav-id="/mesidees/12-eclipse/index.html"><a class="padding" href="/mesidees/12-eclipse/index.html">Eclipse</a></li>
+            <li class="" data-nav-id="/mesidees/13-pipeline/index.html"><a class="padding" href="/mesidees/13-pipeline/index.html">Pipeline</a></li>
+            <li class="" data-nav-id="/mesidees/14-qualimetrie/index.html"><a class="padding" href="/mesidees/14-qualimetrie/index.html">Qualimétrie</a></li>
+            <li class="" data-nav-id="/mesidees/15-js/index.html"><a class="padding" href="/mesidees/15-js/index.html">JS</a></li>
+            <li class="" data-nav-id="/mesidees/17-installationserveuric/index.html"><a class="padding" href="/mesidees/17-installationserveuric/index.html">Installation d&#39;un serveur pour une Integration Continue</a></li>
+            <li class="" data-nav-id="/mesidees/18-licences/index.html"><a class="padding" href="/mesidees/18-licences/index.html">Licence</a></li>
+            <li class="" data-nav-id="/mesidees/19-git/index.html"><a class="padding" href="/mesidees/19-git/index.html">Git</a></li>
+            <li class="" data-nav-id="/mesidees/20-gitflow/index.html"><a class="padding" href="/mesidees/20-gitflow/index.html">les différents FLOW avec Git</a></li>
+            <li class="" data-nav-id="/mesidees/21-jenkins/index.html"><a class="padding" href="/mesidees/21-jenkins/index.html">Jenkins</a></li>
+            <li class="" data-nav-id="/mesidees/22-elastic/index.html"><a class="padding" href="/mesidees/22-elastic/index.html">Stack Elastic</a></li>
+            <li class="" data-nav-id="/mesidees/23-gitetclefssshmultiples/index.html"><a class="padding" href="/mesidees/23-gitetclefssshmultiples/index.html">Git et clefs SSH multiples</a></li>
+            <li class="" data-nav-id="/mesidees/24-sftpaws/index.html"><a class="padding" href="/mesidees/24-sftpaws/index.html">Créer un compte sftp sur AWS</a></li>
+            <li class="" data-nav-id="/mesidees/25-featuretoggle/index.html"><a class="padding" href="/mesidees/25-featuretoggle/index.html">Feature toggle</a></li>
+            <li class="" data-nav-id="/mesidees/26-wordpress/index.html"><a class="padding" href="/mesidees/26-wordpress/index.html">Installer une instance WordPress sur Ubuntu</a></li>
+            <li class="" data-nav-id="/mesidees/28-transcrypt/index.html"><a class="padding" href="/mesidees/28-transcrypt/index.html">Git et les mots de passe</a></li>
+            <li class="" data-nav-id="/mesidees/27-wordpress2/index.html"><a class="padding" href="/mesidees/27-wordpress2/index.html">Rédiger dans WordPress</a></li>
+            <li class="" data-nav-id="/mesidees/99-trucsalire/index.html"><a class="padding" href="/mesidees/99-trucsalire/index.html">Trucs à lire</a></li></ul></li>
+            <li class="" data-nav-id="/mesprojets/index.html"><a class="padding" href="/mesprojets/index.html">Mes projets</a><ul id="R-subsections-b42d1fd85e522adc838a3f3f768726d4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/moncv/index.html"><a class="padding" href="/moncv/index.html">Mon CV</a><ul id="R-subsections-8f33c05f2efc4d68dacb20a930b3b91c" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-blue" value="blue" selected>Blue</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1780601809" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780601809" defer></script>
+    <script src="/js/theme.min.js?1780601809" defer></script>
+  </body>
+</html>

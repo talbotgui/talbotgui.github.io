@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.6.1">
+    <meta name="description" content="Bulletin NG - Guide du développeur">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bulletin NG - Guide du développeur :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Bulletin NG - Guide du développeur">
+    <meta property="og:url" content="https://talbotgui.github.io/mesprojets/bulletin-guidededev/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Bulletin NG - Guide du développeur :: Guillaume TALBOT">
+    <meta property="og:description" content="Bulletin NG - Guide du développeur">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes projets">
+    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta itemprop="name" content="Bulletin NG - Guide du développeur :: Guillaume TALBOT">
+    <meta itemprop="description" content="Bulletin NG - Guide du développeur">
+    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
+    <meta itemprop="wordCount" content="1212">
+    <title>Bulletin NG - Guide du développeur :: Guillaume TALBOT</title>
+    <link href="/mesprojets/bulletin-guidededev/index.print.html" rel="alternate" type="text/html" title="Bulletin NG - Guide du développeur :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780601809" rel="stylesheet">
+    <link href="/css/theme.min.css?1780601809" rel="stylesheet">
+    <link href="/css/format-html.min.css?1780601809" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/mesprojets\/bulletin-guidededev\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.contentLangs=['fr'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support html" data-url="/mesprojets/bulletin-guidededev/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-gestion-de-projet">1/ Gestion de projet</a></li>
+    <li><a href="#2-exigences">2/ Exigences</a>
+      <ul>
+        <li><a href="#21-métiers">2.1/ Métiers</a></li>
+        <li><a href="#22-techniques">2.2/ Techniques</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-environnement">3/ Environnement</a></li>
+    <li><a href="#4-architecture-technique">4/ Architecture technique</a></li>
+    <li><a href="#5-tests">5/ Tests</a>
+      <ul>
+        <li><a href="#51-que-tester">5.1/ Que tester</a></li>
+        <li><a href="#52-comment-tester">5.2/ Comment tester</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-règles-de-conception">6/ Règles de conception</a>
+      <ul>
+        <li><a href="#61-données">6.1/ Données</a></li>
+        <li><a href="#62-service">6.2/ Service</a></li>
+        <li><a href="#63-composants-angular">6.3/ Composants Angular</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-règles-de-développement">7/ Règles de développement</a>
+      <ul>
+        <li><a href="#71-langue">7.1/ Langue</a></li>
+        <li><a href="#72-nommage">7.2/ Nommage</a></li>
+        <li><a href="#73-mise-en-forme-des-sources">7.3/ Mise en forme des sources</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-processus-de-développement">8/ Processus de développement</a>
+      <ul>
+        <li><a href="#81-gestion-de-configuration-logicielle-gcl">8.1/ Gestion de configuration logicielle (GCL)</a></li>
+        <li><a href="#82-commit">8.2/ Commit</a></li>
+        <li><a href="#83-industrialisation">8.3/ Industrialisation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/mesprojets/index.html"><span itemprop="name">Mes projets</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Bulletin NG - Guide du développeur</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesprojets/bulletin-guidededev/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesprojets/index.html" title="Mes projets (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesprojets/mariage-guidededev/index.html" title="Mariage - Guide du développeur (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesprojets" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="bulletin-ng---guide-du-développeur">Bulletin NG - Guide du développeur</h1>
+
+<p>Cette page est mini guide du développeur (<a href="/mesidees/10-guidedudev/index.html">ma définition du guide du développeur</a>) pour le projet BulletinNg (projet en cours de refonte au 31/12/2024).</p>
+<h2 id="1-gestion-de-projet">1/ Gestion de projet</h2>
+<p>Aucun suivi des tâches n&rsquo;est en cours pour le moment car les demandes arrivent et sont traitées au fil de l&rsquo;eau.</p>
+<p>Sont présents en tâches de fond les éléments suivants :</p>
+<ul>
+<li>mettre en oeuvre un maximum des fonctionnalités de Angular, AngularMaterial et des outils de build (NPM, Karma, Jasmine, Protractor, &hellip;).</li>
+</ul>
+<h2 id="2-exigences">2/ Exigences</h2>
+<p>Les exigences sont actuellement fournies par la principale utilisatrice. Aucune formalisation n&rsquo;existe en dehors des quelques lignes ci-dessous.</p>
+<h3 id="21-métiers">2.1/ Métiers</h3>
+<p>Du point de vue métier, le besoin est très spécifique et ne sera pas détaillé. Les principales contraintes métiers ayant amener à des choix techniques discutables sont :</p>
+<ul>
+<li>le caractère privé des données nécessite que ces dernières ne soient pas stockées dans une base de données centralisées. L&rsquo;utilisateur a besoin d&rsquo;avoir une maitrise complète de leur stockage.
+<ul>
+<li>les données sont donc stockées dans un fichier uploadé et téléchargé par l&rsquo;utilisateur au début et à la fin de sa session</li>
+<li>les utilisateurs disposant d&rsquo;un serveur de stockage de données (NAS Network Attached Storage) peuvent l&rsquo;utiliser pour sauvegarder et charger leurs données (à eux de sécuriser leur serveur)</li>
+<li>l&rsquo;application ne doit réaliser aucun transfert de données (sauf dans le cas de la sauvegarde sur un serveur qui est le résultat d&rsquo;une action explicite de l&rsquo;utilisateur)</li>
+</ul>
+</li>
+<li>l&rsquo;application doit être sécurisée dans la mesure du possible pour éviter l&rsquo;injection de script qui pourrait tenter de voler les données</li>
+</ul>
+<h3 id="22-techniques">2.2/ Techniques</h3>
+<p>Du point de vue technique, l&rsquo;application doit être</p>
+<ul>
+<li>l&rsquo;accessibilité n&rsquo;est pas un besoin car l&rsquo;utilisateur doit avoir ses données sur son terminal ;</li>
+<li>évolutive : chaque nouveau besoin doit être facilement réalisé pour fournir le service rapidement ;</li>
+<li>fiable (point primordiale) : l&rsquo;application ne doit pas subir de régressions intempestives portant atteinte à son utilisabilité ou à la fiabilité de ses données ;</li>
+<li>la structure des données sauvegardées ne doit pas être modifiée afin de conserver la rétrocompatibilité avec la précédente application.</li>
+</ul>
+<h2 id="3-environnement">3/ Environnement</h2>
+<p>Ce projet ne compte pas tous les environnements d&rsquo;un projet classique.</p>
+<p>(cf. <a href="https://talbotgui.github.io/mesprojets/mariage-guidededev/#environnement" rel="external" target="_blank">chapitre Environnement du guide du développeur du projet Mariage</a>)</p>
+<h2 id="4-architecture-technique">4/ Architecture technique</h2>
+<p>Pour limiter les transferts réseau, l&rsquo;application se résume à un FrontEnd. Afin de simplifier le code et d&rsquo;en augmenter la maintenabilité, le développement n&rsquo;est pas réalisé en JS/JQuery mais avec Angular (très bon framework pour faire du binding données/HTML)</p>
+<p>Les tests sont cruciaux dans le cadre de cette application. Donc, sans aller jusqu&rsquo;à une couverture de code de 100%/100% (en ligne / en branche), toutes les fonctionnalités doivent être testées (cf. paragraphe dédié aux tests).</p>
+<h2 id="5-tests">5/ Tests</h2>
+<h3 id="51-que-tester">5.1/ Que tester</h3>
+<p>Les cas nominaux de tous les composants doivent être testés ainsi que les cas d&rsquo;erreur principaux.</p>
+<p>Aucune exigence n&rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (les services).</p>
+<h3 id="52-comment-tester">5.2/ Comment tester</h3>
+<p>Jasmine et Ts6-Mockito sont utilisés pour les tests unitaires des services.</p>
+<p>Protractor est utilisé pour les tests de bout en bout (e2e - end to end).</p>
+<h2 id="6-règles-de-conception">6/ Règles de conception</h2>
+<h3 id="61-données">6.1/ Données</h3>
+<p>Le modèle de données ne doit pas évoluer au point de briser la rétrocompatibilité avec l&rsquo;application précédente.</p>
+<h3 id="62-service">6.2/ Service</h3>
+<p>Toute logique ou manipulation de données doit se faire dans un service.</p>
+<p>La manipulation du singleton de données est de la responsabilité de DataRepository (ce qui facilite les tests unitaires en offrant un point d&rsquo;entrée à un bouchon).</p>
+<p>Les lectures ou agrégations de données doivent se faire dans LectureService.</p>
+<p>Les manipulations complexes, non réutilisables et propres à un sous-ensemble du jeu de données doivent être placés dans un service dédié.</p>
+<h3 id="63-composants-angular">6.3/ Composants Angular</h3>
+<p>Les composants doivent être les plus simples possibles et limités la duplication de code. Pour cela, les éléments communs à tous les écrans comme la saisie de note ou de compétence doivent être l&rsquo;objet de composant dédié.</p>
+<p>Les injections de dépendances doivent se faire par la déclaration d&rsquo;un membre <strong>privé</strong> dans le constructeur</p>
+<h2 id="7-règles-de-développement">7/ Règles de développement</h2>
+<p>Les règles ci-dessous doivent être appliquées par tout développeur souhaitant participer à ce projet (non négociable). <strong>Par contre, il est toujours possible de discuter de la modification d&rsquo;une règle.</strong></p>
+<h3 id="71-langue">7.1/ Langue</h3>
+<p>Les entités, les attributs et les méthodes sont nommés en français.
+Les préfixes, suffixes et concepts inhérents au langage reste en anglais (get, set, is, &hellip;)</p>
+<h3 id="72-nommage">7.2/ Nommage</h3>
+<p>Les composants applicatifs sont suffixés selon les règles définies par Angular :</p>
+<ul>
+<li>&ldquo;xx.service.ts&rdquo; pour les service (sauf l&rsquo;unique exception de DataRepository) ;</li>
+<li>&ldquo;xx.component.ts&rdquo; pour le code TypeScript des composants d&rsquo;IHM ;</li>
+<li>&ldquo;xx.component.html&rdquo; pour le code HTML des composants d&rsquo;IHM ;</li>
+<li>&ldquo;xx.component.css&rdquo; pour les styles des composants d&rsquo;IHM ;</li>
+<li>et &ldquo;xx.spec.ts&rdquo; pour les tests.</li>
+</ul>
+<p>Parmi les composants d&rsquo;IHM, un préfixe est ajouté en fonction de l&rsquo;usage et du type de composant :</p>
+<ul>
+<li>&ldquo;compo-xxx&rdquo; pour les composants réutilisables ;</li>
+<li>&ldquo;div-xxx&rdquo; pour les cadres présents dans la page et visibles à tout instant ;</li>
+<li>&ldquo;tab-xxx&rdquo; pour un onglet.</li>
+</ul>
+<p>Les entités métier et les classes utilitaires ne sont pas suffixées mais doivent avoir des noms parlant (l&rsquo;usage du nom d&rsquo;un pattern est utile pour décrire l&rsquo;usage/l&rsquo;utilité du composant)
+Les noms de méthode commence par un verbe à l&rsquo;infinitif</p>
+<h3 id="73-mise-en-forme-des-sources">7.3/ Mise en forme des sources</h3>
+<p>Microsoft VsCode est l&rsquo;IDE préconisé même si le plugin pour Eclipse n&rsquo;est pas mal mais plante encore régulièrement (testé en aout 2017). La configuration VsCode est présente dans le repository et les règles de validation TsLint doivent être respectées !</p>
+<h2 id="8-processus-de-développement">8/ Processus de développement</h2>
+<h3 id="81-gestion-de-configuration-logicielle-gcl">8.1/ Gestion de configuration logicielle (GCL)</h3>
+<ul>
+<li>Que comprend la GCL :
+<ul>
+<li>Les sources applicatives et de test sont dans un repository GIT ;</li>
+<li>Le présent &ldquo;guide du développeur&rdquo; est lui aussi dans un repository GIT mais séparé (pas de gestion de version cohérente nécessaire) ;</li>
+<li>Le bug tracker a utilisé est celui du repository GitHub ;</li>
+<li>Les plans de test &ldquo;métier&rdquo; ne sont pas formalisés. Mais une partie d&rsquo;entre eux sont automatisés.</li>
+</ul>
+</li>
+<li>La gestion de version :
+<ul>
+<li>une seule version existe pour le moment (branche &lsquo;master&rsquo;).</li>
+<li>si des POC sont réalisés, ils doivent l&rsquo;être dans une branche dédiée</li>
+<li>aucun TAG n&rsquo;est posé pour le moment (c&rsquo;est une chose à faire prochainement)</li>
+<li>l&rsquo;usage de featureBranch est autorisé et même encouragé</li>
+</ul>
+</li>
+</ul>
+<h3 id="82-commit">8.2/ Commit</h3>
+<p>Les messages de commit doivent être explicites.</p>
+<h3 id="83-industrialisation">8.3/ Industrialisation</h3>
+<h4 id="831-outils">8.3.1/ Outils</h4>
+<p>La gestion des exigences est totalement informelle. Ce qui ne pose pas de problème pour ce projet car le délai entre l&rsquo;expression du besoin et la mise en production est court et qu&rsquo;aucune contractualisation n&rsquo;existe (ni sur les moyens ni sur le périmètre métier).
+GitHub héberge une partie des outils du projet : repository GIT &amp; guide du développeur, &hellip;
+L&rsquo;outil d&rsquo;intégration continue utilisé est Jenkins (hébergé sur un serveur EC2).
+La qualimétrie est réalisée avec SonarQube (hébergée sur le site officiel en ligne).
+Les relectures de code sont possibles avec GitLab mais ne sont pas utilisées actuellement (un seul développeur pour le moment)</p>
+<h4 id="832-processus">8.3.2/ Processus</h4>
+<p>Quitte à faire un petit projet sympa, autant utiliser les outils correctement. Donc le processus de développement (même s&rsquo;il est minimal) est piloté par un pipeline (cf. <a href="/mesidees/13-pipeline/index.html">pipeline</a>).
+Le pipeline est lui aussi en GCL : dans le <em>JenkinsFile</em>
+Le pipeline commence au commit du code et enchaîne les étapes suivantes : compilation, tests métiers, tests E2E, qualimétrie, promotion manuelle et mise en production</p>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/mesidees/index.html"><a class="padding" href="/mesidees/index.html">Mes idées</a><ul id="R-subsections-f33312b94d7209735d86dea9324bf52f" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/mesprojets/index.html"><a class="padding" href="/mesprojets/index.html">Mes projets</a><ul id="R-subsections-b42d1fd85e522adc838a3f3f768726d4" class="collapsible-menu">
+            <li class="active " data-nav-id="/mesprojets/bulletin-guidededev/index.html"><a class="padding" href="/mesprojets/bulletin-guidededev/index.html">Bulletin NG - Guide du développeur</a></li>
+            <li class="" data-nav-id="/mesprojets/mariage-guidededev/index.html"><a class="padding" href="/mesprojets/mariage-guidededev/index.html">Mariage - Guide du développeur</a></li>
+            <li class="" data-nav-id="/mesprojets/applicationblanche/index.html"><a class="padding" href="/mesprojets/applicationblanche/index.html">Application Blanche</a></li></ul></li>
+            <li class="" data-nav-id="/moncv/index.html"><a class="padding" href="/moncv/index.html">Mon CV</a><ul id="R-subsections-8f33c05f2efc4d68dacb20a930b3b91c" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-blue" value="blue" selected>Blue</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1780601809" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780601809" defer></script>
+    <script src="/js/theme.min.js?1780601809" defer></script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.6.1">
+    <meta name="description" content="Créer une console Hibernate">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Créer une console Hibernate :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Créer une console Hibernate">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/04-consolehibernate/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Créer une console Hibernate :: Guillaume TALBOT">
+    <meta property="og:description" content="Créer une console Hibernate">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="name" content="Créer une console Hibernate :: Guillaume TALBOT">
+    <meta itemprop="description" content="Créer une console Hibernate">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="589">
+    <title>Créer une console Hibernate :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/04-consolehibernate/index.html" rel="canonical" type="text/html" title="Créer une console Hibernate :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780601809" rel="stylesheet">
+    <link href="/css/theme.min.css?1780601809" rel="stylesheet">
+    <link href="/css/format-print.min.css?1780601809" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/mesidees\/04-consolehibernate\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.contentLangs=['fr'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/04-consolehibernate/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-quest-ce-">1/ Qu&rsquo;est-ce ?</a></li>
+    <li><a href="#2-les-problèmes">2/ Les problèmes</a></li>
+    <li><a href="#3-une-solution">3/ Une solution</a></li>
+    <li><a href="#31-étape-1">3.1/ étape 1</a></li>
+    <li><a href="#32-étape-2">3.2/ étape 2</a></li>
+    <li><a href="#33-étape-3">3.3/ étape 3</a></li>
+    <li><a href="#34-étape-4">3.4/ étape 4</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Créer une console Hibernate</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/04-consolehibernate/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/03-testsdedeveloppement/index.html" title="Tests de développement (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/05-retryenjava/index.html" title="Coder des ré-essais en Java (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="créer-une-console-hibernate">Créer une console Hibernate</h1>
+
+<h2 id="1-quest-ce-">1/ Qu&rsquo;est-ce ?</h2>
+<p>Une console Hibernate est un environnement de développement (IDE) permettant de requêter en HQL (ou JPQL) une base de données.</p>
+<p>L&rsquo;intérêt de cette console est de tester une requête HQL sans avoir à déclencher du code Java dans l&rsquo;application ou dans un test de développement.</p>
+<h2 id="2-les-problèmes">2/ Les problèmes</h2>
+<p>Où se trouve la difficulté ? Un peu partout en fait :</p>
+<ul>
+<li>Il faut trouver comment installer le plugin Eclipse.</li>
+<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude.</li>
+<li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude).</li>
+<li>il faut paramétrer correctement la connexion à une base de données.</li>
+</ul>
+<h2 id="3-une-solution">3/ Une solution</h2>
+<h2 id="31-étape-1">3.1/ étape 1</h2>
+<p>Pour installer le plugin, démarrer Eclipse puis</p>
+<ul>
+<li>accéder au MarketPlace via le menu <em>Help</em> &gt; <em>Eclipse MarketPlace</em></li>
+<li>faire une recherche avec le mot <em>jboss</em></li>
+<li>sur la ligne <em>JBoss Tools xxx</em>, cliquer sur le bouton <em>install</em></li>
+<li>parmis la liste des fonctionnalités du plugin, ne sélectionner que les packages marqués <em>required</em> et <em>Hibernate Tools</em></li>
+<li>valider toutes les étapes suivantes jusqu&rsquo;au redémarrage d&rsquo;Eclipse (nécessaire pour prendre en compte le nouveau plugin)</li>
+</ul>
+<h2 id="32-étape-2">3.2/ étape 2</h2>
+<p>Pour paramétrer la connexion à la base de données, depuis Eclipse</p>
+<ul>
+<li>ouvrir la perspective <em>Hibernate</em></li>
+<li>afficher la vue <em>Data Source Explorer</em></li>
+<li>faire un clic droit sur <em>Database connexion</em></li>
+<li>cliquer sur <em>new</em></li>
+<li>sélectionner le bon type de base de données et lui fournir un JAR contenant un driver (dans le repository Maven, <em>org.postgresql:postgresql</em> par exemple)</li>
+<li>renseigner les paramètres de connexion</li>
+<li>tester et sauvegarder la connexion</li>
+</ul>
+<h2 id="33-étape-3">3.3/ étape 3</h2>
+<p>Pour rassembler la configuration dans un même endroit, il faut créer un projet Java dans Eclipse utilisant le même JDK que celui utilisé pour démarrer Eclipse.</p>
+<p>La configuration de la console Hibernate  demande la création de deux fichiers. Donc, dans ce projet, créer les deux fichiers :</p>
+<ul>
+<li><em>hibernate.properties</em> qui va rester vide</li>
+<li><em>hibernate.cfg.xml</em> qui va contenir un de ces deux fichiers XML</li>
+</ul>
+<p>Pour une BDD HSQL :</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE hibernate-configuration PUBLIC &#34;-//Hibernate/Hibernate Configuration DTD 3.0//EN&#34; &#34;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;hibernate-configuration&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.hsqldb.jdbcDriver<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>username<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.HSQLDialect<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/session-factory&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/hibernate-configuration&gt;</span></span></span></code></pre></div>
+<p>Pour une BDD PostgreSQL :</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE hibernate-configuration PUBLIC &#34;-//Hibernate/Hibernate Configuration DTD 3.0//EN&#34; &#34;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;hibernate-configuration&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.postgresql.Driver<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>pwd<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:postgresql://localhost:5432/mybdd<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.PostgreSQL82Dialect<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/session-factory&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/hibernate-configuration&gt;</span></span></span></code></pre></div>
+<p>Toujours dans ce projet, il faut ajouter les répertoires des entités :</p>
+<ul>
+<li>faire un clic droit sur le projet</li>
+<li>cliquer sur <em>Properties</em> puis <em>Java Build Path</em></li>
+<li>dans l&rsquo;onglet <em>source</em>, ajouter des <em>Link sources</em> sur les répertoires contenant les classes des entités</li>
+<li>dans l&rsquo;onglet <em>Libraries</em>, ajouter des <em>external jars</em> permettant de faire compiler les sources (hibernate-core, javax-persistence, &hellip; en fonction des besoins)</li>
+</ul>
+<h2 id="34-étape-4">3.4/ étape 4</h2>
+<p>Pour paramétrer la console Hibernate, il reste maintenant à</p>
+<ul>
+<li>dans la vue <em>Hibernate Configurations</em>, faire un clic-droit et un <em>add Configuration&hellip;</em></li>
+<li>renseigner le formulaire avec :
+<ul>
+<li>Nom : ce que vous voulez</li>
+<li>Type : <em>Core</em></li>
+<li>Hibernate version : votre version d&rsquo;Hibernate</li>
+<li>Project : le projet précédemment créé</li>
+<li>Database Connection : <em>Hibernate configured connection</em></li>
+<li>Property file : le fichier précédemment créé</li>
+<li>Configuration file : le fichier précédemment créé</li>
+<li>Database dialect : HSQL ou PostgreSQL</li>
+</ul>
+</li>
+</ul>
+<p>Après un petit clic sur la flèche à coté de votre configuration pour l&rsquo;étendre, puis un clic sur <em>Session Factory</em>, vous devriez voir toutes vos classes persistantes.</p>
+<p>Il est maintenant possible d&rsquo;ouvrir un <em>HQL Editor</em> depuis un clic droit sur la configuration.</p>
+<p>A partir du même endroit, il est possible de créer un schéma de votre mapping.</p>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js?1780601809" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780601809" defer></script>
+    <script src="/js/theme.min.js?1780601809" defer></script>
+  </body>
+</html>

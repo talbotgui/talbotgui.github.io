@@ -1,0 +1,6 @@
+<!--
+Pour inclure une page HTML dans la page HUGO
+cf. https://xa1.at/hugo-include-html/
+ -->
+{{ $file := .Get 0 }}
+{{ $file | readFile | safeHTML }}

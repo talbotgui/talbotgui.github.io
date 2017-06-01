@@ -1,0 +1,32 @@
+# Documentation du thème RELEARN : https://mcshelby.github.io/hugo-theme-relearn/
+
+baseurl = "https://talbotgui.github.io/"
+languageCode = "fr-fr"
+title = "Guillaume TALBOT"
+contentdir = "content"
+publishDir = "docs"
+theme = 'hugo-theme-relearn'
+  
+[params]
+
+  # Thème bleu par défaut mais autres thèmes disponibles
+  themeVariant = ['blue', 'relearn-light', 'relearn-dark']
+
+  # Désactivation des recherches
+  disableSearch = true
+  disableSearchIndex = true
+  disableSearchPage = true
+
+  # Désactiver le lien 'Home' dans le menu
+  disableLandingPageButton = true
+
+  # L'auteur
+  [params.author]
+    email = 'talbotgui@gmail.com'
+    name = 'Guillaume TALBOT'
+
+# Pour activer l'impression
+[outputs]
+  home = ['html', 'print']
+  page = ['html', 'print']
+  section = ['html', 'print']

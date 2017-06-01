@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.6.1">
+    <meta name="description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/17-installationserveuric/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT">
+    <meta property="og:description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta itemprop="name" content="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT">
+    <meta itemprop="description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
+    <meta itemprop="wordCount" content="973">
+    <title>Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT</title>
+    <link href="/mesidees/17-installationserveuric/index.print.html" rel="alternate" type="text/html" title="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780601809" rel="stylesheet">
+    <link href="/css/theme.min.css?1780601809" rel="stylesheet">
+    <link href="/css/format-html.min.css?1780601809" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/mesidees\/17-installationserveuric\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.contentLangs=['fr'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support html" data-url="/mesidees/17-installationserveuric/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Installation d&#39;un serveur pour une Integration Continue</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/17-installationserveuric/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/15-js/index.html" title="JS (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/18-licences/index.html" title="Licence (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="installation-dun-serveur-pour-une-integration-continue">Installation d&#39;un serveur pour une Integration Continue</h1>
+
+<h4 id="création-de-la-machine-">Création de la machine :</h4>
+<p>Créer une machine de type <em>small</em> chez Amazon EC2 avec l&rsquo;OS Ubuntu xx.xx de votre choix.</p>
+<p>Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)</p>
+<h4 id="mise-à-jour-de-la-plateforme-">Mise à jour de la plateforme :</h4>
+<p>Se connecter en SSH et exécuter</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo apt-get update
+sudo apt-get -y upgrade</code></pre></div>
+<h4 id="installation-de-java-et-jenkins-">Installation de Java et Jenkins :</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo apt-get -y install default-jdk
+	
+@see https://www.jenkins.io/doc/book/installing/linux/#weekly-release
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c &#39;echo deb https://pkg.jenkins.io/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#39;
+sudo apt-get update
+sudo apt-get -y install jenkins</code></pre></div>
+<p>Pour définir le rootContext de Jenkins, exécuter <code>sudo vi /etc/default/jenkins</code> et modifier la dernière ligne pour ajouter &ldquo;&ndash;prefix=$PREFIX&rdquo; (attention au double tirets)</p>
+<p>Pour prendre en compte la modification, redémarrer Jenkins</p>
+<h4 id="installation-apache2">Installation apache2</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo apt-get -y install apache2
+sudo a2enmod proxy proxy_http
+sudo a2enmod headers
+sudo a2enmod ssl</code></pre></div>
+<p>Créer le fichier <code>sudo vi /etc/apache2/sites-available/monHttp.conf</code></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>&lt;VirtualHost *:80&gt;
+ ServerAdmin webmaster@localhost
+ ServerName me.guillaumetalbot.com
+ ServerAlias ci
+&lt;/VirtualHost&gt;</code></pre></div>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo a2ensite monHttp
+sudo /etc/init.d/apache2 restart</code></pre></div>
+<h4 id="installation-letsencrypt">Installation LetsEncrypt</h4>
+<p><em>@see <a href="https://certbot.eff.org/instructions" rel="external" target="_blank">https://certbot.eff.org/instructions</a> et sélectionner Apache et le bon OS</em></p>
+<p><strong>Penser à configurer le nom de domaine pour pointer sur la machine auprès du DNS avant</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot --apache</code></pre></div>
+<h4 id="limiter-les-informations-fournies-par-le-serveur">Limiter les informations fournies par le serveur</h4>
+<p>Modifier le fichier <code>sudo vi /etc/apache2/conf-available/security.conf</code> et changer les valeurs :</p>
+<ul>
+<li>ServerTokens Prod</li>
+<li>ServerSignature Off</li>
+</ul>
+<h4 id="activer-les-accès-sécurisés-aux-outils-">Activer les accès sécurisés aux outils :</h4>
+<p>Modifier le fichier <code>sudo vi /etc/apache2/sites-available/monHttp-le-ssl.conf</code> et y ajouter</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>  DocumentRoot /var/www/html
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+  ProxyRequests Off
+  ProxyVia Off
+  &lt;Proxy *&gt;
+   Order deny,allow
+   Allow from all
+  &lt;/Proxy&gt;
+  ProxyPreserveHost on
+  ProxyPass /jenkins http://localhost:8080/jenkins nocanon
+  ProxyPassReverse /jenkins http://locahost:8080/jenkins
+  ProxyPassReverse /jenkins  http://me.guillaumetalbot.com/jenkins
+  RequestHeader set X-Forwarded-Proto &#34;https&#34;
+  RequestHeader set X-Forwarded-Port &#34;443&#34;
+  AllowEncodedSlashes NoDecode
+
+  &lt;IfModule mod_headers.c&gt;
+   Header set X-Content-Type-Options nosniff
+   Header set X-Permitted-Cross-Domain-Policies &#34;none&#34;
+   # pour ne pas bloquer Jenkins
+   # Header set Content-Security-Policy &#34;child-src &#39;none&#39;; object-src &#39;none&#39;&#34;
+   # Header set X-Frame-Options DENY
+   Header set X-XSS-Protection &#34;1; mode=block;&#34;
+   Header set Strict-Transport-Security &#34;max-age=300; includeSubDomains; preload; always;&#34;
+   Header set Public-Key-Pins &#34;pin-sha256=\&#34;base64+primary==\&#34;; pin-sha256=\&#34;base64+backup==\&#34;; max-age=5184000; includeSubDomains&#34;
+  &lt;/IfModule&gt;</code></pre></div>
+<p>Puis exécuter :</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo /etc/init.d/apache2 restart
+sudo rm /var/www/html/index.html</code></pre></div>
+<p>Créer le fichier <code>sudo vi /var/www/html/index.html</code> avec le contenu suivant :</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta charset=&#34;utf-8&#34; /&gt;
+  &lt;meta http-equiv=&#34;refresh&#34; content=&#34;3; url=https://talbotgui.github.io&#34; /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  Redirection en cours...
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+<h4 id="configuration-jenkins-">Configuration Jenkins :</h4>
+<p>Aller à l&rsquo;adresse https://&hellip;../jenkins et suivre les instructions</p>
+<h4 id="installation-email-">Installation email :</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo apt-get install postfix
+  me.guillaumetalbot.com
+sudo vi /etc/postfix/main.cf
+  myhostname = me.guillaumetalbot.com
+sudo service postfix restart</code></pre></div>
+<h4 id="installation-maven-">Installation Maven :</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo mkdir /usr/share/m2repo
+sudo chmod a+rw /usr/share/m2repo
+sudo apt-get -y install maven</code></pre></div>
+<p>Modifier le fichier <code>sudo vi /usr/share/maven/conf/settings.xml</code> pour définir le repo local</p>
+<h4 id="installation-npm--nodejs">Installation NPM &amp; NodeJS</h4>
+<p>Vérifier la dernière version disponible du setup et remplacer les YY (version 14 en aout 2021).</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>curl -sL https://deb.nodesource.com/setup_YY.x | sudo -E bash -
+sudo apt-get install -y nodejs</code></pre></div>
+<h4 id="pour-paramétrer-jenkins-avec-une-configuration-de-base">Pour paramétrer Jenkins avec une configuration de base</h4>
+<p>Premier accès et paramétrage de base</p>
+<ul>
+<li>accéder au portail pour la première fois</li>
+<li>suivre les instructions pour se connecter en tant qu&rsquo;administrateur</li>
+<li>sélectionner l&rsquo;installation des plugins courants</li>
+</ul>
+<p>Installer les plugins nécessaires</p>
+<ul>
+<li>accéder à la partie &ldquo;administrer Jenkins&rdquo; puis &ldquo;gestion des plugins&rdquo;</li>
+<li>dans la liste des plugins disponibles, sélectionner &ldquo;blue ocean&rdquo; et cliquer sur &ldquo;installer sans redémarrer&rdquo;</li>
+<li>dans la liste des plugins disponibles, sélectionner &ldquo;Pipeline Utility Steps&rdquo; et cliquer sur &ldquo;installer sans redémarrer&rdquo;</li>
+<li>une fois les plugins installés, cliquer sur la case &ldquo;redémarrer Jenkins&rdquo; et patienter que Jenkins redémarre</li>
+</ul>
+<p>Déclarer les outils</p>
+<ul>
+<li>accéder à la partie &ldquo;administrer Jenkins&rdquo; puis &ldquo;Configuration globale des outils&rdquo;</li>
+<li>cliquer sur &ldquo;Ajouter JDK&rdquo;, décocher &ldquo;installation automatique&rdquo;, saisir &ldquo;java local&rdquo; et &ldquo;/usr/lib/jvm/java-11-openjdk-amd64/&rdquo;</li>
+<li>cliquer sur &ldquo;Ajouter Maven&rdquo;, décocher &ldquo;installation automatique&rdquo;, saisir &ldquo;M3&rdquo; et &ldquo;/usr/share/maven/&rdquo;</li>
+</ul>
+<p>Déclarer les clefs</p>
+<ul>
+<li>faire le tour de tous vos dépôts et jenkinsFile pour lister les clefs nécessaires à leur bon fonctionnement</li>
+<li>accéder à la partie &ldquo;administrer Jenkins&rdquo; puis &ldquo;Manage credentials&rdquo;</li>
+<li>cliquer sur &ldquo;Jenkins&rdquo; puis &ldquo;identifiants globaux&rdquo;</li>
+<li>cliquer sur &ldquo;Ajouter identifiant&rdquo; et saisir les élements nécessaires</li>
+</ul>
+<h4 id="publication-dapplication">Publication d&rsquo;application</h4>
+<p>Si votre serveur héberge aussi des applications déployées automatiquement depuis votre Jenkins</p>
+<ul>
+<li>faire le tour de tous vos dépôts et jenkinsFile pour lister les clefs nécessaires à leur bon fonctionnement</li>
+<li>exécuter autant de fois que nécessaire les commandes suivantes</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo mkdir /var/www/html/xxx
+sudo chmod a+rw /var/www/html/xxx</code></pre></div>
+<h4 id="si-la-machine-est-de-type-tiny">Si la machine est de type <em>tiny</em></h4>
+<p>La machine va manquer de RAM. Pour ajouter une partition de SWAP (dans un fichier) (<a href="http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/" rel="external" target="_blank">http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/</a>)</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo dd if=/dev/zero of=/var/myswap bs=1M count=2048
+sudo mkswap /var/myswap
+sudo swapon /var/myswap
+sudo chmod 0644 /var/myswap</code></pre></div>
+<h4 id="petits-outils-à-installer">Petits outils à installer</h4>
+<p>Parmis les outils utiles dans les scripts SHELL, il faut bien souvent installer</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>sudo apt-get -y install zip</code></pre></div>
+<h4 id="les-répertoires-à-vider-pour-récupérer-de-lespace-">Les répertoires à vider pour récupérer de l&rsquo;espace :</h4>
+<p>/var/lib/jenkins/.npm/_logs/</p>
+<h4 id="notes-sur-linstallation-dun-archiva">Notes sur l&rsquo;installation d&rsquo;un Archiva</h4>
+<p>Ressources :</p>
+<ul>
+<li>documentation : <a href="https://archiva.apache.org/docs/2.2.3/quick-start.html" rel="external" target="_blank">https://archiva.apache.org/docs/2.2.3/quick-start.html</a></li>
+<li>installation : <a href="http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip" rel="external" target="_blank">http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip</a></li>
+</ul>
+<p>Installation :</p>
+<ul>
+<li>extraire le contenu de l&rsquo;archive</li>
+<li>si Java9 est le JDK par défaut, modifier le fichier conf/wrapper.conf : <code>wrapper.java.command=C:/Program Files/Java/jdk1.8.0_151/bin/java</code></li>
+<li>sous Windows, dans un interpréteur de commande en mode &ldquo;Admin&rdquo;, exécuter <code>archiva install</code> puis <code>archiva start</code></li>
+<li>Archiva sera disponible à l&rsquo;adresse http://localhost:8080/</li>
+</ul>
+<h4 id="petites-commandes-pratiques-pour-entretenir-le-serveur-">Petites commandes pratiques pour entretenir le serveur :</h4>
+<p>Pour rechercher les répertoires prenant de la place : <code>sudo du -cha --max-depth=1 / | grep -E &quot;[0-9]M|[0-9]G&quot;</code></p>
+<p>Et un petit script permettant de faire le ménage régulièrement :</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>apt clean all
+rm /var/log/**/*.gz
+rm /var/log/journal/*/*-00000*.journal
+rm -rf /var/lib/jenkins/workspace/*
+rm -rf /var/lib/jenkins/.sonar/*
+rm -rf /var/lib/jenkins/.m2/*
+rm -rf /var/lib/jenkins/.npm/*</code></pre></div>
+<h4 id="installation-du-cloud-sdk">Installation du Cloud SDK</h4>
+<ul>
+<li>documentation : <a href="https://cloud.google.com/sdk/docs/downloads-apt-get" rel="external" target="_blank">https://cloud.google.com/sdk/docs/downloads-apt-get</a></li>
+</ul>
+<p>Installation :</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>export CLOUD_SDK_REPO=&#34;cloud-sdk-$(lsb_release -c -s)&#34;
+echo &#34;deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main&#34; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk</code></pre></div>
+<p>Connexion :</p>
+<ul>
+<li>créer une clef depuis la console GCloud (IAM / comptes de service)</li>
+<li>activer les APIs &ldquo;Cloud Resource Manager API&rdquo; et &ldquo;App Engine Admin API&rdquo; depuis la console GCloud (API / Bibliotheque)</li>
+<li>déposer le fichier JSON sur le serveur</li>
+<li>se connecter une première fois avec <code>gcloud auth activate-service-account --key-file=LE_FICHIER_JSON</code></li>
+<li>exécuter la commande <code>gcloud init</code> et renseigner toutes les informations</li>
+</ul>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/mesidees/index.html"><a class="padding" href="/mesidees/index.html">Mes idées</a><ul id="R-subsections-f33312b94d7209735d86dea9324bf52f" class="collapsible-menu">
+            <li class="" data-nav-id="/mesidees/01-dettetechnique/index.html"><a class="padding" href="/mesidees/01-dettetechnique/index.html">Dette technique</a></li>
+            <li class="" data-nav-id="/mesidees/02-pratiques/index.html"><a class="padding" href="/mesidees/02-pratiques/index.html">Liens sur des pratiques utiles</a></li>
+            <li class="" data-nav-id="/mesidees/03-testsdedeveloppement/index.html"><a class="padding" href="/mesidees/03-testsdedeveloppement/index.html">Tests de développement</a></li>
+            <li class="" data-nav-id="/mesidees/04-consolehibernate/index.html"><a class="padding" href="/mesidees/04-consolehibernate/index.html">Créer une console Hibernate</a></li>
+            <li class="" data-nav-id="/mesidees/05-retryenjava/index.html"><a class="padding" href="/mesidees/05-retryenjava/index.html">Coder des ré-essais en Java</a></li>
+            <li class="" data-nav-id="/mesidees/06-relecturedecode/index.html"><a class="padding" href="/mesidees/06-relecturedecode/index.html">Relecture, revue et audit de code</a></li>
+            <li class="" data-nav-id="/mesidees/07-hugoetgithubpages/index.html"><a class="padding" href="/mesidees/07-hugoetgithubpages/index.html">Hugo et GitHub:Pages</a></li>
+            <li class="" data-nav-id="/mesidees/08-creationavechugo/index.html"><a class="padding" href="/mesidees/08-creationavechugo/index.html">Création d&#39;un site avec Hugo</a></li>
+            <li class="" data-nav-id="/mesidees/09-objectmother/index.html"><a class="padding" href="/mesidees/09-objectmother/index.html">Object Mother</a></li>
+            <li class="" data-nav-id="/mesidees/10-guidedudev/index.html"><a class="padding" href="/mesidees/10-guidedudev/index.html">Guide Du Développeur</a></li>
+            <li class="" data-nav-id="/mesidees/11-programmationdefensive/index.html"><a class="padding" href="/mesidees/11-programmationdefensive/index.html">Programmation défensive</a></li>
+            <li class="" data-nav-id="/mesidees/12-eclipse/index.html"><a class="padding" href="/mesidees/12-eclipse/index.html">Eclipse</a></li>
+            <li class="" data-nav-id="/mesidees/13-pipeline/index.html"><a class="padding" href="/mesidees/13-pipeline/index.html">Pipeline</a></li>
+            <li class="" data-nav-id="/mesidees/14-qualimetrie/index.html"><a class="padding" href="/mesidees/14-qualimetrie/index.html">Qualimétrie</a></li>
+            <li class="" data-nav-id="/mesidees/15-js/index.html"><a class="padding" href="/mesidees/15-js/index.html">JS</a></li>
+            <li class="active " data-nav-id="/mesidees/17-installationserveuric/index.html"><a class="padding" href="/mesidees/17-installationserveuric/index.html">Installation d&#39;un serveur pour une Integration Continue</a></li>
+            <li class="" data-nav-id="/mesidees/18-licences/index.html"><a class="padding" href="/mesidees/18-licences/index.html">Licence</a></li>
+            <li class="" data-nav-id="/mesidees/19-git/index.html"><a class="padding" href="/mesidees/19-git/index.html">Git</a></li>
+            <li class="" data-nav-id="/mesidees/20-gitflow/index.html"><a class="padding" href="/mesidees/20-gitflow/index.html">les différents FLOW avec Git</a></li>
+            <li class="" data-nav-id="/mesidees/21-jenkins/index.html"><a class="padding" href="/mesidees/21-jenkins/index.html">Jenkins</a></li>
+            <li class="" data-nav-id="/mesidees/22-elastic/index.html"><a class="padding" href="/mesidees/22-elastic/index.html">Stack Elastic</a></li>
+            <li class="" data-nav-id="/mesidees/23-gitetclefssshmultiples/index.html"><a class="padding" href="/mesidees/23-gitetclefssshmultiples/index.html">Git et clefs SSH multiples</a></li>
+            <li class="" data-nav-id="/mesidees/24-sftpaws/index.html"><a class="padding" href="/mesidees/24-sftpaws/index.html">Créer un compte sftp sur AWS</a></li>
+            <li class="" data-nav-id="/mesidees/25-featuretoggle/index.html"><a class="padding" href="/mesidees/25-featuretoggle/index.html">Feature toggle</a></li>
+            <li class="" data-nav-id="/mesidees/26-wordpress/index.html"><a class="padding" href="/mesidees/26-wordpress/index.html">Installer une instance WordPress sur Ubuntu</a></li>
+            <li class="" data-nav-id="/mesidees/28-transcrypt/index.html"><a class="padding" href="/mesidees/28-transcrypt/index.html">Git et les mots de passe</a></li>
+            <li class="" data-nav-id="/mesidees/27-wordpress2/index.html"><a class="padding" href="/mesidees/27-wordpress2/index.html">Rédiger dans WordPress</a></li>
+            <li class="" data-nav-id="/mesidees/99-trucsalire/index.html"><a class="padding" href="/mesidees/99-trucsalire/index.html">Trucs à lire</a></li></ul></li>
+            <li class="" data-nav-id="/mesprojets/index.html"><a class="padding" href="/mesprojets/index.html">Mes projets</a><ul id="R-subsections-b42d1fd85e522adc838a3f3f768726d4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/moncv/index.html"><a class="padding" href="/moncv/index.html">Mon CV</a><ul id="R-subsections-8f33c05f2efc4d68dacb20a930b3b91c" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-blue" value="blue" selected>Blue</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1780601809" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780601809" defer></script>
+    <script src="/js/theme.min.js?1780601809" defer></script>
+  </body>
+</html>

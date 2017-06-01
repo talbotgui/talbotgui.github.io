@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.6.1">
+    <meta name="description" content="Relecture, revue et audit de code">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Relecture, revue et audit de code :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Relecture, revue et audit de code">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/06-relecturedecode/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Relecture, revue et audit de code :: Guillaume TALBOT">
+    <meta property="og:description" content="Relecture, revue et audit de code">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="name" content="Relecture, revue et audit de code :: Guillaume TALBOT">
+    <meta itemprop="description" content="Relecture, revue et audit de code">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="587">
+    <title>Relecture, revue et audit de code :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/06-relecturedecode/index.html" rel="canonical" type="text/html" title="Relecture, revue et audit de code :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1780601809" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1780601809" rel="stylesheet">
+    <link href="/css/theme.min.css?1780601809" rel="stylesheet">
+    <link href="/css/format-print.min.css?1780601809" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/mesidees\/06-relecturedecode\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.contentLangs=['fr'];
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/06-relecturedecode/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-mes-définitions">1/ Mes définitions</a></li>
+    <li><a href="#2-le-plus-important">2/ Le plus important</a></li>
+    <li><a href="#3-pour-se-simplifier-la-vie">3/ Pour se simplifier la vie</a></li>
+    <li><a href="#4-pour-aller-plus-loin">4/ Pour aller plus loin</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Relecture, revue et audit de code</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/06-relecturedecode/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/05-retryenjava/index.html" title="Coder des ré-essais en Java (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/07-hugoetgithubpages/index.html" title="Hugo et GitHub:Pages (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="relecture-revue-et-audit-de-code">Relecture, revue et audit de code</h1>
+
+<h2 id="1-mes-définitions">1/ Mes définitions</h2>
+<p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple).</p>
+<p>Une relecture permet de s&rsquo;assurer</p>
+<ul>
+<li>que les noms des composants, opérations, attributs, paramètres et variables sont explicites,</li>
+<li>que les commentaires sont utiles et pertinents,</li>
+<li>que le contenu du commit correspond bien aux exigences fournies en entrées (ou au ticket/demande)</li>
+<li>qu&rsquo;aucun fichier ne sera embarqué pour un simple saut de ligne malencontreux,</li>
+<li>&hellip;</li>
+</ul>
+<p><strong>La revue de code</strong> est un processus outillé qui permet de systématiser une relecture de code par un tiers entre la fin du développement et l&rsquo;intégration du dit code dans les sources de l&rsquo;application.</p>
+<p>Le processus peut être le suivant :</p>
+<ul>
+<li>Dès qu&rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers.</li>
+<li>Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer.</li>
+<li>L&rsquo;auditeur parcourt le code et y rédige ses remarques.</li>
+<li>Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&rsquo;être intégré à la branche principale.</li>
+<li>Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&rsquo;il corrige son code.</li>
+</ul>
+<p>Attention, ce processus n&rsquo;intègre pas le build de la branche, le déploiement du(es) livrable(s) généré(s) et les tests à réaliser pour valider le développement réalisé.</p>
+<p><strong>L&rsquo;audit de code</strong> est un processus consistant à faire une relecture de code de tout le code de la branche principale. Ce processus n&rsquo;est pas lié à un développement précis. Mais il peut être judicieux d&rsquo;en réaliser un avant ou après un évènement précis (réversibilité de TMA, montée de version majeure d&rsquo;un framework, &hellip;).</p>
+<p>Cette pratique est tout à fait compatible avec les deux autres pratiques précédentes.</p>
+<h2 id="2-le-plus-important">2/ Le plus important</h2>
+<p>Attention, on parle ici de la qualité du code. La conception, les librairies/framework utilisés, &hellip; sont une autre affaire !!</p>
+<p>Quelques soient les pratiques du projet (revue ou audit ou les deux), l&rsquo;élément central et primordial est l&rsquo;échange entre le développeur et le relecteur. Cet échange est le seul garant du bon fonctionnement de ces pratiques !!</p>
+<p>Sans lui :</p>
+<ul>
+<li>Le relecteur ne verra pas immédiatement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaises relectures.</li>
+<li>Le développeur recevra une liste de remarque totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Un échange verbal peut éviter d&rsquo;interminables échanges de message.</li>
+<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre que s&rsquo;ils communiquent directement l&rsquo;un avec l&rsquo;autre.</li>
+</ul>
+<h2 id="3-pour-se-simplifier-la-vie">3/ Pour se simplifier la vie</h2>
+<p>Certaines règles de développement sont aisément vérifiables (avec une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&rsquo;outil de qualimétrie pour tous les langages.
+Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et de points d&rsquo;attention à contrôler.</p>
+<p>En plus des contrôles de qualité automatiques, les actions automatiques sur le poste du développeur peuvent simplifier les relectures de code. Tous les IDE proposent de formatter le code, réorganiser les imports, &hellip; à chaque sauvegarde de fichier.</p>
+<h2 id="4-pour-aller-plus-loin">4/ Pour aller plus loin</h2>
+<p>Pour mettre en oeuvre ces bonnes idées en poussant l&rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&rsquo;est du <strong>pair programming</strong> !</p>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js?1780601809" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1780601809" defer></script>
+    <script src="/js/theme.min.js?1780601809" defer></script>
+  </body>
+</html>

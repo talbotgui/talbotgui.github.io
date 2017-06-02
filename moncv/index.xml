@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Moncvs on Guillaume TALBOT</title>
+    <link>https://talbotgui.github.io/moncv/index.xml</link>
+    <description>Recent content in Moncvs on Guillaume TALBOT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <atom:link href="https://talbotgui.github.io/moncv/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mon CV</title>
+      <link>https://talbotgui.github.io/moncv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/moncv/</guid>
+      <description>&lt;p&gt;Produire. C&amp;rsquo;est ma drogue. Produire du code, des documents de formation ou un billet de blog. Mais produire.&lt;/p&gt;
+
+&lt;p&gt;2 semaines sans produire, je deviens fou et je passe une nuit sur un projet personnel.&lt;/p&gt;
+
+&lt;p&gt;On ne se refait pas&amp;hellip; Mais on peut s&amp;rsquo;améliorer.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;https://talbotgui.github.io/jquery-timelify/timelify.css&#34;/&gt;
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;https://talbotgui.github.io/font-awesome-4.7.0/css/font-awesome.min.css&#34;/&gt;
+&lt;div class=&#34;timeline&#34;&gt;
+	&lt;h2&gt;2017&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Formateur et référent de formation&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra Steria, dans les fonctions transverses du groupe
+			Référent de plusieurs formations techniques et méthodologiques
+			&lt;br/&gt;Participant aux travaux d’évolution de la méthode du groupe
+			&lt;br/&gt;Formateur Java et méthode du groupe (8 jours par mois en moyenne)
+			&lt;br/&gt;Mise à jour de plusieurs formations et création de 2 nouvelles formations Java (Hibernate avancé et Tests unitaires avancés)
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP (grande autonomie)&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De mai 2015 à aujourd&#39;hui&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Référent technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra Steria, en mission chez Erdf (Enedis) sur le projet Linky-Coeur
+			&lt;br/&gt;Projet visant à mettre en place un SI de gestion des 35 millions de compteurs électriques intelligents Linky. Le projet comprend un système de gestion de processus (BPM), d&#39;échanges complexes (ESB) et d&#39;application référentiels.
+			&lt;br/&gt;Mes rôles durant les 9 premiers mois au sein de l&#39;équipe &#34;outils de tests&#34; :
+			&lt;ul&gt;
+				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
+				&lt;li&gt;Développement et maintenance d’une API de tests SOA utilisée par des développeurs&lt;/li&gt;
+				&lt;li&gt;Développement d’une application Web de tests SOA utilisée par des testeurs métiers (recette)&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;br/&gt;Mes rôles durant les mois suivants au sein d&#39;une équipe de développement LinkyCoeur :
+			&lt;ul&gt;
+				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
+				&lt;li&gt;Développements OSB, BPEL, JEE&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, JSF, Weblogic Server, Oracle DB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP par équipe Scrum et 4 équipes sur le plateau (multiple ESN)&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De janvier 2014 à mai 2015&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2014&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Architecte SI&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour la DOAAT (EDF)
+			&lt;br/&gt;Définition de l&#39;architecture et initialisation d&#39;un SI (ensemble d&#39;application WEB s&#39;intégrant sous la forme d&#39;un portail unifié) : 
+			&lt;ul&gt;
+				&lt;li&gt;revue des modèles UML produits par les concepteurs&lt;/li&gt;
+				&lt;li&gt;génération de la base du code par un outil développé personnellement&lt;/li&gt;
+				&lt;li&gt;conception et rédaction de l’architecture générale, technique et logicielle&lt;/li&gt;
+				&lt;li&gt;rédaction des guides (développement, installation, livraison)&lt;/li&gt;
+				&lt;li&gt;support aux développeurs&lt;/li&gt;
+				&lt;li&gt;développements applicatifs&lt;/li&gt;
+				&lt;li&gt;mise en place de l&#39;industrialisation des développements&lt;/li&gt;
+				&lt;li&gt;mise en place des environnements (développement, qualification, recette)&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, JSF, Weblogic Server, Oracle DB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 16 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De août 2012 à janvier 2014&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Architecte SI&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour Storengy (GDF SUEZ )
+			&lt;br/&gt;En phase d’initialisation et jusqu’au début des développements, définition et mise en place de l’architecture pour un projet de développement de deux applications Web en Java, de la mise en place d&#39;un CRM et d&#39;un BI.
+			&lt;br/&gt;Puis, développeur, référent technique
+			&lt;br/&gt;&lt;br/&gt;Mes activités :
+			&lt;br/&gt;Puis
+			&lt;ul&gt;
+				&lt;li&gt;conception et rédaction de l’architecture générale, technique et logicielle&lt;/li&gt;
+				&lt;li&gt;rédaction des guides (développement, installation, livraison)&lt;/li&gt;
+				&lt;li&gt;Mise en place des environnements (développement, qualification)&lt;/li&gt;
+				&lt;li&gt;Initialisation des développements.&lt;/li&gt;
+				&lt;li&gt;Développement&lt;/li&gt;
+				&lt;li&gt;Support à l&#39;équipe&lt;/li&gt;
+				&lt;li&gt;Accompagnement du prestataire d&#39;hébergement&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, Struts2, Weblogic Server, Oracle DB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP à Paris et 8 ETP à Nantes&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De novembre 2010 à août 2012&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Auditeur&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour SB Alliance-Bongrain, en phase finale du projet, chantier d&#39;amélioration des performances de plusieurs fonctionnalités « clef »
+			&lt;br/&gt;Mes activités : audit de code de performance et développements d&#39;amélioration des performances de fonctionnalités « clefs »
+			&lt;br/&gt;Contexte technique : &lt;i&gt;JProfiler, P6Spy, Java&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 2 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;En novembre 2010&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2010&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Auditeur et développeur&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour Elengy (GDF Suez), TMA évolutive d&#39;une application Java.
+			Mes activités :
+			&lt;ul&gt;
+				&lt;li&gt;phase de prise en charge de l&#39;application en TMA (réversibilité entrante)&lt;/li&gt;
+				&lt;li&gt;chantier d&#39;amélioration des performances&lt;/li&gt;
+				&lt;li&gt;développements de nouvelles fonctionnalités&lt;/li&gt;
+				&lt;li&gt;support et formation des collaborateurs&lt;/li&gt;
+				&lt;li&gt;mise en place de procédures et environnements de livraison&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 7 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De novembre 2009 à novembre 2010&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Développeur&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour le SDIN (EDF), mise en place de WebServices sécurisés s’intégrant au système d’informations du client.
+			Mes activités :
+			&lt;ul&gt;
+				&lt;li&gt;Etude technique (déploiement physique, sécurité)&lt;/li&gt;
+				&lt;li&gt;Développements et qualification&lt;/li&gt;
+				&lt;li&gt;Rédaction de guides d’utilisation et de développement&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Axis&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;En octobre 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Développeur et référent technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour GrDF (GDF SUEZ), TMA évolutive sur une application Java/J2EE.
+			&lt;br/&gt;Mes activités : rédaction de spécifications fonctionnelles, développements et qualification
+			&lt;br/&gt;&lt;br/&gt;Contexte technique : &lt;i&gt;Java, Struts2, EJB3, Weblogic Server, OracleDB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De août 2009 à septembre 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Auditeur et développeur &lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour KARAVEL, durant la période de garantie, quelques semaines d&#39;audit pour améliorer les performances des applications développée par Sopra.
+			&lt;br/&gt;Mes activités : Audit de code et de performance et développements de correctifs pour améliorer les performances du SI.
+			&lt;br/&gt;&lt;br/&gt;Contexte technique : &lt;i&gt;JProfiler, P6Spy, Java, Weblogic Integration (WLI), OracleDB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;En juillet 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Chef de projet technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour le GALEC (Leclerc), projet en régie pour modifier en profondeur l’application de saisie des négociations entre le mouvement Leclerc et ses fournisseurs suite à la mise en place de la Loi de Modernisation de l’Economie. 
+			&lt;br/&gt;Projet en régie pour mettre en place une application de gestion et diffusion de prix de vente conseillés.
+			&lt;br/&gt;&lt;br/&gt;Mes activités : 
+			&lt;ul&gt;
+				&lt;li&gt;Support technique à l’équipe de développement&lt;/li&gt;
+				&lt;li&gt;Gestion de projet partagée avec le client&lt;/li&gt;
+				&lt;li&gt;Développement et qualification d’application&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Struts2, Websphere, DB2&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 6 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De novembre 2008 à juin 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Développeur et référent technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour GrDF, TMA évolutive sur une application développée sur un outil propriétaire
+			&lt;br/&gt;&lt;br/&gt;Mes activités : Rédaction de spécifications fonctionnelles, développement et qualification
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De septembre 2008 à octobre 2008&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Concepteur technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour STIME (Intermarché) en partenariat avec l&#39;éditeur NETFECTIVE sur un de leurs projets au forfait pour la création d’une application de gestion des commandes des points de vente avec un module d’enrichissement des données du catalogue des produits. 
+			&lt;br/&gt;L’application est générée à partir de modèles UML et d’une maquette HTML avec l’outil Blu Age
+			&lt;br/&gt;&lt;br/&gt;Mes activités : 
+			&lt;ul&gt;
+				&lt;li&gt;Conception d’application web en UML avec Blu Age&lt;/li&gt;
+				&lt;li&gt;Prise de connaissance de l&#39;outil Blu Age&lt;/li&gt;
+				&lt;li&gt;Présentation de l&#39;outil aux responsables et aux commerciaux de ma division&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;UML, MDA, Java, Blu Age&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP (seul soprasien)&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De juillet 2008 à août 2008&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Développeur Java&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour KARAVEL sur un projet au forfait de refonte globale du système d’informations du vendeur de voyages en ligne.
+			&lt;br/&gt;&lt;br/&gt;Mes activités durant ces 26 mois :
+			&lt;ul&gt;
+				&lt;li&gt;Développement du prototype qui a servi de base de développement&lt;/li&gt;
+				&lt;li&gt;Revue des modèles UML intégrés dans les exigences&lt;/li&gt;
+				&lt;li&gt;Génération de code à partir des modèles métier (à base de scripting avec Power AMC)&lt;/li&gt;
+				&lt;li&gt;Dénormalisation et maintien des modèles&lt;/li&gt;
+				&lt;li&gt;Développement Back et Front&lt;/li&gt;
+				&lt;li&gt;Support aux développeurs (après un an de mission)&lt;/li&gt;
+				&lt;li&gt;Responsable des applications Référentiel, Catalogue, Vente et Réservation.&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, Struts2, Weblogic Integration (WLI), OracleDB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 20 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;br/&gt;&lt;time&gt;De avril 2006 à juin 2008&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2006&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Diplôme d&#39;ingénieur&lt;/h3&gt;
+			&lt;hr/&gt;
+			ESME SUDRIA, Ivry Sur Seine
+			&lt;hr/&gt;
+			&lt;br/&gt;&lt;time&gt;2006&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2003&lt;/h2&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.timelify.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+	$(&#39;.timeline&#39;).timelify();
+&lt;/script&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -14,7 +14,733 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://talbotgui.github.io/mesidees/</guid>
-      <description>&lt;p&gt;hello world&lt;/p&gt;
+      <description>&lt;p&gt;Cette partie du site contient des résumés d&amp;rsquo;articles, des opinions, des astuces et des guides sur des sujets très divers :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/02-pratiques/&#34;&gt;liens vers des pratiques utiles&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;industrialisation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/01-dettetechnique/&#34;&gt;dette technique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/06-relecturedecode/&#34;&gt;relecture de code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;développement&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/03-testsdedeveloppement/&#34;&gt;tests de développement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/04-consolehibernate/&#34;&gt;créer une console Hibernate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/05-retryenjava/&#34;&gt;Comment coder des ré-essais en Java&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;documentation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/08-creationavechugo/&#34;&gt;créer un site avec Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/07-hugoetgithubpages/&#34;&gt;Hugo et GitHub:Pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dette technique</title>
+      <link>https://talbotgui.github.io/mesidees/01-dettetechnique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/01-dettetechnique/</guid>
+      <description>
+
+&lt;h4 id=&#34;définitions-sur-le-net&#34;&gt;Définitions sur le net&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ward Cunningham (1992) : if you develop a program for a long period of time by only adding features and never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer.&lt;/li&gt;
+&lt;li&gt;James Shore : the cumulative total of less-than-perfect design and implementation&lt;/li&gt;
+&lt;li&gt;Tom Poppendieck : everything that makes your code harder to change&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;ma-définition&#34;&gt;Ma définition&lt;/h4&gt;
+
+&lt;p&gt;La dette technique&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;est constituée des imperfections du design et du code&lt;/li&gt;
+&lt;li&gt;réduit la productivité de l&amp;rsquo;équipe&lt;/li&gt;
+&lt;li&gt;réduit la maintenabilité&lt;/li&gt;
+&lt;li&gt;augmente le nombre d&amp;rsquo;erreurs (bugs dans les nouvelles fonctionnalités et régressions dans le code existant)&lt;/li&gt;
+&lt;li&gt;se mesure par l&amp;rsquo;effort qu&amp;rsquo;il faut pour la résorber&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ces imperfections/violations se séparent en 3 groupes :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;les imperfections &lt;strong&gt;identifiées et délibérées&lt;/strong&gt; : elles sont les preuves de mauvais choix fait en toute connaissance de cause. Ces choix doivent impérativement donner lieu à un plan d&amp;rsquo;action pour résoudre le problème. Exemple : pas de mesure de la couverture de code ni de vérification des exigences qui y sont liées dans un premier temps à cause des délais. Mais on y reviendra juste après la livraison.&lt;/li&gt;
+&lt;li&gt;les imperfections &lt;strong&gt;involontaires et relevées par un outil&lt;/strong&gt; : elles sont les preuves d&amp;rsquo;une incompétence ou d&amp;rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code commité. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus.&lt;/li&gt;
+&lt;li&gt;les imperfections &lt;strong&gt;involontaires et non identifiées&lt;/strong&gt; : elles sont souvent identifiées durant la résolution d&amp;rsquo;un bug. Le problème est général à tout le code mais c&amp;rsquo;est un code en particulier qui a fait émerger un problème. Il faut alors ajouter une règle de développement sur le projet (documenter la règle et l&amp;rsquo;intégrer dans les outils de vérification). Exemple : un caractère bizarre dans une page WEB va permettre de se rendre compte qu&amp;rsquo;une partie des fichiers &amp;ldquo;source&amp;rdquo; n&amp;rsquo;est pas en UTF8.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La dette se traite en&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;définissant au plus tôt des règles de conception, de développement et de test&lt;/li&gt;
+&lt;li&gt;mettant en place des outils (sur le poste du développeur et dans l&amp;rsquo;intégration continue)&lt;/li&gt;
+&lt;li&gt;sensibilisant/formant les développeurs pour qu&amp;rsquo;ils génèrent moins de dette&lt;/li&gt;
+&lt;li&gt;attribuant une priorité à chaque imperfection existante (ou type d&amp;rsquo;imperfections)&lt;/li&gt;
+&lt;li&gt;organisant des actions de refactoring pour réduire le nombre d&amp;rsquo;imperfections&lt;/li&gt;
+&lt;li&gt;amendant et enrichissant les règles tout au long du projet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;sources&#34;&gt;Sources&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.c2.com/cgi/wiki?WardExplainsDebtMetaphor&#34;&gt;Technical debt - Ward Cunningham&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=pqeJFYwnkjE&#34;&gt;Technical debt - Ward Cunningham&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://martinfowler.com/bliki/TechnicalDebt.html&#34;&gt;Technical debt - Martin Fowler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.omg.org/news/meetings/tc/tx-14/special-events/cisq-presentations/CISQ-Seminar-2014-6-17-BILL-CURTIS-Measuring-and-Managing-Technical-Debt.pdf&#34;&gt;Measuring and managing technical debt - CAST Software&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Liens sur des pratiques utiles</title>
+      <link>https://talbotgui.github.io/mesidees/02-pratiques/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/02-pratiques/</guid>
+      <description>
+
+&lt;h3 id=&#34;pratiques-de-développement&#34;&gt;Pratiques de développement :&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://fr.slideshare.net/redigon/refactoring-1658371&#34;&gt;refactoring tips - Martin Fowler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iluwatar/java-design-patterns&#34;&gt;DesignPattern avec explication et code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;documentation-d-une-solution-d-un-langage-ou-d-un-projet&#34;&gt;Documentation d&amp;rsquo;une solution, d&amp;rsquo;un langage ou d&amp;rsquo;un projet :&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Frameworks :
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/syalioune/awesome-java&#34;&gt;Liste très riche de frameworks en tout genre&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/google/jimfs&#34;&gt;Mock d&amp;rsquo;un FileSystem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://selenide.org/quick-start.html&#34;&gt;Selenide - sur couche à Selenium simplifiant l&amp;rsquo;API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Langages :
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.sea5g1fuv&#34;&gt;js - les fonctionnalités de l&amp;rsquo;objet console&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://openweb.eu.org/articles/cascade_css&#34;&gt;css - les règles de priorité de la cascade&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Outils :
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://asciidoctor.org/docs/asciidoctor-maven-plugin/&#34;&gt;asciiDoctor - générer la documentation avec Maven&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.bogotobogo.com/Hadoop/ELK/ELK_ElasticSearch_Logstash_Kibana4.php&#34;&gt;ELK - installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tests de développement</title>
+      <link>https://talbotgui.github.io/mesidees/03-testsdedeveloppement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/03-testsdedeveloppement/</guid>
+      <description>&lt;p&gt;J&amp;rsquo;en ai ras le bol de ce débat stérile sur les tests unitaires. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&amp;rsquo;adjectif unitaire.&lt;/p&gt;
+
+&lt;p&gt;D&amp;rsquo;un côté, les tests sont unitaires quand le SUT (System Under Test) se limite à une classe voire une méthode. L&amp;rsquo;avantage de ces tests est qu&amp;rsquo;ils sont assez simples à rédiger car le code à tester se limite à celui de la classe (inutile de connaître le comportement de tous les autres composants du système qui peuvent être mis en jeu). Le problème est qu&amp;rsquo;il faut justement arriver à isoler le SUT et donc utiliser des techniques de bouchonnage (encore un framework que les collaborateurs du projet doivent apprendre à maîtriser).&lt;/p&gt;
+
+&lt;p&gt;De l&amp;rsquo;autre côté, les tests sont unitaires du moment qu&amp;rsquo;ils participent à la construction de l&amp;rsquo;application durant les travaux du développeur. Et ce quelque soit la granularité du SUT, que les tests soient unitaires (selon la première définition), d&amp;rsquo;intégration ou applicatif (de bout en bout avec tous les composants et systèmes externes).&lt;/p&gt;
+
+&lt;p&gt;Et si, pour se simplifier la vie, on parlait de tests de développement utilisant des TU, TI et TA ?&lt;/p&gt;
+
+&lt;p&gt;Et là, on me pose la question “Et les tests de non-regression ?”. Ma réponse est simple “Un test de non-regression a été un test de développement mais le dev est fini et le test est resté.”&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Créer une console Hibernate</title>
+      <link>https://talbotgui.github.io/mesidees/04-consolehibernate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/04-consolehibernate/</guid>
+      <description>
+
+&lt;p&gt;Créer une console Hibernate (JBoss Tools) sur un projet SpringBoot+JPA utilisant une HSQLDB&lt;/p&gt;
+
+&lt;h2 id=&#34;les-problèmes&#34;&gt;Les problèmes&lt;/h2&gt;
+
+&lt;p&gt;Où se trouve la difficulté ? Un peu partout en fait :
+* La console Hibernate de JBoss Tools utilise encore un fichier /hibernate.cfg.xml/ dont on a plus très souvent l&amp;rsquo;habitude
+* La recherche d&amp;rsquo;entités par présence d&amp;rsquo;annotation n&amp;rsquo;est pas disponible (c&amp;rsquo;est Spring qui le fait d&amp;rsquo;habitude)
+* il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB&lt;/p&gt;
+
+&lt;h2 id=&#34;les-solutions&#34;&gt;Les solutions&lt;/h2&gt;
+
+&lt;p&gt;Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez vous une connexion depuis la vue /Data Source Explorer/. Mais pensez bien à ajouter /;readonly=true;files_readonly=true;hsqldb.lock_file=false/ à la fin de l&amp;rsquo;URL de connexion.&lt;/p&gt;
+
+&lt;p&gt;Quand à la configuration de la console Hibernate, elle demande la création de deux fichiers :
+* /hibernate.properties/ qui va rester vide
+* /hibernate.cfg.xml/ qui va contenir ce code&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE hibernate-configuration PUBLIC &amp;quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&amp;quot; &amp;quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&amp;quot;&amp;gt;
+&amp;lt;hibernate-configuration&amp;gt;
+  &amp;lt;session-factory name=&amp;quot;sessionFactory&amp;quot;&amp;gt;
+    &amp;lt;property name=&amp;quot;hibernate.connection.driver_class&amp;quot;&amp;gt;org.hsqldb.jdbcDriver&amp;lt;/property&amp;gt;
+    &amp;lt;property name=&amp;quot;hibernate.connection.password&amp;quot;&amp;gt;login&amp;lt;/property&amp;gt;
+    &amp;lt;property name=&amp;quot;hibernate.connection.url&amp;quot;&amp;gt;jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false&amp;lt;/property&amp;gt;
+    &amp;lt;property name=&amp;quot;hibernate.connection.username&amp;quot;&amp;gt;username&amp;lt;/property&amp;gt;
+    &amp;lt;property name=&amp;quot;hibernate.dialect&amp;quot;&amp;gt;org.hibernate.dialect.HSQLDialect&amp;lt;/property&amp;gt;
+    &amp;lt;mapping class=&amp;quot;mon.package.MonEntite&amp;quot; /&amp;gt;
+    &amp;lt;mapping class=&amp;quot;mon.package.EtToutesMesAutresEntitesSansEnOublier&amp;quot; /&amp;gt;
+  &amp;lt;/session-factory&amp;gt;
+&amp;lt;/hibernate-configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&amp;rsquo;installation), il vous reste à :
+* ouvrir la perspective /Hibernate/ (avec le petit bouton /Open a perspective/ en haut à droite)
+* dans la vue /Hibernate Configurations/, faire un clic-droit et un /add Configuration&amp;hellip;/
+* renseigner le formulaire avec :
+ * Nom : ce que vous voulez
+ * Type : /Core/
+ * Hibernate version : votre version d&amp;rsquo;Hibernate
+ * Project : votre projet contenant la persistance
+ * Database Connection : /Hibernate configured connection/
+ * Property file : le fichier précédemment créé
+ * Configuration file : le fichier précédemment créé
+ * Database dialect : HSQL&lt;/p&gt;
+
+&lt;p&gt;Après un petit clic sur la flèche à coté de votre configuration pour l&amp;rsquo;étendre, puis un clic sur /Session Factory/, vous devriez voir toutes vos classes persistantes.&lt;/p&gt;
+
+&lt;p&gt;Il est maintenant possible d&amp;rsquo;ouvrir un /HQL Editor/ depuis un clic droit sur la configuration.&lt;/p&gt;
+
+&lt;p&gt;A partir du même endroit, il est possible de créer un schéma de votre mapping.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Coder des ré-essais en Java</title>
+      <link>https://talbotgui.github.io/mesidees/05-retryenjava/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/05-retryenjava/</guid>
+      <description>
+
+&lt;p&gt;La librairie &lt;strong&gt;guava-retrying&lt;/strong&gt; est assez pratique pour définir des méthodes à ré-essayer en cas d&amp;rsquo;échec.&lt;/p&gt;
+
+&lt;p&gt;Documentation : &lt;a href=&#34;https://github.com/rholder/guava-retrying&#34;&gt;ici&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;dépendence&#34;&gt;Dépendence&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+	&amp;lt;groupId&amp;gt;com.github.rholder&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;guava-retrying&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;2.0.0&amp;lt;/version&amp;gt;
+	&amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;exemple&#34;&gt;Exemple&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
+
+import com.github.rholder.retry.RetryException;
+import com.github.rholder.retry.Retryer;
+import com.github.rholder.retry.RetryerBuilder;
+import com.github.rholder.retry.StopStrategies;
+import com.github.rholder.retry.WaitStrategies;
+
+public class Test {
+	public void testRetry() throws ExecutionException, RetryException {
+		final int nbEssais = 6;
+		final int tempsEntreDeuxEssaisEnMs = 500;
+
+		final Retryer&amp;lt;Void&amp;gt; retryer = RetryerBuilder.&amp;lt;Void&amp;gt;newBuilder()//
+				.retryIfExceptionOfType(AssertionError.class).retryIfRuntimeException()//
+				.withStopStrategy(StopStrategies.stopAfterAttempt(nbEssais))//
+				.withWaitStrategy(WaitStrategies.fixedWait(tempsEntreDeuxEssaisEnMs, TimeUnit.MILLISECONDS))//
+				.build();
+
+		final Callable&amp;lt;Void&amp;gt; assertion = () -&amp;gt; {
+			Assert.assertNotNull(&amp;quot;attendu&amp;quot;);
+			return null;
+		};
+
+		retryer.call(assertion);
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Relecture, revue et audit de code</title>
+      <link>https://talbotgui.github.io/mesidees/06-relecturedecode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/06-relecturedecode/</guid>
+      <description>
+
+&lt;h4 id=&#34;ma-définition&#34;&gt;Ma Définition&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;La relecture de code&lt;/strong&gt; est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (//git diff// par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple ajout de ligne malencontreux, &amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;La revue de code&lt;/strong&gt; est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&amp;rsquo;intégration du dit code dans les sources de l&amp;rsquo;application. Le processus peut être le suivant :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dès qu&amp;rsquo;un développeur pousse sont travail sur le repository, une demande de revue est envoyée à un tiers&lt;/li&gt;
+&lt;li&gt;Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer&lt;/li&gt;
+&lt;li&gt;Une liste de remarques est établie&lt;/li&gt;
+&lt;li&gt;Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&amp;rsquo;être intégré à la branche principale&lt;/li&gt;
+&lt;li&gt;Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&amp;rsquo;il corrige son code&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;L&amp;rsquo;audit de code&lt;/strong&gt; est un processus asynchrone qui consiste à faire une relecture de code à tout moment sur le code actuellement intégré à une branche principale. Cette pratique est tout à fait compatible avec les deux autres pratiques précédentes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;le-plus-important&#34;&gt;Le plus important&lt;/h4&gt;
+
+&lt;p&gt;Attention, on parle ici de la qualité du code. La conception, les librairies/framework utilisés, &amp;hellip; sont une autre affaire !!&lt;/p&gt;
+
+&lt;p&gt;Quelques soient les pratiques du projet (revue ou audit ou les deux), l&amp;rsquo;élément central et primordial est l&amp;rsquo;échange entre le développeur et le relecteur. C&amp;rsquo;est cet échange qui est le garant du bon fonctionnement de ces pratiques !! Sans lui :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;le relecteur ne verra pas directement l&amp;rsquo;utilité de son travail. Il s&amp;rsquo;en lassera et fera de mauvaise relecture&lt;/li&gt;
+&lt;li&gt;le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&amp;rsquo;interminables envois de mails&lt;/li&gt;
+&lt;li&gt;le relecteur et le développeur ne pourront apprendre l&amp;rsquo;un de l&amp;rsquo;autre&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;pour-se-simplifier-la-vie&#34;&gt;Pour se simplifier la vie&lt;/h4&gt;
+
+&lt;p&gt;Certains règles de développement sont aisément vérifiables (une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&amp;rsquo;outil de qualimétrie pour tous les langages.
+Il ne remplace pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et points d&amp;rsquo;attention à contrôler.&lt;/p&gt;
+
+&lt;h4 id=&#34;pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/h4&gt;
+
+&lt;p&gt;Pour mettre en oeuvre ces bonnes idées en poussant l&amp;rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à coté du développeur pour lui réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&amp;rsquo;est du &lt;strong&gt;pair programming&lt;/strong&gt; !&lt;/p&gt;
+
+&lt;h4 id=&#34;sources&#34;&gt;Sources&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.8thcolor.com/en/2014/04/5-reasons-you-are-not-doing-code-reviews/&#34;&gt;5 reasons you are not doing code reviews&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phinze.github.io/2013/12/08/pairing-vs-code-review.html&#34;&gt;Pairing vs code review&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo et GitHub:Pages</title>
+      <link>https://talbotgui.github.io/mesidees/07-hugoetgithubpages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/07-hugoetgithubpages/</guid>
+      <description>
+
+&lt;h2 id=&#34;démarrage&#34;&gt;Démarrage&lt;/h2&gt;
+
+&lt;p&gt;Les objectifs sont :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;de disposer d&amp;rsquo;un repository contenant les sources du site avec des pages en markdown&lt;/li&gt;
+&lt;li&gt;d&amp;rsquo;utiliser &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; pour réaliser la mise en page et générer le site statique&lt;/li&gt;
+&lt;li&gt;de déployer ce site statique dans un repository &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub:Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;d&amp;rsquo;automatiser complètement la génération et le déploiement du site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le point de départ :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;le site existe déjà (cf. &lt;a href=&#34;https://talbotgui.github.io/mesidees/08-creationavechugo/&#34;&gt;créer un site avec Hugo&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Hugo génère le site dans le répertoire &amp;lsquo;public&amp;rsquo; (répertoire par défaut)&lt;/li&gt;
+&lt;li&gt;les sources du site sont dans un repository Git&lt;/li&gt;
+&lt;li&gt;un serveur Jenkins est disponible&lt;/li&gt;
+&lt;li&gt;Jenkins contient une configuration login/password avec le compte GitHub&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Les valeurs utilisées ici sont celle du site que vous consultez en ce moment :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/pages-hugo&#34;&gt;le repository des sources&lt;/a&gt; : &lt;a href=&#34;https://github.com/talbotgui/pages-hugo.git&#34;&gt;https://github.com/talbotgui/pages-hugo.git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/talbotgui.github.io&#34;&gt;le repository d&amp;rsquo;hébergement&lt;/a&gt; : &lt;a href=&#34;https://github.com/talbotgui/talbotgui.github.io.git&#34;&gt;https://github.com/talbotgui/talbotgui.github.io.git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;la clef du credential dans Jenkins : compteGithub&lt;/li&gt;
+&lt;li&gt;le nom de l&amp;rsquo;utilisateur qui apparait dans l&amp;rsquo;historique GitHub du repository d&amp;rsquo;hébergement : Jenkins de Guillaume TALBOT&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;etapes&#34;&gt;Etapes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dans Jenkins, créer un job MultiBranchPipeline pointant sur votre repository GitHub&lt;/li&gt;
+&lt;li&gt;Sur le serveur Jenkins, installer l&amp;rsquo;outil &lt;a href=&#34;https://docs.npmjs.com/getting-started/installing-node&#34;&gt;NPM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A la racine du repository des sources, placer le Jenkinsfile suivant :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-groovy&#34;&gt;#!groovy
+
+// Définition des propriétés du job : on ne garde que les 5 derniers build
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: &#39;&#39;, artifactNumToKeepStr: &#39;&#39;, daysToKeepStr: &#39;&#39;, numToKeepStr: &#39;5&#39;)), pipelineTriggers([])])
+
+pipeline {
+
+  // aucun agent par défaut
+  agent none
+
+  stages {
+    
+    stage (&#39;Checkout&#39;) {
+      agent any
+      steps {
+      
+        // clone des sources du site
+        git url: &#39;https://github.com/talbotgui/pages-hugo.git&#39;
+        
+        // clone du thème HUGO
+        dir(&#39;themes&#39;) {
+            sh &amp;quot;git clone https://github.com/matcornic/hugo-theme-learn.git&amp;quot;
+        }
+        
+        stash name: &#39;sources&#39;, includes: &#39;*&#39;
+      }
+    }
+
+    stage (&#39;Build&#39;) {
+      agent any
+      steps {
+        unstash &#39;sources&#39;
+
+        // génère le site
+        sh &amp;quot;chmod u+x ./hugo&amp;quot;
+        sh &amp;quot;./hugo -t hugo-theme-learn&amp;quot;
+        
+        stash name: &#39;public&#39;, includes: &#39;public/**/*&#39;
+      }
+    }
+
+    stage (&#39;Deploy&#39;) {
+      agent any
+      steps {
+
+        // supprime le répertoire &#39;public&#39;
+        dir(&#39;public&#39;) {
+          deleteDir()
+        }
+
+        // clone le repository d&#39;hébergement dans le répertoire &#39;public&#39;
+        sh &amp;quot;git submodule add -f -b master https://github.com/talbotgui/talbotgui.github.io.git public&amp;quot;
+
+        // place le site généré dans le répertoire du repo
+        sh &amp;quot;rm -rf public/*&amp;quot;
+        unstash &#39;public&#39;
+        
+        // commit et push avec les paramètres de compte &#39;compteGithub&#39; (paramétrage Jenkins)
+        dir(&#39;public&#39;) {
+          withCredentials([[$class: &#39;UsernamePasswordMultiBinding&#39;, credentialsId: &#39;compteGithub&#39;, usernameVariable: &#39;GIT_USERNAME&#39;, passwordVariable: &#39;GIT_PASSWORD&#39;]]) {
+            sh &amp;quot;git config user.name &#39;Jenkins de Guillaume TALBOT&#39;&amp;quot;
+            sh &amp;quot;git add -A&amp;quot;
+            sh &amp;quot;git commit -m &#39;Publication du site&#39;&amp;quot;
+            sh(&#39;git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/talbotgui/talbotgui.github.io.git&#39;)
+          }
+        }
+      }
+    }
+  }
+  
+  post {
+        //success {}
+        //unstable {}
+        //failure {}
+        always {
+      node (&#39;&#39;) { step([$class: &#39;WsCleanup&#39;, notFailBuild: true]) }
+        }
+        //changed {}
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Création d&#39;un site avec Hugo</title>
+      <link>https://talbotgui.github.io/mesidees/08-creationavechugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/08-creationavechugo/</guid>
+      <description>
+
+&lt;h2 id=&#34;la-structure&#34;&gt;La structure&lt;/h2&gt;
+
+&lt;p&gt;Le plus simple est toujours de partir d&amp;rsquo;une base de travail simple.
+Pour cela, sont disponibles plusieurs base :
+* &lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème learn
+* &lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/indus&#34;&gt;INDUS&lt;/a&gt; : le site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site
+* &lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/search&#34;&gt;SEARCH&lt;/a&gt; : le site INDUS avec la fonction de recherche basée sur LUNR&lt;/p&gt;
+
+&lt;p&gt;Un exemple d&amp;rsquo;usage réel est disponible &lt;a href=&#34;https://github.com/talbotgui/pages-hugo/tree/master&#34;&gt;ici&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;les-astuces-à-connaître&#34;&gt;Les astuces à connaître&lt;/h2&gt;
+
+&lt;p&gt;basiques :
+ nouvelle page = redémarrage
+ &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;propres au thème :
+ chapitre:true =&amp;gt; texte centré
+ next et prev nécessite une bonne organisation
+ outil de check des liens
+ &amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mon CV</title>
+      <link>https://talbotgui.github.io/moncv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/moncv/</guid>
+      <description>&lt;p&gt;Produire. C&amp;rsquo;est ma drogue. Produire du code, des documents de formation ou un billet de blog. Mais produire.&lt;/p&gt;
+
+&lt;p&gt;2 semaines sans produire, je deviens fou et je passe une nuit sur un projet personnel.&lt;/p&gt;
+
+&lt;p&gt;On ne se refait pas&amp;hellip; Mais on peut s&amp;rsquo;améliorer.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;https://talbotgui.github.io/jquery-timelify/timelify.css&#34;/&gt;
+&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;https://talbotgui.github.io/font-awesome-4.7.0/css/font-awesome.min.css&#34;/&gt;
+&lt;div class=&#34;timeline&#34;&gt;
+	&lt;h2&gt;2017&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Formateur et référent de formation&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra Steria, dans les fonctions transverses du groupe
+			Référent de plusieurs formations techniques et méthodologiques
+			&lt;br/&gt;Participant aux travaux d’évolution de la méthode du groupe
+			&lt;br/&gt;Formateur Java et méthode du groupe (8 jours par mois en moyenne)
+			&lt;br/&gt;Mise à jour de plusieurs formations et création de 2 nouvelles formations Java (Hibernate avancé et Tests unitaires avancés)
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP (grande autonomie)&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De mai 2015 à aujourd&#39;hui&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Référent technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra Steria, en mission chez Erdf (Enedis) sur le projet Linky-Coeur
+			&lt;br/&gt;Projet visant à mettre en place un SI de gestion des 35 millions de compteurs électriques intelligents Linky. Le projet comprend un système de gestion de processus (BPM), d&#39;échanges complexes (ESB) et d&#39;application référentiels.
+			&lt;br/&gt;Mes rôles durant les 9 premiers mois au sein de l&#39;équipe &#34;outils de tests&#34; :
+			&lt;ul&gt;
+				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
+				&lt;li&gt;Développement et maintenance d’une API de tests SOA utilisée par des développeurs&lt;/li&gt;
+				&lt;li&gt;Développement d’une application Web de tests SOA utilisée par des testeurs métiers (recette)&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;br/&gt;Mes rôles durant les mois suivants au sein d&#39;une équipe de développement LinkyCoeur :
+			&lt;ul&gt;
+				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
+				&lt;li&gt;Développements OSB, BPEL, JEE&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, JSF, Weblogic Server, Oracle DB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP par équipe Scrum et 4 équipes sur le plateau (multiple ESN)&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De janvier 2014 à mai 2015&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2014&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Architecte SI&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour la DOAAT (EDF)
+			&lt;br/&gt;Définition de l&#39;architecture et initialisation d&#39;un SI (ensemble d&#39;application WEB s&#39;intégrant sous la forme d&#39;un portail unifié) : 
+			&lt;ul&gt;
+				&lt;li&gt;revue des modèles UML produits par les concepteurs&lt;/li&gt;
+				&lt;li&gt;génération de la base du code par un outil développé personnellement&lt;/li&gt;
+				&lt;li&gt;conception et rédaction de l’architecture générale, technique et logicielle&lt;/li&gt;
+				&lt;li&gt;rédaction des guides (développement, installation, livraison)&lt;/li&gt;
+				&lt;li&gt;support aux développeurs&lt;/li&gt;
+				&lt;li&gt;développements applicatifs&lt;/li&gt;
+				&lt;li&gt;mise en place de l&#39;industrialisation des développements&lt;/li&gt;
+				&lt;li&gt;mise en place des environnements (développement, qualification, recette)&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, JSF, Weblogic Server, Oracle DB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 16 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De août 2012 à janvier 2014&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Architecte SI&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour Storengy (GDF SUEZ )
+			&lt;br/&gt;En phase d’initialisation et jusqu’au début des développements, définition et mise en place de l’architecture pour un projet de développement de deux applications Web en Java, de la mise en place d&#39;un CRM et d&#39;un BI.
+			&lt;br/&gt;Puis, développeur, référent technique
+			&lt;br/&gt;&lt;br/&gt;Mes activités :
+			&lt;br/&gt;Puis
+			&lt;ul&gt;
+				&lt;li&gt;conception et rédaction de l’architecture générale, technique et logicielle&lt;/li&gt;
+				&lt;li&gt;rédaction des guides (développement, installation, livraison)&lt;/li&gt;
+				&lt;li&gt;Mise en place des environnements (développement, qualification)&lt;/li&gt;
+				&lt;li&gt;Initialisation des développements.&lt;/li&gt;
+				&lt;li&gt;Développement&lt;/li&gt;
+				&lt;li&gt;Support à l&#39;équipe&lt;/li&gt;
+				&lt;li&gt;Accompagnement du prestataire d&#39;hébergement&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, Struts2, Weblogic Server, Oracle DB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP à Paris et 8 ETP à Nantes&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De novembre 2010 à août 2012&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Auditeur&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour SB Alliance-Bongrain, en phase finale du projet, chantier d&#39;amélioration des performances de plusieurs fonctionnalités « clef »
+			&lt;br/&gt;Mes activités : audit de code de performance et développements d&#39;amélioration des performances de fonctionnalités « clefs »
+			&lt;br/&gt;Contexte technique : &lt;i&gt;JProfiler, P6Spy, Java&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 2 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;En novembre 2010&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2010&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Auditeur et développeur&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour Elengy (GDF Suez), TMA évolutive d&#39;une application Java.
+			Mes activités :
+			&lt;ul&gt;
+				&lt;li&gt;phase de prise en charge de l&#39;application en TMA (réversibilité entrante)&lt;/li&gt;
+				&lt;li&gt;chantier d&#39;amélioration des performances&lt;/li&gt;
+				&lt;li&gt;développements de nouvelles fonctionnalités&lt;/li&gt;
+				&lt;li&gt;support et formation des collaborateurs&lt;/li&gt;
+				&lt;li&gt;mise en place de procédures et environnements de livraison&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 7 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De novembre 2009 à novembre 2010&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Développeur&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour le SDIN (EDF), mise en place de WebServices sécurisés s’intégrant au système d’informations du client.
+			Mes activités :
+			&lt;ul&gt;
+				&lt;li&gt;Etude technique (déploiement physique, sécurité)&lt;/li&gt;
+				&lt;li&gt;Développements et qualification&lt;/li&gt;
+				&lt;li&gt;Rédaction de guides d’utilisation et de développement&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Axis&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;En octobre 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Développeur et référent technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour GrDF (GDF SUEZ), TMA évolutive sur une application Java/J2EE.
+			&lt;br/&gt;Mes activités : rédaction de spécifications fonctionnelles, développements et qualification
+			&lt;br/&gt;&lt;br/&gt;Contexte technique : &lt;i&gt;Java, Struts2, EJB3, Weblogic Server, OracleDB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De août 2009 à septembre 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Auditeur et développeur &lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour KARAVEL, durant la période de garantie, quelques semaines d&#39;audit pour améliorer les performances des applications développée par Sopra.
+			&lt;br/&gt;Mes activités : Audit de code et de performance et développements de correctifs pour améliorer les performances du SI.
+			&lt;br/&gt;&lt;br/&gt;Contexte technique : &lt;i&gt;JProfiler, P6Spy, Java, Weblogic Integration (WLI), OracleDB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;En juillet 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Chef de projet technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour le GALEC (Leclerc), projet en régie pour modifier en profondeur l’application de saisie des négociations entre le mouvement Leclerc et ses fournisseurs suite à la mise en place de la Loi de Modernisation de l’Economie. 
+			&lt;br/&gt;Projet en régie pour mettre en place une application de gestion et diffusion de prix de vente conseillés.
+			&lt;br/&gt;&lt;br/&gt;Mes activités : 
+			&lt;ul&gt;
+				&lt;li&gt;Support technique à l’équipe de développement&lt;/li&gt;
+				&lt;li&gt;Gestion de projet partagée avec le client&lt;/li&gt;
+				&lt;li&gt;Développement et qualification d’application&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Struts2, Websphere, DB2&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 6 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De novembre 2008 à juin 2009&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Développeur et référent technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour GrDF, TMA évolutive sur une application développée sur un outil propriétaire
+			&lt;br/&gt;&lt;br/&gt;Mes activités : Rédaction de spécifications fonctionnelles, développement et qualification
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De septembre 2008 à octobre 2008&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item inverted&#34;&gt;
+			&lt;h3&gt;Concepteur technique&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour STIME (Intermarché) en partenariat avec l&#39;éditeur NETFECTIVE sur un de leurs projets au forfait pour la création d’une application de gestion des commandes des points de vente avec un module d’enrichissement des données du catalogue des produits. 
+			&lt;br/&gt;L’application est générée à partir de modèles UML et d’une maquette HTML avec l’outil Blu Age
+			&lt;br/&gt;&lt;br/&gt;Mes activités : 
+			&lt;ul&gt;
+				&lt;li&gt;Conception d’application web en UML avec Blu Age&lt;/li&gt;
+				&lt;li&gt;Prise de connaissance de l&#39;outil Blu Age&lt;/li&gt;
+				&lt;li&gt;Présentation de l&#39;outil aux responsables et aux commerciaux de ma division&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;UML, MDA, Java, Blu Age&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP (seul soprasien)&lt;/i&gt;
+			&lt;br/&gt;&lt;time&gt;De juillet 2008 à août 2008&lt;/time&gt;
+		&lt;/li&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Développeur Java&lt;/h3&gt;
+			&lt;hr/&gt;
+			Pour Sopra, en mission pour KARAVEL sur un projet au forfait de refonte globale du système d’informations du vendeur de voyages en ligne.
+			&lt;br/&gt;&lt;br/&gt;Mes activités durant ces 26 mois :
+			&lt;ul&gt;
+				&lt;li&gt;Développement du prototype qui a servi de base de développement&lt;/li&gt;
+				&lt;li&gt;Revue des modèles UML intégrés dans les exigences&lt;/li&gt;
+				&lt;li&gt;Génération de code à partir des modèles métier (à base de scripting avec Power AMC)&lt;/li&gt;
+				&lt;li&gt;Dénormalisation et maintien des modèles&lt;/li&gt;
+				&lt;li&gt;Développement Back et Front&lt;/li&gt;
+				&lt;li&gt;Support aux développeurs (après un an de mission)&lt;/li&gt;
+				&lt;li&gt;Responsable des applications Référentiel, Catalogue, Vente et Réservation.&lt;/li&gt;
+			&lt;/ul&gt;
+			Contexte technique : &lt;i&gt;Java, Spring, Struts2, Weblogic Integration (WLI), OracleDB&lt;/i&gt;
+			&lt;hr/&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 20 ETP&lt;/i&gt;
+			&lt;br/&gt;&lt;br/&gt;&lt;time&gt;De avril 2006 à juin 2008&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2006&lt;/h2&gt;
+	&lt;ul class=&#34;timeline-items&#34;&gt;
+		&lt;li class=&#34;timeline-item&#34;&gt;
+			&lt;h3&gt;Diplôme d&#39;ingénieur&lt;/h3&gt;
+			&lt;hr/&gt;
+			ESME SUDRIA, Ivry Sur Seine
+			&lt;hr/&gt;
+			&lt;br/&gt;&lt;time&gt;2006&lt;/time&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;h2&gt;2003&lt;/h2&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.timelify.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+	$(&#39;.timeline&#39;).timelify();
+&lt;/script&gt;
+
 </description>
     </item>
     

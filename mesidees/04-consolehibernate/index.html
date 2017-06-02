@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
   <head>
@@ -14,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Mes idées</title>
+    <title>Créer une console Hibernate</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -29,7 +26,7 @@
     <link href="/css/customHugo.css" rel="stylesheet">
 
   </head>
-  <body class="" data-url="/mesidees/">
+  <body class="" data-url="/mesidees/04-consolehibernate/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -95,7 +92,7 @@
       
       
 
-      <li class="dd-item active parent" data-nav-id="/mesidees/">
+      <li class="dd-item  parent" data-nav-id="/mesidees/">
         <a href="/mesidees/">
           <span>
             
@@ -124,7 +121,7 @@
               </a>
             </li>
           
-            <li class="dd-item " data-nav-id="/mesidees/04-consolehibernate/">
+            <li class="dd-item active" data-nav-id="/mesidees/04-consolehibernate/">
               <a href="/mesidees/04-consolehibernate/">
                 <span>Créer une console Hibernate     </i></span>
               </a>
@@ -208,7 +205,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/04-consolehibernate/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -228,52 +225,77 @@
                   
                     
                     
+                <a href="/mesidees/" itemprop="url"><span itemprop="title">Mes idées</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
-                <span itemprop="title"> Mes idées</span>
+                <span itemprop="title"> Créer une console Hibernate</span>
               </div>
               
             </div>
 
             </div>
             
-              <div id="chapter">
-            
               <div id="body-inner">
                 
+                <h1>Créer une console Hibernate</h1>
+                
 
-<p>Cette partie du site contient des résumés d&rsquo;articles, des opinions, des astuces et des guides sur des sujets très divers :</p>
 
-<ul>
-<li><p><a href="/mesidees/02-pratiques/">liens vers des pratiques utiles</a></p></li>
 
-<li><p>industrialisation</p>
+<p>Créer une console Hibernate (JBoss Tools) sur un projet SpringBoot+JPA utilisant une HSQLDB</p>
 
-<ul>
-<li><a href="/mesidees/01-dettetechnique/">dette technique</a></li>
-<li><a href="/mesidees/06-relecturedecode/">relecture de code</a></li>
-</ul></li>
+<h2 id="les-problèmes">Les problèmes</h2>
 
-<li><p>développement</p>
+<p>Où se trouve la difficulté ? Un peu partout en fait :
+* La console Hibernate de JBoss Tools utilise encore un fichier /hibernate.cfg.xml/ dont on a plus très souvent l&rsquo;habitude
+* La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude)
+* il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB</p>
 
-<ul>
-<li><a href="/mesidees/03-testsdedeveloppement/">tests de développement</a></li>
-<li><a href="/mesidees/04-consolehibernate/">créer une console Hibernate</a></li>
-<li><a href="/mesidees/05-retryenjava/">Comment coder des ré-essais en Java</a></li>
-</ul></li>
+<h2 id="les-solutions">Les solutions</h2>
 
-<li><p>documentation</p>
+<p>Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez vous une connexion depuis la vue /Data Source Explorer/. Mais pensez bien à ajouter /;readonly=true;files_readonly=true;hsqldb.lock_file=false/ à la fin de l&rsquo;URL de connexion.</p>
 
-<ul>
-<li><a href="/mesidees/08-creationavechugo/">créer un site avec Hugo</a></li>
-<li><a href="/mesidees/07-hugoetgithubpages/">Hugo et GitHub:Pages</a></li>
-</ul></li>
-</ul>
+<p>Quand à la configuration de la console Hibernate, elle demande la création de deux fichiers :
+* /hibernate.properties/ qui va rester vide
+* /hibernate.cfg.xml/ qui va contenir ce code</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE hibernate-configuration PUBLIC &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot; &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;
+&lt;hibernate-configuration&gt;
+  &lt;session-factory name=&quot;sessionFactory&quot;&gt;
+    &lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;org.hsqldb.jdbcDriver&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.password&quot;&gt;login&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
+    &lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.HSQLDialect&lt;/property&gt;
+    &lt;mapping class=&quot;mon.package.MonEntite&quot; /&gt;
+    &lt;mapping class=&quot;mon.package.EtToutesMesAutresEntitesSansEnOublier&quot; /&gt;
+  &lt;/session-factory&gt;
+&lt;/hibernate-configuration&gt;
+</code></pre>
+
+<p>Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&rsquo;installation), il vous reste à :
+* ouvrir la perspective /Hibernate/ (avec le petit bouton /Open a perspective/ en haut à droite)
+* dans la vue /Hibernate Configurations/, faire un clic-droit et un /add Configuration&hellip;/
+* renseigner le formulaire avec :
+ * Nom : ce que vous voulez
+ * Type : /Core/
+ * Hibernate version : votre version d&rsquo;Hibernate
+ * Project : votre projet contenant la persistance
+ * Database Connection : /Hibernate configured connection/
+ * Property file : le fichier précédemment créé
+ * Configuration file : le fichier précédemment créé
+ * Database dialect : HSQL</p>
+
+<p>Après un petit clic sur la flèche à coté de votre configuration pour l&rsquo;étendre, puis un clic sur /Session Factory/, vous devriez voir toutes vos classes persistantes.</p>
+
+<p>Il est maintenant possible d&rsquo;ouvrir un /HQL Editor/ depuis un clic droit sur la configuration.</p>
+
+<p>A partir du même endroit, il est possible de créer un schéma de votre mapping.</p>
 
 
       
-      
-        </div> 
       
       </div>
     </div>
@@ -282,8 +304,8 @@
 
     <div id="navigation">
         
-        
-        <a class="nav nav-next" href="/mesidees/01-dettetechnique/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/mesidees/03-testsdedeveloppement/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/mesidees/05-retryenjava/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
@@ -305,7 +327,4 @@
 
   </body>
 </html>
-
-
-
 

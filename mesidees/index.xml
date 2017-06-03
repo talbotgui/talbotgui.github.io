@@ -481,10 +481,13 @@ pipeline {
 &lt;h2 id=&#34;la-structure&#34;&gt;La structure&lt;/h2&gt;
 
 &lt;p&gt;Le plus simple est toujours de partir d&amp;rsquo;une base de travail simple.
-Pour cela, sont disponibles plusieurs base :
-* &lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème learn
-* &lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/indus&#34;&gt;INDUS&lt;/a&gt; : le site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site
-* &lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/search&#34;&gt;SEARCH&lt;/a&gt; : le site INDUS avec la fonction de recherche basée sur LUNR&lt;/p&gt;
+Pour cela, sont disponibles plusieurs base :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème learn&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/indus&#34;&gt;INDUS&lt;/a&gt; : le site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/search&#34;&gt;SEARCH&lt;/a&gt; : le site INDUS avec la fonction de recherche basée sur LUNR&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Un exemple d&amp;rsquo;usage réel est disponible &lt;a href=&#34;https://github.com/talbotgui/pages-hugo/tree/master&#34;&gt;ici&lt;/a&gt;.&lt;/p&gt;
 

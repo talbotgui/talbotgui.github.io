@@ -26,7 +26,7 @@
     <script src="https://talbotgui.github.io//js/jquery-2.x.min.js"></script>
     <style type="text/css">:root #header + #content > #left > #rlblock_left
     {display:none !important;}</style>
-    <link href="/css/customHugo.css" rel="stylesheet">
+    <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
   <body class="" data-url="/moncv/">
@@ -472,6 +472,9 @@
 <script src="/jquery-timelify/jquery.js"></script>
 <script src="/jquery-timelify/jquery.timelify.js"></script>
 <script>
+	if (screen.width < 1000) {
+		$(".inverted").removeClass("inverted")
+	}
 	$('.timeline').timelify();
 </script>
 

@@ -505,5 +505,191 @@ Pour cela, sont disponibles plusieurs base :&lt;/p&gt;
 </description>
     </item>
     
+    <item>
+      <title>Object Mother</title>
+      <link>https://talbotgui.github.io/mesidees/09-objectmother/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/09-objectmother/</guid>
+      <description>
+
+&lt;h2 id=&#34;le-pattern-tel-qu-il-est-défini-aujourd-hui&#34;&gt;Le pattern tel qu&amp;rsquo;il est défini aujourd&amp;rsquo;hui&lt;/h2&gt;
+
+&lt;p&gt;Ce pattern est dédié à la création d&amp;rsquo;objets de données utilisés dans des tests codés.&lt;/p&gt;
+
+&lt;p&gt;Ce pattern se base sur le pattern Factory. Il propose la création d&amp;rsquo;une classe dont la responsabilité est de créer des objets.
+La particularité de ce pattern est que les données créées sont dédiés aux tests.&lt;/p&gt;
+
+&lt;p&gt;Extraire le code de création de ces objets améliore la lisibilité des tests (à condition que le nom des méthodes de l&amp;rsquo;ObjectMother soit explicite).
+De plus, le fait d&amp;rsquo;utiliser systématiquement un jeu de données particulier permet de créer des données &amp;ldquo;familières&amp;rdquo;. Par exemple : Jean est un nouvel utilisateur, Arnaud est un utilisateur avec des droits d&amp;rsquo;administration, &amp;hellip;
+A l&amp;rsquo;usage, ces personnas (ou leurs pendants quelque soit le type d&amp;rsquo;objets manipulés : facture, usine, paie, compteur, &amp;hellip;) finissent pas être connus de tous les développeurs. Ceci facilite la conception, le développement et la mise au point des tests.&lt;/p&gt;
+
+&lt;p&gt;Sources :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.c2.com/?ObjectMother&#34;&gt;ObjectMother sur le site C2.COM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://martinfowler.com/bliki/ObjectMother.html&#34;&gt;ObjectMother sur le blog de Martin Fowler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.codeleak.pl/2014/06/test-data-builders-and-object-mother.html&#34;&gt;ObjectMother vs TestDataBuilder&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Exemples :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/iluwatar/java-design-patterns/tree/master/object-mother&#34;&gt;exemple explicatif&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/scribejava/scribejava/blob/master/scribejava-core/src/test/java/com/github/scribejava/core/ObjectMother.java&#34;&gt;cas concret dans une petite application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/mariage/blob/master/mariageMetier/src/test/java/com/github/talbotgui/mariage/metier/service/ObjectMother.java&#34;&gt;cas concret dans une petite application&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;les-risques-associés-à-ce-pattern&#34;&gt;Les risques associés à ce pattern&lt;/h2&gt;
+
+&lt;p&gt;Ce pattern ne doit pas dérivé en anti-pattern &amp;ldquo;God Class&amp;rdquo;. Un ObjectMother ne doit pas devenir un composant trop gros ni dépendant de trop d&amp;rsquo;autres composants.
+Pour cela, il suffit de créer un ObjectMother par groupe de données (par exemple : SecuriteObjectMother, FacturationObjectMother, &amp;hellip;).
+Et pour limiter le volume de code d&amp;rsquo;un ObjectMother, il suffit de respecter quelques règles :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pour créer un nouveau jeu de donnée, il faut créer une nouvelle méthode&lt;/li&gt;
+&lt;li&gt;chaque méthode créant des données doit utiliser une méthodes déjà existante créant un jeu de données plus plus simple et doit enrichir ce jeu de données&lt;/li&gt;
+&lt;li&gt;seul l&amp;rsquo;ajout ou la modification d&amp;rsquo;un attribut obligatoire peut donner lieu à la modification d&amp;rsquo;une méthode existante. Mais attention, cela nécessite de re-vérifier tous les tests utilisant la méthode modifiée et les méthodes dérivées)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Guide Du Développeur</title>
+      <link>https://talbotgui.github.io/mesidees/10-guidedudev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/10-guidedudev/</guid>
+      <description>
+
+&lt;p&gt;Le Guide Du Développeur est l&amp;rsquo;espace de partage d&amp;rsquo;une équipe. Il contient toutes les informations utiles aux membres de l&amp;rsquo;équipe.&lt;/p&gt;
+
+&lt;p&gt;Chaque question posée par un collaborateur doit donner lieu à un nouveau paragraphe dans le GDD.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Il est inutile d&amp;rsquo;imposer un guide du développeur.&lt;/strong&gt; Il faut le proposer et le faire adopter. C&amp;rsquo;est un outil pour l&amp;rsquo;équipe construit par l&amp;rsquo;équipe. Si personne ne le consulte avant de se mettre en quête d&amp;rsquo;une réponse (sur Internet ou au près d&amp;rsquo;un leader), alors il est inutile.&lt;/p&gt;
+
+&lt;h2 id=&#34;astuces&#34;&gt;Astuces&lt;/h2&gt;
+
+&lt;p&gt;La première astuce est à destination des sachants (les membres de l&amp;rsquo;équipe qui ont tout dans la tête). Dès qu&amp;rsquo;un collaborateur vient vous poser une question, demandez-lui s&amp;rsquo;il a consulté le GDD. Si ce n&amp;rsquo;est pas le cas, qu&amp;rsquo;il retourne à son poste pour vérifier si la réponse n&amp;rsquo;est pas dans le GDD (même si vous savez que ce n&amp;rsquo;est pas le cas). Il faut que cela devienne un réflexe pour toute l&amp;rsquo;équipe. Et quand il reviendra vous poser la question et qu&amp;rsquo;il aura obtenu sa réponse, dîtes lui d&amp;rsquo;ajouter un paragraphe dans le GDD !!&lt;/p&gt;
+
+&lt;p&gt;Bien souvent, à ce moment là, le collaborateur vous dit qu&amp;rsquo;il n&amp;rsquo;a pas le temps. Pour beaucoup de gens, toutes les tâches sont prioritaires à la documentation (même le café). Mais il est vrai qu&amp;rsquo;on a pas toujours le temps. Pas de soucis, il vous suffit d&amp;rsquo;un tableau blanc (ou d&amp;rsquo;un paperBoard). A chaque réponse obtenu, le collaborateur inscrit son prénom ainsi que les mots clefs de sa question et de sa réponse. Charge à lui de remplir le GDD dans un délai raisonnable puis de venir effacer (ou barrer) son nom.&lt;/p&gt;
+
+&lt;p&gt;Valoriser les contributeurs est aussi une bonne idée. Bien souvent, le dernier arrivé sur le projet est le principal contributeur. Il est aussi celui qui doit s&amp;rsquo;approprier le GDD. Un petit mail avec le meilleur contributeur du mois peut aider à faire adopter le GDD.&lt;/p&gt;
+
+&lt;p&gt;Question outil, un fichier MS Word sur un serveur FTP est une solution à proscrire car l&amp;rsquo;édition à plusieurs est impossible et la gestion des versions (avec un cartouche, &amp;hellip;) est lourde. Un document partagé dans une bonne GED (Gestion Electronique de Documents) est une solution. Mais le plus simple reste un WIKI ou un site statique généré (comme le présent site avec Hugo). Les fonctions nécessaires sont :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pas de prise de tête avec la mise en forme&lt;/li&gt;
+&lt;li&gt;suivi des modifications et consultation possible de l&amp;rsquo;historique&lt;/li&gt;
+&lt;li&gt;simplicité de déplacement des paragraphes (pour permettre la réorganisation au fur et à mesure que le GDD s&amp;rsquo;étoffe).&lt;/li&gt;
+&lt;li&gt;dans tous les cas :
+
+&lt;ul&gt;
+&lt;li&gt;l&amp;rsquo;usage de l&amp;rsquo;outil doit être simple&lt;/li&gt;
+&lt;li&gt;un moteur de recherche doit être présent&lt;/li&gt;
+&lt;li&gt;aucun workflow complexe (relecture, validation, &amp;hellip;) ne doit freiner l&amp;rsquo;enrichissement du GDD&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enfin, il n&amp;rsquo;existe aucun modèle de GDD. Chaque GDD est unique car les préoccupations, les questions et les réponses changent d&amp;rsquo;un projet à un autre (technologies différentes, clients différents, organisations différentes, équipes différentes). Il est préférable de démarrer avec une simple page faisant office de foire aux questions. Quand la page devient indigeste, il suffit de regrouper les questions par thème puis de les extraire dans des pages différentes. Ainsi le GDD émergera petit à petit.&lt;/p&gt;
+
+&lt;h2 id=&#34;idées-de-sujets-à-intégrer-au-gdd&#34;&gt;Idées de sujets à intégrer au GDD :&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Ceci n&amp;rsquo;est pas un menu de GDD mais juste une liste de sujets à traiter sur la plus part des projets ! Votre GDD, vos questions, votre sommaire !!!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;référence documentaire&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cahier des charges&lt;/li&gt;
+&lt;li&gt;dossier(s) d&amp;rsquo;architecture&lt;/li&gt;
+&lt;li&gt;référentiel des exigences&lt;/li&gt;
+&lt;li&gt;référentiel des tests&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;exigences&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;quel est le niveau de détails des exigences en entrée des développements ?&lt;/li&gt;
+&lt;li&gt;quel est le contexte du projet ou de l&amp;rsquo;application ?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;test&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;quel est contractuellement le niveau de détails et le formalisme à livrer en fin de conception ?&lt;/li&gt;
+&lt;li&gt;stratégie de test du projet&lt;/li&gt;
+&lt;li&gt;types de tests disponibles&lt;/li&gt;
+&lt;li&gt;cas de test devant être validés en fin de développement&lt;/li&gt;
+&lt;li&gt;cas de test devant être codés dans un composant de test (avec sa granularité et les outils à utiliser)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;conception&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;résumé de l&amp;rsquo;architecture technique&lt;/li&gt;
+&lt;li&gt;quels sont les impacts de l’AT sur la conception (BI, ERP ou détails trop fins en xNet) ?&lt;/li&gt;
+&lt;li&gt;quel est le niveau de détails attendu en fin de conception (peut-être besoin d’être plus précis que le niveau contractuel en fonction du contexte) ?&lt;/li&gt;
+&lt;li&gt;quels sont les outils de conception et/ou de modélisation ?&lt;/li&gt;
+&lt;li&gt;quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?&lt;/li&gt;
+&lt;li&gt;règles de conception (programmation défensive, @designByContrat, modularité, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;jeu de données de test&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;développement&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;règles de nommage&lt;/li&gt;
+&lt;li&gt;liste des frameworks disponibles, leur usage et le pointeur sur leur documentation&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;industrialisation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;éléments composant la Gestion de Configuration Logicielle (Git, SVN, HP ALM, Archiva, Jira, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;règles d&amp;rsquo;usage de la GCL (flow GIT/SVN, snapshots dans le repository de binaires, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;règles d&amp;rsquo;usage de l&amp;rsquo;intégration continue&lt;/li&gt;
+&lt;li&gt;organisation des équipes en amont et en aval des développements (Continuous Delivery)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;environnements&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;installation du poste de développement&lt;/li&gt;
+&lt;li&gt;liste et paramètres des environnements de test&lt;/li&gt;
+&lt;li&gt;liste des environnements du client&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Programmation défensive</title>
+      <link>https://talbotgui.github.io/mesidees/11-programmationdefensive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/11-programmationdefensive/</guid>
+      <description>&lt;p&gt;Lorsqu&amp;rsquo;un développeur code une nouvelle méthode, il doit savoir s&amp;rsquo;il fait confiance au code qui fera appel à cette méthode. Ou pas.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;S&amp;rsquo;il a confiance, il déclarera les conditions d&amp;rsquo;appels à la méthode dans le contrat de sa méthode (dans la javadoc de sa méthode, dans le wsdl, ou tout autre support d&amp;rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.&lt;/li&gt;
+&lt;li&gt;S&amp;rsquo;il n&amp;rsquo;a pas confiance, les premières lignes de code de la méthode vérifieront que les valeurs des paramètres sont acceptables.
+La seconde option est de la programmation défensive.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Une méthode peut valider les valeurs des paramètres d&amp;rsquo;entrée. Ce n&amp;rsquo;est pas une mauvaise chose en soit. Bien au contraire dans le cas de la validation des données lues dans un fichier envoyé par une application tierce. Même s&amp;rsquo;il existe un contrat définissant le format des données échangées, personne n&amp;rsquo;a envie d&amp;rsquo;intégrer des données de mauvaise qualité dans son système.
+Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle être utilisée partout ?&amp;rdquo;. L&amp;rsquo;ajout de code vérifiant chaque paramètre de chaque méthode de chaque composant du système coûte du temps de développement (du code applicatif et des tests associés). De plus chaque ligne de code ajoute potentiellement un bug dans l&amp;rsquo;application. Et surtout la maintenabilité d&amp;rsquo;une application décroit avec l&amp;rsquo;augmentation du volume de code.&lt;/p&gt;
+
+&lt;p&gt;Mais il ne faut pas faire l&amp;rsquo;amalgame entre la programmation défensive et toutes les validations de données. Par exemple, la validation des données d&amp;rsquo;un formulaire saisies par un être humain est réalisée par une méthode dont c&amp;rsquo;est l&amp;rsquo;objectif. Dans ce cas, ce n&amp;rsquo;est pas de la programmation défensive. Mais, si le service métier appelé après la validation du formulaire vérifie lui aussi une donnée, là, ce sera de la programmation défensive.&lt;/p&gt;
+
+&lt;p&gt;Le choix entre programmation défensive et confiance absolue n&amp;rsquo;est pas du seul ressort du développeur. C&amp;rsquo;est un choix fait par l&amp;rsquo;équipe qui prend en compte le type de composant, le type de données, les contraintes techniques, &amp;hellip; Cela doit donner lieu à un chapitre dans le &lt;a href=&#34;https://talbotgui.github.io/mesidees/10-guidedudev/&#34;&gt;guide du développeur&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Références :
+* &lt;a href=&#34;http://etienne.charignon.free.fr/spip/spip.php?article68&#34;&gt;http://etienne.charignon.free.fr/spip/spip.php?article68&lt;/a&gt;
+* &lt;a href=&#34;https://martinfowler.com/ieeeSoftware/failFast.pdf&#34;&gt;https://martinfowler.com/ieeeSoftware/failFast.pdf&lt;/a&gt;
+* &lt;a href=&#34;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&#34;&gt;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

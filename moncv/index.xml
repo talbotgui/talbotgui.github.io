@@ -244,6 +244,9 @@
 &lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.timelify.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;
+	if (screen.width &lt; 1000) {
+		$(&#34;.inverted&#34;).removeClass(&#34;inverted&#34;)
+	}
 	$(&#39;.timeline&#39;).timelify();
 &lt;/script&gt;
 

@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
   <head>
@@ -14,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Mes idées</title>
+    <title>Programmation défensive</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -29,7 +26,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/">
+  <body class="" data-url="/mesidees/11-programmationdefensive/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -95,7 +92,7 @@
       
       
 
-      <li class="dd-item active parent" data-nav-id="/mesidees/">
+      <li class="dd-item  parent" data-nav-id="/mesidees/">
         <a href="/mesidees/">
           <span>
             
@@ -166,7 +163,7 @@
               </a>
             </li>
           
-            <li class="dd-item " data-nav-id="/mesidees/11-programmationdefensive/">
+            <li class="dd-item active" data-nav-id="/mesidees/11-programmationdefensive/">
               <a href="/mesidees/11-programmationdefensive/">
                 <span>Programmation défensive     </i></span>
               </a>
@@ -226,7 +223,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/11-programmationdefensive/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -246,52 +243,44 @@
                   
                     
                     
+                <a href="/mesidees/" itemprop="url"><span itemprop="title">Mes idées</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
-                <span itemprop="title"> Mes idées</span>
+                <span itemprop="title"> Programmation défensive</span>
               </div>
               
             </div>
 
             </div>
             
-              <div id="chapter">
-            
               <div id="body-inner">
                 
+                <h1>Programmation défensive</h1>
+                
 
-<p>Cette partie du site contient des résumés d&rsquo;articles, des opinions, des astuces et des guides sur des sujets très divers :</p>
-
-<ul>
-<li><p><a href="/mesidees/02-pratiques/">liens vers des pratiques utiles</a></p></li>
-
-<li><p>industrialisation</p>
+<p>Lorsqu&rsquo;un développeur code une nouvelle méthode, il doit savoir s&rsquo;il fait confiance au code qui fera appel à cette méthode. Ou pas.</p>
 
 <ul>
-<li><a href="/mesidees/01-dettetechnique/">dette technique</a></li>
-<li><a href="/mesidees/06-relecturedecode/">relecture de code</a></li>
-</ul></li>
-
-<li><p>développement</p>
-
-<ul>
-<li><a href="/mesidees/03-testsdedeveloppement/">tests de développement</a></li>
-<li><a href="/mesidees/04-consolehibernate/">créer une console Hibernate</a></li>
-<li><a href="/mesidees/05-retryenjava/">Comment coder des ré-essais en Java</a></li>
-</ul></li>
-
-<li><p>documentation</p>
-
-<ul>
-<li><a href="/mesidees/08-creationavechugo/">créer un site avec Hugo</a></li>
-<li><a href="/mesidees/07-hugoetgithubpages/">Hugo et GitHub:Pages</a></li>
-</ul></li>
+<li>S&rsquo;il a confiance, il déclarera les conditions d&rsquo;appels à la méthode dans le contrat de sa méthode (dans la javadoc de sa méthode, dans le wsdl, ou tout autre support d&rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.</li>
+<li>S&rsquo;il n&rsquo;a pas confiance, les premières lignes de code de la méthode vérifieront que les valeurs des paramètres sont acceptables.
+La seconde option est de la programmation défensive.</li>
 </ul>
 
+<p>Une méthode peut valider les valeurs des paramètres d&rsquo;entrée. Ce n&rsquo;est pas une mauvaise chose en soit. Bien au contraire dans le cas de la validation des données lues dans un fichier envoyé par une application tierce. Même s&rsquo;il existe un contrat définissant le format des données échangées, personne n&rsquo;a envie d&rsquo;intégrer des données de mauvaise qualité dans son système.
+Mais une question se pose : &ldquo;la programmation défensive doit-elle être utilisée partout ?&rdquo;. L&rsquo;ajout de code vérifiant chaque paramètre de chaque méthode de chaque composant du système coûte du temps de développement (du code applicatif et des tests associés). De plus chaque ligne de code ajoute potentiellement un bug dans l&rsquo;application. Et surtout la maintenabilité d&rsquo;une application décroit avec l&rsquo;augmentation du volume de code.</p>
+
+<p>Mais il ne faut pas faire l&rsquo;amalgame entre la programmation défensive et toutes les validations de données. Par exemple, la validation des données d&rsquo;un formulaire saisies par un être humain est réalisée par une méthode dont c&rsquo;est l&rsquo;objectif. Dans ce cas, ce n&rsquo;est pas de la programmation défensive. Mais, si le service métier appelé après la validation du formulaire vérifie lui aussi une donnée, là, ce sera de la programmation défensive.</p>
+
+<p>Le choix entre programmation défensive et confiance absolue n&rsquo;est pas du seul ressort du développeur. C&rsquo;est un choix fait par l&rsquo;équipe qui prend en compte le type de composant, le type de données, les contraintes techniques, &hellip; Cela doit donner lieu à un chapitre dans le <a href="/mesidees/10-guidedudev/">guide du développeur</a>.</p>
+
+<p>Références :
+* <a href="http://etienne.charignon.free.fr/spip/spip.php?article68">http://etienne.charignon.free.fr/spip/spip.php?article68</a>
+* <a href="https://martinfowler.com/ieeeSoftware/failFast.pdf">https://martinfowler.com/ieeeSoftware/failFast.pdf</a>
+* <a href="https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level">https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level</a></p>
+
 
       
-      
-        </div> 
       
       </div>
     </div>
@@ -300,8 +289,8 @@
 
     <div id="navigation">
         
+        <a class="nav nav-prev" href="/mesidees/10-guidedudev/"> <i class="fa fa-chevron-left"></i></a>
         
-        <a class="nav nav-next" href="/mesidees/01-dettetechnique/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
@@ -323,7 +312,4 @@
 
   </body>
 </html>
-
-
-
 

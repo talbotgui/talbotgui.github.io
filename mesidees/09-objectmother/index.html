@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
   <head>
@@ -14,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Mes idées</title>
+    <title>Object Mother</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -29,7 +26,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/">
+  <body class="" data-url="/mesidees/09-objectmother/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -95,7 +92,7 @@
       
       
 
-      <li class="dd-item active parent" data-nav-id="/mesidees/">
+      <li class="dd-item  parent" data-nav-id="/mesidees/">
         <a href="/mesidees/">
           <span>
             
@@ -154,7 +151,7 @@
               </a>
             </li>
           
-            <li class="dd-item " data-nav-id="/mesidees/09-objectmother/">
+            <li class="dd-item active" data-nav-id="/mesidees/09-objectmother/">
               <a href="/mesidees/09-objectmother/">
                 <span>Object Mother     </i></span>
               </a>
@@ -226,7 +223,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/09-objectmother/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -246,52 +243,65 @@
                   
                     
                     
+                <a href="/mesidees/" itemprop="url"><span itemprop="title">Mes idées</span></a> <i class="fa fa-angle-right"></i>
+                    
                   
                 
-                <span itemprop="title"> Mes idées</span>
+                <span itemprop="title"> Object Mother</span>
               </div>
               
             </div>
 
             </div>
             
-              <div id="chapter">
-            
               <div id="body-inner">
                 
+                <h1>Object Mother</h1>
+                
 
-<p>Cette partie du site contient des résumés d&rsquo;articles, des opinions, des astuces et des guides sur des sujets très divers :</p>
 
-<ul>
-<li><p><a href="/mesidees/02-pratiques/">liens vers des pratiques utiles</a></p></li>
 
-<li><p>industrialisation</p>
+<h2 id="le-pattern-tel-qu-il-est-défini-aujourd-hui">Le pattern tel qu&rsquo;il est défini aujourd&rsquo;hui</h2>
 
-<ul>
-<li><a href="/mesidees/01-dettetechnique/">dette technique</a></li>
-<li><a href="/mesidees/06-relecturedecode/">relecture de code</a></li>
-</ul></li>
+<p>Ce pattern est dédié à la création d&rsquo;objets de données utilisés dans des tests codés.</p>
 
-<li><p>développement</p>
+<p>Ce pattern se base sur le pattern Factory. Il propose la création d&rsquo;une classe dont la responsabilité est de créer des objets.
+La particularité de ce pattern est que les données créées sont dédiés aux tests.</p>
 
-<ul>
-<li><a href="/mesidees/03-testsdedeveloppement/">tests de développement</a></li>
-<li><a href="/mesidees/04-consolehibernate/">créer une console Hibernate</a></li>
-<li><a href="/mesidees/05-retryenjava/">Comment coder des ré-essais en Java</a></li>
-</ul></li>
+<p>Extraire le code de création de ces objets améliore la lisibilité des tests (à condition que le nom des méthodes de l&rsquo;ObjectMother soit explicite).
+De plus, le fait d&rsquo;utiliser systématiquement un jeu de données particulier permet de créer des données &ldquo;familières&rdquo;. Par exemple : Jean est un nouvel utilisateur, Arnaud est un utilisateur avec des droits d&rsquo;administration, &hellip;
+A l&rsquo;usage, ces personnas (ou leurs pendants quelque soit le type d&rsquo;objets manipulés : facture, usine, paie, compteur, &hellip;) finissent pas être connus de tous les développeurs. Ceci facilite la conception, le développement et la mise au point des tests.</p>
 
-<li><p>documentation</p>
+<p>Sources :</p>
 
 <ul>
-<li><a href="/mesidees/08-creationavechugo/">créer un site avec Hugo</a></li>
-<li><a href="/mesidees/07-hugoetgithubpages/">Hugo et GitHub:Pages</a></li>
-</ul></li>
+<li><a href="http://wiki.c2.com/?ObjectMother">ObjectMother sur le site C2.COM</a></li>
+<li><a href="https://martinfowler.com/bliki/ObjectMother.html">ObjectMother sur le blog de Martin Fowler</a></li>
+<li><a href="http://blog.codeleak.pl/2014/06/test-data-builders-and-object-mother.html">ObjectMother vs TestDataBuilder</a></li>
+</ul>
+
+<p>Exemples :</p>
+
+<ul>
+<li><a href="https://github.com/iluwatar/java-design-patterns/tree/master/object-mother">exemple explicatif</a></li>
+<li><a href="https://github.com/scribejava/scribejava/blob/master/scribejava-core/src/test/java/com/github/scribejava/core/ObjectMother.java">cas concret dans une petite application</a></li>
+<li><a href="https://github.com/talbotgui/mariage/blob/master/mariageMetier/src/test/java/com/github/talbotgui/mariage/metier/service/ObjectMother.java">cas concret dans une petite application</a></li>
+</ul>
+
+<h2 id="les-risques-associés-à-ce-pattern">Les risques associés à ce pattern</h2>
+
+<p>Ce pattern ne doit pas dérivé en anti-pattern &ldquo;God Class&rdquo;. Un ObjectMother ne doit pas devenir un composant trop gros ni dépendant de trop d&rsquo;autres composants.
+Pour cela, il suffit de créer un ObjectMother par groupe de données (par exemple : SecuriteObjectMother, FacturationObjectMother, &hellip;).
+Et pour limiter le volume de code d&rsquo;un ObjectMother, il suffit de respecter quelques règles :</p>
+
+<ul>
+<li>pour créer un nouveau jeu de donnée, il faut créer une nouvelle méthode</li>
+<li>chaque méthode créant des données doit utiliser une méthodes déjà existante créant un jeu de données plus plus simple et doit enrichir ce jeu de données</li>
+<li>seul l&rsquo;ajout ou la modification d&rsquo;un attribut obligatoire peut donner lieu à la modification d&rsquo;une méthode existante. Mais attention, cela nécessite de re-vérifier tous les tests utilisant la méthode modifiée et les méthodes dérivées)</li>
 </ul>
 
 
       
-      
-        </div> 
       
       </div>
     </div>
@@ -300,8 +310,8 @@
 
     <div id="navigation">
         
-        
-        <a class="nav nav-next" href="/mesidees/01-dettetechnique/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/mesidees/08-creationavechugo/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/mesidees/10-guidedudev/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
@@ -323,7 +333,4 @@
 
   </body>
 </html>
-
-
-
 

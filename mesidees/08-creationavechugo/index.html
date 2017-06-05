@@ -267,7 +267,7 @@
 Pour cela, sont disponibles plusieurs base :</p>
 
 <ul>
-<li><a href="https://github.com/talbotgui/creation-hugo/tree/simple">SIMPLE</a> : un site Hugo de 2 pages avec le thème learn</li>
+<li><a href="https://github.com/talbotgui/creation-hugo/tree/simple">SIMPLE</a> : un site Hugo de 2 pages avec le thème <a href="https://">LEARN</a></li>
 <li><a href="https://github.com/talbotgui/creation-hugo/tree/indus">INDUS</a> : le même site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site</li>
 <li><a href="https://github.com/talbotgui/creation-hugo/tree/search">SEARCH</a> : le même site INDUS avec la fonction de recherche basée sur LUNR</li>
 <li><a href="https://github.com/talbotgui/pages-hugo/tree/master">JENKINS</a> : mon site est basé sur SEARCH mais automatiquement publié sur les GitHub:pages</li>
@@ -275,13 +275,35 @@ Pour cela, sont disponibles plusieurs base :</p>
 
 <h2 id="les-astuces-à-connaître">Les astuces à connaître</h2>
 
-<p>basiques :
- nouvelle page = redémarrage
- &hellip;</p>
+<h4 id="hugo-en-2-mots">Hugo en 2 mots</h4>
 
-<p>propres au thème :
- chapitre:true =&gt; texte centré
- next et prev nécessite une bonne organisation
+<p>L&rsquo;idée d&rsquo;Hugo est de générer un site WEB statique avec une jolie mise en forme sans se prendre la tête avec la mise en forme.</p>
+
+<p>Donc le contenu du site est codé en Markdown et Hugo génère les pages WEB.</p>
+
+<p>L&rsquo;avantage d&rsquo;un site statique est qu&rsquo;il est extrêmement performant. Cette solution est utilisée en production pour générer des pages WEB dont la fréquence de modification des contenus est faible (1 à 2 fois par jour).</p>
+
+<h4 id="manipulation">Manipulation</h4>
+
+<p>Le site se démarre en double-cliquant sur &ldquo;/bin/startServer.cmd&rdquo;. Le site est alors disponible sur l&rsquo;adresse &ldquo;<a href="http://localhost:1313&quot;">http://localhost:1313&quot;</a>.</p>
+
+<p>Toute modification d&rsquo;une page existante déclenche automatiquement son rafraîchissement dans le navigateur. Mais l&rsquo;ajout d&rsquo;une nouvelle page n&rsquo;est pas pris en compte à chaud. Il faut couper le serveur et le redémarrer.</p>
+
+<h4 id="contenu-et-mise-en-forme">Contenu et mise en forme</h4>
+
+<p>Les premières lignes de chaque page (les fichiers &ldquo;.MD&rdquo; du répertoire &ldquo;docs&rdquo;) sont des propriétés :</p>
+
+<ul>
+<li>title : le titre de la page utilisé dans l&rsquo;onglet affichant la page mais aussi dans le menu latéral de la page</li>
+<li>prev : [optionnel] le chemin vers la page précédente qui doit toujours commencer et se finir par un &ldquo;/&rdquo;. Il est possible de naviguer par le menu mais aussi par les flèches présentes à gauche et à droite des articles ou encore avec les flèches gauche et droite du clavier.</li>
+<li>next : [optionnel] le chemin vers la page suivante</li>
+<li>weight : [optionnel] l&rsquo;importance de la page et donc son ordre d&rsquo;apparition dans le menu</li>
+<li>chapter : [optionnel] &lsquo;true&rsquo; si la page est un chapitre. Le contenu est alors centré par défaut.</li>
+</ul>
+
+<h4 id="outil-utile">Outil utile</h4>
+
+<p>Un site avec Hugo utilisant &ldquo;prev&rdquo; et &ldquo;next&rdquo; contient donc beaucoup de lien. Il faut les vérifier. Pour le faire automatiquement et rapidement, il existe des outils comme &ldquo;Broken Link Checker&rdquo;
  outil de check des liens
  &hellip;</p>
 

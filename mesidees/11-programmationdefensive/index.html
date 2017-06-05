@@ -262,22 +262,25 @@
 <p>Lorsqu&rsquo;un développeur code une nouvelle méthode, il doit savoir s&rsquo;il fait confiance au code qui fera appel à cette méthode. Ou pas.</p>
 
 <ul>
-<li>S&rsquo;il a confiance, il déclarera les conditions d&rsquo;appels à la méthode dans le contrat de sa méthode (dans la javadoc de sa méthode, dans le wsdl, ou tout autre support d&rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.</li>
+<li>S&rsquo;il a confiance, il déclarera les conditions d&rsquo;appels à la méthode dans le contrat de sa méthode (dans la Javadoc de sa méthode, dans le WSDL, ou tout autre support d&rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.</li>
 <li>S&rsquo;il n&rsquo;a pas confiance, les premières lignes de code de la méthode vérifieront que les valeurs des paramètres sont acceptables.
 La seconde option est de la programmation défensive.</li>
 </ul>
 
 <p>Une méthode peut valider les valeurs des paramètres d&rsquo;entrée. Ce n&rsquo;est pas une mauvaise chose en soit. Bien au contraire dans le cas de la validation des données lues dans un fichier envoyé par une application tierce. Même s&rsquo;il existe un contrat définissant le format des données échangées, personne n&rsquo;a envie d&rsquo;intégrer des données de mauvaise qualité dans son système.
-Mais une question se pose : &ldquo;la programmation défensive doit-elle être utilisée partout ?&rdquo;. L&rsquo;ajout de code vérifiant chaque paramètre de chaque méthode de chaque composant du système coûte du temps de développement (du code applicatif et des tests associés). De plus chaque ligne de code ajoute potentiellement un bug dans l&rsquo;application. Et surtout la maintenabilité d&rsquo;une application décroit avec l&rsquo;augmentation du volume de code.</p>
+Mais une question se pose : &ldquo;doit-on utiliser la programmation défensive partout ?&rdquo;. L&rsquo;ajout de code vérifiant chaque paramètre de chaque méthode de chaque composant du système coûte du temps de développement (du code applicatif et des tests associés). De plus chaque ligne de code ajoute potentiellement un bug dans l&rsquo;application. Et surtout la maintenabilité d&rsquo;une application décroit avec l&rsquo;augmentation du volume de code.</p>
 
 <p>Mais il ne faut pas faire l&rsquo;amalgame entre la programmation défensive et toutes les validations de données. Par exemple, la validation des données d&rsquo;un formulaire saisies par un être humain est réalisée par une méthode dont c&rsquo;est l&rsquo;objectif. Dans ce cas, ce n&rsquo;est pas de la programmation défensive. Mais, si le service métier appelé après la validation du formulaire vérifie lui aussi une donnée, là, ce sera de la programmation défensive.</p>
 
 <p>Le choix entre programmation défensive et confiance absolue n&rsquo;est pas du seul ressort du développeur. C&rsquo;est un choix fait par l&rsquo;équipe qui prend en compte le type de composant, le type de données, les contraintes techniques, &hellip; Cela doit donner lieu à un chapitre dans le <a href="/mesidees/10-guidedudev/">guide du développeur</a>.</p>
 
-<p>Références :
-* <a href="http://etienne.charignon.free.fr/spip/spip.php?article68">http://etienne.charignon.free.fr/spip/spip.php?article68</a>
-* <a href="https://martinfowler.com/ieeeSoftware/failFast.pdf">https://martinfowler.com/ieeeSoftware/failFast.pdf</a>
-* <a href="https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level">https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level</a></p>
+<p>Références :</p>
+
+<ul>
+<li><a href="http://etienne.charignon.free.fr/spip/spip.php?article68">http://etienne.charignon.free.fr/spip/spip.php?article68</a></li>
+<li><a href="https://martinfowler.com/ieeeSoftware/failFast.pdf">https://martinfowler.com/ieeeSoftware/failFast.pdf</a></li>
+<li><a href="https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level">https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level</a></li>
+</ul>
 
 
       
@@ -290,7 +293,7 @@ Mais une question se pose : &ldquo;la programmation défensive doit-elle être u
     <div id="navigation">
         
         <a class="nav nav-prev" href="/mesidees/10-guidedudev/"> <i class="fa fa-chevron-left"></i></a>
-        
+        <a class="nav nav-next" href="/moncv/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

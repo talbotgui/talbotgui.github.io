@@ -76,7 +76,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;les imperfections &lt;strong&gt;identifiées et délibérées&lt;/strong&gt; : elles sont les preuves de mauvais choix fait en toute connaissance de cause. Ces choix doivent impérativement donner lieu à un plan d&amp;rsquo;action pour résoudre le problème. Exemple : pas de mesure de la couverture de code ni de vérification des exigences qui y sont liées dans un premier temps à cause des délais. Mais on y reviendra juste après la livraison.&lt;/li&gt;
-&lt;li&gt;les imperfections &lt;strong&gt;involontaires et relevées par un outil&lt;/strong&gt; : elles sont les preuves d&amp;rsquo;une incompétence ou d&amp;rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code commité. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus.&lt;/li&gt;
+&lt;li&gt;les imperfections &lt;strong&gt;involontaires et relevées par un outil&lt;/strong&gt; : elles sont les preuves d&amp;rsquo;une incompétence ou d&amp;rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code &amp;ldquo;commité&amp;rdquo;. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus.&lt;/li&gt;
 &lt;li&gt;les imperfections &lt;strong&gt;involontaires et non identifiées&lt;/strong&gt; : elles sont souvent identifiées durant la résolution d&amp;rsquo;un bug. Le problème est général à tout le code mais c&amp;rsquo;est un code en particulier qui a fait émerger un problème. Il faut alors ajouter une règle de développement sur le projet (documenter la règle et l&amp;rsquo;intégrer dans les outils de vérification). Exemple : un caractère bizarre dans une page WEB va permettre de se rendre compte qu&amp;rsquo;une partie des fichiers &amp;ldquo;source&amp;rdquo; n&amp;rsquo;est pas en UTF8.
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -114,7 +114,7 @@
 &lt;h3 id=&#34;pratiques-de-développement&#34;&gt;Pratiques de développement :&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fr.slideshare.net/redigon/refactoring-1658371&#34;&gt;refactoring tips - Martin Fowler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://fr.slideshare.net/redigon/refactoring-1658371&#34;&gt;Refactoring tips - Martin Fowler&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/iluwatar/java-design-patterns&#34;&gt;DesignPattern avec explication et code&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -131,13 +131,13 @@
 &lt;li&gt;Langages :
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.sea5g1fuv&#34;&gt;js - les fonctionnalités de l&amp;rsquo;objet console&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://openweb.eu.org/articles/cascade_css&#34;&gt;css - les règles de priorité de la cascade&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.sea5g1fuv&#34;&gt;JS - les fonctionnalités de l&amp;rsquo;objet console&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://openweb.eu.org/articles/cascade_css&#34;&gt;CSS - les règles de priorité de la cascade&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Outils :
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://asciidoctor.org/docs/asciidoctor-maven-plugin/&#34;&gt;asciiDoctor - générer la documentation avec Maven&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://asciidoctor.org/docs/asciidoctor-maven-plugin/&#34;&gt;AsciiDoctor - générer la documentation avec Maven&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.bogotobogo.com/Hadoop/ELK/ELK_ElasticSearch_Logstash_Kibana4.php&#34;&gt;ELK - installation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -155,11 +155,11 @@
 
 &lt;p&gt;D&amp;rsquo;un côté, les tests sont unitaires quand le SUT (System Under Test) se limite à une classe voire une méthode. L&amp;rsquo;avantage de ces tests est qu&amp;rsquo;ils sont assez simples à rédiger car le code à tester se limite à celui de la classe (inutile de connaître le comportement de tous les autres composants du système qui peuvent être mis en jeu). Le problème est qu&amp;rsquo;il faut justement arriver à isoler le SUT et donc utiliser des techniques de bouchonnage (encore un framework que les collaborateurs du projet doivent apprendre à maîtriser).&lt;/p&gt;
 
-&lt;p&gt;De l&amp;rsquo;autre côté, les tests sont unitaires du moment qu&amp;rsquo;ils participent à la construction de l&amp;rsquo;application durant les travaux du développeur. Et ce quelque soit la granularité du SUT, que les tests soient unitaires (selon la première définition), d&amp;rsquo;intégration ou applicatif (de bout en bout avec tous les composants et systèmes externes).&lt;/p&gt;
+&lt;p&gt;De l&amp;rsquo;autre côté, les tests sont unitaires du moment qu&amp;rsquo;ils participent à la construction de l&amp;rsquo;application durant les travaux du développeur. Et ce quel que soit la granularité du SUT, que les tests soient unitaires (selon la première définition), d&amp;rsquo;intégration ou applicatif (de bout en bout avec tous les composants et systèmes externes).&lt;/p&gt;
 
 &lt;p&gt;Et si, pour se simplifier la vie, on parlait de tests de développement utilisant des TU, TI et TA ?&lt;/p&gt;
 
-&lt;p&gt;Et là, on me pose la question “Et les tests de non-regression ?”. Ma réponse est simple “Un test de non-regression a été un test de développement mais le dev est fini et le test est resté.”&lt;/p&gt;
+&lt;p&gt;Et là, on me pose la question “Et les tests de non-régression ?”. Ma réponse est simple “Un test de non-régression a été un test de développement mais le développement est fini et le test est resté.”&lt;/p&gt;
 </description>
     </item>
     
@@ -175,46 +175,58 @@
 
 &lt;h2 id=&#34;les-problèmes&#34;&gt;Les problèmes&lt;/h2&gt;
 
-&lt;p&gt;Où se trouve la difficulté ? Un peu partout en fait :
-* La console Hibernate de JBoss Tools utilise encore un fichier /hibernate.cfg.xml/ dont on a plus très souvent l&amp;rsquo;habitude
-* La recherche d&amp;rsquo;entités par présence d&amp;rsquo;annotation n&amp;rsquo;est pas disponible (c&amp;rsquo;est Spring qui le fait d&amp;rsquo;habitude)
-* il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB&lt;/p&gt;
+&lt;p&gt;Où se trouve la difficulté ? Un peu partout en fait :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;La console Hibernate de JBoss Tools utilise encore un fichier /hibernate.cfg.xml/ dont on a plus très souvent l&amp;rsquo;habitude&lt;/li&gt;
+&lt;li&gt;La recherche d&amp;rsquo;entités par présence d&amp;rsquo;annotation n&amp;rsquo;est pas disponible (c&amp;rsquo;est Spring qui le fait d&amp;rsquo;habitude)&lt;/li&gt;
+&lt;li&gt;il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;les-solutions&#34;&gt;Les solutions&lt;/h2&gt;
 
-&lt;p&gt;Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez vous une connexion depuis la vue /Data Source Explorer/. Mais pensez bien à ajouter /;readonly=true;files_readonly=true;hsqldb.lock_file=false/ à la fin de l&amp;rsquo;URL de connexion.&lt;/p&gt;
+&lt;p&gt;Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue /Data Source Explorer/. Mais pensez bien à ajouter /;readonly=true;files_readonly=true;hsqldb.lock_file=false/ à la fin de l&amp;rsquo;URL de connexion.&lt;/p&gt;
 
-&lt;p&gt;Quand à la configuration de la console Hibernate, elle demande la création de deux fichiers :
-* /hibernate.properties/ qui va rester vide
-* /hibernate.cfg.xml/ qui va contenir ce code&lt;/p&gt;
+&lt;p&gt;Quant à la configuration de la console Hibernate, elle demande la création de deux fichiers :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&lt;ul&gt;
+&lt;li&gt;/hibernate.properties/ qui va rester vide&lt;/li&gt;
+&lt;li&gt;/hibernate.cfg.xml/ qui va contenir ce code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!DOCTYPE hibernate-configuration PUBLIC &amp;quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&amp;quot; &amp;quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&amp;quot;&amp;gt;
 &amp;lt;hibernate-configuration&amp;gt;
-  &amp;lt;session-factory name=&amp;quot;sessionFactory&amp;quot;&amp;gt;
-    &amp;lt;property name=&amp;quot;hibernate.connection.driver_class&amp;quot;&amp;gt;org.hsqldb.jdbcDriver&amp;lt;/property&amp;gt;
-    &amp;lt;property name=&amp;quot;hibernate.connection.password&amp;quot;&amp;gt;login&amp;lt;/property&amp;gt;
-    &amp;lt;property name=&amp;quot;hibernate.connection.url&amp;quot;&amp;gt;jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false&amp;lt;/property&amp;gt;
-    &amp;lt;property name=&amp;quot;hibernate.connection.username&amp;quot;&amp;gt;username&amp;lt;/property&amp;gt;
-    &amp;lt;property name=&amp;quot;hibernate.dialect&amp;quot;&amp;gt;org.hibernate.dialect.HSQLDialect&amp;lt;/property&amp;gt;
-    &amp;lt;mapping class=&amp;quot;mon.package.MonEntite&amp;quot; /&amp;gt;
-    &amp;lt;mapping class=&amp;quot;mon.package.EtToutesMesAutresEntitesSansEnOublier&amp;quot; /&amp;gt;
-  &amp;lt;/session-factory&amp;gt;
+&amp;lt;session-factory name=&amp;quot;sessionFactory&amp;quot;&amp;gt;
+&amp;lt;property name=&amp;quot;hibernate.connection.driver_class&amp;quot;&amp;gt;org.hsqldb.jdbcDriver&amp;lt;/property&amp;gt;
+&amp;lt;property name=&amp;quot;hibernate.connection.password&amp;quot;&amp;gt;login&amp;lt;/property&amp;gt;
+&amp;lt;property name=&amp;quot;hibernate.connection.url&amp;quot;&amp;gt;jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false&amp;lt;/property&amp;gt;
+&amp;lt;property name=&amp;quot;hibernate.connection.username&amp;quot;&amp;gt;username&amp;lt;/property&amp;gt;
+&amp;lt;property name=&amp;quot;hibernate.dialect&amp;quot;&amp;gt;org.hibernate.dialect.HSQLDialect&amp;lt;/property&amp;gt;
+&amp;lt;mapping class=&amp;quot;mon.package.MonEntite&amp;quot; /&amp;gt;
+&amp;lt;mapping class=&amp;quot;mon.package.EtToutesMesAutresEntitesSansEnOublier&amp;quot; /&amp;gt;
+&amp;lt;/session-factory&amp;gt;
 &amp;lt;/hibernate-configuration&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&amp;rsquo;installation), il vous reste à :
-* ouvrir la perspective /Hibernate/ (avec le petit bouton /Open a perspective/ en haut à droite)
-* dans la vue /Hibernate Configurations/, faire un clic-droit et un /add Configuration&amp;hellip;/
-* renseigner le formulaire avec :
- * Nom : ce que vous voulez
- * Type : /Core/
- * Hibernate version : votre version d&amp;rsquo;Hibernate
- * Project : votre projet contenant la persistance
- * Database Connection : /Hibernate configured connection/
- * Property file : le fichier précédemment créé
- * Configuration file : le fichier précédemment créé
- * Database dialect : HSQL&lt;/p&gt;
+&lt;p&gt;Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&amp;rsquo;installation), il vous reste à :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ouvrir la perspective /Hibernate/ (avec le petit bouton /Open a perspective/ en haut à droite)&lt;/li&gt;
+&lt;li&gt;dans la vue /Hibernate Configurations/, faire un clic-droit et un /add Configuration&amp;hellip;/&lt;/li&gt;
+&lt;li&gt;renseigner le formulaire avec :
+
+&lt;ul&gt;
+&lt;li&gt;Nom : ce que vous voulez&lt;/li&gt;
+&lt;li&gt;Type : /Core/&lt;/li&gt;
+&lt;li&gt;Hibernate version : votre version d&amp;rsquo;Hibernate&lt;/li&gt;
+&lt;li&gt;Project : votre projet contenant la persistance&lt;/li&gt;
+&lt;li&gt;Database Connection : /Hibernate configured connection/&lt;/li&gt;
+&lt;li&gt;Property file : le fichier précédemment créé&lt;/li&gt;
+&lt;li&gt;Configuration file : le fichier précédemment créé&lt;/li&gt;
+&lt;li&gt;Database dialect : HSQL&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Après un petit clic sur la flèche à coté de votre configuration pour l&amp;rsquo;étendre, puis un clic sur /Session Factory/, vous devriez voir toutes vos classes persistantes.&lt;/p&gt;
 
@@ -232,11 +244,11 @@
       <guid>https://talbotgui.github.io/mesidees/05-retryenjava/</guid>
       <description>
 
-&lt;p&gt;La librairie &lt;strong&gt;guava-retrying&lt;/strong&gt; est assez pratique pour définir des méthodes à ré-essayer en cas d&amp;rsquo;échec.&lt;/p&gt;
+&lt;p&gt;La librairie &lt;strong&gt;guava-retrying&lt;/strong&gt; est assez pratique pour définir des méthodes à réessayer en cas d&amp;rsquo;échec.&lt;/p&gt;
 
 &lt;p&gt;Documentation : &lt;a href=&#34;https://github.com/rholder/guava-retrying&#34;&gt;ici&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;dépendence&#34;&gt;Dépendence&lt;/h4&gt;
+&lt;h4 id=&#34;dépendance&#34;&gt;Dépendance&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
 	&amp;lt;groupId&amp;gt;com.github.rholder&amp;lt;/groupId&amp;gt;
@@ -299,7 +311,7 @@ public class Test {
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;La revue de code&lt;/strong&gt; est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&amp;rsquo;intégration du dit code dans les sources de l&amp;rsquo;application. Le processus peut être le suivant :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Dès qu&amp;rsquo;un développeur pousse sont travail sur le repository, une demande de revue est envoyée à un tiers&lt;/li&gt;
+&lt;li&gt;Dès qu&amp;rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers&lt;/li&gt;
 &lt;li&gt;Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer&lt;/li&gt;
 &lt;li&gt;Une liste de remarques est établie&lt;/li&gt;
 &lt;li&gt;Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&amp;rsquo;être intégré à la branche principale&lt;/li&gt;
@@ -328,7 +340,7 @@ Il ne remplace pas la relecture humaine mais ils peuvent la simplifier en rédui
 
 &lt;h4 id=&#34;pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/h4&gt;
 
-&lt;p&gt;Pour mettre en oeuvre ces bonnes idées en poussant l&amp;rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à coté du développeur pour lui réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&amp;rsquo;est du &lt;strong&gt;pair programming&lt;/strong&gt; !&lt;/p&gt;
+&lt;p&gt;Pour mettre en oeuvre ces bonnes idées en poussant l&amp;rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour lui réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&amp;rsquo;est du &lt;strong&gt;pair programming&lt;/strong&gt; !&lt;/p&gt;
 
 &lt;h4 id=&#34;sources&#34;&gt;Sources&lt;/h4&gt;
 
@@ -484,7 +496,7 @@ pipeline {
 Pour cela, sont disponibles plusieurs base :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème learn&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème &lt;a href=&#34;https://&#34;&gt;LEARN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/indus&#34;&gt;INDUS&lt;/a&gt; : le même site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/search&#34;&gt;SEARCH&lt;/a&gt; : le même site INDUS avec la fonction de recherche basée sur LUNR&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/pages-hugo/tree/master&#34;&gt;JENKINS&lt;/a&gt; : mon site est basé sur SEARCH mais automatiquement publié sur les GitHub:pages&lt;/li&gt;
@@ -492,13 +504,35 @@ Pour cela, sont disponibles plusieurs base :&lt;/p&gt;
 
 &lt;h2 id=&#34;les-astuces-à-connaître&#34;&gt;Les astuces à connaître&lt;/h2&gt;
 
-&lt;p&gt;basiques :
- nouvelle page = redémarrage
- &amp;hellip;&lt;/p&gt;
+&lt;h4 id=&#34;hugo-en-2-mots&#34;&gt;Hugo en 2 mots&lt;/h4&gt;
 
-&lt;p&gt;propres au thème :
- chapitre:true =&amp;gt; texte centré
- next et prev nécessite une bonne organisation
+&lt;p&gt;L&amp;rsquo;idée d&amp;rsquo;Hugo est de générer un site WEB statique avec une jolie mise en forme sans se prendre la tête avec la mise en forme.&lt;/p&gt;
+
+&lt;p&gt;Donc le contenu du site est codé en Markdown et Hugo génère les pages WEB.&lt;/p&gt;
+
+&lt;p&gt;L&amp;rsquo;avantage d&amp;rsquo;un site statique est qu&amp;rsquo;il est extrêmement performant. Cette solution est utilisée en production pour générer des pages WEB dont la fréquence de modification des contenus est faible (1 à 2 fois par jour).&lt;/p&gt;
+
+&lt;h4 id=&#34;manipulation&#34;&gt;Manipulation&lt;/h4&gt;
+
+&lt;p&gt;Le site se démarre en double-cliquant sur &amp;ldquo;/bin/startServer.cmd&amp;rdquo;. Le site est alors disponible sur l&amp;rsquo;adresse &amp;ldquo;&lt;a href=&#34;http://localhost:1313&amp;quot;&#34;&gt;http://localhost:1313&amp;quot;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Toute modification d&amp;rsquo;une page existante déclenche automatiquement son rafraîchissement dans le navigateur. Mais l&amp;rsquo;ajout d&amp;rsquo;une nouvelle page n&amp;rsquo;est pas pris en compte à chaud. Il faut couper le serveur et le redémarrer.&lt;/p&gt;
+
+&lt;h4 id=&#34;contenu-et-mise-en-forme&#34;&gt;Contenu et mise en forme&lt;/h4&gt;
+
+&lt;p&gt;Les premières lignes de chaque page (les fichiers &amp;ldquo;.MD&amp;rdquo; du répertoire &amp;ldquo;docs&amp;rdquo;) sont des propriétés :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;title : le titre de la page utilisé dans l&amp;rsquo;onglet affichant la page mais aussi dans le menu latéral de la page&lt;/li&gt;
+&lt;li&gt;prev : [optionnel] le chemin vers la page précédente qui doit toujours commencer et se finir par un &amp;ldquo;/&amp;rdquo;. Il est possible de naviguer par le menu mais aussi par les flèches présentes à gauche et à droite des articles ou encore avec les flèches gauche et droite du clavier.&lt;/li&gt;
+&lt;li&gt;next : [optionnel] le chemin vers la page suivante&lt;/li&gt;
+&lt;li&gt;weight : [optionnel] l&amp;rsquo;importance de la page et donc son ordre d&amp;rsquo;apparition dans le menu&lt;/li&gt;
+&lt;li&gt;chapter : [optionnel] &amp;lsquo;true&amp;rsquo; si la page est un chapitre. Le contenu est alors centré par défaut.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;outil-utile&#34;&gt;Outil utile&lt;/h4&gt;
+
+&lt;p&gt;Un site avec Hugo utilisant &amp;ldquo;prev&amp;rdquo; et &amp;ldquo;next&amp;rdquo; contient donc beaucoup de lien. Il faut les vérifier. Pour le faire automatiquement et rapidement, il existe des outils comme &amp;ldquo;Broken Link Checker&amp;rdquo;
  outil de check des liens
  &amp;hellip;&lt;/p&gt;
 </description>
@@ -521,7 +555,7 @@ La particularité de ce pattern est que les données créées sont dédiés aux 
 
 &lt;p&gt;Extraire le code de création de ces objets améliore la lisibilité des tests (à condition que le nom des méthodes de l&amp;rsquo;ObjectMother soit explicite).
 De plus, le fait d&amp;rsquo;utiliser systématiquement un jeu de données particulier permet de créer des données &amp;ldquo;familières&amp;rdquo;. Par exemple : Jean est un nouvel utilisateur, Arnaud est un utilisateur avec des droits d&amp;rsquo;administration, &amp;hellip;
-A l&amp;rsquo;usage, ces personnas (ou leurs pendants quelque soit le type d&amp;rsquo;objets manipulés : facture, usine, paie, compteur, &amp;hellip;) finissent pas être connus de tous les développeurs. Ceci facilite la conception, le développement et la mise au point des tests.&lt;/p&gt;
+A l&amp;rsquo;usage, ces personna (ou leurs pendants quel que soit le type d&amp;rsquo;objets manipulés : facture, usine, paie, compteur, &amp;hellip;) finissent pas être connus de tous les développeurs. Ceci facilite la conception, le développement et la mise au point des tests.&lt;/p&gt;
 
 &lt;p&gt;Sources :&lt;/p&gt;
 
@@ -547,8 +581,8 @@ Et pour limiter le volume de code d&amp;rsquo;un ObjectMother, il suffit de resp
 
 &lt;ul&gt;
 &lt;li&gt;pour créer un nouveau jeu de donnée, il faut créer une nouvelle méthode&lt;/li&gt;
-&lt;li&gt;chaque méthode créant des données doit utiliser une méthodes déjà existante créant un jeu de données plus plus simple et doit enrichir ce jeu de données&lt;/li&gt;
-&lt;li&gt;seul l&amp;rsquo;ajout ou la modification d&amp;rsquo;un attribut obligatoire peut donner lieu à la modification d&amp;rsquo;une méthode existante. Mais attention, cela nécessite de re-vérifier tous les tests utilisant la méthode modifiée et les méthodes dérivées)&lt;/li&gt;
+&lt;li&gt;chaque méthode créant des données doit utiliser une méthode déjà existante créant un jeu de données plus simple et doit enrichir ce jeu de données&lt;/li&gt;
+&lt;li&gt;seul l&amp;rsquo;ajout ou la modification d&amp;rsquo;un attribut obligatoire peut donner lieu à la modification d&amp;rsquo;une méthode existante. Mais attention, cela nécessite de revérifier tous les tests utilisant la méthode modifiée et les méthodes dérivées)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -569,9 +603,9 @@ Et pour limiter le volume de code d&amp;rsquo;un ObjectMother, il suffit de resp
 
 &lt;h2 id=&#34;astuces&#34;&gt;Astuces&lt;/h2&gt;
 
-&lt;p&gt;La première astuce est à destination des sachants (les membres de l&amp;rsquo;équipe qui ont tout dans la tête). Dès qu&amp;rsquo;un collaborateur vient vous poser une question, demandez-lui s&amp;rsquo;il a consulté le GDD. Si ce n&amp;rsquo;est pas le cas, qu&amp;rsquo;il retourne à son poste pour vérifier si la réponse n&amp;rsquo;est pas dans le GDD (même si vous savez que ce n&amp;rsquo;est pas le cas). Il faut que cela devienne un réflexe pour toute l&amp;rsquo;équipe. Et quand il reviendra vous poser la question et qu&amp;rsquo;il aura obtenu sa réponse, dîtes lui d&amp;rsquo;ajouter un paragraphe dans le GDD !!&lt;/p&gt;
+&lt;p&gt;La première astuce est à destination des Lead (les membres de l&amp;rsquo;équipe qui ont tout dans la tête). Dès qu&amp;rsquo;un collaborateur vient vous poser une question, demandez-lui s&amp;rsquo;il a consulté le GDD. Si ce n&amp;rsquo;est pas le cas, qu&amp;rsquo;il retourne à son poste pour vérifier si la réponse n&amp;rsquo;est pas dans le GDD (même si vous savez que ce n&amp;rsquo;est pas le cas). Il faut que cela devienne un réflexe pour toute l&amp;rsquo;équipe. Et quand il reviendra vous poser la question et qu&amp;rsquo;il aura obtenu sa réponse, dîtes lui d&amp;rsquo;ajouter un paragraphe dans le GDD !!&lt;/p&gt;
 
-&lt;p&gt;Bien souvent, à ce moment là, le collaborateur vous dit qu&amp;rsquo;il n&amp;rsquo;a pas le temps. Pour beaucoup de gens, toutes les tâches sont prioritaires à la documentation (même le café). Mais il est vrai qu&amp;rsquo;on a pas toujours le temps. Pas de soucis, il vous suffit d&amp;rsquo;un tableau blanc (ou d&amp;rsquo;un paperBoard). A chaque réponse obtenu, le collaborateur inscrit son prénom ainsi que les mots clefs de sa question et de sa réponse. Charge à lui de remplir le GDD dans un délai raisonnable puis de venir effacer (ou barrer) son nom.&lt;/p&gt;
+&lt;p&gt;Bien souvent, à ce moment-là, le collaborateur vous dit qu&amp;rsquo;il n&amp;rsquo;a pas le temps. Pour beaucoup de gens, toutes les tâches sont prioritaires à la documentation (même le café). Mais il est vrai qu&amp;rsquo;on n&amp;rsquo;a pas toujours le temps. Pas de soucis, il vous suffit d&amp;rsquo;un tableau blanc (ou d&amp;rsquo;un paperBoard). A chaque réponse obtenue, le collaborateur inscrit son prénom ainsi que les mots clefs de sa question et de sa réponse. Charge à lui de remplir le GDD dans un délai raisonnable puis de venir effacer (ou barrer) son nom.&lt;/p&gt;
 
 &lt;p&gt;Valoriser les contributeurs est aussi une bonne idée. Bien souvent, le dernier arrivé sur le projet est le principal contributeur. Il est aussi celui qui doit s&amp;rsquo;approprier le GDD. Un petit mail avec le meilleur contributeur du mois peut aider à faire adopter le GDD.&lt;/p&gt;
 
@@ -671,22 +705,25 @@ Et pour limiter le volume de code d&amp;rsquo;un ObjectMother, il suffit de resp
       <description>&lt;p&gt;Lorsqu&amp;rsquo;un développeur code une nouvelle méthode, il doit savoir s&amp;rsquo;il fait confiance au code qui fera appel à cette méthode. Ou pas.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;S&amp;rsquo;il a confiance, il déclarera les conditions d&amp;rsquo;appels à la méthode dans le contrat de sa méthode (dans la javadoc de sa méthode, dans le wsdl, ou tout autre support d&amp;rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.&lt;/li&gt;
+&lt;li&gt;S&amp;rsquo;il a confiance, il déclarera les conditions d&amp;rsquo;appels à la méthode dans le contrat de sa méthode (dans la Javadoc de sa méthode, dans le WSDL, ou tout autre support d&amp;rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.&lt;/li&gt;
 &lt;li&gt;S&amp;rsquo;il n&amp;rsquo;a pas confiance, les premières lignes de code de la méthode vérifieront que les valeurs des paramètres sont acceptables.
 La seconde option est de la programmation défensive.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Une méthode peut valider les valeurs des paramètres d&amp;rsquo;entrée. Ce n&amp;rsquo;est pas une mauvaise chose en soit. Bien au contraire dans le cas de la validation des données lues dans un fichier envoyé par une application tierce. Même s&amp;rsquo;il existe un contrat définissant le format des données échangées, personne n&amp;rsquo;a envie d&amp;rsquo;intégrer des données de mauvaise qualité dans son système.
-Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle être utilisée partout ?&amp;rdquo;. L&amp;rsquo;ajout de code vérifiant chaque paramètre de chaque méthode de chaque composant du système coûte du temps de développement (du code applicatif et des tests associés). De plus chaque ligne de code ajoute potentiellement un bug dans l&amp;rsquo;application. Et surtout la maintenabilité d&amp;rsquo;une application décroit avec l&amp;rsquo;augmentation du volume de code.&lt;/p&gt;
+Mais une question se pose : &amp;ldquo;doit-on utiliser la programmation défensive partout ?&amp;rdquo;. L&amp;rsquo;ajout de code vérifiant chaque paramètre de chaque méthode de chaque composant du système coûte du temps de développement (du code applicatif et des tests associés). De plus chaque ligne de code ajoute potentiellement un bug dans l&amp;rsquo;application. Et surtout la maintenabilité d&amp;rsquo;une application décroit avec l&amp;rsquo;augmentation du volume de code.&lt;/p&gt;
 
 &lt;p&gt;Mais il ne faut pas faire l&amp;rsquo;amalgame entre la programmation défensive et toutes les validations de données. Par exemple, la validation des données d&amp;rsquo;un formulaire saisies par un être humain est réalisée par une méthode dont c&amp;rsquo;est l&amp;rsquo;objectif. Dans ce cas, ce n&amp;rsquo;est pas de la programmation défensive. Mais, si le service métier appelé après la validation du formulaire vérifie lui aussi une donnée, là, ce sera de la programmation défensive.&lt;/p&gt;
 
 &lt;p&gt;Le choix entre programmation défensive et confiance absolue n&amp;rsquo;est pas du seul ressort du développeur. C&amp;rsquo;est un choix fait par l&amp;rsquo;équipe qui prend en compte le type de composant, le type de données, les contraintes techniques, &amp;hellip; Cela doit donner lieu à un chapitre dans le &lt;a href=&#34;https://talbotgui.github.io/mesidees/10-guidedudev/&#34;&gt;guide du développeur&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Références :
-* &lt;a href=&#34;http://etienne.charignon.free.fr/spip/spip.php?article68&#34;&gt;http://etienne.charignon.free.fr/spip/spip.php?article68&lt;/a&gt;
-* &lt;a href=&#34;https://martinfowler.com/ieeeSoftware/failFast.pdf&#34;&gt;https://martinfowler.com/ieeeSoftware/failFast.pdf&lt;/a&gt;
-* &lt;a href=&#34;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&#34;&gt;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Références :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://etienne.charignon.free.fr/spip/spip.php?article68&#34;&gt;http://etienne.charignon.free.fr/spip/spip.php?article68&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://martinfowler.com/ieeeSoftware/failFast.pdf&#34;&gt;https://martinfowler.com/ieeeSoftware/failFast.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&#34;&gt;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -709,10 +746,9 @@ Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle êt
 	&lt;h2&gt;2017&lt;/h2&gt;
 	&lt;ul class=&#34;timeline-items&#34;&gt;
 		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Formateur et référent de formation&lt;/h3&gt;
+			&lt;h3&gt;Formateur et référent de formations&lt;/h3&gt;
 			&lt;hr/&gt;
-			Pour Sopra Steria, dans les fonctions transverses du groupe
-			Référent de plusieurs formations techniques et méthodologiques
+			Pour Sopra Steria, dans les fonctions transverses du groupe, référent de plusieurs formations techniques et méthodologiques
 			&lt;br/&gt;Participant aux travaux d’évolution de la méthode du groupe
 			&lt;br/&gt;Formateur Java et méthode du groupe (8 jours par mois en moyenne)
 			&lt;br/&gt;Mise à jour de plusieurs formations et création de 2 nouvelles formations Java (Hibernate avancé et Tests unitaires avancés)
@@ -723,15 +759,15 @@ Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle êt
 		&lt;li class=&#34;timeline-item inverted&#34;&gt;
 			&lt;h3&gt;Référent technique&lt;/h3&gt;
 			&lt;hr/&gt;
-			Pour Sopra Steria, en mission chez Erdf (Enedis) sur le projet Linky-Coeur
-			&lt;br/&gt;Projet visant à mettre en place un SI de gestion des 35 millions de compteurs électriques intelligents Linky. Le projet comprend un système de gestion de processus (BPM), d&#39;échanges complexes (ESB) et d&#39;application référentiels.
+			Pour Sopra Steria, en mission chez Enedis (anciennement Erdf) sur le projet Linky-Coeur
+			&lt;br/&gt;Projet visant à mettre en place un SI de gestion des 35 millions de compteurs électriques intelligents d&#39;EDF. Le projet comprend un système de gestion de processus (BPM), d&#39;échanges complexes (ESB) et d&#39;application référentiels.
 			&lt;br/&gt;Mes rôles durant les 9 premiers mois au sein de l&#39;équipe &#34;outils de tests&#34; :
 			&lt;ul&gt;
 				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
 				&lt;li&gt;Développement et maintenance d’une API de tests SOA utilisée par des développeurs&lt;/li&gt;
 				&lt;li&gt;Développement d’une application Web de tests SOA utilisée par des testeurs métiers (recette)&lt;/li&gt;
 			&lt;/ul&gt;
-			&lt;br/&gt;Mes rôles durant les mois suivants au sein d&#39;une équipe de développement LinkyCoeur :
+			&lt;br/&gt;Mes rôles durant les mois suivants au sein d&#39;une équipe de développement Linky-Coeur :
 			&lt;ul&gt;
 				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
 				&lt;li&gt;Développements OSB, BPEL, JEE&lt;/li&gt;
@@ -762,12 +798,12 @@ Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle êt
 			Contexte technique : &lt;i&gt;Java, Spring, JSF, Weblogic Server, Oracle DB&lt;/i&gt;
 			&lt;hr/&gt;
 			&lt;i class=&#34;fa fa-group&#34;&gt; 16 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De août 2012 à janvier 2014&lt;/time&gt;
+			&lt;br/&gt;&lt;time&gt;D&#39;août 2012 à janvier 2014&lt;/time&gt;
 		&lt;/li&gt;
 		&lt;li class=&#34;timeline-item inverted&#34;&gt;
 			&lt;h3&gt;Architecte SI&lt;/h3&gt;
 			&lt;hr/&gt;
-			Pour Sopra, en mission pour Storengy (GDF SUEZ )
+			Pour Sopra, en mission pour Storengy (GDF SUEZ)
 			&lt;br/&gt;En phase d’initialisation et jusqu’au début des développements, définition et mise en place de l’architecture pour un projet de développement de deux applications Web en Java, de la mise en place d&#39;un CRM et d&#39;un BI.
 			&lt;br/&gt;Puis, développeur, référent technique
 			&lt;br/&gt;&lt;br/&gt;Mes activités :
@@ -802,7 +838,7 @@ Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle êt
 		&lt;li class=&#34;timeline-item inverted&#34;&gt;
 			&lt;h3&gt;Auditeur et développeur&lt;/h3&gt;
 			&lt;hr/&gt;
-			Pour Sopra, en mission pour Elengy (GDF Suez), TMA évolutive d&#39;une application Java.
+			Pour Sopra, en mission pour Elengy (Engie), TMA évolutive d&#39;une application Java.
 			Mes activités :
 			&lt;ul&gt;
 				&lt;li&gt;phase de prise en charge de l&#39;application en TMA (réversibilité entrante)&lt;/li&gt;
@@ -838,7 +874,7 @@ Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle êt
 			&lt;br/&gt;&lt;br/&gt;Contexte technique : &lt;i&gt;Java, Struts2, EJB3, Weblogic Server, OracleDB&lt;/i&gt;
 			&lt;hr/&gt;
 			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De août 2009 à septembre 2009&lt;/time&gt;
+			&lt;br/&gt;&lt;time&gt;D&#39;août 2009 à septembre 2009&lt;/time&gt;
 		&lt;/li&gt;
 		&lt;li class=&#34;timeline-item&#34;&gt;
 			&lt;h3&gt;Auditeur et développeur &lt;/h3&gt;
@@ -888,7 +924,7 @@ Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle êt
 			&lt;/ul&gt;
 			Contexte technique : &lt;i&gt;UML, MDA, Java, Blu Age&lt;/i&gt;
 			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP (seul soprasien)&lt;/i&gt;
+			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP (seul Sopra dans l&#39;équipe Netfective)&lt;/i&gt;
 			&lt;br/&gt;&lt;time&gt;De juillet 2008 à août 2008&lt;/time&gt;
 		&lt;/li&gt;
 		&lt;li class=&#34;timeline-item&#34;&gt;
@@ -899,7 +935,7 @@ Mais une question se pose : &amp;ldquo;la programmation défensive doit-elle êt
 			&lt;ul&gt;
 				&lt;li&gt;Développement du prototype qui a servi de base de développement&lt;/li&gt;
 				&lt;li&gt;Revue des modèles UML intégrés dans les exigences&lt;/li&gt;
-				&lt;li&gt;Génération de code à partir des modèles métier (à base de scripting avec Power AMC)&lt;/li&gt;
+				&lt;li&gt;Génération de code à partir des modèles métier (à base de scripts dans Power AMC)&lt;/li&gt;
 				&lt;li&gt;Dénormalisation et maintien des modèles&lt;/li&gt;
 				&lt;li&gt;Développement Back et Front&lt;/li&gt;
 				&lt;li&gt;Support aux développeurs (après un an de mission)&lt;/li&gt;

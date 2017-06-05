@@ -270,7 +270,7 @@ La particularité de ce pattern est que les données créées sont dédiés aux 
 
 <p>Extraire le code de création de ces objets améliore la lisibilité des tests (à condition que le nom des méthodes de l&rsquo;ObjectMother soit explicite).
 De plus, le fait d&rsquo;utiliser systématiquement un jeu de données particulier permet de créer des données &ldquo;familières&rdquo;. Par exemple : Jean est un nouvel utilisateur, Arnaud est un utilisateur avec des droits d&rsquo;administration, &hellip;
-A l&rsquo;usage, ces personnas (ou leurs pendants quelque soit le type d&rsquo;objets manipulés : facture, usine, paie, compteur, &hellip;) finissent pas être connus de tous les développeurs. Ceci facilite la conception, le développement et la mise au point des tests.</p>
+A l&rsquo;usage, ces personna (ou leurs pendants quel que soit le type d&rsquo;objets manipulés : facture, usine, paie, compteur, &hellip;) finissent pas être connus de tous les développeurs. Ceci facilite la conception, le développement et la mise au point des tests.</p>
 
 <p>Sources :</p>
 
@@ -296,8 +296,8 @@ Et pour limiter le volume de code d&rsquo;un ObjectMother, il suffit de respecte
 
 <ul>
 <li>pour créer un nouveau jeu de donnée, il faut créer une nouvelle méthode</li>
-<li>chaque méthode créant des données doit utiliser une méthodes déjà existante créant un jeu de données plus plus simple et doit enrichir ce jeu de données</li>
-<li>seul l&rsquo;ajout ou la modification d&rsquo;un attribut obligatoire peut donner lieu à la modification d&rsquo;une méthode existante. Mais attention, cela nécessite de re-vérifier tous les tests utilisant la méthode modifiée et les méthodes dérivées)</li>
+<li>chaque méthode créant des données doit utiliser une méthode déjà existante créant un jeu de données plus simple et doit enrichir ce jeu de données</li>
+<li>seul l&rsquo;ajout ou la modification d&rsquo;un attribut obligatoire peut donner lieu à la modification d&rsquo;une méthode existante. Mais attention, cela nécessite de revérifier tous les tests utilisant la méthode modifiée et les méthodes dérivées)</li>
 </ul>
 
 

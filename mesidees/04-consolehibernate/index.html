@@ -268,20 +268,20 @@
 <p>Où se trouve la difficulté ? Un peu partout en fait :</p>
 
 <ul>
-<li>La console Hibernate de JBoss Tools utilise encore un fichier /hibernate.cfg.xml/ dont on a plus très souvent l&rsquo;habitude</li>
+<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude</li>
 <li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude)</li>
 <li>il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB</li>
 </ul>
 
 <h2 id="les-solutions">Les solutions</h2>
 
-<p>Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue /Data Source Explorer/. Mais pensez bien à ajouter /;readonly=true;files_readonly=true;hsqldb.lock_file=false/ à la fin de l&rsquo;URL de connexion.</p>
+<p>Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue <em>Data Source Explorer</em>. Mais pensez bien à ajouter <em>;readonly=true;files_readonly=true;hsqldb.lock_file=false</em> à la fin de l&rsquo;URL de connexion.</p>
 
 <p>Quant à la configuration de la console Hibernate, elle demande la création de deux fichiers :</p>
 
 <ul>
-<li>/hibernate.properties/ qui va rester vide</li>
-<li>/hibernate.cfg.xml/ qui va contenir ce code</li>
+<li><em>hibernate.properties</em> qui va rester vide</li>
+<li><em>hibernate.cfg.xml</em> qui va contenir ce code</li>
 </ul>
 
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -302,25 +302,25 @@
 <p>Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&rsquo;installation), il vous reste à :</p>
 
 <ul>
-<li>ouvrir la perspective /Hibernate/ (avec le petit bouton /Open a perspective/ en haut à droite)</li>
-<li>dans la vue /Hibernate Configurations/, faire un clic-droit et un /add Configuration&hellip;/</li>
+<li>ouvrir la perspective <em>Hibernate</em> (avec le petit bouton <em>Open a perspective</em> en haut à droite)</li>
+<li>dans la vue <em>Hibernate Configurations</em>, faire un clic-droit et un <em>add Configuration&hellip;</em></li>
 <li>renseigner le formulaire avec :
 
 <ul>
 <li>Nom : ce que vous voulez</li>
-<li>Type : /Core/</li>
+<li>Type : <em>Core</em></li>
 <li>Hibernate version : votre version d&rsquo;Hibernate</li>
 <li>Project : votre projet contenant la persistance</li>
-<li>Database Connection : /Hibernate configured connection/</li>
+<li>Database Connection : <em>Hibernate configured connection</em></li>
 <li>Property file : le fichier précédemment créé</li>
 <li>Configuration file : le fichier précédemment créé</li>
 <li>Database dialect : HSQL</li>
 </ul></li>
 </ul>
 
-<p>Après un petit clic sur la flèche à coté de votre configuration pour l&rsquo;étendre, puis un clic sur /Session Factory/, vous devriez voir toutes vos classes persistantes.</p>
+<p>Après un petit clic sur la flèche à coté de votre configuration pour l&rsquo;étendre, puis un clic sur <em>Session Factory</em>, vous devriez voir toutes vos classes persistantes.</p>
 
-<p>Il est maintenant possible d&rsquo;ouvrir un /HQL Editor/ depuis un clic droit sur la configuration.</p>
+<p>Il est maintenant possible d&rsquo;ouvrir un <em>HQL Editor</em> depuis un clic droit sur la configuration.</p>
 
 <p>A partir du même endroit, il est possible de créer un schéma de votre mapping.</p>
 

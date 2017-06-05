@@ -178,20 +178,20 @@
 &lt;p&gt;Où se trouve la difficulté ? Un peu partout en fait :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;La console Hibernate de JBoss Tools utilise encore un fichier /hibernate.cfg.xml/ dont on a plus très souvent l&amp;rsquo;habitude&lt;/li&gt;
+&lt;li&gt;La console Hibernate de JBoss Tools utilise encore un fichier &lt;em&gt;hibernate.cfg.xml&lt;/em&gt; dont on a plus très souvent l&amp;rsquo;habitude&lt;/li&gt;
 &lt;li&gt;La recherche d&amp;rsquo;entités par présence d&amp;rsquo;annotation n&amp;rsquo;est pas disponible (c&amp;rsquo;est Spring qui le fait d&amp;rsquo;habitude)&lt;/li&gt;
 &lt;li&gt;il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;les-solutions&#34;&gt;Les solutions&lt;/h2&gt;
 
-&lt;p&gt;Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue /Data Source Explorer/. Mais pensez bien à ajouter /;readonly=true;files_readonly=true;hsqldb.lock_file=false/ à la fin de l&amp;rsquo;URL de connexion.&lt;/p&gt;
+&lt;p&gt;Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue &lt;em&gt;Data Source Explorer&lt;/em&gt;. Mais pensez bien à ajouter &lt;em&gt;;readonly=true;files_readonly=true;hsqldb.lock_file=false&lt;/em&gt; à la fin de l&amp;rsquo;URL de connexion.&lt;/p&gt;
 
 &lt;p&gt;Quant à la configuration de la console Hibernate, elle demande la création de deux fichiers :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;/hibernate.properties/ qui va rester vide&lt;/li&gt;
-&lt;li&gt;/hibernate.cfg.xml/ qui va contenir ce code&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;hibernate.properties&lt;/em&gt; qui va rester vide&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;hibernate.cfg.xml&lt;/em&gt; qui va contenir ce code&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -212,25 +212,25 @@
 &lt;p&gt;Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&amp;rsquo;installation), il vous reste à :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;ouvrir la perspective /Hibernate/ (avec le petit bouton /Open a perspective/ en haut à droite)&lt;/li&gt;
-&lt;li&gt;dans la vue /Hibernate Configurations/, faire un clic-droit et un /add Configuration&amp;hellip;/&lt;/li&gt;
+&lt;li&gt;ouvrir la perspective &lt;em&gt;Hibernate&lt;/em&gt; (avec le petit bouton &lt;em&gt;Open a perspective&lt;/em&gt; en haut à droite)&lt;/li&gt;
+&lt;li&gt;dans la vue &lt;em&gt;Hibernate Configurations&lt;/em&gt;, faire un clic-droit et un &lt;em&gt;add Configuration&amp;hellip;&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;renseigner le formulaire avec :
 
 &lt;ul&gt;
 &lt;li&gt;Nom : ce que vous voulez&lt;/li&gt;
-&lt;li&gt;Type : /Core/&lt;/li&gt;
+&lt;li&gt;Type : &lt;em&gt;Core&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;Hibernate version : votre version d&amp;rsquo;Hibernate&lt;/li&gt;
 &lt;li&gt;Project : votre projet contenant la persistance&lt;/li&gt;
-&lt;li&gt;Database Connection : /Hibernate configured connection/&lt;/li&gt;
+&lt;li&gt;Database Connection : &lt;em&gt;Hibernate configured connection&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;Property file : le fichier précédemment créé&lt;/li&gt;
 &lt;li&gt;Configuration file : le fichier précédemment créé&lt;/li&gt;
 &lt;li&gt;Database dialect : HSQL&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Après un petit clic sur la flèche à coté de votre configuration pour l&amp;rsquo;étendre, puis un clic sur /Session Factory/, vous devriez voir toutes vos classes persistantes.&lt;/p&gt;
+&lt;p&gt;Après un petit clic sur la flèche à coté de votre configuration pour l&amp;rsquo;étendre, puis un clic sur &lt;em&gt;Session Factory&lt;/em&gt;, vous devriez voir toutes vos classes persistantes.&lt;/p&gt;
 
-&lt;p&gt;Il est maintenant possible d&amp;rsquo;ouvrir un /HQL Editor/ depuis un clic droit sur la configuration.&lt;/p&gt;
+&lt;p&gt;Il est maintenant possible d&amp;rsquo;ouvrir un &lt;em&gt;HQL Editor&lt;/em&gt; depuis un clic droit sur la configuration.&lt;/p&gt;
 
 &lt;p&gt;A partir du même endroit, il est possible de créer un schéma de votre mapping.&lt;/p&gt;
 </description>
@@ -306,7 +306,7 @@ public class Test {
 &lt;h4 id=&#34;ma-définition&#34;&gt;Ma Définition&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;La relecture de code&lt;/strong&gt; est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (//git diff// par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple ajout de ligne malencontreux, &amp;hellip;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;La relecture de code&lt;/strong&gt; est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (&lt;em&gt;git diff&lt;/em&gt; par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple ajout de ligne malencontreux, &amp;hellip;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;La revue de code&lt;/strong&gt; est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&amp;rsquo;intégration du dit code dans les sources de l&amp;rsquo;application. Le processus peut être le suivant :&lt;/p&gt;
 

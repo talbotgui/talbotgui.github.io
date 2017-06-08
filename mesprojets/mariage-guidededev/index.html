@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Coder des ré-essais en Java</title>
+    <title>Mariage - Guide du développeur</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -26,7 +26,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/05-retryenjava/">
+  <body class="" data-url="/mesprojets/mariage-guidededev/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -99,7 +99,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/mesidees/">
+      <li class="dd-item  " data-nav-id="/mesidees/">
         <a href="/mesidees/">
           <span>
             
@@ -134,7 +134,7 @@
               </a>
             </li>
           
-            <li class="dd-item active" data-nav-id="/mesidees/05-retryenjava/">
+            <li class="dd-item " data-nav-id="/mesidees/05-retryenjava/">
               <a href="/mesidees/05-retryenjava/">
                 <span>Coder des ré-essais en Java     </i></span>
               </a>
@@ -196,7 +196,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/mesprojets/">
+      <li class="dd-item  parent" data-nav-id="/mesprojets/">
         <a href="/mesprojets/">
           <span>
             
@@ -207,7 +207,7 @@
         
         <ul>
           
-            <li class="dd-item " data-nav-id="/mesprojets/mariage-guidededev/">
+            <li class="dd-item active" data-nav-id="/mesprojets/mariage-guidededev/">
               <a href="/mesprojets/mariage-guidededev/">
                 <span>Mariage - Guide du développeur     </i></span>
               </a>
@@ -267,7 +267,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/05-retryenjava/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesprojets/mariage-guidededev/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -287,11 +287,11 @@
                   
                     
                     
-                <a href="/mesidees/" itemprop="url"><span itemprop="title">Mes idées</span></a> <i class="fa fa-angle-right"></i>
+                <a href="/mesprojets/" itemprop="url"><span itemprop="title">Mes idées</span></a> <i class="fa fa-angle-right"></i>
                     
                   
                 
-                <span itemprop="title"> Coder des ré-essais en Java</span>
+                <span itemprop="title"> Mariage - Guide du développeur</span>
               </div>
               
             </div>
@@ -300,59 +300,109 @@
             
               <div id="body-inner">
                 
-                <h1>Coder des ré-essais en Java</h1>
+                <h1>Mariage - Guide du développeur</h1>
                 
 
 
 
-<p>La librairie <strong>guava-retrying</strong> est assez pratique pour définir des méthodes à réessayer en cas d&rsquo;échec.</p>
+<h2 id="exigences">Exigences</h2>
 
-<p>Documentation : <a href="https://github.com/rholder/guava-retrying">ici</a></p>
+<p>Les exigences sont actuellement fournies par la principale utilisatrice. Aucune formalisation n&rsquo;existe et un suivi minimaliste des tâches est réalisés dans le fichier &ldquo;backlog.txt&rdquo; placé à la racine de la branche &ldquo;master&rdquo;.</p>
 
-<h4 id="dépendance">Dépendance</h4>
+<h2 id="tests">Tests</h2>
 
-<pre><code class="language-xml">&lt;dependency&gt;
-	&lt;groupId&gt;com.github.rholder&lt;/groupId&gt;
-	&lt;artifactId&gt;guava-retrying&lt;/artifactId&gt;
-	&lt;version&gt;2.0.0&lt;/version&gt;
-	&lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
+<h4 id="environnement">Environnement</h4>
 
-<h4 id="exemple">Exemple</h4>
+<p>Seul l&rsquo;environnement de production, celui d&rsquo;intégration et ceux de développement existent. Aucun environnement n&rsquo;est dédié aux tests (techniques, métiers, performance ni sécurité).</p>
 
-<pre><code class="language-java">import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
+<p>Donc tous les tests doivent être :</p>
 
-import org.junit.Assert;
+<ul>
+<li>exécutés par le développeur sur son poste de développement,</li>
+<li>codés avec JUnit ou TestNG,</li>
+<li>exécutés à chaque commit par l&rsquo;intégration continue</li>
+</ul>
 
-import com.github.rholder.retry.RetryException;
-import com.github.rholder.retry.Retryer;
-import com.github.rholder.retry.RetryerBuilder;
-import com.github.rholder.retry.StopStrategies;
-import com.github.rholder.retry.WaitStrategies;
+<h4 id="que-tester">Que tester</h4>
 
-public class Test {
-	public void testRetry() throws ExecutionException, RetryException {
-		final int nbEssais = 6;
-		final int tempsEntreDeuxEssaisEnMs = 500;
+<p>Les cas nominaux de tous les composants doivent être testés ainsi que les cas d&rsquo;erreur principaux.</p>
 
-		final Retryer&lt;Void&gt; retryer = RetryerBuilder.&lt;Void&gt;newBuilder()//
-				.retryIfExceptionOfType(AssertionError.class).retryIfRuntimeException()//
-				.withStopStrategy(StopStrategies.stopAfterAttempt(nbEssais))//
-				.withWaitStrategy(WaitStrategies.fixedWait(tempsEntreDeuxEssaisEnMs, TimeUnit.MILLISECONDS))//
-				.build();
+<p>Aucune exigence n&rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (hors getter, setter, constructeur, code de <a href="/mesidees/11-programmationdefensive/">programmation défensive</a>, &hellip;)</p>
 
-		final Callable&lt;Void&gt; assertion = () -&gt; {
-			Assert.assertNotNull(&quot;attendu&quot;);
-			return null;
-		};
+<h4 id="comment-tester">Comment tester</h4>
 
-		retryer.call(assertion);
-	}
-}
-</code></pre>
+<p><strong>Les composants métiers</strong> (Service, Repostitory et Entité) doivent être testés avec des tests d&rsquo;intégration. Il n&rsquo;est pas concevable de tester un système entièrement basé sur la notion de transaction et de requêtes SQL (Spring, Hibernate et la bdd) sans une connexion à une base de données et sans activer les commits.</p>
+
+<p>Si certains composants métiers présentent une grande complexité, alors un <a href="/mesidees/03-testsdedeveloppement/">test de granularité unitaire</a> est tout à fait envisageable. Un tel composant n&rsquo;existe pas pour le moment.</p>
+
+<p><strong>Les contrôleurs REST</strong> doivent être testés unitairement. Ces composants ne sont pas transactionnels et les services sont testés par ailleurs. Mais, pour bien vérifier le paramétrage et le code, il est nécessaire de réaliser le test des contrôleurs en démarrant un serveur WEB (l&rsquo;adjectif &ldquo;unitaire&rdquo; utilisé plus tôt est donc discutable - cf. <a href="/mesidees/03-testsdedeveloppement/">test de granularité unitaire</a>).</p>
+
+<p><strong>Les écrans</strong> de l&rsquo;application sont testés de bout en bout. Selenium est utilisé pour piloter le navigateur et un jeu de données est utilisé pour initialiser le test.</p>
+
+<p>ATTENTION : les tests Selenium ne sont donc pas tous indépendants les uns des autres. Ce n&rsquo;est pas une bonne pratique mais faire autrement avec un test de bout en bout est trop coûteux.</p>
+
+<h4 id="avec-quels-outils">Avec quels outils</h4>
+
+<p>JUnit et TestNG sont tous deux des exécuteurs de tests. JUnit est utilisé dans les tests des composants métiers. TestNG, étant plus pratique à utiliser avec Mockito, est utilisé pour l&rsquo;exécution des tests des contrôleurs.</p>
+
+<p>Mockito est donc utilisé pour bouchonner les services métiers dans les tests des contrôleurs.</p>
+
+<p>La classe utilitaire JdbcTemplate (fournie par Spring-jdbc) peut être utilisée dans les tests métiers afin d&rsquo;exécuter simplement des requêtes SQL en base de données pour valider le contenu.</p>
+
+<p>La classe utilitaire RestTemplate (fournie par Spring-web) peut être utilisée dans les tests des contrôleurs pour réaliser les appels HTTP simplement.</p>
+
+<p>Selenium est une API très riche. La classe MyDriver rassemble les opérations usuelles utiles aux tests (il est tout à fait possible de l&rsquo;enrichir).
+Les sélecteurs à utiliser dans les tests Selenium sont tous rassemblés dans la classe Selectors. Tous les sélecteurs doivent être rassemblés dans cette classe.
+Cette classe contient une hiérarchie de sous-classes structurée ainsi : NomDeLaPage / TypeDelements / selecteurElement. Exemple : Index.Button.CONFIRMER_SUPPRESSION
+Toute modification d&rsquo;une page HTML doit entraîner l&rsquo;enrichissement de la classe Selectors avec le sélecteur permettant de sélectionner les éléments ajoutés/modifiés/supprimés.</p>
+
+<h2 id="gestion-de-configuration-logicielle">Gestion de configuration logicielle</h2>
+
+<h4 id="source">Source</h4>
+
+<p>Les sources sont toutes rassemblées dans GitHub. Le développement se fait directement dans la branche &ldquo;master&rdquo;. Les essais/recherches/prototypes éventuels doivent être codés dans d&rsquo;autres branches (<em>/!\ le nom des branches est pris en compte par l&rsquo;intégration continue pour la promotion et le déploiement en production - cf. Jenkinsfile</em>).</p>
+
+<p>Les messages de commit doivent être explicites. Toute nouvelle fonctionnalité doit être commitée avec un message commençant par &ldquo;[FEATURE]&rdquo; (afin que le commit soit correctement affiché dans la page <em>releaseNote</em> de l&rsquo;application).</p>
+
+<p>TO CONTINUE</p>
+
+<ul>
+<li><p>conception</p>
+
+<ul>
+<li>résumé de l&rsquo;architecture technique</li>
+<li>quels sont les impacts de l’AT sur la conception (BI, ERP ou détails trop fins en xNet) ?</li>
+<li>quel est le niveau de détails attendu en fin de conception (peut-être besoin d’être plus précis que le niveau contractuel en fonction du contexte) ?</li>
+<li>quels sont les outils de conception et/ou de modélisation ?</li>
+<li>quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?</li>
+<li>règles de conception (programmation défensive, @designByContrat, modularité, &hellip;)</li>
+<li>jeu de données de test</li>
+</ul></li>
+
+<li><p>développement</p>
+
+<ul>
+<li>règles de nommage</li>
+<li>liste des frameworks disponibles, leur usage et le pointeur sur leur documentation</li>
+</ul></li>
+
+<li><p>industrialisation</p>
+
+<ul>
+<li>éléments composant la Gestion de Configuration Logicielle (Git, SVN, HP ALM, Archiva, Jira, &hellip;)</li>
+<li>règles d&rsquo;usage de la GCL (flow GIT/SVN, snapshots dans le repository de binaires, &hellip;)</li>
+<li>règles d&rsquo;usage de l&rsquo;intégration continue</li>
+<li>organisation des équipes en amont et en aval des développements (Continuous Delivery)</li>
+</ul></li>
+
+<li><p>environnements</p>
+
+<ul>
+<li>installation du poste de développement</li>
+<li>liste et paramètres des environnements de test</li>
+<li>liste des environnements du client</li>
+</ul></li>
+</ul>
 
 
       
@@ -364,8 +414,8 @@ public class Test {
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="/mesidees/04-consolehibernate/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/mesidees/06-relecturedecode/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/mesprojets/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/moncv/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

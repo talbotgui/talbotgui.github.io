@@ -50,6 +50,14 @@
   </url>
   
   <url>
+    <loc>https://talbotgui.github.io/mesprojets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesprojets/mariage-guidededev/</loc>
+  </url>
+  
+  <url>
     <loc>https://talbotgui.github.io/moncv/</loc>
   </url>
   
@@ -60,6 +68,11 @@
   
   <url>
     <loc>https://talbotgui.github.io/mesidees/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesprojets/</loc>
     <priority>0</priority>
   </url>
   

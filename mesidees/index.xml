@@ -303,17 +303,17 @@ public class Test {
       <guid>https://talbotgui.github.io/mesidees/06-relecturedecode/</guid>
       <description>
 
-&lt;h4 id=&#34;ma-définition&#34;&gt;Ma Définition&lt;/h4&gt;
+&lt;h4 id=&#34;ma-définition&#34;&gt;Ma définition&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;La relecture de code&lt;/strong&gt; est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (&lt;em&gt;git diff&lt;/em&gt; par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple ajout de ligne malencontreux, &amp;hellip;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;La relecture de code&lt;/strong&gt; est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (&lt;em&gt;git diff&lt;/em&gt; par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple saut de ligne malencontreux, &amp;hellip;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;La revue de code&lt;/strong&gt; est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&amp;rsquo;intégration du dit code dans les sources de l&amp;rsquo;application. Le processus peut être le suivant :&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Dès qu&amp;rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers&lt;/li&gt;
 &lt;li&gt;Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer&lt;/li&gt;
-&lt;li&gt;Une liste de remarques est établie&lt;/li&gt;
+&lt;li&gt;L&amp;rsquo;auditeur parcours le code et y incruste des remarques&lt;/li&gt;
 &lt;li&gt;Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&amp;rsquo;être intégré à la branche principale&lt;/li&gt;
 &lt;li&gt;Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&amp;rsquo;il corrige son code&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -328,19 +328,19 @@ public class Test {
 &lt;p&gt;Quelques soient les pratiques du projet (revue ou audit ou les deux), l&amp;rsquo;élément central et primordial est l&amp;rsquo;échange entre le développeur et le relecteur. C&amp;rsquo;est cet échange qui est le garant du bon fonctionnement de ces pratiques !! Sans lui :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;le relecteur ne verra pas directement l&amp;rsquo;utilité de son travail. Il s&amp;rsquo;en lassera et fera de mauvaise relecture&lt;/li&gt;
-&lt;li&gt;le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&amp;rsquo;interminables envois de mails&lt;/li&gt;
-&lt;li&gt;le relecteur et le développeur ne pourront apprendre l&amp;rsquo;un de l&amp;rsquo;autre&lt;/li&gt;
+&lt;li&gt;le relecteur ne verra pas directement l&amp;rsquo;utilité de son travail. Il s&amp;rsquo;en lassera et fera de mauvaises relectures ;&lt;/li&gt;
+&lt;li&gt;le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&amp;rsquo;interminables envois de mails ;&lt;/li&gt;
+&lt;li&gt;le relecteur et le développeur ne pourront apprendre l&amp;rsquo;un de l&amp;rsquo;autre que s&amp;rsquo;ils communiquent les yeux dans les yeux.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;pour-se-simplifier-la-vie&#34;&gt;Pour se simplifier la vie&lt;/h4&gt;
 
-&lt;p&gt;Certains règles de développement sont aisément vérifiables (une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&amp;rsquo;outil de qualimétrie pour tous les langages.
-Il ne remplace pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et points d&amp;rsquo;attention à contrôler.&lt;/p&gt;
+&lt;p&gt;Certains règles de développement sont aisément vérifiables (avec une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&amp;rsquo;outil de qualimétrie pour tous les langages.
+Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et de points d&amp;rsquo;attention à contrôler.&lt;/p&gt;
 
 &lt;h4 id=&#34;pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/h4&gt;
 
-&lt;p&gt;Pour mettre en oeuvre ces bonnes idées en poussant l&amp;rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour lui réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&amp;rsquo;est du &lt;strong&gt;pair programming&lt;/strong&gt; !&lt;/p&gt;
+&lt;p&gt;Pour mettre en oeuvre ces bonnes idées en poussant l&amp;rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&amp;rsquo;est du &lt;strong&gt;pair programming&lt;/strong&gt; !&lt;/p&gt;
 
 &lt;h4 id=&#34;sources&#34;&gt;Sources&lt;/h4&gt;
 
@@ -496,7 +496,7 @@ pipeline {
 Pour cela, sont disponibles plusieurs base :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème &lt;a href=&#34;https://&#34;&gt;LEARN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème &lt;a href=&#34;https://matcornic.github.io/hugo-learn-doc/basics/what-is-this-hugo-theme/&#34;&gt;LEARN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/indus&#34;&gt;INDUS&lt;/a&gt; : le même site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/search&#34;&gt;SEARCH&lt;/a&gt; : le même site INDUS avec la fonction de recherche basée sur LUNR&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/pages-hugo/tree/master&#34;&gt;JENKINS&lt;/a&gt; : mon site est basé sur SEARCH mais automatiquement publié sur les GitHub:pages&lt;/li&gt;

@@ -303,17 +303,17 @@ public class Test {
       <guid>https://talbotgui.github.io/mesidees/06-relecturedecode/</guid>
       <description>
 
-&lt;h4 id=&#34;ma-définition&#34;&gt;Ma Définition&lt;/h4&gt;
+&lt;h4 id=&#34;ma-définition&#34;&gt;Ma définition&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;La relecture de code&lt;/strong&gt; est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (&lt;em&gt;git diff&lt;/em&gt; par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple ajout de ligne malencontreux, &amp;hellip;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;La relecture de code&lt;/strong&gt; est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (&lt;em&gt;git diff&lt;/em&gt; par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple saut de ligne malencontreux, &amp;hellip;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;La revue de code&lt;/strong&gt; est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&amp;rsquo;intégration du dit code dans les sources de l&amp;rsquo;application. Le processus peut être le suivant :&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Dès qu&amp;rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers&lt;/li&gt;
 &lt;li&gt;Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer&lt;/li&gt;
-&lt;li&gt;Une liste de remarques est établie&lt;/li&gt;
+&lt;li&gt;L&amp;rsquo;auditeur parcours le code et y incruste des remarques&lt;/li&gt;
 &lt;li&gt;Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&amp;rsquo;être intégré à la branche principale&lt;/li&gt;
 &lt;li&gt;Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&amp;rsquo;il corrige son code&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -328,19 +328,19 @@ public class Test {
 &lt;p&gt;Quelques soient les pratiques du projet (revue ou audit ou les deux), l&amp;rsquo;élément central et primordial est l&amp;rsquo;échange entre le développeur et le relecteur. C&amp;rsquo;est cet échange qui est le garant du bon fonctionnement de ces pratiques !! Sans lui :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;le relecteur ne verra pas directement l&amp;rsquo;utilité de son travail. Il s&amp;rsquo;en lassera et fera de mauvaise relecture&lt;/li&gt;
-&lt;li&gt;le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&amp;rsquo;interminables envois de mails&lt;/li&gt;
-&lt;li&gt;le relecteur et le développeur ne pourront apprendre l&amp;rsquo;un de l&amp;rsquo;autre&lt;/li&gt;
+&lt;li&gt;le relecteur ne verra pas directement l&amp;rsquo;utilité de son travail. Il s&amp;rsquo;en lassera et fera de mauvaises relectures ;&lt;/li&gt;
+&lt;li&gt;le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&amp;rsquo;interminables envois de mails ;&lt;/li&gt;
+&lt;li&gt;le relecteur et le développeur ne pourront apprendre l&amp;rsquo;un de l&amp;rsquo;autre que s&amp;rsquo;ils communiquent les yeux dans les yeux.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;pour-se-simplifier-la-vie&#34;&gt;Pour se simplifier la vie&lt;/h4&gt;
 
-&lt;p&gt;Certains règles de développement sont aisément vérifiables (une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&amp;rsquo;outil de qualimétrie pour tous les langages.
-Il ne remplace pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et points d&amp;rsquo;attention à contrôler.&lt;/p&gt;
+&lt;p&gt;Certains règles de développement sont aisément vérifiables (avec une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&amp;rsquo;outil de qualimétrie pour tous les langages.
+Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et de points d&amp;rsquo;attention à contrôler.&lt;/p&gt;
 
 &lt;h4 id=&#34;pour-aller-plus-loin&#34;&gt;Pour aller plus loin&lt;/h4&gt;
 
-&lt;p&gt;Pour mettre en oeuvre ces bonnes idées en poussant l&amp;rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour lui réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&amp;rsquo;est du &lt;strong&gt;pair programming&lt;/strong&gt; !&lt;/p&gt;
+&lt;p&gt;Pour mettre en oeuvre ces bonnes idées en poussant l&amp;rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&amp;rsquo;est du &lt;strong&gt;pair programming&lt;/strong&gt; !&lt;/p&gt;
 
 &lt;h4 id=&#34;sources&#34;&gt;Sources&lt;/h4&gt;
 
@@ -496,7 +496,7 @@ pipeline {
 Pour cela, sont disponibles plusieurs base :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème &lt;a href=&#34;https://&#34;&gt;LEARN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/simple&#34;&gt;SIMPLE&lt;/a&gt; : un site Hugo de 2 pages avec le thème &lt;a href=&#34;https://matcornic.github.io/hugo-learn-doc/basics/what-is-this-hugo-theme/&#34;&gt;LEARN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/indus&#34;&gt;INDUS&lt;/a&gt; : le même site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/creation-hugo/tree/search&#34;&gt;SEARCH&lt;/a&gt; : le même site INDUS avec la fonction de recherche basée sur LUNR&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/talbotgui/pages-hugo/tree/master&#34;&gt;JENKINS&lt;/a&gt; : mon site est basé sur SEARCH mais automatiquement publié sur les GitHub:pages&lt;/li&gt;
@@ -723,6 +723,133 @@ Mais une question se pose : &amp;ldquo;doit-on utiliser la programmation défens
 &lt;li&gt;&lt;a href=&#34;http://etienne.charignon.free.fr/spip/spip.php?article68&#34;&gt;http://etienne.charignon.free.fr/spip/spip.php?article68&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://martinfowler.com/ieeeSoftware/failFast.pdf&#34;&gt;https://martinfowler.com/ieeeSoftware/failFast.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&#34;&gt;https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mes idées</title>
+      <link>https://talbotgui.github.io/mesprojets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesprojets/</guid>
+      <description>&lt;p&gt;Mes projets publiques en cours :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;une application de gestion des invités à un mariage (&lt;a href=&#34;https://github.com/talbotgui/mariage&#34;&gt;GitHub&lt;/a&gt;)
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesprojets/mariage-guidededev/&#34;&gt;guide du développeur&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mariage - Guide du développeur</title>
+      <link>https://talbotgui.github.io/mesprojets/mariage-guidededev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesprojets/mariage-guidededev/</guid>
+      <description>
+
+&lt;h2 id=&#34;exigences&#34;&gt;Exigences&lt;/h2&gt;
+
+&lt;p&gt;Les exigences sont actuellement fournies par la principale utilisatrice. Aucune formalisation n&amp;rsquo;existe et un suivi minimaliste des tâches est réalisés dans le fichier &amp;ldquo;backlog.txt&amp;rdquo; placé à la racine de la branche &amp;ldquo;master&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;tests&#34;&gt;Tests&lt;/h2&gt;
+
+&lt;h4 id=&#34;environnement&#34;&gt;Environnement&lt;/h4&gt;
+
+&lt;p&gt;Seul l&amp;rsquo;environnement de production, celui d&amp;rsquo;intégration et ceux de développement existent. Aucun environnement n&amp;rsquo;est dédié aux tests (techniques, métiers, performance ni sécurité).&lt;/p&gt;
+
+&lt;p&gt;Donc tous les tests doivent être :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;exécutés par le développeur sur son poste de développement,&lt;/li&gt;
+&lt;li&gt;codés avec JUnit ou TestNG,&lt;/li&gt;
+&lt;li&gt;exécutés à chaque commit par l&amp;rsquo;intégration continue&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;que-tester&#34;&gt;Que tester&lt;/h4&gt;
+
+&lt;p&gt;Les cas nominaux de tous les composants doivent être testés ainsi que les cas d&amp;rsquo;erreur principaux.&lt;/p&gt;
+
+&lt;p&gt;Aucune exigence n&amp;rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (hors getter, setter, constructeur, code de &lt;a href=&#34;https://talbotgui.github.io/mesidees/11-programmationdefensive/&#34;&gt;programmation défensive&lt;/a&gt;, &amp;hellip;)&lt;/p&gt;
+
+&lt;h4 id=&#34;comment-tester&#34;&gt;Comment tester&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Les composants métiers&lt;/strong&gt; (Service, Repostitory et Entité) doivent être testés avec des tests d&amp;rsquo;intégration. Il n&amp;rsquo;est pas concevable de tester un système entièrement basé sur la notion de transaction et de requêtes SQL (Spring, Hibernate et la bdd) sans une connexion à une base de données et sans activer les commits.&lt;/p&gt;
+
+&lt;p&gt;Si certains composants métiers présentent une grande complexité, alors un &lt;a href=&#34;https://talbotgui.github.io/mesidees/03-testsdedeveloppement/&#34;&gt;test de granularité unitaire&lt;/a&gt; est tout à fait envisageable. Un tel composant n&amp;rsquo;existe pas pour le moment.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Les contrôleurs REST&lt;/strong&gt; doivent être testés unitairement. Ces composants ne sont pas transactionnels et les services sont testés par ailleurs. Mais, pour bien vérifier le paramétrage et le code, il est nécessaire de réaliser le test des contrôleurs en démarrant un serveur WEB (l&amp;rsquo;adjectif &amp;ldquo;unitaire&amp;rdquo; utilisé plus tôt est donc discutable - cf. &lt;a href=&#34;https://talbotgui.github.io/mesidees/03-testsdedeveloppement/&#34;&gt;test de granularité unitaire&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Les écrans&lt;/strong&gt; de l&amp;rsquo;application sont testés de bout en bout. Selenium est utilisé pour piloter le navigateur et un jeu de données est utilisé pour initialiser le test.&lt;/p&gt;
+
+&lt;p&gt;ATTENTION : les tests Selenium ne sont donc pas tous indépendants les uns des autres. Ce n&amp;rsquo;est pas une bonne pratique mais faire autrement avec un test de bout en bout est trop coûteux.&lt;/p&gt;
+
+&lt;h4 id=&#34;avec-quels-outils&#34;&gt;Avec quels outils&lt;/h4&gt;
+
+&lt;p&gt;JUnit et TestNG sont tous deux des exécuteurs de tests. JUnit est utilisé dans les tests des composants métiers. TestNG, étant plus pratique à utiliser avec Mockito, est utilisé pour l&amp;rsquo;exécution des tests des contrôleurs.&lt;/p&gt;
+
+&lt;p&gt;Mockito est donc utilisé pour bouchonner les services métiers dans les tests des contrôleurs.&lt;/p&gt;
+
+&lt;p&gt;La classe utilitaire JdbcTemplate (fournie par Spring-jdbc) peut être utilisée dans les tests métiers afin d&amp;rsquo;exécuter simplement des requêtes SQL en base de données pour valider le contenu.&lt;/p&gt;
+
+&lt;p&gt;La classe utilitaire RestTemplate (fournie par Spring-web) peut être utilisée dans les tests des contrôleurs pour réaliser les appels HTTP simplement.&lt;/p&gt;
+
+&lt;p&gt;Selenium est une API très riche. La classe MyDriver rassemble les opérations usuelles utiles aux tests (il est tout à fait possible de l&amp;rsquo;enrichir).
+Les sélecteurs à utiliser dans les tests Selenium sont tous rassemblés dans la classe Selectors. Tous les sélecteurs doivent être rassemblés dans cette classe.
+Cette classe contient une hiérarchie de sous-classes structurée ainsi : NomDeLaPage / TypeDelements / selecteurElement. Exemple : Index.Button.CONFIRMER_SUPPRESSION
+Toute modification d&amp;rsquo;une page HTML doit entraîner l&amp;rsquo;enrichissement de la classe Selectors avec le sélecteur permettant de sélectionner les éléments ajoutés/modifiés/supprimés.&lt;/p&gt;
+
+&lt;h2 id=&#34;gestion-de-configuration-logicielle&#34;&gt;Gestion de configuration logicielle&lt;/h2&gt;
+
+&lt;h4 id=&#34;source&#34;&gt;Source&lt;/h4&gt;
+
+&lt;p&gt;Les sources sont toutes rassemblées dans GitHub. Le développement se fait directement dans la branche &amp;ldquo;master&amp;rdquo;. Les essais/recherches/prototypes éventuels doivent être codés dans d&amp;rsquo;autres branches (&lt;em&gt;/!\ le nom des branches est pris en compte par l&amp;rsquo;intégration continue pour la promotion et le déploiement en production - cf. Jenkinsfile&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Les messages de commit doivent être explicites. Toute nouvelle fonctionnalité doit être commitée avec un message commençant par &amp;ldquo;[FEATURE]&amp;rdquo; (afin que le commit soit correctement affiché dans la page &lt;em&gt;releaseNote&lt;/em&gt; de l&amp;rsquo;application).&lt;/p&gt;
+
+&lt;p&gt;TO CONTINUE&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;conception&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;résumé de l&amp;rsquo;architecture technique&lt;/li&gt;
+&lt;li&gt;quels sont les impacts de l’AT sur la conception (BI, ERP ou détails trop fins en xNet) ?&lt;/li&gt;
+&lt;li&gt;quel est le niveau de détails attendu en fin de conception (peut-être besoin d’être plus précis que le niveau contractuel en fonction du contexte) ?&lt;/li&gt;
+&lt;li&gt;quels sont les outils de conception et/ou de modélisation ?&lt;/li&gt;
+&lt;li&gt;quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?&lt;/li&gt;
+&lt;li&gt;règles de conception (programmation défensive, @designByContrat, modularité, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;jeu de données de test&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;développement&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;règles de nommage&lt;/li&gt;
+&lt;li&gt;liste des frameworks disponibles, leur usage et le pointeur sur leur documentation&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;industrialisation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;éléments composant la Gestion de Configuration Logicielle (Git, SVN, HP ALM, Archiva, Jira, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;règles d&amp;rsquo;usage de la GCL (flow GIT/SVN, snapshots dans le repository de binaires, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;règles d&amp;rsquo;usage de l&amp;rsquo;intégration continue&lt;/li&gt;
+&lt;li&gt;organisation des équipes en amont et en aval des développements (Continuous Delivery)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;environnements&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;installation du poste de développement&lt;/li&gt;
+&lt;li&gt;liste et paramètres des environnements de test&lt;/li&gt;
+&lt;li&gt;liste des environnements du client&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

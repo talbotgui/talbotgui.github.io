@@ -68,7 +68,14 @@
             
           
         
+          
+          
+            
+          
         
+        
+        
+          
         
           
         
@@ -189,6 +196,43 @@
       
       
 
+      <li class="dd-item  " data-nav-id="/mesprojets/">
+        <a href="/mesprojets/">
+          <span>
+            
+             Mes idées
+            
+           </span>
+        </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/mesprojets/mariage-guidededev/">
+              <a href="/mesprojets/mariage-guidededev/">
+                <span>Mariage - Guide du développeur     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+          
+            
+          
+        
+      
+      
+      
+
       <li class="dd-item  " data-nav-id="/moncv/">
         <a href="/moncv/">
           <span>
@@ -261,17 +305,17 @@
 
 
 
-<h4 id="ma-définition">Ma Définition</h4>
+<h4 id="ma-définition">Ma définition</h4>
 
 <ul>
-<li><p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple). Une relecture permet de s&rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&rsquo;aucun fichier ne sera intégré au commit pour un simple ajout de ligne malencontreux, &hellip;</p></li>
+<li><p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple). Une relecture permet de s&rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&rsquo;aucun fichier ne sera intégré au commit pour un simple saut de ligne malencontreux, &hellip;</p></li>
 
 <li><p><strong>La revue de code</strong> est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&rsquo;intégration du dit code dans les sources de l&rsquo;application. Le processus peut être le suivant :</p>
 
 <ul>
 <li>Dès qu&rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers</li>
 <li>Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer</li>
-<li>Une liste de remarques est établie</li>
+<li>L&rsquo;auditeur parcours le code et y incruste des remarques</li>
 <li>Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&rsquo;être intégré à la branche principale</li>
 <li>Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&rsquo;il corrige son code</li>
 </ul></li>
@@ -286,19 +330,19 @@
 <p>Quelques soient les pratiques du projet (revue ou audit ou les deux), l&rsquo;élément central et primordial est l&rsquo;échange entre le développeur et le relecteur. C&rsquo;est cet échange qui est le garant du bon fonctionnement de ces pratiques !! Sans lui :</p>
 
 <ul>
-<li>le relecteur ne verra pas directement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaise relecture</li>
-<li>le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&rsquo;interminables envois de mails</li>
-<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre</li>
+<li>le relecteur ne verra pas directement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaises relectures ;</li>
+<li>le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&rsquo;interminables envois de mails ;</li>
+<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre que s&rsquo;ils communiquent les yeux dans les yeux.</li>
 </ul>
 
 <h4 id="pour-se-simplifier-la-vie">Pour se simplifier la vie</h4>
 
-<p>Certains règles de développement sont aisément vérifiables (une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&rsquo;outil de qualimétrie pour tous les langages.
-Il ne remplace pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et points d&rsquo;attention à contrôler.</p>
+<p>Certains règles de développement sont aisément vérifiables (avec une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&rsquo;outil de qualimétrie pour tous les langages.
+Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et de points d&rsquo;attention à contrôler.</p>
 
 <h4 id="pour-aller-plus-loin">Pour aller plus loin</h4>
 
-<p>Pour mettre en oeuvre ces bonnes idées en poussant l&rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour lui réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&rsquo;est du <strong>pair programming</strong> !</p>
+<p>Pour mettre en oeuvre ces bonnes idées en poussant l&rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&rsquo;est du <strong>pair programming</strong> !</p>
 
 <h4 id="sources">Sources</h4>
 

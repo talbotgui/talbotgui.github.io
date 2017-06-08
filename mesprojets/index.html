@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
   <head>
@@ -11,7 +14,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Coder des ré-essais en Java</title>
+    <title>Mes idées</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -26,7 +29,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/05-retryenjava/">
+  <body class="" data-url="/mesprojets/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -99,7 +102,7 @@
       
       
 
-      <li class="dd-item  parent" data-nav-id="/mesidees/">
+      <li class="dd-item  " data-nav-id="/mesidees/">
         <a href="/mesidees/">
           <span>
             
@@ -134,7 +137,7 @@
               </a>
             </li>
           
-            <li class="dd-item active" data-nav-id="/mesidees/05-retryenjava/">
+            <li class="dd-item " data-nav-id="/mesidees/05-retryenjava/">
               <a href="/mesidees/05-retryenjava/">
                 <span>Coder des ré-essais en Java     </i></span>
               </a>
@@ -196,7 +199,7 @@
       
       
 
-      <li class="dd-item  " data-nav-id="/mesprojets/">
+      <li class="dd-item active parent" data-nav-id="/mesprojets/">
         <a href="/mesprojets/">
           <span>
             
@@ -267,7 +270,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/05-retryenjava/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesprojets/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -287,75 +290,34 @@
                   
                     
                     
-                <a href="/mesidees/" itemprop="url"><span itemprop="title">Mes idées</span></a> <i class="fa fa-angle-right"></i>
-                    
                   
                 
-                <span itemprop="title"> Coder des ré-essais en Java</span>
+                <span itemprop="title"> Mes idées</span>
               </div>
               
             </div>
 
             </div>
             
+              <div id="chapter">
+            
               <div id="body-inner">
                 
-                <h1>Coder des ré-essais en Java</h1>
-                
 
+<p>Mes projets publiques en cours :</p>
 
+<ul>
+<li>une application de gestion des invités à un mariage (<a href="https://github.com/talbotgui/mariage">GitHub</a>)
 
-<p>La librairie <strong>guava-retrying</strong> est assez pratique pour définir des méthodes à réessayer en cas d&rsquo;échec.</p>
-
-<p>Documentation : <a href="https://github.com/rholder/guava-retrying">ici</a></p>
-
-<h4 id="dépendance">Dépendance</h4>
-
-<pre><code class="language-xml">&lt;dependency&gt;
-	&lt;groupId&gt;com.github.rholder&lt;/groupId&gt;
-	&lt;artifactId&gt;guava-retrying&lt;/artifactId&gt;
-	&lt;version&gt;2.0.0&lt;/version&gt;
-	&lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
-
-<h4 id="exemple">Exemple</h4>
-
-<pre><code class="language-java">import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-
-import org.junit.Assert;
-
-import com.github.rholder.retry.RetryException;
-import com.github.rholder.retry.Retryer;
-import com.github.rholder.retry.RetryerBuilder;
-import com.github.rholder.retry.StopStrategies;
-import com.github.rholder.retry.WaitStrategies;
-
-public class Test {
-	public void testRetry() throws ExecutionException, RetryException {
-		final int nbEssais = 6;
-		final int tempsEntreDeuxEssaisEnMs = 500;
-
-		final Retryer&lt;Void&gt; retryer = RetryerBuilder.&lt;Void&gt;newBuilder()//
-				.retryIfExceptionOfType(AssertionError.class).retryIfRuntimeException()//
-				.withStopStrategy(StopStrategies.stopAfterAttempt(nbEssais))//
-				.withWaitStrategy(WaitStrategies.fixedWait(tempsEntreDeuxEssaisEnMs, TimeUnit.MILLISECONDS))//
-				.build();
-
-		final Callable&lt;Void&gt; assertion = () -&gt; {
-			Assert.assertNotNull(&quot;attendu&quot;);
-			return null;
-		};
-
-		retryer.call(assertion);
-	}
-}
-</code></pre>
+<ul>
+<li><a href="/mesprojets/mariage-guidededev/">guide du développeur</a></li>
+</ul></li>
+</ul>
 
 
       
+      
+        </div> 
       
       </div>
     </div>
@@ -364,8 +326,8 @@ public class Test {
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="/mesidees/04-consolehibernate/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/mesidees/06-relecturedecode/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/mesidees/11-programmationdefensive/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/mesprojets/mariage-guidededev/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>
@@ -387,4 +349,7 @@ public class Test {
 
   </body>
 </html>
+
+
+
 

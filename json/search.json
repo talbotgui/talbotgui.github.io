@@ -73,7 +73,7 @@
     },
     {
         "uri": "/docs/mesprojets/index",
-        "title": "Mes idées",
+        "title": "Mes projets",
         "content": "\nMes projets publiques en cours :\n\nune application de gestion des invités à un mariage ([GitHub] (https://github.com/talbotgui/mariage))\n  [guide du développeur] (/mesprojets/mariage-guidededev/)\n",
         "tags": []
     },

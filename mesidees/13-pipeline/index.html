@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Dette technique</title>
+    <title>Pipeline</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -26,7 +26,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/01-dettetechnique/">
+  <body class="" data-url="/mesidees/13-pipeline/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -110,7 +110,7 @@
         
         <ul>
           
-            <li class="dd-item active" data-nav-id="/mesidees/01-dettetechnique/">
+            <li class="dd-item " data-nav-id="/mesidees/01-dettetechnique/">
               <a href="/mesidees/01-dettetechnique/">
                 <span>Dette technique     </i></span>
               </a>
@@ -182,7 +182,7 @@
               </a>
             </li>
           
-            <li class="dd-item " data-nav-id="/mesidees/13-pipeline/">
+            <li class="dd-item active" data-nav-id="/mesidees/13-pipeline/">
               <a href="/mesidees/13-pipeline/">
                 <span>Pipeline     </i></span>
               </a>
@@ -285,7 +285,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/01-dettetechnique/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/13-pipeline/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -309,7 +309,7 @@
                     
                   
                 
-                <span itemprop="title"> Dette technique</span>
+                <span itemprop="title"> Pipeline</span>
               </div>
               
             </div>
@@ -318,58 +318,15 @@
             
               <div id="body-inner">
                 
-                <h1>Dette technique</h1>
+                <h1>Pipeline</h1>
                 
 
-
-
-<h4 id="définitions-sur-le-net">Définitions sur le net</h4>
+<p><strong>EN COURS DE CONSTRUCTION</strong></p>
 
 <ul>
-<li>Ward Cunningham (1992) : if you develop a program for a long period of time by only adding features and never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer.</li>
-<li>James Shore : the cumulative total of less-than-perfect design and implementation</li>
-<li>Tom Poppendieck : everything that makes your code harder to change</li>
-</ul>
-
-<h4 id="ma-définition">Ma définition</h4>
-
-<p>La dette technique</p>
-
-<ul>
-<li>est constituée des imperfections du design et du code</li>
-<li>réduit la productivité de l&rsquo;équipe</li>
-<li>réduit la maintenabilité</li>
-<li>augmente le nombre d&rsquo;erreurs (bugs dans les nouvelles fonctionnalités et régressions dans le code existant)</li>
-<li>se mesure par l&rsquo;effort qu&rsquo;il faut pour la résorber</li>
-</ul>
-
-<p>Ces imperfections/violations se séparent en 3 groupes :</p>
-
-<ul>
-<li>les imperfections <strong>identifiées et délibérées</strong> : elles sont les preuves de mauvais choix fait en toute connaissance de cause. Ces choix doivent impérativement donner lieu à un plan d&rsquo;action pour résoudre le problème. Exemple : pas de mesure de la couverture de code ni de vérification des exigences qui y sont liées dans un premier temps à cause des délais. Mais on y reviendra juste après la livraison.</li>
-<li>les imperfections <strong>involontaires et relevées par un outil</strong> : elles sont les preuves d&rsquo;une incompétence ou d&rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code &ldquo;commité&rdquo;. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus.</li>
-<li>les imperfections <strong>involontaires et non identifiées</strong> : elles sont souvent identifiées durant la résolution d&rsquo;un bug. Le problème est général à tout le code mais c&rsquo;est un code en particulier qui a fait émerger un problème. Il faut alors ajouter une règle de développement sur le projet (documenter la règle et l&rsquo;intégrer dans les outils de vérification). Exemple : un caractère bizarre dans une page WEB va permettre de se rendre compte qu&rsquo;une partie des fichiers &ldquo;source&rdquo; n&rsquo;est pas en UTF8.
-<br /></li>
-</ul>
-
-<p>La dette se traite en</p>
-
-<ul>
-<li>définissant au plus tôt des règles de conception, de développement et de test</li>
-<li>mettant en place des outils (sur le poste du développeur et dans l&rsquo;intégration continue)</li>
-<li>sensibilisant/formant les développeurs pour qu&rsquo;ils génèrent moins de dette</li>
-<li>attribuant une priorité à chaque imperfection existante (ou type d&rsquo;imperfections)</li>
-<li>organisant des actions de refactoring pour réduire le nombre d&rsquo;imperfections</li>
-<li>amendant et enrichissant les règles tout au long du projet</li>
-</ul>
-
-<h4 id="sources">Sources</h4>
-
-<ul>
-<li><a href="http://www.c2.com/cgi/wiki?WardExplainsDebtMetaphor">Technical debt - Ward Cunningham</a></li>
-<li><a href="https://www.youtube.com/watch?v=pqeJFYwnkjE">Technical debt - Ward Cunningham</a></li>
-<li><a href="http://martinfowler.com/bliki/TechnicalDebt.html">Technical debt - Martin Fowler</a></li>
-<li><a href="http://www.omg.org/news/meetings/tc/tx-14/special-events/cisq-presentations/CISQ-Seminar-2014-6-17-BILL-CURTIS-Measuring-and-Managing-Technical-Debt.pdf">Measuring and managing technical debt - CAST Software</a></li>
+<li>Jenkins &amp; IC</li>
+<li>Continuous Delivery &amp; pipeline
+&hellip;</li>
 </ul>
 
 
@@ -382,8 +339,8 @@
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="/mesidees/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/mesidees/02-pratiques/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/mesidees/12-eclipse/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/mesidees/14-qualimetrie/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

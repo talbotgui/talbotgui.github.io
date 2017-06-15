@@ -24,23 +24,43 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/01-dettetechnique/&#34;&gt;dette technique&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/06-relecturedecode/&#34;&gt;relecture de code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/14-qualimetrie/&#34;&gt;qualimétrie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/13-pipeline/&#34;&gt;Integration Continue - pipeline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/10-guidedudev/&#34;&gt;guide du développeur&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;développement&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;développement - outils&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/04-consolehibernate/&#34;&gt;créer une console Hibernate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/12-eclipse/&#34;&gt;Eclipse&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;développement - pratiques &amp;amp; patterns&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/03-testsdedeveloppement/&#34;&gt;tests de développement&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/04-consolehibernate/&#34;&gt;créer une console Hibernate&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/05-retryenjava/&#34;&gt;Comment coder des ré-essais en Java&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/10-guidedudev/&#34;&gt;guide du développeur&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/09-objectmother/&#34;&gt;Object Mother - comment créer des jeux de données dans un test&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/11-programmationdefensive/&#34;&gt;programmation défensive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;développement - astuces &amp;amp; frameworks&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/05-retryenjava/&#34;&gt;coder des ré-essais en Java&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;documentation&lt;/p&gt;
 
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/10-guidedudev/&#34;&gt;guide du développeur&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/08-creationavechugo/&#34;&gt;créer un site avec Hugo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesidees/07-hugoetgithubpages/&#34;&gt;Hugo et GitHub:Pages&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;La page &amp;lsquo;guide du développeur&amp;rsquo; est présente plusieurs fois dans ce menu car c&amp;rsquo;est un élément central de tout projet.&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -728,373 +748,178 @@ Mais une question se pose : &amp;ldquo;doit-on utiliser la programmation défens
     </item>
     
     <item>
-      <title>Mes projets</title>
-      <link>https://talbotgui.github.io/mesprojets/</link>
+      <title>Eclipse</title>
+      <link>https://talbotgui.github.io/mesidees/12-eclipse/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://talbotgui.github.io/mesprojets/</guid>
-      <description>&lt;p&gt;Mes projets publiques en cours :&lt;/p&gt;
+      <guid>https://talbotgui.github.io/mesidees/12-eclipse/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;EN COURS DE CONSTRUCTION&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;une application de gestion des invités à un mariage (&lt;a href=&#34;https://github.com/talbotgui/mariage&#34;&gt;GitHub&lt;/a&gt;)
+&lt;li&gt;les raccourcis principaux&lt;/li&gt;
+&lt;li&gt;les plugins utiles
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://talbotgui.github.io/mesprojets/mariage-guidededev/&#34;&gt;guide du développeur&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hibernate Tools&lt;/li&gt;
+&lt;li&gt;apprendre les raccourcis par coeur&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;les configurations utiles
+
+&lt;ul&gt;
+&lt;li&gt;formatage&lt;/li&gt;
+&lt;li&gt;save actions
+&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>Mariage - Guide du développeur</title>
-      <link>https://talbotgui.github.io/mesprojets/mariage-guidededev/</link>
+      <title>Pipeline</title>
+      <link>https://talbotgui.github.io/mesidees/13-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://talbotgui.github.io/mesprojets/mariage-guidededev/</guid>
+      <guid>https://talbotgui.github.io/mesidees/13-pipeline/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;EN COURS DE CONSTRUCTION&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jenkins &amp;amp; IC&lt;/li&gt;
+&lt;li&gt;Continuous Delivery &amp;amp; pipeline
+&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Qualimétrie</title>
+      <link>https://talbotgui.github.io/mesidees/14-qualimetrie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/14-qualimetrie/</guid>
       <description>
 
-&lt;h2 id=&#34;exigences&#34;&gt;Exigences&lt;/h2&gt;
+&lt;p&gt;La Qualimétrie est la mesure de la qualité d&amp;rsquo;un projet.&lt;/p&gt;
 
-&lt;p&gt;Les exigences sont actuellement fournies par la principale utilisatrice. Aucune formalisation n&amp;rsquo;existe et un suivi minimaliste des tâches est réalisés dans le fichier &amp;ldquo;backlog.txt&amp;rdquo; placé à la racine de la branche &amp;ldquo;master&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;le-problème-qui-se-pose-avant-de-parler-de-qualimétrie&#34;&gt;Le problème qui se pose avant de parler de qualimétrie.&lt;/h2&gt;
 
-&lt;h2 id=&#34;tests&#34;&gt;Tests&lt;/h2&gt;
+&lt;p&gt;Or, qualité veut tout et rien dire. Donc, ici, je vais me limiter à la qualité du code.&lt;/p&gt;
 
-&lt;h4 id=&#34;environnement&#34;&gt;Environnement&lt;/h4&gt;
+&lt;p&gt;Mais pour évaluer le code d&amp;rsquo;un projet, encore faut-il qu&amp;rsquo;il existe des règles de conception/développement sur le projet. Sans règle, il ne peut y avoir de qualité.&lt;/p&gt;
 
-&lt;p&gt;Seul l&amp;rsquo;environnement de production, celui d&amp;rsquo;intégration et ceux de développement existent. Aucun environnement n&amp;rsquo;est dédié aux tests (techniques, métiers, performance ni sécurité).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Et oubliez l&amp;rsquo;expression &lt;em&gt;&amp;ldquo;les standards de qualité&amp;rdquo;&lt;/em&gt; !!!&lt;/strong&gt; Vous en voulez des standards ? On prend les règles de développement de SUN ? Ou celles d&amp;rsquo;Eclipse ? Ou les règles de nommage de la convention JavaBean ? Ou celles du client (s&amp;rsquo;il en a défini et qu&amp;rsquo;elles ne sont pas obsolètes) ?&lt;/p&gt;
 
-&lt;p&gt;Donc tous les tests doivent être :&lt;/p&gt;
+&lt;p&gt;Donc, par pitié, que chaque projet définisse ses règles ! En s&amp;rsquo;appuyant sur des éléments existants bien entendu et sans redécouvrir la roue !&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A partir de là, on peut commencer à mesurer la qualité du code.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pourquoi-faire&#34;&gt;Pourquoi faire&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;ldquo;La qualité ne sert à rien.&amp;rdquo;&lt;/em&gt; Si vous le pensez, quittez ce site !&lt;/p&gt;
+
+&lt;p&gt;Vous continuez à lire. Tant mieux. Désolé de paraître dur mais il n&amp;rsquo;est pas acceptable d&amp;rsquo;ignorer la qualité d&amp;rsquo;un projet.
+Elle peut ne pas être prioritaire. Mais ça se paiera tôt ou tard.&lt;/p&gt;
+
+&lt;p&gt;Pourquoi ? &lt;strong&gt;Car un code moche est un code compliqué à faire évoluer !&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Les développeurs prendront des raccourcis et feront du code moche car le code est déjà moche et que tout le monde le sait et s&amp;rsquo;en moque. Et du moche dans du moche, au milieu du moche, &amp;hellip; donnera un code incompréhensible, incohérent et &lt;strong&gt;très difficile à maintenir.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce jour-là, apparaîtront des bugs en pagaille et les corrections prendront de plus en plus de temps.&lt;/p&gt;
+
+&lt;h2 id=&#34;que-comprend-la-qualimétrie-de-code&#34;&gt;Que comprend la qualimétrie de code&lt;/h2&gt;
+
+&lt;p&gt;Les règles de conception/développement portent sur beaucoup d&amp;rsquo;aspects du code. Donc la qualimétrie aussi :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;exécutés par le développeur sur son poste de développement,&lt;/li&gt;
-&lt;li&gt;codés avec JUnit ou TestNG,&lt;/li&gt;
-&lt;li&gt;exécutés à chaque commit par l&amp;rsquo;intégration continue&lt;/li&gt;
+&lt;li&gt;format du code :
+
+&lt;ul&gt;
+&lt;li&gt;longueur des lignes de code,&lt;/li&gt;
+&lt;li&gt;longueur des lignes de commentaire,&lt;/li&gt;
+&lt;li&gt;nombre de ligne maximal d&amp;rsquo;une méthode,&lt;/li&gt;
+&lt;li&gt;nombre de ligne maximal d&amp;rsquo;une classe,&lt;/li&gt;
+&lt;li&gt;tabulation en espace ou non,&lt;/li&gt;
+&lt;li&gt;indentation&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;lisibilité et compréhensibilité du code :
+
+&lt;ul&gt;
+&lt;li&gt;longueur des noms de variables/paramètres/membres/méthodes/classes/interfaces/package,&lt;/li&gt;
+&lt;li&gt;mauvais usages des noms réservés (i, j, T, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;complexité des algorithmes :
+
+&lt;ul&gt;
+&lt;li&gt;nombre maximal de boucles imbriquées,&lt;/li&gt;
+&lt;li&gt;méthodes récursives,&lt;/li&gt;
+&lt;li&gt;mauvais usages de mots clefs (&lt;em&gt;return&lt;/em&gt;, &lt;em&gt;break&lt;/em&gt;, &lt;em&gt;continue&lt;/em&gt;, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;couverture de code
+
+&lt;ul&gt;
+&lt;li&gt;pourcentage de lignes de code testées&lt;/li&gt;
+&lt;li&gt;pourcentage de combinaisons de conditions (if, while, &amp;hellip;) testées&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;sécurité&lt;/li&gt;
+&lt;li&gt;duplication&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;que-tester&#34;&gt;Que tester&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;TO CONTINUE&lt;/strong&gt;
+&lt;strong&gt;A partir des groupes Sonar et Checkstyle&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Les cas nominaux de tous les composants doivent être testés ainsi que les cas d&amp;rsquo;erreur principaux.&lt;/p&gt;
+&lt;h2 id=&#34;quels-outils&#34;&gt;Quels outils&lt;/h2&gt;
 
-&lt;p&gt;Aucune exigence n&amp;rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (hors getter, setter, constructeur, code de &lt;a href=&#34;https://talbotgui.github.io/mesidees/11-programmationdefensive/&#34;&gt;programmation défensive&lt;/a&gt;, &amp;hellip;)&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;outil le plus connu est SonarQube.&lt;/p&gt;
 
-&lt;h4 id=&#34;comment-tester&#34;&gt;Comment tester&lt;/h4&gt;
+&lt;p&gt;Ce n&amp;rsquo;est pas à proprement parlé un outil de qualimétrie. C&amp;rsquo;est un portail de restitution et agrégation des violations détectées par d&amp;rsquo;autres outils comme Checkstyle, FindBugs, PMD, CPD, Clover, Cobertura, &amp;hellip; De plus, SonarQube permet d&amp;rsquo;administrer le paramétrage de ces analyseurs et d&amp;rsquo;exécuter les analyses.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Les composants métiers&lt;/strong&gt; (Service, Repostitory et Entité) doivent être testés avec des tests d&amp;rsquo;intégration. Il n&amp;rsquo;est pas concevable de tester un système entièrement basé sur la notion de transaction et de requêtes SQL (Spring, Hibernate et la bdd) sans une connexion à une base de données et sans activer les commits.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est donc un outil très complet et indispensable !&lt;/p&gt;
 
-&lt;p&gt;Si certains composants métiers présentent une grande complexité, alors un &lt;a href=&#34;https://talbotgui.github.io/mesidees/03-testsdedeveloppement/&#34;&gt;test de granularité unitaire&lt;/a&gt; est tout à fait envisageable. Un tel composant n&amp;rsquo;existe pas pour le moment.&lt;/p&gt;
+&lt;p&gt;SonarQube propose une &lt;a href=&#34;https://sonarcloud.io&#34;&gt;plateforme en ligne&lt;/a&gt;, gratuite et publique pour les projets Open Source.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Les contrôleurs REST&lt;/strong&gt; doivent être testés unitairement. Ces composants ne sont pas transactionnels et les services sont testés par ailleurs. Mais, pour bien vérifier le paramétrage et le code, il est nécessaire de réaliser le test des contrôleurs en démarrant un serveur WEB (l&amp;rsquo;adjectif &amp;ldquo;unitaire&amp;rdquo; utilisé plus tôt est donc discutable - cf. &lt;a href=&#34;https://talbotgui.github.io/mesidees/03-testsdedeveloppement/&#34;&gt;test de granularité unitaire&lt;/a&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;comment-démarrer&#34;&gt;Comment démarrer&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Les écrans&lt;/strong&gt; de l&amp;rsquo;application sont testés de bout en bout. Selenium est utilisé pour piloter le navigateur et un jeu de données est utilisé pour initialiser le test.&lt;/p&gt;
+&lt;p&gt;Que votre projet démarre tout juste, ou que vous ayez déjà des milliers de lignes de code, il est toujours temps de commencer à mesurer la qualité.&lt;/p&gt;
 
-&lt;p&gt;ATTENTION : les tests Selenium ne sont donc pas tous indépendants les uns des autres. Ce n&amp;rsquo;est pas une bonne pratique mais faire autrement avec un test de bout en bout est trop coûteux.&lt;/p&gt;
+&lt;p&gt;Le premier objectif de la mesure est de faire un point. Est-ce une catastrophe ? Ou pas ? &lt;strong&gt;Attention, il faut que le paramétrage des outils d&amp;rsquo;analyse corresponde à vos règles !!&lt;/strong&gt; Si vous prenez le paramétrage par défaut de SUN sur votre projet sans l&amp;rsquo;adapter à votre contexte, vous obtiendrez des milliers de violations.&lt;/p&gt;
 
-&lt;h4 id=&#34;avec-quels-outils&#34;&gt;Avec quels outils&lt;/h4&gt;
+&lt;p&gt;Vous avez votre première mesure ? Très bien ! Première chose à faire, que la dette soit petite ou grande, &lt;strong&gt;ne pas la dégrader !&lt;/strong&gt; Surveiller les violations et, à chaque nouveau problème détecté, trouvez le développeur, apprenez/rappelez lui les règles du projet et faites-lui corriger sa coquille.&lt;/p&gt;
 
-&lt;p&gt;JUnit et TestNG sont tous deux des exécuteurs de tests. JUnit est utilisé dans les tests des composants métiers. TestNG, étant plus pratique à utiliser avec Mockito, est utilisé pour l&amp;rsquo;exécution des tests des contrôleurs.&lt;/p&gt;
-
-&lt;p&gt;Mockito est donc utilisé pour bouchonner les services métiers dans les tests des contrôleurs.&lt;/p&gt;
-
-&lt;p&gt;La classe utilitaire JdbcTemplate (fournie par Spring-jdbc) peut être utilisée dans les tests métiers afin d&amp;rsquo;exécuter simplement des requêtes SQL en base de données pour valider le contenu.&lt;/p&gt;
-
-&lt;p&gt;La classe utilitaire RestTemplate (fournie par Spring-web) peut être utilisée dans les tests des contrôleurs pour réaliser les appels HTTP simplement.&lt;/p&gt;
-
-&lt;p&gt;Selenium est une API très riche. La classe MyDriver rassemble les opérations usuelles utiles aux tests (il est tout à fait possible de l&amp;rsquo;enrichir).
-Les sélecteurs à utiliser dans les tests Selenium sont tous rassemblés dans la classe Selectors. Tous les sélecteurs doivent être rassemblés dans cette classe.
-Cette classe contient une hiérarchie de sous-classes structurée ainsi : NomDeLaPage / TypeDelements / selecteurElement. Exemple : Index.Button.CONFIRMER_SUPPRESSION
-Toute modification d&amp;rsquo;une page HTML doit entraîner l&amp;rsquo;enrichissement de la classe Selectors avec le sélecteur permettant de sélectionner les éléments ajoutés/modifiés/supprimés.&lt;/p&gt;
-
-&lt;h2 id=&#34;gestion-de-configuration-logicielle&#34;&gt;Gestion de configuration logicielle&lt;/h2&gt;
-
-&lt;h4 id=&#34;source&#34;&gt;Source&lt;/h4&gt;
-
-&lt;p&gt;Les sources sont toutes rassemblées dans GitHub. Le développement se fait directement dans la branche &amp;ldquo;master&amp;rdquo;. Les essais/recherches/prototypes éventuels doivent être codés dans d&amp;rsquo;autres branches (&lt;em&gt;/!\ le nom des branches est pris en compte par l&amp;rsquo;intégration continue pour la promotion et le déploiement en production - cf. Jenkinsfile&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;Les messages de commit doivent être explicites. Toute nouvelle fonctionnalité doit être commitée avec un message commençant par &amp;ldquo;[FEATURE]&amp;rdquo; (afin que le commit soit correctement affiché dans la page &lt;em&gt;releaseNote&lt;/em&gt; de l&amp;rsquo;application).&lt;/p&gt;
-
-&lt;p&gt;TO CONTINUE&lt;/p&gt;
+&lt;p&gt;Une fois toute hémorragie contenue, on peut s&amp;rsquo;attaquer à réduire les violations. Il existe plusieurs stratégies et deux d&amp;rsquo;entre elles me semblent pertinentes à mener en parallèle :&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;conception&lt;/p&gt;
+&lt;li&gt;trouver, quel que soit leur sévérité, les violations les plus nombreuses mais corrigibles en quelques minutes (avec un outil ou un rechercher/remplacer d&amp;rsquo;expression régulière)
 
 &lt;ul&gt;
-&lt;li&gt;résumé de l&amp;rsquo;architecture technique&lt;/li&gt;
-&lt;li&gt;quels sont les impacts de l’AT sur la conception (BI, ERP ou détails trop fins en xNet) ?&lt;/li&gt;
-&lt;li&gt;quel est le niveau de détails attendu en fin de conception (peut-être besoin d’être plus précis que le niveau contractuel en fonction du contexte) ?&lt;/li&gt;
-&lt;li&gt;quels sont les outils de conception et/ou de modélisation ?&lt;/li&gt;
-&lt;li&gt;quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?&lt;/li&gt;
-&lt;li&gt;règles de conception (programmation défensive, @designByContrat, modularité, &amp;hellip;)&lt;/li&gt;
-&lt;li&gt;jeu de données de test&lt;/li&gt;
+&lt;li&gt;avantages : diminuer le nombre de violations rapidement et simplement&lt;/li&gt;
+&lt;li&gt;soucis : les développeurs risquent d&amp;rsquo;en recréer car la correction est un bon moyen d&amp;rsquo;apprendre&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;développement&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;règles de nommage&lt;/li&gt;
-&lt;li&gt;liste des frameworks disponibles, leur usage et le pointeur sur leur documentation&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;industrialisation&lt;/p&gt;
+&lt;li&gt;faire corriger, chaque semaine, par chaque développeur, un petit lot de violations parmi les plus importantes
 
 &lt;ul&gt;
-&lt;li&gt;éléments composant la Gestion de Configuration Logicielle (Git, SVN, HP ALM, Archiva, Jira, &amp;hellip;)&lt;/li&gt;
-&lt;li&gt;règles d&amp;rsquo;usage de la GCL (flow GIT/SVN, snapshots dans le repository de binaires, &amp;hellip;)&lt;/li&gt;
-&lt;li&gt;règles d&amp;rsquo;usage de l&amp;rsquo;intégration continue&lt;/li&gt;
-&lt;li&gt;organisation des équipes en amont et en aval des développements (Continuous Delivery)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;environnements&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;installation du poste de développement&lt;/li&gt;
-&lt;li&gt;liste et paramètres des environnements de test&lt;/li&gt;
-&lt;li&gt;liste des environnements du client&lt;/li&gt;
+&lt;li&gt;avantages : les violations diminueront régulièrement, les développeurs apprendront durant les corrections, le temps passé à améliorer le code sera réparti sur plusieurs personnes et plusieurs semaines&lt;/li&gt;
+&lt;li&gt;soucis : la qualité augmentera lentement (à condition qu&amp;rsquo;aucune hémorragie ne subsiste), une personne aura la charge d&amp;rsquo;analyser les rapports SonarQube pour lister les violations à traiter chaque semaine&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Mon CV</title>
-      <link>https://talbotgui.github.io/moncv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://talbotgui.github.io/moncv/</guid>
-      <description>&lt;p&gt;Produire. C&amp;rsquo;est ma drogue. Produire du code, des documents de formation ou un billet de blog. Mais produire.&lt;/p&gt;
 
-&lt;p&gt;2 semaines sans produire, je deviens fou et je passe une nuit sur un projet personnel.&lt;/p&gt;
+&lt;h2 id=&#34;les-travers-et-excès&#34;&gt;Les travers et excès&lt;/h2&gt;
 
-&lt;p&gt;On ne se refait pas&amp;hellip; Mais on peut s&amp;rsquo;améliorer.&lt;/p&gt;
+&lt;p&gt;La mesure de la qualité doit être une aide. Pas un frein !&lt;/p&gt;
 
+&lt;ul&gt;
+&lt;li&gt;Il faut analyser et extraire uniquement les problèmes violant les règles du projet (et uniquement elles) ;&lt;/li&gt;
+&lt;li&gt;SonarQube n&amp;rsquo;est pas un outil de surveillance de la production des développeurs : la découverte d&amp;rsquo;une violation ne doit pas donner lieu à un lynchage public ;&lt;/li&gt;
+&lt;li&gt;L&amp;rsquo;outil est au service de l&amp;rsquo;équipe et non d&amp;rsquo;un râleur prenant plaisir à critiquer le travail des autres.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;https://talbotgui.github.io/jquery-timelify/timelify.css&#34;/&gt;
-&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;https://talbotgui.github.io/font-awesome-4.7.0/css/font-awesome.min.css&#34;/&gt;
-&lt;div class=&#34;timeline&#34;&gt;
-	&lt;h2&gt;2017&lt;/h2&gt;
-	&lt;ul class=&#34;timeline-items&#34;&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Formateur et référent de formations&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra Steria, dans les fonctions transverses du groupe, référent de plusieurs formations techniques et méthodologiques
-			&lt;br/&gt;Participant aux travaux d’évolution de la méthode du groupe
-			&lt;br/&gt;Formateur Java et méthode du groupe (8 jours par mois en moyenne)
-			&lt;br/&gt;Mise à jour de plusieurs formations et création de 2 nouvelles formations Java (Hibernate avancé et Tests unitaires avancés)
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP (grande autonomie)&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De mai 2015 à aujourd&#39;hui&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item inverted&#34;&gt;
-			&lt;h3&gt;Référent technique&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra Steria, en mission chez Enedis (anciennement Erdf) sur le projet Linky-Coeur
-			&lt;br/&gt;Projet visant à mettre en place un SI de gestion des 35 millions de compteurs électriques intelligents d&#39;EDF. Le projet comprend un système de gestion de processus (BPM), d&#39;échanges complexes (ESB) et d&#39;application référentiels.
-			&lt;br/&gt;Mes rôles durant les 9 premiers mois au sein de l&#39;équipe &#34;outils de tests&#34; :
-			&lt;ul&gt;
-				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
-				&lt;li&gt;Développement et maintenance d’une API de tests SOA utilisée par des développeurs&lt;/li&gt;
-				&lt;li&gt;Développement d’une application Web de tests SOA utilisée par des testeurs métiers (recette)&lt;/li&gt;
-			&lt;/ul&gt;
-			&lt;br/&gt;Mes rôles durant les mois suivants au sein d&#39;une équipe de développement Linky-Coeur :
-			&lt;ul&gt;
-				&lt;li&gt;Support à une équipe de développement&lt;/li&gt;
-				&lt;li&gt;Développements OSB, BPEL, JEE&lt;/li&gt;
-			&lt;/ul&gt;
-			Contexte technique : &lt;i&gt;Java, Spring, JSF, Weblogic Server, Oracle DB&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP par équipe Scrum et 4 équipes sur le plateau (multiple ESN)&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De janvier 2014 à mai 2015&lt;/time&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;h2&gt;2014&lt;/h2&gt;
-	&lt;ul class=&#34;timeline-items&#34;&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Architecte SI&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour la DOAAT (EDF)
-			&lt;br/&gt;Définition de l&#39;architecture et initialisation d&#39;un SI (ensemble d&#39;application WEB s&#39;intégrant sous la forme d&#39;un portail unifié) : 
-			&lt;ul&gt;
-				&lt;li&gt;revue des modèles UML produits par les concepteurs&lt;/li&gt;
-				&lt;li&gt;génération de la base du code par un outil développé personnellement&lt;/li&gt;
-				&lt;li&gt;conception et rédaction de l’architecture générale, technique et logicielle&lt;/li&gt;
-				&lt;li&gt;rédaction des guides (développement, installation, livraison)&lt;/li&gt;
-				&lt;li&gt;support aux développeurs&lt;/li&gt;
-				&lt;li&gt;développements applicatifs&lt;/li&gt;
-				&lt;li&gt;mise en place de l&#39;industrialisation des développements&lt;/li&gt;
-				&lt;li&gt;mise en place des environnements (développement, qualification, recette)&lt;/li&gt;
-			&lt;/ul&gt;
-			Contexte technique : &lt;i&gt;Java, Spring, JSF, Weblogic Server, Oracle DB&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 16 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;D&#39;août 2012 à janvier 2014&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item inverted&#34;&gt;
-			&lt;h3&gt;Architecte SI&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour Storengy (GDF SUEZ)
-			&lt;br/&gt;En phase d’initialisation et jusqu’au début des développements, définition et mise en place de l’architecture pour un projet de développement de deux applications Web en Java, de la mise en place d&#39;un CRM et d&#39;un BI.
-			&lt;br/&gt;Puis, développeur, référent technique
-			&lt;br/&gt;&lt;br/&gt;Mes activités :
-			&lt;br/&gt;Puis
-			&lt;ul&gt;
-				&lt;li&gt;conception et rédaction de l’architecture générale, technique et logicielle&lt;/li&gt;
-				&lt;li&gt;rédaction des guides (développement, installation, livraison)&lt;/li&gt;
-				&lt;li&gt;Mise en place des environnements (développement, qualification)&lt;/li&gt;
-				&lt;li&gt;Initialisation des développements.&lt;/li&gt;
-				&lt;li&gt;Développement&lt;/li&gt;
-				&lt;li&gt;Support à l&#39;équipe&lt;/li&gt;
-				&lt;li&gt;Accompagnement du prestataire d&#39;hébergement&lt;/li&gt;
-			&lt;/ul&gt;
-			Contexte technique : &lt;i&gt;Java, Spring, Struts2, Weblogic Server, Oracle DB&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP à Paris et 8 ETP à Nantes&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De novembre 2010 à août 2012&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Auditeur&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour SB Alliance-Bongrain, en phase finale du projet, chantier d&#39;amélioration des performances de plusieurs fonctionnalités « clef »
-			&lt;br/&gt;Mes activités : audit de code de performance et développements d&#39;amélioration des performances de fonctionnalités « clefs »
-			&lt;br/&gt;Contexte technique : &lt;i&gt;JProfiler, P6Spy, Java&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 2 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;En novembre 2010&lt;/time&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;h2&gt;2010&lt;/h2&gt;
-	&lt;ul class=&#34;timeline-items&#34;&gt;
-		&lt;li class=&#34;timeline-item inverted&#34;&gt;
-			&lt;h3&gt;Auditeur et développeur&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour Elengy (Engie), TMA évolutive d&#39;une application Java.
-			Mes activités :
-			&lt;ul&gt;
-				&lt;li&gt;phase de prise en charge de l&#39;application en TMA (réversibilité entrante)&lt;/li&gt;
-				&lt;li&gt;chantier d&#39;amélioration des performances&lt;/li&gt;
-				&lt;li&gt;développements de nouvelles fonctionnalités&lt;/li&gt;
-				&lt;li&gt;support et formation des collaborateurs&lt;/li&gt;
-				&lt;li&gt;mise en place de procédures et environnements de livraison&lt;/li&gt;
-			&lt;/ul&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 7 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De novembre 2009 à novembre 2010&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Développeur&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour le SDIN (EDF), mise en place de WebServices sécurisés s’intégrant au système d’informations du client.
-			Mes activités :
-			&lt;ul&gt;
-				&lt;li&gt;Etude technique (déploiement physique, sécurité)&lt;/li&gt;
-				&lt;li&gt;Développements et qualification&lt;/li&gt;
-				&lt;li&gt;Rédaction de guides d’utilisation et de développement&lt;/li&gt;
-			&lt;/ul&gt;
-			Contexte technique : &lt;i&gt;Java, Axis&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;En octobre 2009&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item inverted&#34;&gt;
-			&lt;h3&gt;Développeur et référent technique&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour GrDF (GDF SUEZ), TMA évolutive sur une application Java/J2EE.
-			&lt;br/&gt;Mes activités : rédaction de spécifications fonctionnelles, développements et qualification
-			&lt;br/&gt;&lt;br/&gt;Contexte technique : &lt;i&gt;Java, Struts2, EJB3, Weblogic Server, OracleDB&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;D&#39;août 2009 à septembre 2009&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Auditeur et développeur &lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour KARAVEL, durant la période de garantie, quelques semaines d&#39;audit pour améliorer les performances des applications développée par Sopra.
-			&lt;br/&gt;Mes activités : Audit de code et de performance et développements de correctifs pour améliorer les performances du SI.
-			&lt;br/&gt;&lt;br/&gt;Contexte technique : &lt;i&gt;JProfiler, P6Spy, Java, Weblogic Integration (WLI), OracleDB&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 1 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;En juillet 2009&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item inverted&#34;&gt;
-			&lt;h3&gt;Chef de projet technique&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour le GALEC (Leclerc), projet en régie pour modifier en profondeur l’application de saisie des négociations entre le mouvement Leclerc et ses fournisseurs suite à la mise en place de la Loi de Modernisation de l’Economie. 
-			&lt;br/&gt;Projet en régie pour mettre en place une application de gestion et diffusion de prix de vente conseillés.
-			&lt;br/&gt;&lt;br/&gt;Mes activités : 
-			&lt;ul&gt;
-				&lt;li&gt;Support technique à l’équipe de développement&lt;/li&gt;
-				&lt;li&gt;Gestion de projet partagée avec le client&lt;/li&gt;
-				&lt;li&gt;Développement et qualification d’application&lt;/li&gt;
-			&lt;/ul&gt;
-			Contexte technique : &lt;i&gt;Java, Struts2, Websphere, DB2&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 6 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De novembre 2008 à juin 2009&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Développeur et référent technique&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour GrDF, TMA évolutive sur une application développée sur un outil propriétaire
-			&lt;br/&gt;&lt;br/&gt;Mes activités : Rédaction de spécifications fonctionnelles, développement et qualification
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 4 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De septembre 2008 à octobre 2008&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item inverted&#34;&gt;
-			&lt;h3&gt;Concepteur technique&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour STIME (Intermarché) en partenariat avec l&#39;éditeur NETFECTIVE sur un de leurs projets au forfait pour la création d’une application de gestion des commandes des points de vente avec un module d’enrichissement des données du catalogue des produits. 
-			&lt;br/&gt;L’application est générée à partir de modèles UML et d’une maquette HTML avec l’outil Blu Age
-			&lt;br/&gt;&lt;br/&gt;Mes activités : 
-			&lt;ul&gt;
-				&lt;li&gt;Conception d’application web en UML avec Blu Age&lt;/li&gt;
-				&lt;li&gt;Prise de connaissance de l&#39;outil Blu Age&lt;/li&gt;
-				&lt;li&gt;Présentation de l&#39;outil aux responsables et aux commerciaux de ma division&lt;/li&gt;
-			&lt;/ul&gt;
-			Contexte technique : &lt;i&gt;UML, MDA, Java, Blu Age&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 8 ETP (seul Sopra dans l&#39;équipe Netfective)&lt;/i&gt;
-			&lt;br/&gt;&lt;time&gt;De juillet 2008 à août 2008&lt;/time&gt;
-		&lt;/li&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Développeur Java&lt;/h3&gt;
-			&lt;hr/&gt;
-			Pour Sopra, en mission pour KARAVEL sur un projet au forfait de refonte globale du système d’informations du vendeur de voyages en ligne.
-			&lt;br/&gt;&lt;br/&gt;Mes activités durant ces 26 mois :
-			&lt;ul&gt;
-				&lt;li&gt;Développement du prototype qui a servi de base de développement&lt;/li&gt;
-				&lt;li&gt;Revue des modèles UML intégrés dans les exigences&lt;/li&gt;
-				&lt;li&gt;Génération de code à partir des modèles métier (à base de scripts dans Power AMC)&lt;/li&gt;
-				&lt;li&gt;Dénormalisation et maintien des modèles&lt;/li&gt;
-				&lt;li&gt;Développement Back et Front&lt;/li&gt;
-				&lt;li&gt;Support aux développeurs (après un an de mission)&lt;/li&gt;
-				&lt;li&gt;Responsable des applications Référentiel, Catalogue, Vente et Réservation.&lt;/li&gt;
-			&lt;/ul&gt;
-			Contexte technique : &lt;i&gt;Java, Spring, Struts2, Weblogic Integration (WLI), OracleDB&lt;/i&gt;
-			&lt;hr/&gt;
-			&lt;i class=&#34;fa fa-group&#34;&gt; 20 ETP&lt;/i&gt;
-			&lt;br/&gt;&lt;br/&gt;&lt;time&gt;De avril 2006 à juin 2008&lt;/time&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;h2&gt;2006&lt;/h2&gt;
-	&lt;ul class=&#34;timeline-items&#34;&gt;
-		&lt;li class=&#34;timeline-item&#34;&gt;
-			&lt;h3&gt;Diplôme d&#39;ingénieur&lt;/h3&gt;
-			&lt;hr/&gt;
-			ESME SUDRIA, Ivry Sur Seine
-			&lt;hr/&gt;
-			&lt;br/&gt;&lt;time&gt;2006&lt;/time&gt;
-		&lt;/li&gt;
-	&lt;/ul&gt;
-	&lt;h2&gt;2003&lt;/h2&gt;
-&lt;/div&gt;
-&lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://talbotgui.github.io/jquery-timelify/jquery.timelify.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-	if (screen.width &lt; 1000) {
-		$(&#34;.inverted&#34;).removeClass(&#34;inverted&#34;)
-	}
-	$(&#39;.timeline&#39;).timelify();
-&lt;/script&gt;
+&lt;h2 id=&#34;mieux-que-surveiller-prévenir&#34;&gt;Mieux que surveiller, prévenir !&lt;/h2&gt;
 
+&lt;p&gt;SonarQube analyse le code présent sur le serveur hébergeant les sources.&lt;/p&gt;
+
+&lt;p&gt;Mais, le mieux serait qu&amp;rsquo;un outil prévienne le développeur dès qu&amp;rsquo;il code une bêtise !&lt;/p&gt;
+
+&lt;p&gt;La réponse : SonarLint ! Cet outil (sous forme de plugin dans les IDE) se connecte à SonarQube, télécharge les règles de validation et vérifie le code directement dans l&amp;rsquo;environnement du développeur.&lt;/p&gt;
+
+&lt;p&gt;Avec cet outil, si un développeur crée encore des violations, c&amp;rsquo;est qu&amp;rsquo;il se moque de son équipe. Là, très chères collègues, je vous laisse lui expliquer votre point de vue entre gens courtois et polis (dans la mesure du possible ;) ).&lt;/p&gt;
 </description>
     </item>
     

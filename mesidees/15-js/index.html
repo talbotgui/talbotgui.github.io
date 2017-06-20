@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Tests de développement</title>
+    <title>JS</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -26,7 +26,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/03-testsdedeveloppement/">
+  <body class="" data-url="/mesidees/15-js/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -122,7 +122,7 @@
               </a>
             </li>
           
-            <li class="dd-item active" data-nav-id="/mesidees/03-testsdedeveloppement/">
+            <li class="dd-item " data-nav-id="/mesidees/03-testsdedeveloppement/">
               <a href="/mesidees/03-testsdedeveloppement/">
                 <span>Tests de développement     </i></span>
               </a>
@@ -194,7 +194,7 @@
               </a>
             </li>
           
-            <li class="dd-item " data-nav-id="/mesidees/15-js/">
+            <li class="dd-item active" data-nav-id="/mesidees/15-js/">
               <a href="/mesidees/15-js/">
                 <span>JS     </i></span>
               </a>
@@ -297,7 +297,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/03-testsdedeveloppement/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/15-js/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -321,7 +321,7 @@
                     
                   
                 
-                <span itemprop="title"> Tests de développement</span>
+                <span itemprop="title"> JS</span>
               </div>
               
             </div>
@@ -330,18 +330,163 @@
             
               <div id="body-inner">
                 
-                <h1>Tests de développement</h1>
+                <h1>JS</h1>
                 
 
-<p>J&rsquo;en ai ras le bol de ce débat stérile sur les tests unitaires. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&rsquo;adjectif unitaire.</p>
 
-<p>D&rsquo;un côté, les tests sont unitaires quand le SUT (System Under Test) se limite à une classe voire une méthode. L&rsquo;avantage de ces tests est qu&rsquo;ils sont assez simples à rédiger car le code à tester se limite à celui de la classe (inutile de connaître le comportement de tous les autres composants du système qui peuvent être mis en jeu). Le problème est qu&rsquo;il faut justement arriver à isoler le SUT et donc utiliser des techniques de bouchonnage (encore un framework que les collaborateurs du projet doivent apprendre à maîtriser).</p>
 
-<p>De l&rsquo;autre côté, les tests sont unitaires du moment qu&rsquo;ils participent à la construction de l&rsquo;application durant les travaux du développeur. Et ce quel que soit la granularité du SUT, que les tests soient unitaires (selon la première définition), d&rsquo;intégration ou applicatif (de bout en bout avec tous les composants et systèmes externes).</p>
+<p>Quelques notes sur les incontournables choses à connaître en JS.</p>
 
-<p>Et si, pour se simplifier la vie, on parlait de tests de développement utilisant des TU, TI et TA ?</p>
+<p>Au sommaire :</p>
 
-<p>Et là, on me pose la question “Et les tests de non-régression ?”. Ma réponse est simple “Un test de non-régression a été un test de développement mais le développement est fini et le test est resté.”</p>
+<ul>
+<li><a href="#les-6-falsies">Les 6 falsies</a></li>
+<li><a href="#les-paramètres-par-défaut">Les paramètres par défaut</a></li>
+<li><a href="#les-déclarations-de-variables">Les déclarations de variables</a></li>
+<li><a href="#déclaration-des-scripts-dans-une-page-html">Déclaration des scripts dans une page HTML</a></li>
+<li><a href="#les-exceptions-en-js">Les exceptions en JS</a></li>
+<li><a href="#déclarer-une-classe">Déclarer une classe</a></li>
+<li><a href="#utiliser-des-getter-setter-en-js">Utiliser des getter / setter en JS</a></li>
+<li><a href="#déclarer-un-module-encapsulant-du-code">Déclarer un module encapsulant du code</a></li>
+</ul>
+
+<h4 id="les-6-falsies">Les 6 falsies</h4>
+
+<ul>
+<li>false</li>
+<li>0</li>
+<li>&rdquo; ou &ldquo;&rdquo; string de length 0</li>
+<li>NaN</li>
+<li>undefined</li>
+<li>null</li>
+</ul>
+
+<p>Astuce :</p>
+
+<ul>
+<li><em>!!maVariable</em> permet de récupérer un booleen TRUE si la valeur de la variable n&rsquo;est pas l&rsquo;un des falsies</li>
+<li><em>a &amp;&amp; b</em> renvoie <strong>a</strong> s&rsquo;il est un falsie et <strong>b</strong> sinon</li>
+<li><em>a || b</em> renvoie <strong>a</strong> s&rsquo;il n&rsquo;est pas un falsie et <strong>b</strong> sinon</li>
+</ul>
+
+<h4 id="les-paramètres-par-défaut">Les paramètres par défaut</h4>
+
+<p>function toto(a = 1, b = 2) { return a * b; }</p>
+
+<h4 id="les-déclarations-de-variables">Les déclarations de variables</h4>
+
+<ul>
+<li><em>const</em> permet la déclaration d&rsquo;une variable non ré-affectable (le <em>final</em> de Java)</li>
+<li><em>let</em> permet de déclarer une variable dans un scope précis (sans écraser une variable du même nom dans le scope parent)</li>
+<li><em>var</em> est et reste la déclaration de variables de l&rsquo;époque mais ne devrait plus être utilisé.</li>
+</ul>
+
+<p>une belle explication <a href="http://putaindecode.io/fr/articles/js/es2015/const-let-var/">ici</a></p>
+
+<h4 id="déclaration-des-scripts-dans-une-page-html">Déclaration des scripts dans une page HTML</h4>
+
+<p>Un JS ne doit pas être déclaré dans le head mais à la fin du body (<a href="https://openclassrooms.com/courses/bonnes-pratiques-javascript">source 1</a>, <a href="https://www.alsacreations.com/astuce/lire/916-librairie-javascript-jquery-script.html">source2</a>).</p>
+
+<p>Au pire, si le JS ne dépend d&rsquo;aucun autre, il peut être chargé avec ASYNC. Mais attention aux dépendances entre scripts d&rsquo;une même page (<a href="https://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html">source</a>).</p>
+
+<h4 id="les-exceptions-en-js">Les exceptions en JS</h4>
+
+<p>He oui, ça existe. Mais c&rsquo;est pénalisant en performance. Donc à utiliser avec modération.</p>
+
+<pre><code class="language-js">try {
+	throw {&quot;name&quot;:&quot;monException&quot;, &quot;message&quot;:&quot;momMessage&quot;};
+} catch (e) {
+}
+</code></pre>
+
+<h4 id="déclarer-une-classe">Déclarer une classe</h4>
+
+<p>solution 1 : la fonction</p>
+
+<pre><code class="language-js">function MaClasse(args){
+	this.prop = args;
+	this.maMethode = function() {
+		alert(this.prop);
+	};
+}
+var monInstance = new MaClasse(true, &quot;bonjour&quot;);
+monInstance.maMethode();
+</code></pre>
+
+<p>solution 2 : la description</p>
+
+<pre><code class="language-js">let monInstance =  {
+	prop: args,
+	maMethode: function() {
+		alert(this.prop);
+	}
+}
+</code></pre>
+
+<p>solution 3 : le prototype</p>
+
+<pre><code class="language-js">function MaClasse(args){ ... }
+MaClasse.prototype.prop = ...;
+MaClasse.prototype.maMethode = function() { alert(this.prop); };
+
+var monInstance = new MaClasse(true, &quot;bonjour&quot;);
+monInstance.maMethode();
+</code></pre>
+
+<p>solution 4 : l&rsquo;héritage</p>
+
+<pre><code class="language-js">// Type Rectangle avec une largeur et une longueur
+function Rectangle(largeur, longueur) {  this.largeur = largeur; this.longueur = longueur; };
+Rectangle.prototype.largeur = 0;
+Rectangle.prototype.longueur = 0;
+Rectangle.prototype.calculSurface = function() { return this.largeur * this.longueur; };
+			
+// Type Carre avec une largeur (la longueur et la largeur sont égales)
+function Carre(largeur) { Rectangle.call(this, largeur, largeur); };
+Carre.prototype = Object.create(Rectangle.prototype);
+Carre.prototype.constructor = Carre;
+
+// Test du Rectangle
+let monRec = new Rectangle(3, 10);
+let surfaceMonRec = monRec.calculSurface(); //30
+
+// Test du Carre
+let monCarre = new Carre(5);
+let surfaceMonCarre = monCarre.calculSurface(); //25
+</code></pre>
+
+<h4 id="utiliser-des-getter-setter-en-js">Utiliser des getter / setter en JS</h4>
+
+<pre><code class="language-js">let monInstance =  {
+	get prop() {
+		return ...;
+	}
+	
+	set prop(value) {
+		...
+	}
+}
+</code></pre>
+
+<p>Si le getter n&rsquo;existe pas, la valeur retournée est <em>undefined</em></p>
+
+<h4 id="déclarer-un-module-encapsulant-du-code">Déclarer un module encapsulant du code</h4>
+
+<pre><code class="language-js">var MonModule = ( function() {
+	// privé
+	const compteur = 18;
+	function maMethodePrivee() {
+		...
+	}
+
+	// public
+	let module = {};
+	module.methodePublique = function() {
+		...
+	}
+	return module;
+})();
+</code></pre>
 
 
       
@@ -353,8 +498,8 @@
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="/mesidees/02-pratiques/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/mesidees/04-consolehibernate/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/mesidees/14-qualimetrie/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/mesprojets/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

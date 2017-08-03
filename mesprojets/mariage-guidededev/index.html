@@ -200,6 +200,12 @@
               </a>
             </li>
           
+            <li class="dd-item " data-nav-id="/mesidees/16-angular/">
+              <a href="/mesidees/16-angular/">
+                <span>Angular     </i></span>
+              </a>
+            </li>
+          
             <li class="dd-item " data-nav-id="/mesidees/99-trucsalire/">
               <a href="/mesidees/99-trucsalire/">
                 <span>Trucs à lire     </i></span>
@@ -271,6 +277,16 @@
             
            </span>
         </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/moncv/01-limitescv/">
+              <a href="/moncv/01-limitescv/">
+                <span>Les limites d&#39;un CV     </i></span>
+              </a>
+            </li>
+          
+        </ul>
         
       </li>
       
@@ -409,7 +425,7 @@
 </ul></li>
 <li>la planification des événements,</li>
 <li>le calcul des statistiques nécessaires aux mariés et prestataires,</li>
-<li>le partage de ces informations avec les proches participant à l&rsquo;organisation (parents, témoins, &hellip;)</li>
+<li>le partage de ces informations avec les proches participants à l&rsquo;organisation (parents, témoins, &hellip;)</li>
 </ul>
 
 <p>Il existe déjà des sites pour faire tout ça. Mais aucun qui nous correspondait exactement. Et tous, systématiquement, sont envahis de publicité (<em>donc, en bon geek, j&rsquo;ai fait le mien</em>).</p>
@@ -454,7 +470,7 @@
 
 <h2 id="architecture-technique">Architecture technique</h2>
 
-<p>En bon développeur Java, l&rsquo;application se base sur Hibernate et Spring. Pour ne pas avoir à installer de composant tiers sur les environnements et parce que les exigences le permettent, l&rsquo;application est auto-porteuse avec SpringBoot. Ce dernier démarre un serveur WEB (Tomcat) et une base de données (HSQL) automatiquement.</p>
+<p>En bon développeur Java, l&rsquo;application se base sur Hibernate et Spring. Pour ne pas avoir à installer de composant tiers sur les environnements et parce que les exigences le permettent, l&rsquo;application est autoporteuse avec SpringBoot. Ce dernier démarre un serveur WEB (Tomcat) et une base de données (HSQL) automatiquement.</p>
 
 <p>Pour réduire les bugs, rien de tel que de réduire le volume de code. Donc SpringData pour la persistance. Ce qui impose l&rsquo;usage de JPA à la place de l&rsquo;API Hibernate native.</p>
 
@@ -510,13 +526,13 @@ Toute modification d&rsquo;une page HTML doit entraîner l&rsquo;enrichissement 
 <h4 id="api">API</h4>
 
 <p>Les services ne sont exposés via l&rsquo;API que s&rsquo;ils sont utilisés par l&rsquo;IHM.
-La validation des paramètres d&rsquo;entrée se fait dans le &ldquo;controlleur&rdquo;.
-La transformation des entités en DTO se fait dans le &ldquo;controlleur&rdquo; (dont c&rsquo;est la responsabilité).</p>
+La validation des paramètres d&rsquo;entrée se fait dans le &ldquo;contrôleur&rdquo;.
+La transformation des entités en DTO se fait dans le &ldquo;contrôleur&rdquo; (dont c&rsquo;est la responsabilité).</p>
 
 <h4 id="web-pages">WEB - Pages</h4>
 
 <p>Les tableaux de données sont réalisés avec le plugin JQxGrid.
-Dans un premier temps, les filtres, paginations et tris sont fait coté client (par le framework).
+Dans un premier temps, les filtres, paginations et tris sont réalisés du coté client (par le framework).
 Une fois l&rsquo;usage courant du tableau défini, les bons filtres et tris (et donc aussi la pagination) doivent être implémentés coté serveur.</p>
 
 <h4 id="web-js">WEB - JS</h4>
@@ -541,8 +557,8 @@ Les préfixes, suffixes et concepts inhérents au langage reste en anglais (get,
 <li>&ldquo;Exception&rdquo; pour les exceptions,</li>
 <li>&ldquo;DTO&rdquo; pour les structures de données de transport,</li>
 <li>&ldquo;Service&rdquo; pour les services métiers,</li>
-<li>&ldquo;DAO&rdquo; pour l&rsquo;accès à la persistence,</li>
-<li>&ldquo;Controlleur&rdquo; pour l&rsquo;exposition de service en REST</li>
+<li>&ldquo;DAO&rdquo; pour l&rsquo;accès à la persistance,</li>
+<li>&ldquo;contrôleur&rdquo; pour l&rsquo;exposition de service en REST</li>
 <li>et &ldquo;Test&rdquo; pour tous les tests</li>
 </ul>
 
@@ -557,17 +573,17 @@ Les noms de méthode commence par un verbe à l&rsquo;infinitif</p>
 <p>Le formatage des sources est celui par défaut dans Eclipse (version Néon) : 120 caractères par ligne (80 pour les commentaires) et indentation par tabulation.
 Les membres sont triés systématiquement.
 Les lignes ne contenant que des tabulations et/ou des espaces sont vidées.
-Le mot clef &ldquo;final&rdquo; est placé sur toutes les variables affectée sune seule fois et sur les paramètres.
+Le mot clef &ldquo;final&rdquo; est placé sur toutes les variables affectées une seule fois et sur les paramètres.
 Le mot clef &ldquo;this&rdquo; est utilisé systématiquement.
 Les cast inutiles sont supprimés.</p>
 
 <h4 id="hql">HQL</h4>
 
-<p>Les requêtes HQL simples peuvent être écrites sur une seule ligne. Les complexes sont formatées pour être plus lisible. L&rsquo;usage des commentaires &ldquo;//&rdquo; en fin de ligne est autorisé pour forcer Eclipse à conserver à la ligne la chaîne de caractère à concaténer.</p>
+<p>Les requêtes HQL simples peuvent être écrites sur une seule ligne. Les plus complexes sont formatées pour être plus lisible. L&rsquo;usage des commentaires &ldquo;//&rdquo; en fin de ligne est autorisé pour forcer Eclipse à conserver à la ligne la chaîne de caractère à concaténer.</p>
 
 <p>Toujours définir par défaut l&rsquo;attribut READ_ONLY à <em>true</em> sur une méthode chargeant des entités persistantes. Seules les entités nécessitant d&rsquo;être &ldquo;managed&rdquo; doivent l&rsquo;être (cf. documentation hibernate sur le cycle de vie des objets dans une session)
 Ne jamais créer un lien entre deux entités en instanciant une entité et ne définissant que son ID. Toujours utiliser <em>EntityManager.getReference</em>
-La gestion des transaction est faite via les annotations Spring. Les exceptions du projet sont <em>runtime</em> et déclenchent donc le rollback. Seuls les composants de type &ldquo;Service&rdquo; et &ldquo;DAO&rdquo; peuvent être transactionnels (par les &ldquo;Controlleur&rdquo;)</p>
+La gestion des transactions est faite via les annotations Spring. Les exceptions du projet sont <em>runtime</em> et déclenchent donc le rollback. Seuls les composants de type &ldquo;Service&rdquo; et &ldquo;DAO&rdquo; peuvent être transactionnels (par les &ldquo;contrôleur&rdquo;)</p>
 
 <h2 id="processus-de-développement">Processus de développement</h2>
 
@@ -626,7 +642,7 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
 
 <ul>
 <li>liste des frameworks disponibles, leur usage et le pointeur sur leur documentation</li>
-<li>qualimétrie obligatoire avec le site &ldquo;online&rdquo; (avec sa conf imposée d&rsquo;où les violations non corrigée qui ne le seront pas)</li>
+<li>qualimétrie obligatoire avec le site &ldquo;online&rdquo; (avec sa configuration imposée par la plateforme d&rsquo;où les violations non corrigée qui ne le seront pas)</li>
 <li>HQL propre</li>
 <li>code en français</li>
 <li>méthode = verbe à l&rsquo;infinitif</li>
@@ -636,7 +652,7 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
 <li>industrialisation :
 
 <ul>
-<li>aucune installation de poste automatique car seul l&rsquo;IDE est nécessaire et l&rsquo;application est auto-porteuse</li>
+<li>aucune installation de poste automatique car seul l&rsquo;IDE est nécessaire et l&rsquo;application est autoporteuse</li>
 <li>IC = jenkins toujours à jour avec un pipelineAsCode (lien vers le blog sur le sujet)</li>
 <li>pipeline = git/compile/TU/TI/TA/qualimétrie/promotion/production</li>
 <li>à quand un second développeur et la mise en place des pullrequest et des revues de code ?</li>

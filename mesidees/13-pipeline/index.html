@@ -200,6 +200,12 @@
               </a>
             </li>
           
+            <li class="dd-item " data-nav-id="/mesidees/16-angular/">
+              <a href="/mesidees/16-angular/">
+                <span>Angular     </i></span>
+              </a>
+            </li>
+          
             <li class="dd-item " data-nav-id="/mesidees/99-trucsalire/">
               <a href="/mesidees/99-trucsalire/">
                 <span>Trucs à lire     </i></span>
@@ -272,6 +278,16 @@
            </span>
         </a>
         
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/moncv/01-limitescv/">
+              <a href="/moncv/01-limitescv/">
+                <span>Les limites d&#39;un CV     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
       </li>
       
       
@@ -333,13 +349,90 @@
                 <h1>Pipeline</h1>
                 
 
-<p><strong>EN COURS DE CONSTRUCTION</strong></p>
+
 
 <ul>
-<li>Jenkins &amp; IC</li>
-<li>Continuous Delivery &amp; pipeline
-&hellip;</li>
+<li><a href="#définition-de-l-intégration-continue-ic-dans-la-suite-du-chapitre">Définition de l&rsquo;intégration continue</a></li>
+<li><a href="#les-actions-à-faire-réaliser-par-l-ic">Les actions à faire réaliser par l&rsquo;IC</a></li>
+<li><a href="#comment-aller-un-tout-petit-peu-plus-loin">Comment aller un tout petit peu plus loin</a></li>
+<li><a href="#définition-du-continuous-delivery">Définition du Continuous Delivery</a></li>
 </ul>
+
+<h2 id="définition-de-l-intégration-continue-ic-dans-la-suite-du-chapitre">Définition de l&rsquo;Intégration Continue (IC dans la suite du chapitre)</h2>
+
+<h4 id="en-une-seule-phrase">En une seule phrase</h4>
+
+<p><strong>L&rsquo;intégration continue a pour objectif de valider que le code actuellement présent dans le repository de source est valide.</strong></p>
+
+<p>La fréquence de la validation et même la définition de cette validation sont très variables d&rsquo;un projet à un autre :</p>
+
+<ul>
+<li>la fréquence peut être :
+
+<ul>
+<li>1 fois par jour (minimum du minimum)</li>
+<li>2 fois par jour (à 13h et à 23h par exemple)</li>
+<li>quelques fois par jour (toutes les 2 heures par exemple)</li>
+<li>à chaque commit (solution optimum)</li>
+</ul></li>
+<li>la validation peut comprendre :
+
+<ul>
+<li>la compilation et le packaging de la solution (minimum du minimum)</li>
+<li>l&rsquo;exécution des tests (unitaire &amp; de développement &amp; intégration &amp; bout en bout &amp; non régression)</li>
+<li>l&rsquo;analyse de la qualité du code (Sonar par exemple)</li>
+<li>les tests de performance (non pas pour valider les exigences de performance ou robustesse mais pour valider que les temps d&rsquo;exécution des fonctionnalités importantes ne se dégradent pas pour un jeu de données et une plateforme donnée)</li>
+<li>les tests de sécurité (lister les failles potentielles à partir des dépendances de la solution)</li>
+</ul></li>
+</ul>
+
+<h4 id="pourquoi-pour-qui">Pourquoi ? Pour qui ?</h4>
+
+<p>L&rsquo;erreur est humaine. Un développeur peut, par inadvertance et très rarement (bien entendu), pousser sur le repository du code invalide (qui ne compile pas ou qui casse des tests).</p>
+
+<p>A cet instant-là, le projet n&rsquo;est plus en mesure de livrer la solution. Ce qui est très gênant pour les projets en MCO dont le délai de livraison d&rsquo;un correctif n&rsquo;est que de quelques heures. Et surtout les autres développeurs de l&rsquo;équipe ne peuvent plus récupérer les modifications poussées sur le repository.</p>
+
+<p>Il faut donc corriger cette situation au plus vite. Mais encore faut-il détecter le problème. <strong>L&rsquo;Intégration Continue est là pour ça !!</strong></p>
+
+<h2 id="les-actions-à-faire-réaliser-par-l-ic">Les actions à faire réaliser par l&rsquo;IC</h2>
+
+<p>Si l&rsquo;IC est capable d&rsquo;exécuter des tests d&rsquo;intégration voire des tests de bout en bout, elle est donc capable de déployer la solution sur un environnement. Pourquoi ne pas utiliser ce script/outil pour mettre à disposition des testeurs un bouton déclenchant un déploiement de la dernière version du code valide sur l&rsquo;environnement de test de leur choix ?</p>
+
+<p>Si l&rsquo;IC peut déclencher n&rsquo;importe quel script/outil, pourquoi ne pas automatiser les tâches récurrentes et pénibles comme le déplacement des livrables sur le serveur FTP du client ou l&rsquo;extraction de la liste des bugs corrigés dans une version de la solution ou extraire la liste des commits ou même générer un bon de livraison ?</p>
+
+<h2 id="comment-aller-un-tout-petit-peu-plus-loin">Comment aller un tout petit peu plus loin</h2>
+
+<p>Bon, arrivé à ce point, qu&rsquo;a-t-on :</p>
+
+<ul>
+<li>pour les développeurs, l&rsquo;IC vérifie régulièrement la validité du code</li>
+<li>pour les testeurs, l&rsquo;IC déploie une version de la solution sur l&rsquo;environnement de leur choix</li>
+<li>pour le responsable de la livraison, l&rsquo;IC prépare tous les livrables (ou une grande partie)</li>
+</ul>
+
+<p>Mais les analystes fonctionnels, les développeurs et les testeurs ont des interactions plus importantes que ça !</p>
+
+<ul>
+<li>un analyste ne peut-il pas informer les développeurs que son(ses) exigence(s) sont prêtes à être développées (cf. Definition Of Ready) ?</li>
+<li>un développeur ne peut-il pas prévenir un autre développeur que son code est prêt à être relu/revu ?</li>
+<li>un relecteur ne peut-il pas informer un testeur qu&rsquo;une (ou plusieurs) exigence(s) est (sont) terminées (cf. Definition Of Done) et prête(s) à être qualifiée(s) ?</li>
+<li>un testeur ne peut-il informer le responsable des versions qu&rsquo;une (ou plusieurs) exigence(s) est(sont) testée(s) ?</li>
+</ul>
+
+<p>Et pourtant, le référentiel des exigences existe certainement (HP ALM par exemple), le référentiel des tests existe aussi (encore HP ALM par exemple) et l&rsquo;outil de revu/relecture de code est installé. Il est certainement possible de lier tout ce petit monde.</p>
+
+<h2 id="définition-du-continuous-delivery">Définition du Continuous Delivery</h2>
+
+<p>Une fois tous les membres de l&rsquo;équipe outillés, il est possible de décrire le processus de production de l&rsquo;équipe par un tuyau dans lequel entre une (ou un petit groupe d&rsquo;) exigence(s) qui enchaîneront une série d&rsquo;étapes jusqu&rsquo;à être terminées.</p>
+
+<p>Ce processus dépend totalement de l&rsquo;équipe mais commence toujours avec une exigence (ou un petit paquet). Donc la première étape est toujours la description de cette (ces) exigence(s). Peuvent suivre, la conception détaillée, le développement, la qualification interne, la recette client, le déploiement en pré-production puis celui en production.</p>
+
+<p>Certaines équipes vont y ajouter de la relecture de code ou des revues de conception ou arrêter leur pipeline à la livraison de leur client (s&rsquo;ils ne gèrent pas ni la recette ni la production).</p>
+
+<p>Et enfin, chaque exigence ne donnant pas lieu à une mise en production, s&rsquo;ajouteront des étapes conditionnées par une promotion manuelle : une action manuelle qui autorisera une instance du pipeline à avancer.</p>
+
+<p>Voici un exemple de Pipeline très simple et très singulier : le pipeline de mon projet personnel <a href="/mesprojets/mariage-guidededev">&lsquo;Mariage&rsquo;</a>
+<img src="/images/pipeline-jenkinsSimple.png" alt="pipeline-jenkinsSimple" /></p>
 
 
       

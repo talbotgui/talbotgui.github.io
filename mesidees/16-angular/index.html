@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     
-    <title>Guide Du Développeur</title>
+    <title>Angular</title>
     <link href="https://talbotgui.github.io//css/nucleus.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/font-awesome.min.css" rel="stylesheet">
     <link href="https://talbotgui.github.io//css/hybrid.css" rel="stylesheet">
@@ -26,7 +26,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/10-guidedudev/">
+  <body class="" data-url="/mesidees/16-angular/">
     
     <nav id="sidebar">
   <div id="header-wrapper">
@@ -164,7 +164,7 @@
               </a>
             </li>
           
-            <li class="dd-item active" data-nav-id="/mesidees/10-guidedudev/">
+            <li class="dd-item " data-nav-id="/mesidees/10-guidedudev/">
               <a href="/mesidees/10-guidedudev/">
                 <span>Guide Du Développeur     </i></span>
               </a>
@@ -200,7 +200,7 @@
               </a>
             </li>
           
-            <li class="dd-item " data-nav-id="/mesidees/16-angular/">
+            <li class="dd-item active" data-nav-id="/mesidees/16-angular/">
               <a href="/mesidees/16-angular/">
                 <span>Angular     </i></span>
               </a>
@@ -313,7 +313,7 @@
                 
                 
               <div id="top-github-link">
-                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/10-guidedudev/index.md" target="blank">
+                  <a class="github-link" href="https://github.com/talbotgui/pages-hugo/edit/master/docs/mesidees/16-angular/index.md" target="blank">
                     <i class="fa fa-code-fork"></i>
                     Edit this page
                   </a>
@@ -337,7 +337,7 @@
                     
                   
                 
-                <span itemprop="title"> Guide Du Développeur</span>
+                <span itemprop="title"> Angular</span>
               </div>
               
             </div>
@@ -346,108 +346,122 @@
             
               <div id="body-inner">
                 
-                <h1>Guide Du Développeur</h1>
+                <h1>Angular</h1>
                 
 
 
 
-<p>Le Guide Du Développeur est l&rsquo;espace de partage d&rsquo;une équipe. Il contient toutes les informations utiles aux membres de l&rsquo;équipe.</p>
+<h4 id="quelques-astuces-angular-à-retenir">Quelques astuces Angular à retenir :</h4>
 
-<p>Chaque question posée par un collaborateur doit donner lieu à un nouveau paragraphe dans le GDD.</p>
+<p><strong><a href="https://angular.io/guide/cheatsheet">Angular Cheat Sheet</a></strong></p>
 
-<p><strong>Il est inutile d&rsquo;imposer un guide du développeur.</strong> Il faut le proposer et le faire adopter. C&rsquo;est un outil pour l&rsquo;équipe construit par l&rsquo;équipe. Si personne ne le consulte avant de se mettre en quête d&rsquo;une réponse (sur Internet ou au près d&rsquo;un leader), alors il est inutile.</p>
+<p>Au besoin, pour réinstaller Angular/cli :
+<code>ts npm install -g @angular/cli --no-optional</code></p>
 
-<h2 id="astuces">Astuces</h2>
+<p>Dans une interpolation, pour naviguer sans risque, il suffit d&rsquo;utiliser le Safe Navigation Operator (&lsquo;?.&rsquo;).
+Exemple : <code>ts unObjet?.unAttributPotentiellementUndefined</code></p>
 
-<p>La première astuce est à destination des Lead (les membres de l&rsquo;équipe qui ont tout dans la tête). Dès qu&rsquo;un collaborateur vient vous poser une question, demandez-lui s&rsquo;il a consulté le GDD. Si ce n&rsquo;est pas le cas, qu&rsquo;il retourne à son poste pour vérifier si la réponse n&rsquo;est pas dans le GDD (même si vous savez que ce n&rsquo;est pas le cas). Il faut que cela devienne un réflexe pour toute l&rsquo;équipe. Et quand il reviendra vous poser la question et qu&rsquo;il aura obtenu sa réponse, dîtes lui d&rsquo;ajouter un paragraphe dans le GDD !!</p>
-
-<p>Bien souvent, à ce moment-là, le collaborateur vous dit qu&rsquo;il n&rsquo;a pas le temps. Pour beaucoup de gens, toutes les tâches sont prioritaires à la documentation (même le café). Mais il est vrai qu&rsquo;on n&rsquo;a pas toujours le temps. Pas de soucis, il vous suffit d&rsquo;un tableau blanc (ou d&rsquo;un paperBoard). A chaque réponse obtenue, le collaborateur inscrit son prénom ainsi que les mots clefs de sa question et de sa réponse. Charge à lui de remplir le GDD dans un délai raisonnable puis de venir effacer (ou barrer) son nom.</p>
-
-<p>Valoriser les contributeurs est aussi une bonne idée. Bien souvent, le dernier arrivé sur le projet est le principal contributeur. Il est aussi celui qui doit s&rsquo;approprier le GDD. Un petit mail avec le meilleur contributeur du mois peut aider à faire adopter le GDD.</p>
-
-<p>Question outil, un fichier MS Word sur un serveur FTP est une solution à proscrire car l&rsquo;édition à plusieurs est impossible et la gestion des versions (avec un cartouche, &hellip;) est lourde. Un document partagé dans une bonne GED (Gestion Electronique de Documents) est une solution. Mais le plus simple reste un WIKI ou un site statique généré (comme le présent site avec Hugo). Les fonctions nécessaires sont :</p>
+<p>Two way binding :</p>
 
 <ul>
-<li>pas de prise de tête avec la mise en forme</li>
-<li>suivi des modifications et consultation possible de l&rsquo;historique</li>
-<li>simplicité de déplacement des paragraphes (pour permettre la réorganisation au fur et à mesure que le GDD s&rsquo;étoffe).</li>
-<li>dans tous les cas :
-
-<ul>
-<li>l&rsquo;usage de l&rsquo;outil doit être simple</li>
-<li>un moteur de recherche doit être présent</li>
-<li>aucun workflow complexe (relecture, validation, &hellip;) ne doit freiner l&rsquo;enrichissement du GDD</li>
-</ul></li>
+<li><code>ts [ngModel]=&quot;monAttribut&quot;</code> si la valeur change dans le JS, le DOM est mis à jour</li>
+<li><code>ts (ngModel)=&quot;monAttribut&quot;</code> si le DOM change, la valeur du JS est mise à jour</li>
 </ul>
 
-<p>Enfin, il n&rsquo;existe aucun modèle de GDD. Chaque GDD est unique car les préoccupations, les questions et les réponses changent d&rsquo;un projet à un autre (technologies différentes, clients différents, organisations différentes, équipes différentes). Il est préférable de démarrer avec une simple page faisant office de foire aux questions. Quand la page devient indigeste, il suffit de regrouper les questions par thème puis de les extraire dans des pages différentes. Ainsi le GDD émergera petit à petit.</p>
+<p>Exemple de binding : <code>html &lt;div [style.background-color]=&quot;getStyle()&quot;&gt;</code></p>
 
-<h2 id="idées-de-sujets-à-intégrer-au-gdd">Idées de sujets à intégrer au GDD :</h2>
-
-<p><strong>Ceci n&rsquo;est pas un menu de GDD mais juste une liste de sujets à traiter sur la plus part des projets ! Votre GDD, vos questions, votre sommaire !!!</strong></p>
+<p>Évènement :</p>
 
 <ul>
-<li><p>référence documentaire</p>
+<li>déclencher du code : <code>(click)=&quot;auClick()&quot;</code></li>
+<li>récupérer l&rsquo;event : <code>(click)=&quot;auClick($event)&quot;</code></li>
+</ul>
+
+<p>Dirty checking :</p>
 
 <ul>
-<li>cahier des charges</li>
-<li>dossier(s) d&rsquo;architecture</li>
-<li>référentiel des exigences</li>
-<li>référentiel des tests</li>
-</ul></li>
+<li>tout changement est pris en compte dans le composant : <code>ts @Component {..., changeDetection: ChangeDetectionStrategy.Default, ...}</code> =&gt;</li>
+<li>seul les @Input sont raffraichis : <code>ts @Component {..., changeDetection: ChangeDetectionStrategy.OnPush,  ...}</code></li>
+</ul>
 
-<li><p>exigences</p>
+<p>Pipes :</p>
 
 <ul>
-<li>quel est le niveau de détails des exigences en entrée des développements ?</li>
-<li>quel est le contexte du projet ou de l&rsquo;application ?</li>
-</ul></li>
+<li>date, currency, decimal, uppercase, lowercase, slice (slice:start:end), i18nSelect, i18nPlural, percent, json, async</li>
+<li>exemple : <code>{{dateNaissance | date:&quot;dd/MM/yy&quot;}}</code></li>
+<li>exemple : <code>&lt;li *ngFor=&quot;let i of collection | slice:1:3&quot;&gt;{{i}}&lt;/li&gt;</code></li>
+<li>exemple : <code>{{monAttribut | async&quot;}}</code> pour se lier à un Observable et être notifié</li>
+<li>exemple : <code>{{note.valeur | i18nSelect: libellesNote}}</code> avec libellesNote un Objet {&lsquo;clef1&rsquo;:&lsquo;valeur1&rsquo;,&lsquo;clef2&rsquo;:&lsquo;valeur2&rsquo;} et non une Map<string, string></li>
+</ul>
 
-<li><p>test</p>
-
-<ul>
-<li>quel est contractuellement le niveau de détails et le formalisme à livrer en fin de conception ?</li>
-<li>stratégie de test du projet</li>
-<li>types de tests disponibles</li>
-<li>cas de test devant être validés en fin de développement</li>
-<li>cas de test devant être codés dans un composant de test (avec sa granularité et les outils à utiliser)</li>
-</ul></li>
-
-<li><p>conception</p>
+<p>Constante :</p>
 
 <ul>
-<li>résumé de l&rsquo;architecture technique</li>
-<li>quels sont les impacts de l’AT sur la conception (BI, ERP ou détails trop fins en xNet) ?</li>
-<li>quel est le niveau de détails attendu en fin de conception (peut-être besoin d’être plus précis que le niveau contractuel en fonction du contexte) ?</li>
-<li>quels sont les outils de conception et/ou de modélisation ?</li>
-<li>quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?</li>
-<li>règles de conception (programmation défensive, @designByContrat, modularité, &hellip;)</li>
-<li>jeu de données de test</li>
-</ul></li>
+<li>à déclarer dans <code>json providers: [..., {provide: 'maConstante', useValue:'azertyuiop'}, ...]</code></li>
+<li>à utiliser dans <code>json constructor(..., @Inject('maConstante') public maConstante, ...)</code></li>
+</ul>
 
-<li><p>développement</p>
+<p>Interfaces implémentables dans un composant : OnInit, AfterContentInit</p>
+
+<p>Exemple de directive : pour logger le clic sur tous un ensemble de boutons</p>
 
 <ul>
-<li>règles de nommage</li>
-<li>liste des frameworks disponibles, leur usage et le pointeur sur leur documentation</li>
-</ul></li>
+<li><code>html &lt;button [track]=&quot;unBouton&quot;&gt;coucou&lt;/button&gt;</code></li>
+<li><code>ts @Directive({selector: '[track]'}) export class TrackDirective {
+@Input() track;
+@HostListener('click')
+onClick(){ console.log(this.track); }
+}</code></li>
+</ul>
 
-<li><p>industrialisation</p>
+<p>Pour faire des checkbox dans un *ngFor : <code>html &lt;div *ngFor=&quot;let aze of azes&quot;&gt;
+  &lt;input [id]=&quot;aze&quot;, name=&quot;monChamp&quot; ngModel [value]=&quot;aze&quot; type=&quot;radio&quot;&gt;&lt;/input&gt;
+  &lt;label [attr.for]=&quot;aze&quot;&gt;{{aze}}&lt;/label&gt;
+&lt;/div&gt;</code></p>
+
+<p>Ajouter remplacer ngModel par <code>[ngModel]=&quot;azes[0]&quot;</code> pour définir une valeur par défaut</p>
+
+<p>Créer une variable locale à la page HTML (sans lien avec un attribut du composant) : <code>#toto=&quot;NgForm&quot;</code> ou <code>#toto=&quot;NgModel&quot;</code></p>
+
+<p>Validation de formulaire :</p>
 
 <ul>
-<li>éléments composant la Gestion de Configuration Logicielle (Git, SVN, HP ALM, Archiva, Jira, &hellip;)</li>
-<li>règles d&rsquo;usage de la GCL (flow GIT/SVN, snapshots dans le repository de binaires, &hellip;)</li>
-<li>règles d&rsquo;usage de l&rsquo;intégration continue</li>
-<li>organisation des équipes en amont et en aval des développements (Continuous Delivery)</li>
-</ul></li>
+<li>il faut un form avec les attributs <code>novalidate</code> et <code>#toto=&quot;ngForm&quot;</code></li>
+<li>l&rsquo;attribut <code>required</code> sur les champs obligatoires</li>
+<li>une div avec le message d&rsquo;erreur (pristine = inchangé) : <code>html &lt;div [hidden]=&quot;inputNom.valid || inputNom.pristine&quot; class=&quot;alert alert-danger&quot;&gt;Le nom est obligatoire&lt;/div&gt;</code></li>
+</ul>
 
-<li><p>environnements</p>
+<p>Pour la validation des radios, c&rsquo;est l&rsquo;input qui est invalide et le label est à coté. Astuce CSS : <code>css .ng-invalid + label:after { content:'sélectionne en un'; }</code></p>
+
+<p>Faire une boucle *ngFor et avoir l&rsquo;index : <code>*ngFor=&quot;let aze of azes; let i=index&quot;</code></p>
+
+<p>Afficher/masquer un élément :</p>
 
 <ul>
-<li>installation du poste de développement</li>
-<li>liste et paramètres des environnements de test</li>
-<li>liste des environnements du client</li>
-</ul></li>
+<li><code>*ngIf</code> supprime l&rsquo;élément du DOM</li>
+<li><code>[hidden]</code> change la valeur de l&rsquo;attribut display (none/block)</li>
+</ul>
+
+<h4 id="pour-tester-une-application-angular-et-ses-composants">Pour tester une application Angular et ses composants :</h4>
+
+<p>Dans les tests, si l&rsquo;erreur <em>Uncaught NetworkError: Failed to execute &lsquo;send&rsquo; on &lsquo;XMLHttpRequest&rsquo;: Failed to load &lsquo;ng:///DynamicTestModule/ComposantNoteComponent.ngfactory.js&rsquo;. thrown</em> survient, c&rsquo;est un problème de données/objets non fournis en entrée d&rsquo;un composant. Par exemple : un composant appel un mock dans le onInit mais le mock a été &lsquo;reset&rsquo; et ne renvoie rien.</p>
+
+<p>Ne jamais oublier de créer l&rsquo;instance après avoir créer le mock avec Mockito</p>
+
+<p>Quelques liens :</p>
+
+<ul>
+<li><a href="http://blog.bandzarewicz.com/blog/2012/03/08/jasmine-cheat-sheet/">cheat sheet pour Jasmine</a></li>
+<li><a href="http://blog.mlewandowski.com/Debugging-Karma-tests-with-VSCode.html">débugger des tests Karma depuis VsCode</a></li>
+<li><a href="https://github.com/NagRock/ts-mockito">Mockito</a></li>
+</ul>
+
+<p>Quelques commandes :</p>
+
+<ul>
+<li>Pour lancer les tests : <code>sh ng test</code></li>
+<li>Pour lancer les tests avec couverture de code : <code>sh ng test --code-coverage --reporters=coverage-istanbul</code></li>
+<li>Pour lancer les tests avec PhantomJS : <code>sh ng test --config=karma-ic.conf.js</code></li>
 </ul>
 
 
@@ -460,8 +474,8 @@
 
     <div id="navigation">
         
-        <a class="nav nav-prev" href="/mesidees/09-objectmother/"> <i class="fa fa-chevron-left"></i></a>
-        <a class="nav nav-next" href="/mesidees/11-programmationdefensive/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        <a class="nav nav-prev" href="/mesidees/15-js/"> <i class="fa fa-chevron-left"></i></a>
+        <a class="nav nav-next" href="/mesidees/99-trucsalire/" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
     </div>
 
     </section>

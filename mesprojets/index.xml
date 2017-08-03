@@ -14,7 +14,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://talbotgui.github.io/mesprojets/</guid>
-      <description>&lt;p&gt;Mes projets publiques en cours :&lt;/p&gt;
+      <description>&lt;p&gt;Mes projets publics en cours :&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;une application de gestion des invités à un mariage (&lt;a href=&#34;https://github.com/talbotgui/mariage&#34;&gt;GitHub&lt;/a&gt;)
@@ -108,7 +108,7 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;la planification des événements,&lt;/li&gt;
 &lt;li&gt;le calcul des statistiques nécessaires aux mariés et prestataires,&lt;/li&gt;
-&lt;li&gt;le partage de ces informations avec les proches participant à l&amp;rsquo;organisation (parents, témoins, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;le partage de ces informations avec les proches participants à l&amp;rsquo;organisation (parents, témoins, &amp;hellip;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Il existe déjà des sites pour faire tout ça. Mais aucun qui nous correspondait exactement. Et tous, systématiquement, sont envahis de publicité (&lt;em&gt;donc, en bon geek, j&amp;rsquo;ai fait le mien&lt;/em&gt;).&lt;/p&gt;
@@ -153,7 +153,7 @@
 
 &lt;h2 id=&#34;architecture-technique&#34;&gt;Architecture technique&lt;/h2&gt;
 
-&lt;p&gt;En bon développeur Java, l&amp;rsquo;application se base sur Hibernate et Spring. Pour ne pas avoir à installer de composant tiers sur les environnements et parce que les exigences le permettent, l&amp;rsquo;application est auto-porteuse avec SpringBoot. Ce dernier démarre un serveur WEB (Tomcat) et une base de données (HSQL) automatiquement.&lt;/p&gt;
+&lt;p&gt;En bon développeur Java, l&amp;rsquo;application se base sur Hibernate et Spring. Pour ne pas avoir à installer de composant tiers sur les environnements et parce que les exigences le permettent, l&amp;rsquo;application est autoporteuse avec SpringBoot. Ce dernier démarre un serveur WEB (Tomcat) et une base de données (HSQL) automatiquement.&lt;/p&gt;
 
 &lt;p&gt;Pour réduire les bugs, rien de tel que de réduire le volume de code. Donc SpringData pour la persistance. Ce qui impose l&amp;rsquo;usage de JPA à la place de l&amp;rsquo;API Hibernate native.&lt;/p&gt;
 
@@ -209,13 +209,13 @@ Toute modification d&amp;rsquo;une page HTML doit entraîner l&amp;rsquo;enrichi
 &lt;h4 id=&#34;api&#34;&gt;API&lt;/h4&gt;
 
 &lt;p&gt;Les services ne sont exposés via l&amp;rsquo;API que s&amp;rsquo;ils sont utilisés par l&amp;rsquo;IHM.
-La validation des paramètres d&amp;rsquo;entrée se fait dans le &amp;ldquo;controlleur&amp;rdquo;.
-La transformation des entités en DTO se fait dans le &amp;ldquo;controlleur&amp;rdquo; (dont c&amp;rsquo;est la responsabilité).&lt;/p&gt;
+La validation des paramètres d&amp;rsquo;entrée se fait dans le &amp;ldquo;contrôleur&amp;rdquo;.
+La transformation des entités en DTO se fait dans le &amp;ldquo;contrôleur&amp;rdquo; (dont c&amp;rsquo;est la responsabilité).&lt;/p&gt;
 
 &lt;h4 id=&#34;web-pages&#34;&gt;WEB - Pages&lt;/h4&gt;
 
 &lt;p&gt;Les tableaux de données sont réalisés avec le plugin JQxGrid.
-Dans un premier temps, les filtres, paginations et tris sont fait coté client (par le framework).
+Dans un premier temps, les filtres, paginations et tris sont réalisés du coté client (par le framework).
 Une fois l&amp;rsquo;usage courant du tableau défini, les bons filtres et tris (et donc aussi la pagination) doivent être implémentés coté serveur.&lt;/p&gt;
 
 &lt;h4 id=&#34;web-js&#34;&gt;WEB - JS&lt;/h4&gt;
@@ -240,8 +240,8 @@ Les préfixes, suffixes et concepts inhérents au langage reste en anglais (get,
 &lt;li&gt;&amp;ldquo;Exception&amp;rdquo; pour les exceptions,&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;DTO&amp;rdquo; pour les structures de données de transport,&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;Service&amp;rdquo; pour les services métiers,&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;DAO&amp;rdquo; pour l&amp;rsquo;accès à la persistence,&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;Controlleur&amp;rdquo; pour l&amp;rsquo;exposition de service en REST&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;DAO&amp;rdquo; pour l&amp;rsquo;accès à la persistance,&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;contrôleur&amp;rdquo; pour l&amp;rsquo;exposition de service en REST&lt;/li&gt;
 &lt;li&gt;et &amp;ldquo;Test&amp;rdquo; pour tous les tests&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -256,17 +256,17 @@ Les noms de méthode commence par un verbe à l&amp;rsquo;infinitif&lt;/p&gt;
 &lt;p&gt;Le formatage des sources est celui par défaut dans Eclipse (version Néon) : 120 caractères par ligne (80 pour les commentaires) et indentation par tabulation.
 Les membres sont triés systématiquement.
 Les lignes ne contenant que des tabulations et/ou des espaces sont vidées.
-Le mot clef &amp;ldquo;final&amp;rdquo; est placé sur toutes les variables affectée sune seule fois et sur les paramètres.
+Le mot clef &amp;ldquo;final&amp;rdquo; est placé sur toutes les variables affectées une seule fois et sur les paramètres.
 Le mot clef &amp;ldquo;this&amp;rdquo; est utilisé systématiquement.
 Les cast inutiles sont supprimés.&lt;/p&gt;
 
 &lt;h4 id=&#34;hql&#34;&gt;HQL&lt;/h4&gt;
 
-&lt;p&gt;Les requêtes HQL simples peuvent être écrites sur une seule ligne. Les complexes sont formatées pour être plus lisible. L&amp;rsquo;usage des commentaires &amp;ldquo;//&amp;rdquo; en fin de ligne est autorisé pour forcer Eclipse à conserver à la ligne la chaîne de caractère à concaténer.&lt;/p&gt;
+&lt;p&gt;Les requêtes HQL simples peuvent être écrites sur une seule ligne. Les plus complexes sont formatées pour être plus lisible. L&amp;rsquo;usage des commentaires &amp;ldquo;//&amp;rdquo; en fin de ligne est autorisé pour forcer Eclipse à conserver à la ligne la chaîne de caractère à concaténer.&lt;/p&gt;
 
 &lt;p&gt;Toujours définir par défaut l&amp;rsquo;attribut READ_ONLY à &lt;em&gt;true&lt;/em&gt; sur une méthode chargeant des entités persistantes. Seules les entités nécessitant d&amp;rsquo;être &amp;ldquo;managed&amp;rdquo; doivent l&amp;rsquo;être (cf. documentation hibernate sur le cycle de vie des objets dans une session)
 Ne jamais créer un lien entre deux entités en instanciant une entité et ne définissant que son ID. Toujours utiliser &lt;em&gt;EntityManager.getReference&lt;/em&gt;
-La gestion des transaction est faite via les annotations Spring. Les exceptions du projet sont &lt;em&gt;runtime&lt;/em&gt; et déclenchent donc le rollback. Seuls les composants de type &amp;ldquo;Service&amp;rdquo; et &amp;ldquo;DAO&amp;rdquo; peuvent être transactionnels (par les &amp;ldquo;Controlleur&amp;rdquo;)&lt;/p&gt;
+La gestion des transactions est faite via les annotations Spring. Les exceptions du projet sont &lt;em&gt;runtime&lt;/em&gt; et déclenchent donc le rollback. Seuls les composants de type &amp;ldquo;Service&amp;rdquo; et &amp;ldquo;DAO&amp;rdquo; peuvent être transactionnels (par les &amp;ldquo;contrôleur&amp;rdquo;)&lt;/p&gt;
 
 &lt;h2 id=&#34;processus-de-développement&#34;&gt;Processus de développement&lt;/h2&gt;
 
@@ -325,7 +325,7 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
 
 &lt;ul&gt;
 &lt;li&gt;liste des frameworks disponibles, leur usage et le pointeur sur leur documentation&lt;/li&gt;
-&lt;li&gt;qualimétrie obligatoire avec le site &amp;ldquo;online&amp;rdquo; (avec sa conf imposée d&amp;rsquo;où les violations non corrigée qui ne le seront pas)&lt;/li&gt;
+&lt;li&gt;qualimétrie obligatoire avec le site &amp;ldquo;online&amp;rdquo; (avec sa configuration imposée par la plateforme d&amp;rsquo;où les violations non corrigée qui ne le seront pas)&lt;/li&gt;
 &lt;li&gt;HQL propre&lt;/li&gt;
 &lt;li&gt;code en français&lt;/li&gt;
 &lt;li&gt;méthode = verbe à l&amp;rsquo;infinitif&lt;/li&gt;
@@ -335,7 +335,7 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
 &lt;li&gt;industrialisation :
 
 &lt;ul&gt;
-&lt;li&gt;aucune installation de poste automatique car seul l&amp;rsquo;IDE est nécessaire et l&amp;rsquo;application est auto-porteuse&lt;/li&gt;
+&lt;li&gt;aucune installation de poste automatique car seul l&amp;rsquo;IDE est nécessaire et l&amp;rsquo;application est autoporteuse&lt;/li&gt;
 &lt;li&gt;IC = jenkins toujours à jour avec un pipelineAsCode (lien vers le blog sur le sujet)&lt;/li&gt;
 &lt;li&gt;pipeline = git/compile/TU/TI/TA/qualimétrie/promotion/production&lt;/li&gt;
 &lt;li&gt;à quand un second développeur et la mise en place des pullrequest et des revues de code ?&lt;/li&gt;

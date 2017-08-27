@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <title>Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT</title>
+    
+    
+    <link href="/css/nucleus.css?1503842971" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1503842971" rel="stylesheet">
+    <link href="/css/hybrid.css?1503842971" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1503842971" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1503842971" rel="stylesheet">
+    <link href="/css/horsey.css?1503842971" rel="stylesheet">
+    <link href="/css/theme.css?1503842971" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1503842971" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1503842971"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/mesidees/17-installationserveuric/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1503842971"></script>
+<script type="text/javascript" src="/js/horsey.js?1503842971"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/talbotgui.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1503842971"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mesidees/" title="Mesidees" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/mesidees/">
+          Mesidees
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item ">
+        <a href="/mesidees/">
+        Mes idées
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/01-dettetechnique/" title="Dette technique" class="dd-item ">
+        <a href="/mesidees/01-dettetechnique/">
+        Dette technique
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/02-pratiques/" title="Liens sur des pratiques utiles" class="dd-item ">
+        <a href="/mesidees/02-pratiques/">
+        Liens sur des pratiques utiles
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/03-testsdedeveloppement/" title="Tests de développement" class="dd-item ">
+        <a href="/mesidees/03-testsdedeveloppement/">
+        Tests de développement
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/04-consolehibernate/" title="Créer une console Hibernate" class="dd-item ">
+        <a href="/mesidees/04-consolehibernate/">
+        Créer une console Hibernate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" class="dd-item ">
+        <a href="/mesidees/05-retryenjava/">
+        Coder des ré-essais en Java
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/06-relecturedecode/" title="Relecture, revue et audit de code" class="dd-item ">
+        <a href="/mesidees/06-relecturedecode/">
+        Relecture, revue et audit de code
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/07-hugoetgithubpages/" title="Hugo et GitHub:Pages" class="dd-item ">
+        <a href="/mesidees/07-hugoetgithubpages/">
+        Hugo et GitHub:Pages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/08-creationavechugo/" title="Création d&#39;un site avec Hugo" class="dd-item ">
+        <a href="/mesidees/08-creationavechugo/">
+        Création d&#39;un site avec Hugo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/09-objectmother/" title="Object Mother" class="dd-item ">
+        <a href="/mesidees/09-objectmother/">
+        Object Mother
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/10-guidedudev/" title="Guide Du Développeur" class="dd-item ">
+        <a href="/mesidees/10-guidedudev/">
+        Guide Du Développeur
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/11-programmationdefensive/" title="Programmation défensive" class="dd-item ">
+        <a href="/mesidees/11-programmationdefensive/">
+        Programmation défensive
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/12-eclipse/" title="Eclipse" class="dd-item ">
+        <a href="/mesidees/12-eclipse/">
+        Eclipse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/13-pipeline/" title="Pipeline" class="dd-item ">
+        <a href="/mesidees/13-pipeline/">
+        Pipeline
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/14-qualimetrie/" title="Qualimétrie" class="dd-item ">
+        <a href="/mesidees/14-qualimetrie/">
+        Qualimétrie
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/15-js/" title="JS" class="dd-item ">
+        <a href="/mesidees/15-js/">
+        JS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item ">
+        <a href="/mesidees/16-angular/">
+        Angular
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/17-installationserveuric/" title="Installation d&#39;un serveur pour une Integration Continue" class="dd-item active">
+        <a href="/mesidees/17-installationserveuric/">
+        Installation d&#39;un serveur pour une Integration Continue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/18-licences/" title="Licence" class="dd-item ">
+        <a href="/mesidees/18-licences/">
+        Licence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/19-git/" title="Git" class="dd-item ">
+        <a href="/mesidees/19-git/">
+        Git
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/99-trucsalire/" title="Trucs à lire" class="dd-item ">
+        <a href="/mesidees/99-trucsalire/">
+        Trucs à lire
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mesprojets/" title="Mesprojets" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mesprojets/">
+          Mesprojets
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesprojets/" title="Mes projets" class="dd-item ">
+        <a href="/mesprojets/">
+        Mes projets
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur" class="dd-item ">
+        <a href="/mesprojets/mariage-guidededev/">
+        Mariage - Guide du développeur
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/moncv/" title="Moncvs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/moncv/">
+          Moncvs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/moncv/" title="Mon CV" class="dd-item ">
+        <a href="/moncv/">
+        Mon CV
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/moncv/01-limitescv/" title="Les limites d&#39;un CV" class="dd-item ">
+        <a href="/moncv/01-limitescv/">
+        Les limites d&#39;un CV
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable sticky-parent">
+              
+              <div class="sticky-spacer">
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mesidees</a> > Installation d'un serveur pour une Integration Continue
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#création-de-la-machine">Création de la machine :</a></li>
+<li><a href="#mise-à-jour-de-la-plateforme">Mise à jour de la plateforme :</a></li>
+<li><a href="#installation-de-java-et-jenkins">Installation de Java et Jenkins :</a></li>
+<li><a href="#installation-apache2">Installation apache2</a></li>
+<li><a href="#installation-letsencrypt">Installation LetsEncrypt</a></li>
+<li><a href="#activer-les-accès-sécurisés-aux-outils">Activer les accès sécurisés aux outils :</a></li>
+<li><a href="#configuration-jenkins">Configuration Jenkins :</a></li>
+<li><a href="#installation-email">Installation email :</a></li>
+<li><a href="#installation-maven">Installation Maven :</a></li>
+<li><a href="#installation-npm-nodejs">Installation NPM &amp; NodeJS</a></li>
+<li><a href="#installation-de-chrome">Installation de Chrome :</a></li>
+<li><a href="#si-la-machine-est-de-type-tiny">Si la machine est de type <em>tiny</em></a></li>
+<li><a href="#les-répertoires-à-vider-pour-récupérer-de-l-espace">Les répertoires à vider pour récupérer de l&rsquo;espace :</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Installation d&#39;un serveur pour une Integration Continue</h1>
+          
+
+        
+
+
+
+<h4 id="création-de-la-machine">Création de la machine :</h4>
+
+<p>Créer une machine de type <em>small</em> chez Amazon EC2 avec l&rsquo;OS Ubuntu 17.04 AMD64 (image <em>AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720</em>).
+Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)</p>
+
+<h4 id="mise-à-jour-de-la-plateforme">Mise à jour de la plateforme :</h4>
+
+<p>Se connecter en SSH et exécuter
+<code>ssh sudo apt-get update
+sudo apt-get upgrade</code></p>
+
+<h4 id="installation-de-java-et-jenkins">Installation de Java et Jenkins :</h4>
+
+<pre><code class="language-ssh">sudo apt-get install default-jdk
+    
+@see http://pkg.jenkins-ci.org/debian/
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ &gt;&gt; /etc/apt/sources.list'
+sudo apt-get update
+sudo apt-get install jenkins
+</code></pre>
+
+<p>Pour définir le rootContext de Jenkins, exécuter <code>ssh sudo vi /etc/default/jenkins</code> et modifier la dernière ligne pour ajouter &ldquo;&ndash;prefix=$PREFIX&rdquo;</p>
+
+<h4 id="installation-apache2">Installation apache2</h4>
+
+<pre><code class="language-ssh">sudo apt-get install apache2
+sudo a2enmod proxy proxy_http
+sudo a2enmod headers
+sudo a2enmod ssl
+</code></pre>
+
+<p>Créer le fichier <em>/etc/apache2/sites-available/monHttp.conf</em></p>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+ ServerAdmin webmaster@localhost
+ ServerName me.guillaumetalbot.com
+ ServerAlias ci
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<pre><code class="language-ssh">sudo a2ensite monHttp
+sudo /etc/init.d/apache2 restart
+</code></pre>
+
+<h4 id="installation-letsencrypt">Installation LetsEncrypt</h4>
+
+<p><em>@see <a href="https://certbot.eff.org/#ubuntutzesty-apache">https://certbot.eff.org/#ubuntutzesty-apache</a></em></p>
+
+<p><strong>Penser à configurer le nom de domaine pour pointer sur la machine auprès du DNS</strong></p>
+
+<pre><code class="language-ssh">sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-apache 
+sudo certbot --apache
+</code></pre>
+
+<h4 id="activer-les-accès-sécurisés-aux-outils">Activer les accès sécurisés aux outils :</h4>
+
+<p>Modifier le fichier /etc/apache2/sites-available/monHttp-le-ssl.conf et y ajouter</p>
+
+<pre><code>DocumentRoot /var/www/html
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+ProxyRequests Off
+ProxyVia Off
+&lt;Proxy *&gt;
+Order deny,allow
+Allow from all
+&lt;/Proxy&gt;
+ProxyPreserveHost on
+ProxyPass /monMariage http://localhost:9090/monMariage
+ProxyPassReverse /monMariage http://locahost:9090/monMariage
+ProxyPass /jenkins http://localhost:8080/jenkins nocanon
+ProxyPassReverse /jenkins http://locahost:8080/jenkins
+ProxyPassReverse /jenkins  http://me.guillaumetalbot.com/jenkins
+RequestHeader set X-Forwarded-Proto &quot;https&quot;
+RequestHeader set X-Forwarded-Port &quot;443&quot;
+AllowEncodedSlashes NoDecode
+</code></pre>
+
+<p>Puis exécuter :</p>
+
+<pre><code class="language-ssh">sudo /etc/init.d/apache2 restart
+sudo rm /var/www/html/index.html
+</code></pre>
+
+<p>Créer le fichier /var/www/html/index.html avec le contenu suivant :</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://me.guillaumetalbot.com/monMariage/login.html&quot; /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  Redirection en cours
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h4 id="configuration-jenkins">Configuration Jenkins :</h4>
+
+<p>Aller à l&rsquo;adresse https://&hellip;../jenkins et suivre les instructions</p>
+
+<h4 id="installation-email">Installation email :</h4>
+
+<pre><code class="language-ssh">sudo apt-get install postfix
+sudo vi /etc/postfix/main.cf
+  myhostname = guillaumetalbot.com
+sudo vi /etc/postfix/virtual
+  webmaster@ec2-52-49-145-20.eu-west-1.compute.amazonaws.com ubuntu
+sudo postmap /etc/postfix/virtual
+sudo service postfix restart
+</code></pre>
+
+<h4 id="installation-maven">Installation Maven :</h4>
+
+<p><code>ssh sudo apt-get install maven</code>
+Modifier le fichier /usr/share/maven/conf/settings.xml pour définir le repo local sans oublier de créer le répertoire avec le droit à tous les utilisateurs (chmod a+w m2repo)</p>
+
+<h4 id="installation-npm-nodejs">Installation NPM &amp; NodeJS</h4>
+
+<pre><code class="language-ssh">curl -sL https://deb.nodesource.com/setup_7.x | sudo bash -
+sudo apt-get install nodejs
+</code></pre>
+
+<h4 id="installation-de-chrome">Installation de Chrome :</h4>
+
+<pre><code class="language-ssh">sh -c 'echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google.list'
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+</code></pre>
+
+<h4 id="si-la-machine-est-de-type-tiny">Si la machine est de type <em>tiny</em></h4>
+
+<p>La machine va manquer de RAM. Pour ajouter une partition de SWAP (dans un fichier) (<a href="http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/">http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/</a>)</p>
+
+<pre><code class="language-ssh">dd if=/dev/zero of=/var/myswap bs=1M count=2048
+mkswap /var/myswap
+swapon /var/myswap
+</code></pre>
+
+<h4 id="les-répertoires-à-vider-pour-récupérer-de-l-espace">Les répertoires à vider pour récupérer de l&rsquo;espace :</h4>
+
+<p>/var/lib/jenkins/.npm/_logs/</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/mesidees/16-angular/" title="Angular"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/mesidees/18-licences/" title="Licence" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1503842971"></script>
+    <script src="/js/perfect-scrollbar.min.js?1503842971"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1503842971"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1503842971"></script>
+    <script src="/js/featherlight.min.js?1503842971"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1503842971"></script>
+    <script src="/js/highlight.pack.js?1503842971"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1503842971"></script>
+    <script src="/js/learn.js?1503842971"></script>
+    <script src="/js/hugo-learn.js?1503842971"></script>
+
+    <link href="/mermaid/mermaid.css?1503842971" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1503842971"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

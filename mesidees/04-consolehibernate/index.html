@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <title>Créer une console Hibernate :: Guillaume TALBOT</title>
+    
+    
+    <link href="/css/nucleus.css?1503842971" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1503842971" rel="stylesheet">
+    <link href="/css/hybrid.css?1503842971" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1503842971" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1503842971" rel="stylesheet">
+    <link href="/css/horsey.css?1503842971" rel="stylesheet">
+    <link href="/css/theme.css?1503842971" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1503842971" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1503842971"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/mesidees/04-consolehibernate/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1503842971"></script>
+<script type="text/javascript" src="/js/horsey.js?1503842971"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/talbotgui.github.io\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1503842971"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mesidees/" title="Mesidees" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/mesidees/">
+          Mesidees
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item ">
+        <a href="/mesidees/">
+        Mes idées
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/01-dettetechnique/" title="Dette technique" class="dd-item ">
+        <a href="/mesidees/01-dettetechnique/">
+        Dette technique
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/02-pratiques/" title="Liens sur des pratiques utiles" class="dd-item ">
+        <a href="/mesidees/02-pratiques/">
+        Liens sur des pratiques utiles
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/03-testsdedeveloppement/" title="Tests de développement" class="dd-item ">
+        <a href="/mesidees/03-testsdedeveloppement/">
+        Tests de développement
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/04-consolehibernate/" title="Créer une console Hibernate" class="dd-item active">
+        <a href="/mesidees/04-consolehibernate/">
+        Créer une console Hibernate
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" class="dd-item ">
+        <a href="/mesidees/05-retryenjava/">
+        Coder des ré-essais en Java
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/06-relecturedecode/" title="Relecture, revue et audit de code" class="dd-item ">
+        <a href="/mesidees/06-relecturedecode/">
+        Relecture, revue et audit de code
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/07-hugoetgithubpages/" title="Hugo et GitHub:Pages" class="dd-item ">
+        <a href="/mesidees/07-hugoetgithubpages/">
+        Hugo et GitHub:Pages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/08-creationavechugo/" title="Création d&#39;un site avec Hugo" class="dd-item ">
+        <a href="/mesidees/08-creationavechugo/">
+        Création d&#39;un site avec Hugo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/09-objectmother/" title="Object Mother" class="dd-item ">
+        <a href="/mesidees/09-objectmother/">
+        Object Mother
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/10-guidedudev/" title="Guide Du Développeur" class="dd-item ">
+        <a href="/mesidees/10-guidedudev/">
+        Guide Du Développeur
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/11-programmationdefensive/" title="Programmation défensive" class="dd-item ">
+        <a href="/mesidees/11-programmationdefensive/">
+        Programmation défensive
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/12-eclipse/" title="Eclipse" class="dd-item ">
+        <a href="/mesidees/12-eclipse/">
+        Eclipse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/13-pipeline/" title="Pipeline" class="dd-item ">
+        <a href="/mesidees/13-pipeline/">
+        Pipeline
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/14-qualimetrie/" title="Qualimétrie" class="dd-item ">
+        <a href="/mesidees/14-qualimetrie/">
+        Qualimétrie
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/15-js/" title="JS" class="dd-item ">
+        <a href="/mesidees/15-js/">
+        JS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item ">
+        <a href="/mesidees/16-angular/">
+        Angular
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/17-installationserveuric/" title="Installation d&#39;un serveur pour une Integration Continue" class="dd-item ">
+        <a href="/mesidees/17-installationserveuric/">
+        Installation d&#39;un serveur pour une Integration Continue
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/18-licences/" title="Licence" class="dd-item ">
+        <a href="/mesidees/18-licences/">
+        Licence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/19-git/" title="Git" class="dd-item ">
+        <a href="/mesidees/19-git/">
+        Git
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesidees/99-trucsalire/" title="Trucs à lire" class="dd-item ">
+        <a href="/mesidees/99-trucsalire/">
+        Trucs à lire
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mesprojets/" title="Mesprojets" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mesprojets/">
+          Mesprojets
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesprojets/" title="Mes projets" class="dd-item ">
+        <a href="/mesprojets/">
+        Mes projets
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur" class="dd-item ">
+        <a href="/mesprojets/mariage-guidededev/">
+        Mariage - Guide du développeur
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/moncv/" title="Moncvs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/moncv/">
+          Moncvs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/moncv/" title="Mon CV" class="dd-item ">
+        <a href="/moncv/">
+        Mon CV
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/moncv/01-limitescv/" title="Les limites d&#39;un CV" class="dd-item ">
+        <a href="/moncv/01-limitescv/">
+        Les limites d&#39;un CV
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable sticky-parent">
+              
+              <div class="sticky-spacer">
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mesidees</a> > Créer une console Hibernate
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#les-problèmes">Les problèmes</a></li>
+<li><a href="#les-solutions">Les solutions</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Créer une console Hibernate</h1>
+          
+
+        
+
+
+
+<p>Créer une console Hibernate (JBoss Tools) sur un projet SpringBoot+JPA utilisant une HSQLDB</p>
+
+<h2 id="les-problèmes">Les problèmes</h2>
+
+<p>Où se trouve la difficulté ? Un peu partout en fait :</p>
+
+<ul>
+<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude</li>
+<li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude)</li>
+<li>il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB</li>
+</ul>
+
+<h2 id="les-solutions">Les solutions</h2>
+
+<p>Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue <em>Data Source Explorer</em>. Mais pensez bien à ajouter <em>;readonly=true;files_readonly=true;hsqldb.lock_file=false</em> à la fin de l&rsquo;URL de connexion.</p>
+
+<p>Quant à la configuration de la console Hibernate, elle demande la création de deux fichiers :</p>
+
+<ul>
+<li><em>hibernate.properties</em> qui va rester vide</li>
+<li><em>hibernate.cfg.xml</em> qui va contenir ce code</li>
+</ul>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE hibernate-configuration PUBLIC &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot; &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;
+&lt;hibernate-configuration&gt;
+&lt;session-factory name=&quot;sessionFactory&quot;&gt;
+&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;org.hsqldb.jdbcDriver&lt;/property&gt;
+&lt;property name=&quot;hibernate.connection.password&quot;&gt;login&lt;/property&gt;
+&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false&lt;/property&gt;
+&lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
+&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.HSQLDialect&lt;/property&gt;
+&lt;mapping class=&quot;mon.package.MonEntite&quot; /&gt;
+&lt;mapping class=&quot;mon.package.EtToutesMesAutresEntitesSansEnOublier&quot; /&gt;
+&lt;/session-factory&gt;
+&lt;/hibernate-configuration&gt;
+</code></pre>
+
+<p>Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&rsquo;installation), il vous reste à :</p>
+
+<ul>
+<li>ouvrir la perspective <em>Hibernate</em> (avec le petit bouton <em>Open a perspective</em> en haut à droite)</li>
+<li>dans la vue <em>Hibernate Configurations</em>, faire un clic-droit et un <em>add Configuration&hellip;</em></li>
+<li>renseigner le formulaire avec :
+
+<ul>
+<li>Nom : ce que vous voulez</li>
+<li>Type : <em>Core</em></li>
+<li>Hibernate version : votre version d&rsquo;Hibernate</li>
+<li>Project : votre projet contenant la persistance</li>
+<li>Database Connection : <em>Hibernate configured connection</em></li>
+<li>Property file : le fichier précédemment créé</li>
+<li>Configuration file : le fichier précédemment créé</li>
+<li>Database dialect : HSQL</li>
+</ul></li>
+</ul>
+
+<p>Après un petit clic sur la flèche à coté de votre configuration pour l&rsquo;étendre, puis un clic sur <em>Session Factory</em>, vous devriez voir toutes vos classes persistantes.</p>
+
+<p>Il est maintenant possible d&rsquo;ouvrir un <em>HQL Editor</em> depuis un clic droit sur la configuration.</p>
+
+<p>A partir du même endroit, il est possible de créer un schéma de votre mapping.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/mesidees/03-testsdedeveloppement/" title="Tests de développement"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1503842971"></script>
+    <script src="/js/perfect-scrollbar.min.js?1503842971"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1503842971"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1503842971"></script>
+    <script src="/js/featherlight.min.js?1503842971"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1503842971"></script>
+    <script src="/js/highlight.pack.js?1503842971"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1503842971"></script>
+    <script src="/js/learn.js?1503842971"></script>
+    <script src="/js/hugo-learn.js?1503842971"></script>
+
+    <link href="/mermaid/mermaid.css?1503842971" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1503842971"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

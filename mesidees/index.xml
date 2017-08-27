@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mesidees on Guillaume TALBOT</title>
+    <link>https://talbotgui.github.io/mesidees/</link>
+    <description>Recent content in Mesidees on Guillaume TALBOT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    
+	<atom:link href="https://talbotgui.github.io/mesidees/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mes idées</title>
+      <link>https://talbotgui.github.io/mesidees/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/</guid>
+      <description>Cette partie du site contient des résumés d&amp;rsquo;articles, des opinions, des astuces et des guides sur des sujets très divers :
+ liens vers des pratiques utiles
+ industrialisation
+ dette technique relecture de code qualimétrie intégration Continue - pipeline guide du développeur installation d&amp;rsquo;un serveur pour une IC  développement - langages / outils
+ créer une console Hibernate Eclipse quelques incontournables de JS Angular Git Cheat Sheet  développement - pratiques &amp;amp; patterns</description>
+    </item>
+    
+    <item>
+      <title>Dette technique</title>
+      <link>https://talbotgui.github.io/mesidees/01-dettetechnique/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/01-dettetechnique/</guid>
+      <description>Définitions sur le net  Ward Cunningham (1992) : if you develop a program for a long period of time by only adding features and never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer. James Shore : the cumulative total of less-than-perfect design and implementation Tom Poppendieck : everything that makes your code harder to change  Ma définition La dette technique</description>
+    </item>
+    
+    <item>
+      <title>Liens sur des pratiques utiles</title>
+      <link>https://talbotgui.github.io/mesidees/02-pratiques/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/02-pratiques/</guid>
+      <description> Pratiques de développement :  Refactoring tips - Martin Fowler DesignPattern avec explication et code  Documentation d&amp;rsquo;une solution, d&amp;rsquo;un langage ou d&amp;rsquo;un projet :  Frameworks :  Liste très riche de frameworks en tout genre Mock d&amp;rsquo;un FileSystem Selenide - sur couche à Selenium simplifiant l&amp;rsquo;API  Langages :  JS - les fonctionnalités de l&amp;rsquo;objet console CSS - les règles de priorité de la cascade  Outils :  AsciiDoctor - générer la documentation avec Maven Hugo ELK - installation   </description>
+    </item>
+    
+    <item>
+      <title>Tests de développement</title>
+      <link>https://talbotgui.github.io/mesidees/03-testsdedeveloppement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/03-testsdedeveloppement/</guid>
+      <description>J&amp;rsquo;en ai ras le bol de ce débat stérile sur les tests unitaires. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&amp;rsquo;adjectif unitaire.
+D&amp;rsquo;un côté, les tests sont unitaires quand le SUT (System Under Test) se limite à une classe voire une méthode. L&amp;rsquo;avantage de ces tests est qu&amp;rsquo;ils sont assez simples à rédiger car le code à tester se limite à celui de la classe (inutile de connaître le comportement de tous les autres composants du système qui peuvent être mis en jeu).</description>
+    </item>
+    
+    <item>
+      <title>Créer une console Hibernate</title>
+      <link>https://talbotgui.github.io/mesidees/04-consolehibernate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/04-consolehibernate/</guid>
+      <description>Créer une console Hibernate (JBoss Tools) sur un projet SpringBoot+JPA utilisant une HSQLDB
+Les problèmes Où se trouve la difficulté ? Un peu partout en fait :
+ La console Hibernate de JBoss Tools utilise encore un fichier hibernate.cfg.xml dont on a plus très souvent l&amp;rsquo;habitude La recherche d&amp;rsquo;entités par présence d&amp;rsquo;annotation n&amp;rsquo;est pas disponible (c&amp;rsquo;est Spring qui le fait d&amp;rsquo;habitude) il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB  Les solutions Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue Data Source Explorer.</description>
+    </item>
+    
+    <item>
+      <title>Coder des ré-essais en Java</title>
+      <link>https://talbotgui.github.io/mesidees/05-retryenjava/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/05-retryenjava/</guid>
+      <description>La librairie guava-retrying est assez pratique pour définir des méthodes à réessayer en cas d&amp;rsquo;échec.
+Documentation : ici
+Dépendance &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.github.rholder&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;guava-retrying&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;  Exemple import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.TimeUnit; import org.junit.Assert; import com.github.rholder.retry.RetryException; import com.github.rholder.retry.Retryer; import com.github.rholder.retry.RetryerBuilder; import com.github.rholder.retry.StopStrategies; import com.github.rholder.retry.WaitStrategies; public class Test { public void testRetry() throws ExecutionException, RetryException { final int nbEssais = 6; final int tempsEntreDeuxEssaisEnMs = 500; final Retryer&amp;lt;Void&amp;gt; retryer = RetryerBuilder.</description>
+    </item>
+    
+    <item>
+      <title>Relecture, revue et audit de code</title>
+      <link>https://talbotgui.github.io/mesidees/06-relecturedecode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/06-relecturedecode/</guid>
+      <description>Ma définition  La relecture de code est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&amp;rsquo;afficher le contenu du commit (git diff par exemple). Une relecture permet de s&amp;rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &amp;hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&amp;rsquo;aucun fichier ne sera intégré au commit pour un simple saut de ligne malencontreux, &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Hugo et GitHub:Pages</title>
+      <link>https://talbotgui.github.io/mesidees/07-hugoetgithubpages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/07-hugoetgithubpages/</guid>
+      <description>Démarrage Les objectifs sont :
+ de disposer d&amp;rsquo;un repository contenant les sources du site avec des pages en markdown d&amp;rsquo;utiliser Hugo pour réaliser la mise en page et générer le site statique de déployer ce site statique dans un repository GitHub:Pages d&amp;rsquo;automatiser complètement la génération et le déploiement du site  Le point de départ :
+ le site existe déjà (cf. créer un site avec Hugo) Hugo génère le site dans le répertoire &amp;lsquo;public&amp;rsquo; (répertoire par défaut) les sources du site sont dans un repository Git un serveur Jenkins est disponible Jenkins contient une configuration login/password avec le compte GitHub  Les valeurs utilisées ici sont celle du site que vous consultez en ce moment :</description>
+    </item>
+    
+    <item>
+      <title>Création d&#39;un site avec Hugo</title>
+      <link>https://talbotgui.github.io/mesidees/08-creationavechugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/08-creationavechugo/</guid>
+      <description>La structure Le plus simple est toujours de partir d&amp;rsquo;une base de travail simple. Pour cela, sont disponibles plusieurs base :
+ SIMPLE : un site Hugo de 2 pages avec le thème LEARN INDUS : le même site SIMPLE mais industrialisé avec NPM pour démarrer le site sur Windows, Unix ou simplement générer le site SEARCH : le même site INDUS avec la fonction de recherche basée sur LUNR JENKINS : mon site est basé sur SEARCH mais automatiquement publié sur les GitHub:pages  Les astuces à connaître Hugo en 2 mots L&amp;rsquo;idée d&amp;rsquo;Hugo est de générer un site WEB statique avec une jolie mise en forme sans se prendre la tête avec la mise en forme.</description>
+    </item>
+    
+    <item>
+      <title>Object Mother</title>
+      <link>https://talbotgui.github.io/mesidees/09-objectmother/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/09-objectmother/</guid>
+      <description>Le pattern tel qu&amp;rsquo;il est défini aujourd&amp;rsquo;hui Ce pattern est dédié à la création d&amp;rsquo;objets de données utilisés dans des tests codés.
+Ce pattern se base sur le pattern Factory. Il propose la création d&amp;rsquo;une classe dont la responsabilité est de créer des objets. La particularité de ce pattern est que les données créées sont dédiés aux tests.
+Extraire le code de création de ces objets améliore la lisibilité des tests (à condition que le nom des méthodes de l&amp;rsquo;ObjectMother soit explicite).</description>
+    </item>
+    
+    <item>
+      <title>Guide Du Développeur</title>
+      <link>https://talbotgui.github.io/mesidees/10-guidedudev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/10-guidedudev/</guid>
+      <description>Le Guide Du Développeur est l&amp;rsquo;espace de partage d&amp;rsquo;une équipe. Il contient toutes les informations utiles aux membres de l&amp;rsquo;équipe.
+Chaque question posée par un collaborateur doit donner lieu à un nouveau paragraphe dans le GDD.
+Il est inutile d&amp;rsquo;imposer un guide du développeur. Il faut le proposer et le faire adopter. C&amp;rsquo;est un outil pour l&amp;rsquo;équipe construit par l&amp;rsquo;équipe. Si personne ne le consulte avant de se mettre en quête d&amp;rsquo;une réponse (sur Internet ou au près d&amp;rsquo;un leader), alors il est inutile.</description>
+    </item>
+    
+    <item>
+      <title>Programmation défensive</title>
+      <link>https://talbotgui.github.io/mesidees/11-programmationdefensive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/11-programmationdefensive/</guid>
+      <description>Lorsqu&amp;rsquo;un développeur code une nouvelle méthode, il doit savoir s&amp;rsquo;il fait confiance au code qui fera appel à cette méthode. Ou pas.
+ S&amp;rsquo;il a confiance, il déclarera les conditions d&amp;rsquo;appels à la méthode dans le contrat de sa méthode (dans la Javadoc de sa méthode, dans le WSDL, ou tout autre support d&amp;rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.</description>
+    </item>
+    
+    <item>
+      <title>Eclipse</title>
+      <link>https://talbotgui.github.io/mesidees/12-eclipse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/12-eclipse/</guid>
+      <description>Introduction Un outil mal/sous utilisé Comment apprendre à utiliser pleinement Eclipse ? Les raccourcis à connaître Les fonctionnalités natives indispensables Les plugins très utiles en fonction des projets  Introduction Eclipse est un IDE, un environnement de développement intégré. A ce titre, il propose un éditeur de texte et des centaines de fonctionnalités autour. Basé sur un système de plugin, il est très extensible et très personnalisable.
+Eclipse n&amp;rsquo;est pas le seul IDE disponible sur le marché.</description>
+    </item>
+    
+    <item>
+      <title>Pipeline</title>
+      <link>https://talbotgui.github.io/mesidees/13-pipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/13-pipeline/</guid>
+      <description>Définition de l&amp;rsquo;intégration continue Les actions à faire réaliser par l&amp;rsquo;IC Comment aller un tout petit peu plus loin Définition du Continuous Delivery  Définition de l&amp;rsquo;Intégration Continue (IC dans la suite du chapitre) En une seule phrase L&amp;rsquo;intégration continue a pour objectif de valider que le code actuellement présent dans le repository de source est valide.
+La fréquence de la validation et même la définition de cette validation sont très variables d&amp;rsquo;un projet à un autre :</description>
+    </item>
+    
+    <item>
+      <title>Qualimétrie</title>
+      <link>https://talbotgui.github.io/mesidees/14-qualimetrie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/14-qualimetrie/</guid>
+      <description>La Qualimétrie est la mesure de la qualité d&amp;rsquo;un projet.
+Le problème qui se pose avant de parler de qualimétrie. Or, qualité veut tout et rien dire. Donc, ici, je vais me limiter à la qualité du code.
+Mais pour évaluer le code d&amp;rsquo;un projet, encore faut-il qu&amp;rsquo;il existe des règles de conception/développement sur le projet. Sans règle, il ne peut y avoir de qualité.
+Et oubliez l&amp;rsquo;expression &amp;ldquo;les standards de qualité&amp;rdquo; !</description>
+    </item>
+    
+    <item>
+      <title>JS</title>
+      <link>https://talbotgui.github.io/mesidees/15-js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/15-js/</guid>
+      <description>Quelques notes sur les incontournables choses à connaître en JS.
+Au sommaire :
+ Les 6 falsies Les paramètres par défaut Les déclarations de variables Déclaration des scripts dans une page HTML Les exceptions en JS Déclarer une classe Utiliser des getter / setter en JS Déclarer un module encapsulant du code  Les 6 falsies  false 0 &amp;rdquo; ou &amp;ldquo;&amp;rdquo; string de length 0 NaN undefined null  Astuce :</description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>https://talbotgui.github.io/mesidees/16-angular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/16-angular/</guid>
+      <description>Quelques astuces Angular à retenir : Angular Cheat Sheet
+Au besoin, pour réinstaller Angular/cli : ts npm install -g @angular/cli --no-optional
+Dans une interpolation, pour naviguer sans risque, il suffit d&amp;rsquo;utiliser le Safe Navigation Operator (&amp;lsquo;?.&amp;rsquo;). Exemple : ts unObjet?.unAttributPotentiellementUndefined
+Two way binding :
+ ts [ngModel]=&amp;quot;monAttribut&amp;quot; si la valeur change dans le JS, le DOM est mis à jour ts (ngModel)=&amp;quot;monAttribut&amp;quot; si le DOM change, la valeur du JS est mise à jour  Exemple de binding : html &amp;lt;div [style.</description>
+    </item>
+    
+    <item>
+      <title>Installation d&#39;un serveur pour une Integration Continue</title>
+      <link>https://talbotgui.github.io/mesidees/17-installationserveuric/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/17-installationserveuric/</guid>
+      <description>Création de la machine : Créer une machine de type small chez Amazon EC2 avec l&amp;rsquo;OS Ubuntu 17.04 AMD64 (image AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720). Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)
+Mise à jour de la plateforme : Se connecter en SSH et exécuter ssh sudo apt-get update sudo apt-get upgrade
+Installation de Java et Jenkins : sudo apt-get install default-jdk @see http://pkg.jenkins-ci.org/debian/ wget -q -O - https://pkg.</description>
+    </item>
+    
+    <item>
+      <title>Licence</title>
+      <link>https://talbotgui.github.io/mesidees/18-licences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/18-licences/</guid>
+      <description>Source : https://opensource.stackexchange.com/questions/21/whats-the-difference-between-permissive-and-copyleft-licenses</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://talbotgui.github.io/mesidees/19-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/19-git/</guid>
+      <description>Les basics : Pour cloner un dépot : ssh git clone https://xxxxxxxxx
+Pour ajouter une modification : ssh git add rep1/monFichier.xxx
+Pour ajouter toutes les modifications : ssh git add -A
+Pour annuler les ADD : ssh git reset
+Pour annuler le ADD d&amp;rsquo;un fichier : ssh git reset rep1/monFichier.xxx
+Pour annuler les modifications d&amp;rsquo;un fichier : ssh git checkout rep1/monFichier.xxx
+Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>Trucs à lire</title>
+      <link>https://talbotgui.github.io/mesidees/99-trucsalire/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/99-trucsalire/</guid>
+      <description>Quelques trucs à lire :
+ retour sur le piratage de TV5 Monde: partie1, partie2 le MOOC sur la sécurité informatique proposée par le gouvernement  </description>
+    </item>
+    
+  </channel>
+</rss>

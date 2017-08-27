@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/01-dettetechnique/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/02-pratiques/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/03-testsdedeveloppement/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/04-consolehibernate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/05-retryenjava/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/06-relecturedecode/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/07-hugoetgithubpages/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/08-creationavechugo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/09-objectmother/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/10-guidedudev/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/11-programmationdefensive/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/12-eclipse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/13-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/14-qualimetrie/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/15-js/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/16-angular/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/17-installationserveuric/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/18-licences/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/19-git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/99-trucsalire/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesprojets/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesprojets/mariage-guidededev/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/moncv/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/moncv/01-limitescv/</loc>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesidees/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/mesprojets/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/moncv/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://talbotgui.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

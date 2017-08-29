@@ -11,19 +11,6 @@
     
     
     <item>
-      <title>Mes idées</title>
-      <link>https://talbotgui.github.io/mesidees/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://talbotgui.github.io/mesidees/</guid>
-      <description>Cette partie du site contient des résumés d&amp;rsquo;articles, des opinions, des astuces et des guides sur des sujets très divers :
- liens vers des pratiques utiles
- industrialisation
- dette technique relecture de code qualimétrie intégration Continue - pipeline guide du développeur installation d&amp;rsquo;un serveur pour une IC  développement - langages / outils
- créer une console Hibernate Eclipse quelques incontournables de JS Angular Git Cheat Sheet  développement - pratiques &amp;amp; patterns</description>
-    </item>
-    
-    <item>
       <title>Dette technique</title>
       <link>https://talbotgui.github.io/mesidees/01-dettetechnique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -227,6 +214,25 @@ Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
     </item>
     
     <item>
+      <title>les différents FLOW avec Git</title>
+      <link>https://talbotgui.github.io/mesidees/20-gitflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/20-gitflow/</guid>
+      <description>Modèle 1 : a-successful-git-branching-model sources :
+ blog d&amp;rsquo;origine comment gérer plusieurs version  Liste des branches :  master =&amp;gt; la branche déployable en production à tout instant develop =&amp;gt; la branche contenant tous les développements réalisés pour la prochaine release feature_XX =&amp;gt; la branche contenant les commits d&amp;rsquo;une fonctionnalités  initialisée depuis : DEVELOP peut être mergée dans : DEVELOP  release_XX =&amp;gt; la branche qui contient les commits d&amp;rsquo;une version précise de l&amp;rsquo;application  Règles à respecter :  master :  tout commit sur le MASTER donne lieu à un tag et un déploiement en production  develop :  tout développement terminé doit être mergé sur la branche DEVELOP  feature_XX :  à créer depuis DEVELOP à merger dans DEVELOP à ne jamais pousser sur le repository ORIGIN les développeurs peuvent se synchroniser entre eux pour travailler sur une même feature ne pousser dans DEVELOP que quand la fonctionnalité est terminée et souhaitée pour la prochaine version (car la branche de la prochaine version sera créée depuis DEVELOP)  release_XX :  à créer depuis DEVELOP à merger dans DEVELOP et MASTER quand la plus part des fonctionnalités (voire toutes) ont été intégrées dans DEVELOP, on créer la branche release_XX quand la release est terminée et validée, la branche est poussées dans MASTER (pour livraison) et dans DEVELOP (pour y mettre les correctifs) toute correction d&amp;rsquo;une fonctionnalité doit être faite sur la branche release_XX  hotFix_XX :</description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>https://talbotgui.github.io/mesidees/21-jenkins/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/21-jenkins/</guid>
+      <description> Liens nécessaires :  site de Jenkins documentation officielle  Pipeline as code  pipeline as code - step rerefence pour ne pas commiter 100 fois une correction de JenkinsFile pipeline syntax : une page aidant à la création des commandes disponible en cliquant sur le lien &amp;ldquo;Pipeline Syntax&amp;rdquo; présent en dessous de tout éditeur de pipeline dans Jenkins (dans un job Pipeline ou dans l&amp;rsquo;écran &amp;ldquo;replay&amp;rdquo; d&amp;rsquo;un build)  </description>
+    </item>
+    
+    <item>
       <title>Trucs à lire</title>
       <link>https://talbotgui.github.io/mesidees/99-trucsalire/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -234,16 +240,6 @@ Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
       <guid>https://talbotgui.github.io/mesidees/99-trucsalire/</guid>
       <description>Quelques trucs à lire :
  retour sur le piratage de TV5 Monde: partie1, partie2 le MOOC sur la sécurité informatique proposée par le gouvernement  </description>
-    </item>
-    
-    <item>
-      <title>Mes projets</title>
-      <link>https://talbotgui.github.io/mesprojets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://talbotgui.github.io/mesprojets/</guid>
-      <description>Mes projets publics en cours :
- une application de gestion des invités à un mariage (GitHub)  guide du développeur  une application de gestion d&amp;rsquo;une classe d&amp;rsquo;école primaire avec les informations sur les élèves, les notes, les compétences à travailler et le cahier journal) (GitHub) le présent site avec mes notes capitalisant des trucs et astuces utiles (GitHub)  </description>
     </item>
     
     <item>
@@ -255,18 +251,6 @@ Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
       <description>Cette page est un court guide du développeur (ma définition du guide du développeur) pour mon projet Mariage.
 Sommaire :
  Gestion de projet Exigences  Exigences métiers Exigences techniques  Environnement Architecture technique Tests  Que tester Comment tester Avec quels outils  Règles de conception  Persistance Service API WEB - Pages WEB - JS  Règles de développement  Langue Nommage Mise en forme des sources HQL  Processus de développement  Gestion de configuration logicielle Commit Industrialisation   Gestion de projet Un suivi minimaliste des tâches est réalisés dans le fichier &amp;ldquo;backlog.</description>
-    </item>
-    
-    <item>
-      <title>Mon CV</title>
-      <link>https://talbotgui.github.io/moncv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://talbotgui.github.io/moncv/</guid>
-      <description>Produire. C&amp;rsquo;est ma drogue. Produire du code, des documents de formation ou un billet de blog. Mais produire.
-2 semaines sans produire, je deviens fou et je passe une nuit sur un projet personnel.
-On ne se refait pas&amp;hellip; Mais on peut s&amp;rsquo;améliorer.
-2017 Formateur et référent de formations  Pour Sopra Steria, dans les fonctions transverses du groupe, référent de plusieurs formations techniques et méthodologiques Participant aux travaux d’évolution de la méthode du groupe Formateur Java et méthode du groupe (8 jours par mois en moyenne) Mise à jour de plusieurs formations et création de 2 nouvelles formations Java (Hibernate avancé et Tests unitaires avancés)  1 ETP (grande autonomie) De mai 2015 à aujourd&#39;hui  Référent technique  Pour Sopra Steria, en mission chez Enedis (anciennement Erdf) sur le projet Linky-Coeur Projet visant à mettre en place un SI de gestion des 35 millions de compteurs électriques intelligents d&#39;EDF.</description>
     </item>
     
     <item>

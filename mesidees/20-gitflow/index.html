@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <title>Créer une console Hibernate :: Guillaume TALBOT</title>
+    <title>les différents FLOW avec Git :: Guillaume TALBOT</title>
     
     
     <link href="/css/nucleus.css?1504020015" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/04-consolehibernate/">
+  <body class="" data-url="/mesidees/20-gitflow/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -162,7 +162,7 @@
  
   
     
-      <li data-nav-id="/mesidees/04-consolehibernate/" title="Créer une console Hibernate" class="dd-item active">
+      <li data-nav-id="/mesidees/04-consolehibernate/" title="Créer une console Hibernate" class="dd-item ">
         <a href="/mesidees/04-consolehibernate/">
         Créer une console Hibernate
         <i class="fa fa-check read-icon"></i>
@@ -466,7 +466,7 @@
  
   
     
-      <li data-nav-id="/mesidees/20-gitflow/" title="les différents FLOW avec Git" class="dd-item ">
+      <li data-nav-id="/mesidees/20-gitflow/" title="les différents FLOW avec Git" class="dd-item active">
         <a href="/mesidees/20-gitflow/">
         les différents FLOW avec Git
         <i class="fa fa-check read-icon"></i>
@@ -688,7 +688,7 @@
             
           
           
-            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Créer une console Hibernate
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > les différents FLOW avec Git
           
          
           
@@ -704,8 +704,36 @@
 <ul>
 <li>
 <ul>
-<li><a href="#les-problèmes">Les problèmes</a></li>
-<li><a href="#les-solutions">Les solutions</a></li>
+<li>
+<ul>
+<li><a href="#modèle-1-a-successful-git-branching-model">Modèle 1 : a-successful-git-branching-model</a>
+<ul>
+<li>
+<ul>
+<li><a href="#liste-des-branches">Liste des branches :</a></li>
+<li><a href="#règles-à-respecter">Règles à respecter :</a></li>
+<li><a href="#avantages-et-problèmes">Avantages et problèmes :</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#modèle-1-git-flow-l-outil-qui-va-avec">Modèle 1 : Git Flow, l&rsquo;outil qui va avec</a>
+<ul>
+<li>
+<ul>
+<li><a href="#avantages-et-problèmes-1">Avantages et problèmes :</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#modèle-2">Modèle 2 :</a>
+<ul>
+<li>
+<ul>
+<li><a href="#liste-des-branches-1">Liste des branches :</a></li>
+<li><a href="#règles-à-respecter-1">Règles à respecter :</a></li>
+<li><a href="#avantages-et-problèmes-2">Avantages et problèmes :</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#annexes">Annexes :</a></li>
+<li><a href="#mes-propres-questions">Mes propres questions :</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -720,75 +748,176 @@
         
         <div id="body-inner">
           
-            <h1>Créer une console Hibernate</h1>
+            <h1>les différents FLOW avec Git</h1>
           
 
         
 
 
 
-<p>Créer une console Hibernate (JBoss Tools) sur un projet SpringBoot+JPA utilisant une HSQLDB</p>
+<h3 id="modèle-1-a-successful-git-branching-model">Modèle 1 : a-successful-git-branching-model</h3>
 
-<h2 id="les-problèmes">Les problèmes</h2>
-
-<p>Où se trouve la difficulté ? Un peu partout en fait :</p>
+<p>sources :</p>
 
 <ul>
-<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude</li>
-<li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude)</li>
-<li>il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB</li>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">blog d&rsquo;origine</a></li>
+<li><a href="https://blog.nathanaelcherrier.com/2016/08/03/gerer-plusieurs-versions-avec-gitflow/">comment gérer plusieurs version</a></li>
 </ul>
 
-<h2 id="les-solutions">Les solutions</h2>
-
-<p>Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue <em>Data Source Explorer</em>. Mais pensez bien à ajouter <em>;readonly=true;files_readonly=true;hsqldb.lock_file=false</em> à la fin de l&rsquo;URL de connexion.</p>
-
-<p>Quant à la configuration de la console Hibernate, elle demande la création de deux fichiers :</p>
+<h5 id="liste-des-branches">Liste des branches :</h5>
 
 <ul>
-<li><em>hibernate.properties</em> qui va rester vide</li>
-<li><em>hibernate.cfg.xml</em> qui va contenir ce code</li>
+<li>master =&gt; la branche déployable en production à tout instant</li>
+<li>develop =&gt; la branche contenant tous les développements réalisés pour la prochaine release</li>
+<li>feature_XX =&gt; la branche contenant les commits d&rsquo;une fonctionnalités
+
+<ul>
+<li>initialisée depuis : DEVELOP</li>
+<li>peut être mergée dans : DEVELOP</li>
+</ul></li>
+<li>release_XX =&gt; la branche qui contient les commits d&rsquo;une version précise de l&rsquo;application</li>
 </ul>
 
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE hibernate-configuration PUBLIC &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot; &quot;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&quot;&gt;
-&lt;hibernate-configuration&gt;
-&lt;session-factory name=&quot;sessionFactory&quot;&gt;
-&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;org.hsqldb.jdbcDriver&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.password&quot;&gt;login&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
-&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.HSQLDialect&lt;/property&gt;
-&lt;mapping class=&quot;mon.package.MonEntite&quot; /&gt;
-&lt;mapping class=&quot;mon.package.EtToutesMesAutresEntitesSansEnOublier&quot; /&gt;
-&lt;/session-factory&gt;
-&lt;/hibernate-configuration&gt;
-</code></pre>
-
-<p>Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&rsquo;installation), il vous reste à :</p>
+<h5 id="règles-à-respecter">Règles à respecter :</h5>
 
 <ul>
-<li>ouvrir la perspective <em>Hibernate</em> (avec le petit bouton <em>Open a perspective</em> en haut à droite)</li>
-<li>dans la vue <em>Hibernate Configurations</em>, faire un clic-droit et un <em>add Configuration&hellip;</em></li>
-<li>renseigner le formulaire avec :
+<li>master :
 
 <ul>
-<li>Nom : ce que vous voulez</li>
-<li>Type : <em>Core</em></li>
-<li>Hibernate version : votre version d&rsquo;Hibernate</li>
-<li>Project : votre projet contenant la persistance</li>
-<li>Database Connection : <em>Hibernate configured connection</em></li>
-<li>Property file : le fichier précédemment créé</li>
-<li>Configuration file : le fichier précédemment créé</li>
-<li>Database dialect : HSQL</li>
+<li>tout commit sur le MASTER donne lieu à un tag et un déploiement en production</li>
+</ul></li>
+<li>develop :
+
+<ul>
+<li>tout développement terminé doit être mergé sur la branche DEVELOP</li>
+</ul></li>
+<li>feature_XX :
+
+<ul>
+<li>à créer depuis DEVELOP</li>
+<li>à merger dans DEVELOP</li>
+<li>à ne jamais pousser sur le repository ORIGIN</li>
+<li>les développeurs peuvent se synchroniser entre eux pour travailler sur une même feature</li>
+<li>ne pousser dans DEVELOP que quand la fonctionnalité est terminée et souhaitée pour la prochaine version (car la branche de la prochaine version sera créée depuis DEVELOP)</li>
+</ul></li>
+<li>release_XX :
+
+<ul>
+<li>à créer depuis DEVELOP</li>
+<li>à merger dans DEVELOP et MASTER</li>
+<li>quand la plus part des fonctionnalités (voire toutes) ont été intégrées dans DEVELOP, on créer la branche release_XX</li>
+<li>quand la release est terminée et validée, la branche est poussées dans MASTER (pour livraison) et dans DEVELOP (pour y mettre les correctifs)</li>
+<li>toute correction d&rsquo;une fonctionnalité doit être faite sur la branche release_XX</li>
+</ul></li>
+<li>hotFix_XX :<br />
+
+<ul>
+<li>à créer depuis MASTER</li>
+<li>à merger dans DEVELOP et MASTER</li>
+<li>si un bug bloquant survient, il est corrigé dans une branche hotFix_XX</li>
+<li>une fois le bug corrigé, la branche hotFix_XX est poussée dans MASTER et DEVELOP</li>
 </ul></li>
 </ul>
 
-<p>Après un petit clic sur la flèche à coté de votre configuration pour l&rsquo;étendre, puis un clic sur <em>Session Factory</em>, vous devriez voir toutes vos classes persistantes.</p>
+<h5 id="avantages-et-problèmes">Avantages et problèmes :</h5>
 
-<p>Il est maintenant possible d&rsquo;ouvrir un <em>HQL Editor</em> depuis un clic droit sur la configuration.</p>
+<ul>
+<li>~ flow complexe mais un outil existe pour en simplifier l&rsquo;usage (cf. paragraphe suivant)</li>
+<li>- comment vérifier à chaque instant que les branches feature_XX sont intégrables sans conflit ni régression (chacune avec DEVELOP et toutes les combinaisons de feature_XX avec DEVELOP) ?</li>
+<li>+ permet des relectures de code facilement directement sur la branche feature_XX avant son intégration dans DEVELOP</li>
+<li>- habituellement, MASTER est la branche centrale d&rsquo;un dépot. Autant renommer DEVELOP en MASTER et la notion de MASTER dans ce flow n&rsquo;apporte rien car chaque commit dans MASTER donne lieu à une branche release_XX</li>
+<li>~ qu&rsquo;entend-on par feature ? Si une branche feature_XX a une durée de moins de 5 jours et qu&rsquo;on démarre 4-5 branches le même jour (au début du sprint), les conflits risquent de poser problèmes.</li>
+<li>- ce modèle part du principe qu&rsquo;il n&rsquo;existe qu&rsquo;une version finale à une instant T (le master). Or, dans une prestation de développement d&rsquo;application par une SSII chez un client, l&rsquo;équipe gère une version en qualification interne, une en recette client et une en production (modèle un peu ancien mais encore très vivant). Exemple : On a une version 1.0.3 en production et une 1.1 en &ldquo;recette client&rdquo;. Donc le master est à l&rsquo;image de la 1.1. Comment créer un patch sur la vielle version ???</li>
+</ul>
 
-<p>A partir du même endroit, il est possible de créer un schéma de votre mapping.</p>
+<h3 id="modèle-1-git-flow-l-outil-qui-va-avec">Modèle 1 : Git Flow, l&rsquo;outil qui va avec</h3>
+
+<p>sources :</p>
+
+<ul>
+<li><a href="https://jeffkreeftmeijer.com/git-flow/">introduction à GitFlow</a></li>
+<li><a href="https://blog.nathanaelcherrier.com/2016/07/11/gitflow-la-methodologie-et-la-pratique/">Git Flow</a></li>
+<li><a href="https://danielkummer.github.io/git-flow-cheatsheet/index.fr_FR.html">cheat sheet</a></li>
+<li><a href="https://github.com/petervanderdoes/gitflow-avh">documentation</a></li>
+</ul>
+
+<p>Pour simplifier l&rsquo;usage de ce modèle, GitFlow propose de nouvelles commandes qui font les merges, les créations de branche et les cheryPick :</p>
+
+<ul>
+<li>sur le même modèle que la console GIT, GitFlow permet d&rsquo;initialiser un repos et notamment de nommer toutes les branches du modèle : <code>ssh git flow init</code></li>
+<li>pour créer et terminer une feature_XX : <code>ssh git flow feature start maFonctionnalité</code> et <code>ssh git flow feature finish maFonctionnalité</code></li>
+<li>pour créer et terminer une release : <code>ssh git flow release start 0.1.0</code> et <code>ssh git flow release finish 0.1.0</code></li>
+</ul>
+
+<p>Pour traiter le problème &ldquo;multi-version&rdquo; du modèle, gitFlow propose une fonction <code>ssh git flow support</code>. Mais la gestion des cherryPick des bugFixes est à faire manuellement !</p>
+
+<h5 id="avantages-et-problèmes-1">Avantages et problèmes :</h5>
+
+<ul>
+<li>+ l&rsquo;outil simplifie beaucoup l&rsquo;usage du modèle</li>
+<li>- L&rsquo;usage de la fonction <code>ssh git flow hotfix start</code> est impossible (au risque de livrer la 1.1 en production directement).</li>
+</ul>
+
+<h3 id="modèle-2">Modèle 2 :</h3>
+
+<hr />
+
+<p>source :</p>
+
+<ul>
+<li><a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">critique du modèle 1</a></li>
+</ul>
+
+<h5 id="liste-des-branches-1">Liste des branches :</h5>
+
+<ul>
+<li>master =&gt; la branche qui accueille tous les commit de développement</li>
+<li>release_XX =&gt; une branche par livraison</li>
+<li>branchesLocales =&gt; des branches que créent les développeurs mais qu&rsquo;ils ne partagent jamais sur ORIGIN</li>
+</ul>
+
+<h5 id="règles-à-respecter-1">Règles à respecter :</h5>
+
+<ul>
+<li>master :
+
+<ul>
+<li>tout les développements sont commités dans le MASTER</li>
+</ul></li>
+<li>release_XX :
+
+<ul>
+<li>la branche release_XX est créée au moment de la livraison de l&rsquo;application (en même temps que le tag)</li>
+<li>toute correction d&rsquo;un bug bloquant se fait sur la branche release_XX</li>
+<li>toute correction d&rsquo;un bug bloquant donne lieu à un CHERRY PICK vers le MASTER</li>
+</ul></li>
+<li>branchesLocales :
+
+<ul>
+<li>les branches locales sont une bonne chose à utiliser</li>
+<li>mais elles doivent être très régulièrement mise à jour vis à vis du MASTER</li>
+</ul></li>
+</ul>
+
+<h5 id="avantages-et-problèmes-2">Avantages et problèmes :</h5>
+
+<ul>
+<li>+ flow simple</li>
+<li>- pas de relecture de code possible directement depuis un outil centralisé car les branches locales sont &ldquo;locales&rdquo;</li>
+</ul>
+
+<h3 id="annexes">Annexes :</h3>
+
+<p>sources de réflexion :</p>
+
+<ul>
+<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows#forking-workflow">comparaison de workflow</a></li>
+</ul>
+
+<h3 id="mes-propres-questions">Mes propres questions :</h3>
+
+<p>Les featureBranch sont bien pratiques. Associées aux PullRequest qui permettent une relecture du code, on a un bon process de relecture obligatoire.
+Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rsquo;est pas incompatible avec la featureBranch_zzz d&rsquo;un collègue ?</p>
 
 
 <footer class=" footline" >
@@ -890,26 +1019,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1166,6 +1275,26 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1267,10 +1396,10 @@
 
 
         
-            <a class="nav nav-prev" href="/mesidees/03-testsdedeveloppement/" title="Tests de développement"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/mesidees/19-git/" title="Git"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/mesidees/21-jenkins/" title="Jenkins" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

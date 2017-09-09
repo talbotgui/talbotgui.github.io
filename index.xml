@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://talbotgui.github.io/mesidees/02-pratiques/</guid>
-      <description> Pratiques de développement :  Refactoring tips - Martin Fowler DesignPattern avec explication et code  Documentation d&amp;rsquo;une solution, d&amp;rsquo;un langage ou d&amp;rsquo;un projet :  Frameworks :  Liste très riche de frameworks en tout genre Mock d&amp;rsquo;un FileSystem Selenide - sur couche à Selenium simplifiant l&amp;rsquo;API  Langages :  JS - les fonctionnalités de l&amp;rsquo;objet console CSS - les règles de priorité de la cascade  Outils :  AsciiDoctor - générer la documentation avec Maven Hugo ELK - installation   </description>
+      <description> Pratiques de développement :  Refactoring tips - Martin Fowler DesignPattern avec explication et code  Documentation d&amp;rsquo;une solution, d&amp;rsquo;un langage ou d&amp;rsquo;un projet :  Frameworks :  Liste très riche de frameworks en tout genre Mock d&amp;rsquo;un FileSystem Selenide - sur couche à Selenium simplifiant l&amp;rsquo;API  Langages :  JS - les fonctionnalités de l&amp;rsquo;objet console CSS - les règles de priorité de la cascade  Outils :  AsciiDoctor - générer la documentation avec Maven Hugo ELK - installation   Pratiques triés par méthode/framework :  Scrum :  objectif de sprint sprint backlog product backlog burn-down chart DefinitionOfDone  XP :  integration continue 10 minute build whole team (toutes les compétences au même endroit) informative workspace (management visuel et partage des informations) test-first programming pair programming incremental design user story slack (se garder du temps pour les impondérables, l&amp;rsquo;amélioration continue, &amp;hellip;) refactoring simple design planning game single code base (une seule branche, les autres durent moins de quelques heures) shared code (le code n&amp;rsquo;est le domaine réservé de personne, tout le monde peut contribuer à toutes les parties) code &amp;amp; test root cause analysis (corriger les bugs et faire en sorte de ne plus les reproduire) real customer involvement daily deployment (en prod chaque nuit) pay-per-use (c&amp;rsquo;est le meilleur feedback et il doit revenir jusqu&amp;rsquo;à l&amp;rsquo;équipe)  LEAN :  réduire le gaspillage Intégrer la qualité dans le processus de production Créer et améliorer la connaissance Différer le plus tard possible les décisions irréversibles Produire rapidement une solution utile Respecter les personnes Optimiser le tout  UP :  itératif et incrémental piloté par les risques gérer la demande par les Use Case architecture par composants concevoir visuellement (vue logique, vue implémentation, vue comportement, vue déploiement et vue utilisateur) tester et vérifier la qualité controler les changement phases IECT  Agile UP :  US plutot que UC storyboard Agile model driven development = Model Storm (réunion de 30mn de conception) + TDD moins de document que UP   </description>
     </item>
     
     <item>
@@ -240,6 +240,17 @@ Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
       <guid>https://talbotgui.github.io/mesidees/99-trucsalire/</guid>
       <description>Quelques trucs à lire :
  retour sur le piratage de TV5 Monde: partie1, partie2 le MOOC sur la sécurité informatique proposée par le gouvernement  </description>
+    </item>
+    
+    <item>
+      <title>Bulletin NG - Guide du développeur</title>
+      <link>https://talbotgui.github.io/mesprojets/bulletin-guidededev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesprojets/bulletin-guidededev/</guid>
+      <description>Cette page est mini guide du développeur (ma définition du guide du développeur) pour le projet BulletinNg.
+Sommaire :
+ Gestion de projet Exigences  Exigences métiers Exigences techniques  Environnement Architecture technique Tests  Que tester Comment tester  Règles de conception  Données Service Composants Angular  Règles de développement  Langue Nommage Mise en forme des sources  Processus de développement  Gestion de configuration logicielle Commit Industrialisation   Gestion de projet Aucun suivi des tâches n&amp;rsquo;est en cours pour le moment car les demandes arrivent et sont traitées au fil de l&amp;rsquo;eau.</description>
     </item>
     
     <item>

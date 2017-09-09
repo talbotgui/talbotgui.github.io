@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <title>Coder des ré-essais en Java :: Guillaume TALBOT</title>
+    <title>Bulletin NG - Guide du développeur :: Guillaume TALBOT</title>
     
     
     <link href="/css/nucleus.css?1504942837" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/05-retryenjava/">
+  <body class="" data-url="/mesprojets/bulletin-guidededev/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -79,7 +79,7 @@
   
     
     <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item 
-        parent
+        
         
         
         ">
@@ -181,7 +181,7 @@
  
   
     
-      <li data-nav-id="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" class="dd-item active">
+      <li data-nav-id="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" class="dd-item ">
         <a href="/mesidees/05-retryenjava/">
         Coder des ré-essais en Java
         <i class="fa fa-check read-icon"></i>
@@ -531,7 +531,7 @@
   
     
     <li data-nav-id="/mesprojets/" title="Mes projets" class="dd-item 
-        
+        parent
         
         
         ">
@@ -557,7 +557,7 @@
  
   
     
-      <li data-nav-id="/mesprojets/bulletin-guidededev/" title="Bulletin NG - Guide du développeur" class="dd-item ">
+      <li data-nav-id="/mesprojets/bulletin-guidededev/" title="Bulletin NG - Guide du développeur" class="dd-item active">
         <a href="/mesprojets/bulletin-guidededev/">
         Bulletin NG - Guide du développeur
         <i class="fa fa-check read-icon"></i>
@@ -707,7 +707,7 @@
             
           
           
-            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Coder des ré-essais en Java
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesprojets/'>Mes projets</a> > Bulletin NG - Guide du développeur
           
          
           
@@ -723,12 +723,54 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#gestion-de-projet">Gestion de projet</a></li>
+<li><a href="#exigences">Exigences</a>
 <ul>
 <li>
 <ul>
-<li><a href="#dépendance">Dépendance</a></li>
-<li><a href="#exemple">Exemple</a></li>
+<li><a href="#métiers">Métiers</a></li>
+<li><a href="#techniques">Techniques</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#environnement">Environnement</a></li>
+<li><a href="#architecture-technique">Architecture technique</a></li>
+<li><a href="#tests">Tests</a>
+<ul>
+<li>
+<ul>
+<li><a href="#que-tester">Que tester</a></li>
+<li><a href="#comment-tester">Comment tester</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#règles-de-conception">Règles de conception</a>
+<ul>
+<li>
+<ul>
+<li><a href="#données">Données</a></li>
+<li><a href="#service">Service</a></li>
+<li><a href="#composants-angular">Composants Angular</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#règles-de-développement">Règles de développement</a>
+<ul>
+<li>
+<ul>
+<li><a href="#langue">Langue</a></li>
+<li><a href="#nommage">Nommage</a></li>
+<li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#processus-de-développement">Processus de développement</a>
+<ul>
+<li>
+<ul>
+<li><a href="#gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle (GCL)</a></li>
+<li><a href="#commit">Commit</a></li>
+<li><a href="#industrialisation">Industrialisation</a>
+<ul>
+<li><a href="#outils">Outils</a></li>
+<li><a href="#processus">Processus</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -745,61 +787,217 @@
         
         <div id="body-inner">
           
-            <h1>Coder des ré-essais en Java</h1>
+            <h1>Bulletin NG - Guide du développeur</h1>
           
 
         
 
 
 
-<p>La librairie <strong>guava-retrying</strong> est assez pratique pour définir des méthodes à réessayer en cas d&rsquo;échec.</p>
+<p>Cette page est mini guide du développeur (<a href="/mesidees/10-guidedudev/">ma définition du guide du développeur</a>) pour le projet <a href="https://github.com/talbotgui/bulletin-ng">BulletinNg</a>.</p>
 
-<p>Documentation : <a href="https://github.com/rholder/guava-retrying">ici</a></p>
+<p><strong>Sommaire</strong> :</p>
 
-<h4 id="dépendance">Dépendance</h4>
+<ul>
+<li><a href="#gestion-de-projet">Gestion de projet</a></li>
+<li><a href="#exigences">Exigences</a>
 
-<pre><code class="language-xml">&lt;dependency&gt;
-	&lt;groupId&gt;com.github.rholder&lt;/groupId&gt;
-	&lt;artifactId&gt;guava-retrying&lt;/artifactId&gt;
-	&lt;version&gt;2.0.0&lt;/version&gt;
-	&lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;
-</code></pre>
+<ul>
+<li><a href="#métiers">Exigences métiers</a></li>
+<li><a href="#techniques">Exigences techniques</a></li>
+</ul></li>
+<li><a href="#environnement">Environnement</a></li>
+<li><a href="#architecture-technique">Architecture technique</a></li>
+<li><a href="#tests">Tests</a>
 
-<h4 id="exemple">Exemple</h4>
+<ul>
+<li><a href="#que-tester">Que tester</a></li>
+<li><a href="#comment-tester">Comment tester</a></li>
+</ul></li>
+<li><a href="#règles-de-conception">Règles de conception</a>
 
-<pre><code class="language-java">import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
+<ul>
+<li><a href="#données">Données</a></li>
+<li><a href="#service">Service</a></li>
+<li><a href="#composants-angular">Composants Angular</a></li>
+</ul></li>
+<li><a href="#règles-de-développement">Règles de développement</a>
 
-import org.junit.Assert;
+<ul>
+<li><a href="#langue">Langue</a></li>
+<li><a href="#nommage">Nommage</a></li>
+<li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
+</ul></li>
+<li><a href="#processus-de-développement">Processus de développement</a>
 
-import com.github.rholder.retry.RetryException;
-import com.github.rholder.retry.Retryer;
-import com.github.rholder.retry.RetryerBuilder;
-import com.github.rholder.retry.StopStrategies;
-import com.github.rholder.retry.WaitStrategies;
+<ul>
+<li><a href="#gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle</a></li>
+<li><a href="#commit">Commit</a></li>
+<li><a href="#industrialisation">Industrialisation</a></li>
+</ul></li>
+</ul>
 
-public class Test {
-	public void testRetry() throws ExecutionException, RetryException {
-		final int nbEssais = 6;
-		final int tempsEntreDeuxEssaisEnMs = 500;
+<h2 id="gestion-de-projet">Gestion de projet</h2>
 
-		final Retryer&lt;Void&gt; retryer = RetryerBuilder.&lt;Void&gt;newBuilder()//
-				.retryIfExceptionOfType(AssertionError.class).retryIfRuntimeException()//
-				.withStopStrategy(StopStrategies.stopAfterAttempt(nbEssais))//
-				.withWaitStrategy(WaitStrategies.fixedWait(tempsEntreDeuxEssaisEnMs, TimeUnit.MILLISECONDS))//
-				.build();
+<p>Aucun suivi des tâches n&rsquo;est en cours pour le moment car les demandes arrivent et sont traitées au fil de l&rsquo;eau.</p>
 
-		final Callable&lt;Void&gt; assertion = () -&gt; {
-			Assert.assertNotNull(&quot;attendu&quot;);
-			return null;
-		};
+<p>Sont présents en tâches de fond les éléments suivants :</p>
 
-		retryer.call(assertion);
-	}
-}
-</code></pre>
+<ul>
+<li>mettre en oeuvre un maximum des fonctionnalités de Angular, AngularMaterial et des outils de build (NPM, Karma, Jasmine, Protractor, &hellip;).</li>
+</ul>
+
+<h2 id="exigences">Exigences</h2>
+
+<p>Les exigences sont actuellement fournies par la principale utilisatrice. Aucune formalisation n&rsquo;existe en dehors des quelques lignes ci-dessous.</p>
+
+<h4 id="métiers">Métiers</h4>
+
+<p>Du point de vue métier, le besoin est très spécifique et ne sera pas détaillé. Les principales contraintes métiers ayant amener à des choix techniques discutables sont :</p>
+
+<ul>
+<li>le caractère privé des données nécessite que ces dernières ne soient pas stockées dans une base de données centralisées. L&rsquo;utilisateur a besoin d&rsquo;avoir une maitrise complète de leur stockage.
+
+<ul>
+<li>les données sont donc stockées dans un fichier uploadé et téléchargé par l&rsquo;utilisateur au début et à la fin de sa session</li>
+<li>les utilisateurs disposant d&rsquo;un serveur de stockage de données (NAS Network Attached Storage) peuvent l&rsquo;utiliser pour sauvegarder et charger leurs données (à eux de sécuriser leur serveur)</li>
+<li>l&rsquo;application ne doit réaliser aucun transfert de données (sauf dans le cas de la sauvegarde sur un serveur qui est le résultat d&rsquo;une action explicite de l&rsquo;utilisateur)</li>
+</ul></li>
+<li>l&rsquo;application doit être sécurisée dans la mesure du possible pour éviter l&rsquo;injection de script qui pourrait tenter de voler les données</li>
+</ul>
+
+<h4 id="techniques">Techniques</h4>
+
+<p>Du point de vue technique, l&rsquo;application doit être</p>
+
+<ul>
+<li>l&rsquo;accessibilité n&rsquo;est pas un besoin car l&rsquo;utilisateur doit avoir ses données sur son terminal ;</li>
+<li>évolutive : chaque nouveau besoin doit être facilement réalisé pour fournir le service rapidement ;</li>
+<li>fiable (point primordiale) : l&rsquo;application ne doit pas subir de régressions intempestives portant atteinte à son utilisabilité ou à la fiabilité de ses données ;</li>
+<li>la structure des données sauvegardées ne doit pas être modifiée afin de conserver la rétrocompatibilité avec la précédente application.</li>
+</ul>
+
+<h2 id="environnement">Environnement</h2>
+
+<p>Ce projet ne compte pas tous les environnements d&rsquo;un projet classique.</p>
+
+<p>(cf. <a href="https://talbotgui.github.io/mesprojets/mariage-guidededev/#environnement">chapitre Environnement du guide du développeur du projet Mariage</a>)</p>
+
+<h2 id="architecture-technique">Architecture technique</h2>
+
+<p>Pour limiter les transferts réseau, l&rsquo;application se résume à un FrontEnd. Afin de simplifier le code et d&rsquo;en augmenter la maintenabilité, le développement n&rsquo;est pas réalisé en JS/JQuery mais avec Angular (très bon framework pour faire du binding données/HTML)</p>
+
+<p>Les tests sont cruciaux dans le cadre de cette application. Donc, sans aller jusqu&rsquo;à une couverture de code de 100%/100% (en ligne / en branche), toutes les fonctionnalités doivent être testées (cf. paragraphe dédié aux tests).</p>
+
+<h2 id="tests">Tests</h2>
+
+<h4 id="que-tester">Que tester</h4>
+
+<p>Les cas nominaux de tous les composants doivent être testés ainsi que les cas d&rsquo;erreur principaux.</p>
+
+<p>Aucune exigence n&rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (les services).</p>
+
+<h4 id="comment-tester">Comment tester</h4>
+
+<p>Jasmine et Ts6-Mockito sont utilisés pour les tests unitaires des services.</p>
+
+<p>Protractor est utilisé pour les tests de bout en bout (e2e - end to end).</p>
+
+<h2 id="règles-de-conception">Règles de conception</h2>
+
+<h4 id="données">Données</h4>
+
+<p>Le modèle de données ne doit pas évoluer au point de briser la rétrocompatibilité avec l&rsquo;application précédente.</p>
+
+<h4 id="service">Service</h4>
+
+<p>Toute logique ou manipulation de données doit se faire dans un service.</p>
+
+<p>La manipulation du singleton de données est de la responsabilité de DataRepository (ce qui facilite les tests unitaires en offrant un point d&rsquo;entrée à un bouchon).</p>
+
+<p>Les lectures ou agrégations de données doivent se faire dans LectureService.</p>
+
+<p>Les manipulations complexes, non réutilisables et propres à un sous-ensemble du jeu de données doivent être placés dans un service dédié.</p>
+
+<h4 id="composants-angular">Composants Angular</h4>
+
+<p>Les composants doivent être les plus simples possibles et limités la duplication de code. Pour cela, les éléments communs à tous les écrans comme la saisie de note ou de compétence doivent être l&rsquo;objet de composant dédié.</p>
+
+<h2 id="règles-de-développement">Règles de développement</h2>
+
+<p>Les règles ci-dessous doivent être appliquées par tout développeur souhaitant participer à ce projet (non négociable). <strong>Par contre, il est toujours possible de discuter de la modification d&rsquo;une règle.</strong></p>
+
+<h4 id="langue">Langue</h4>
+
+<p>Les entités, les attributs et les méthodes sont nommés en français.
+Les préfixes, suffixes et concepts inhérents au langage reste en anglais (get, set, is, &hellip;)</p>
+
+<h4 id="nommage">Nommage</h4>
+
+<p>Les composants applicatifs sont suffixés selon les règles définies par Angular :</p>
+
+<ul>
+<li>&ldquo;xx.service.ts&rdquo; pour les service (sauf l&rsquo;unique exception de DataRepository) ;</li>
+<li>&ldquo;xx.component.ts&rdquo; pour le code TypeScript des composants d&rsquo;IHM ;</li>
+<li>&ldquo;xx.component.html&rdquo; pour le code HTML des composants d&rsquo;IHM ;</li>
+<li>&ldquo;xx.component.css&rdquo; pour les styles des composants d&rsquo;IHM ;</li>
+<li>et &ldquo;xx.spec.ts&rdquo; pour les tests.</li>
+</ul>
+
+<p>Parmi les composants d&rsquo;IHM, un préfixe est ajouté en fonction de l&rsquo;usage et du type de composant :
+* &ldquo;compo-xxx&rdquo; pour les composants réutilisables ;
+* &ldquo;div-xxx&rdquo; pour les cadres présents dans la page et visibles à tout instant ;
+* &ldquo;tab-xxx&rdquo; pour un onglet.</p>
+
+<p>Les entités métier et les classes utilitaires ne sont pas suffixées mais doivent avoir des noms parlant (l&rsquo;usage du nom d&rsquo;un pattern est utile pour décrire l&rsquo;usage/l&rsquo;utilité du composant)
+Les noms de méthode commence par un verbe à l&rsquo;infinitif</p>
+
+<h4 id="mise-en-forme-des-sources">Mise en forme des sources</h4>
+
+<p>Microsoft VsCode est l&rsquo;IDE préconisé même si le plugin pour Eclipse n&rsquo;est pas mal mais plante encore régulièrement (testé en aout 2017). La configuration VsCode est présente dans le repository et les règles de validation TsLint doivent être respectées !</p>
+
+<h2 id="processus-de-développement">Processus de développement</h2>
+
+<h4 id="gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle (GCL)</h4>
+
+<ul>
+<li>Que comprend la GCL :
+
+<ul>
+<li>Les sources applicatives et de test sont dans un repository GIT ;</li>
+<li>Le présent &ldquo;guide du développeur&rdquo; est lui aussi dans un repository GIT mais séparé (pas de gestion de version cohérente nécessaire) ;</li>
+<li>Le bug tracker a utilisé est celui du repository GitHub ;</li>
+<li>Les plans de test &ldquo;métier&rdquo; ne sont pas formalisés. Mais une partie d&rsquo;entre eux sont automatisés.</li>
+</ul></li>
+<li>La gestion de version :
+
+<ul>
+<li>une seule version existe pour le moment (branche &lsquo;master&rsquo;).</li>
+<li>si des POC sont réalisés, ils doivent l&rsquo;être dans une branche dédiée</li>
+<li>aucun TAG n&rsquo;est posé pour le moment (c&rsquo;est une chose à faire prochainement)</li>
+<li>l&rsquo;usage de featureBranch est autorisé et même encouragé</li>
+</ul></li>
+</ul>
+
+<h4 id="commit">Commit</h4>
+
+<p>Les messages de commit doivent être explicites.</p>
+
+<h4 id="industrialisation">Industrialisation</h4>
+
+<h5 id="outils">Outils</h5>
+
+<p>La gestion des exigences est totalement informelle. Ce qui ne pose pas de problème pour ce projet car le délai entre l&rsquo;expression du besoin et la mise en production est court et qu&rsquo;aucune contractualisation n&rsquo;existe (ni sur les moyens ni sur le périmètre métier).
+GitHub héberge une partie des outils du projet : repository GIT &amp; guide du développeur, &hellip;
+L&rsquo;outil d&rsquo;intégration continue utilisé est Jenkins (hébergé sur un serveur EC2).
+La qualimétrie est réalisée avec SonarQube (hébergée sur le site officiel en ligne).
+Les relectures de code sont possibles avec GitLab mais ne sont pas utilisées actuellement (un seul développeur pour le moment)</p>
+
+<h5 id="processus">Processus</h5>
+
+<p>Quitte à faire un petit projet sympa, autant utiliser les outils correctement. Donc le processus de développement (même s&rsquo;il est minimal) est piloté par un pipeline (cf. <a href="/mesidees/13-pipeline/">pipeline</a>).
+Le pipeline est lui aussi en GCL : dans le <em>JenkinsFile</em>
+Le pipeline commence au commit du code et enchaîne les étapes suivantes : compilation, tests métiers, tests E2E, qualimétrie, promotion manuelle et mise en production</p>
 
 
 <footer class=" footline" >
@@ -836,20 +1034,6 @@ public class Test {
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -860,9 +1044,6 @@ public class Test {
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -917,7 +1098,6 @@ public class Test {
             
                 
                     
-                    
                 
                 
 
@@ -933,9 +1113,6 @@ public class Test {
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1204,6 +1381,75 @@ public class Test {
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1236,54 +1482,6 @@ public class Test {
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1294,10 +1492,10 @@ public class Test {
 
 
         
-            <a class="nav nav-prev" href="/mesidees/04-consolehibernate/" title="Créer une console Hibernate"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/mesprojets/" title="Mes projets"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/mesidees/06-relecturedecode/" title="Relecture, revue et audit de code" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -13,19 +13,19 @@
     <title>Stack Elastic :: Guillaume TALBOT</title>
     
     
-    <link href="/css/nucleus.css?1505763934" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1505763934" rel="stylesheet">
-    <link href="/css/hybrid.css?1505763934" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1505763934" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1505763934" rel="stylesheet">
-    <link href="/css/horsey.css?1505763934" rel="stylesheet">
-    <link href="/css/theme.css?1505763934" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1505763934" rel="stylesheet">
+    <link href="/css/nucleus.css?1505764097" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1505764097" rel="stylesheet">
+    <link href="/css/hybrid.css?1505764097" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1505764097" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1505764097" rel="stylesheet">
+    <link href="/css/horsey.css?1505764097" rel="stylesheet">
+    <link href="/css/theme.css?1505764097" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1505764097" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1505763934" rel="stylesheet">
+      <link href="/css/theme-blue.css?1505764097" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1505763934"></script>
+    <script src="/js/jquery-2.x.min.js?1505764097"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1505763934"></script>
-<script type="text/javascript" src="/js/horsey.js?1505763934"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1505764097"></script>
+<script type="text/javascript" src="/js/horsey.js?1505764097"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1505763934"></script>
+<script type="text/javascript" src="/js/search.js?1505764097"></script>
 
     
   </div>
@@ -835,8 +835,8 @@
 <li><em>En option</em>, installer X-Pack en exécutant les commandes :
 
 <ul>
-<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code>ssh bin/elasticsearch-plugin install x-pack</code></li>
-<li>depuis le répertoire d&rsquo;installation de Kibana : <code>ssh bin/kibana-plugin install x-pack</code></li>
+<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code>bin/elasticsearch-plugin install x-pack</code></li>
+<li>depuis le répertoire d&rsquo;installation de Kibana : <code>bin/kibana-plugin install x-pack</code></li>
 </ul></li>
 <li>Paramétrer les outils :
 
@@ -849,8 +849,8 @@
 <li>Démarrer les outils :
 
 <ul>
-<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code>ssh bin/elasticsearch</code></li>
-<li>depuis le répertoire d&rsquo;installation de Kibana : <code>ssh bin/kibana</code></li>
+<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code>bin/elasticsearch</code></li>
+<li>depuis le répertoire d&rsquo;installation de Kibana : <code>bin/kibana</code></li>
 </ul></li>
 <li>Ouvrir Kibana dans <a href="http://localhost:5601">un navigateur</a></li>
 </ul>
@@ -992,7 +992,7 @@ output {
 <li>0-resetTouteLaChaine.cmd :</li>
 </ul>
 
-<pre><code class="language-ssh">rmdir filebeat-5.6.0-windows-x86_64\data /Q /S
+<pre><code>rmdir filebeat-5.6.0-windows-x86_64\data /Q /S
 
 rmdir logstash-5.6.0\data /Q /S
 
@@ -1002,14 +1002,14 @@ rmdir kibana-5.6.0-windows-x86\data /Q /S
 </code></pre>
 
 <ul>
-<li><p>1-elasticsearch.cmd : <code>ssh elasticsearch-5.6.0\bin\elasticsearch</code></p></li>
+<li><p>1-elasticsearch.cmd : <code>elasticsearch-5.6.0\bin\elasticsearch</code></p></li>
 
-<li><p>2-kibana.cmd : <code>ssh kibana-5.6.0-windows-x86\bin\kibana</code></p></li>
+<li><p>2-kibana.cmd : <code>kibana-5.6.0-windows-x86\bin\kibana</code></p></li>
 
 <li><p>3-startLogStash.cmd :</p></li>
 </ul>
 
-<pre><code class="language-ssh">title Logstash
+<pre><code>title Logstash
 
 logstash-5.6.0\bin\logstash -f configLogStash/mesLogs_pipeline.conf --config.reload.automatic
 </code></pre>
@@ -1018,7 +1018,7 @@ logstash-5.6.0\bin\logstash -f configLogStash/mesLogs_pipeline.conf --config.rel
 <li>4-startFileBeat.cmd :</li>
 </ul>
 
-<pre><code class="language-ssh">title FileBeats
+<pre><code>title FileBeats
 
 filebeat-5.6.0-windows-x86_64\filebeat -e -c configFileBeat/mesLogs_filebeat.yml -d &quot;publish&quot;
 </code></pre>
@@ -1584,20 +1584,20 @@ filebeat-5.6.0-windows-x86_64\filebeat -e -c configFileBeat/mesLogs_filebeat.yml
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1505763934"></script>
-    <script src="/js/perfect-scrollbar.min.js?1505763934"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1505763934"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1505763934"></script>
-    <script src="/js/featherlight.min.js?1505763934"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1505763934"></script>
-    <script src="/js/highlight.pack.js?1505763934"></script>
+    <script src="/js/clipboard.min.js?1505764097"></script>
+    <script src="/js/perfect-scrollbar.min.js?1505764097"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1505764097"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1505764097"></script>
+    <script src="/js/featherlight.min.js?1505764097"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1505764097"></script>
+    <script src="/js/highlight.pack.js?1505764097"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1505763934"></script>
-    <script src="/js/learn.js?1505763934"></script>
-    <script src="/js/hugo-learn.js?1505763934"></script>
+    <script src="/js/modernizr.custom.71422.js?1505764097"></script>
+    <script src="/js/learn.js?1505764097"></script>
+    <script src="/js/hugo-learn.js?1505764097"></script>
 
-    <link href="/mermaid/mermaid.css?1505763934" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1505763934"></script>
+    <link href="/mermaid/mermaid.css?1505764097" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1505764097"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

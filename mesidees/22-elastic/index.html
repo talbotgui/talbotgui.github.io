@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <title>Angular :: Guillaume TALBOT</title>
+    <title>Stack Elastic :: Guillaume TALBOT</title>
     
     
     <link href="/css/nucleus.css?1505763934" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/16-angular/">
+  <body class="" data-url="/mesidees/22-elastic/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -390,7 +390,7 @@
  
   
     
-      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item active">
+      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item ">
         <a href="/mesidees/16-angular/">
         Angular
         <i class="fa fa-check read-icon"></i>
@@ -504,7 +504,7 @@
  
   
     
-      <li data-nav-id="/mesidees/22-elastic/" title="Stack Elastic" class="dd-item ">
+      <li data-nav-id="/mesidees/22-elastic/" title="Stack Elastic" class="dd-item active">
         <a href="/mesidees/22-elastic/">
         Stack Elastic
         <i class="fa fa-check read-icon"></i>
@@ -726,7 +726,7 @@
             
           
           
-            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Angular
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Stack Elastic
           
          
           
@@ -746,11 +746,12 @@
 <ul>
 <li>
 <ul>
-<li><a href="#quelques-astuces-angular-à-retenir">Quelques astuces Angular à retenir :</a></li>
-<li><a href="#pour-tester-une-application-angular-et-ses-composants">Pour tester une application Angular et ses composants :</a></li>
-<li><a href="#intégrer-des-frameworks-supplémentaires">Intégrer des frameworks supplémentaires :</a></li>
-<li><a href="#quelques-lectures-utiles">Quelques lectures utiles :</a></li>
-<li><a href="#quelques-commandes-npm-utiles">Quelques commandes NPM utiles :</a></li>
+<li><a href="#a-quoi-peut-servir-elastic-stack-anciennement-stask-elk">A quoi peut servir Elastic Stack (anciennement Stask ELK)</a></li>
+<li><a href="#infrastructure-de-la-stack-elastic">Infrastructure de la Stack Elastic</a></li>
+<li><a href="#installation-sur-un-poste-windows">Installation sur un poste Windows</a></li>
+<li><a href="#paramétrer-une-configuration-basique">Paramétrer une configuration basique</a></li>
+<li><a href="#installation-sur-un-ubuntu">Installation sur un Ubuntu</a></li>
+<li><a href="#sources-d-informations">Sources d&rsquo;informations :</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -767,144 +768,299 @@
         
         <div id="body-inner">
           
-            <h1>Angular</h1>
+            <h1>Stack Elastic</h1>
           
 
         
 
 
 
-<h4 id="quelques-astuces-angular-à-retenir">Quelques astuces Angular à retenir :</h4>
-
-<p><strong><a href="https://angular.io/guide/cheatsheet">Angular Cheat Sheet</a></strong></p>
-
-<p>Au besoin, pour réinstaller Angular/cli :
-<code>ts npm install -g @angular/cli --no-optional</code></p>
-
-<p>Dans une interpolation, pour naviguer sans risque, il suffit d&rsquo;utiliser le Safe Navigation Operator (&lsquo;?.&rsquo;).
-Exemple : <code>ts unObjet?.unAttributPotentiellementUndefined</code></p>
-
-<p>Two way binding :</p>
+<h4 id="a-quoi-peut-servir-elastic-stack-anciennement-stask-elk">A quoi peut servir Elastic Stack (anciennement Stask ELK)</h4>
 
 <ul>
-<li><code>ts [ngModel]=&quot;monAttribut&quot;</code> si la valeur change dans le JS, le DOM est mis à jour</li>
-<li><code>ts (ngModel)=&quot;monAttribut&quot;</code> si le DOM change, la valeur du JS est mise à jour</li>
+<li>obtenir rapidement les logs d&rsquo;un serveur : pour éviter les demandes à l&rsquo;hébergeur qui, parfois et selon les contrats, peuvent demander 3 jours pour être traitées</li>
+<li>corréler les logs de plusieurs serveur pour avoir une vision d&rsquo;ensemble d&rsquo;un processus métier : cas classique des micro-services (dont chaque composant crée ses logs) ou des systèmes SOA</li>
+<li>détecter des problèmes : à partir de données de référence, il est possible de détecter des anomalies (temps de traitement longs, consommation CPU ou mémoire anormale) liées à certains appels au système ou évènement métier</li>
 </ul>
 
-<p>Exemple de binding : <code>html &lt;div [style.background-color]=&quot;getStyle()&quot;&gt;</code></p>
-
-<p>Évènement :</p>
+<p>Dans tous les cas, avant de vouloir faire quelque chose d&rsquo;intelligent avec les données collectées, il faut déjà avoir une idée des éléments à collecter :</p>
 
 <ul>
-<li>déclencher du code : <code>(click)=&quot;auClick()&quot;</code></li>
-<li>récupérer l&rsquo;event : <code>(click)=&quot;auClick($event)&quot;</code></li>
+<li>logs applicatifs</li>
+<li>logs d&rsquo;erreur</li>
+<li>logs de requêtes HTTP</li>
+<li>logs de requêtes SQL</li>
+<li>état physique de la machine (TOP en Unix)</li>
+<li>&hellip;</li>
 </ul>
 
-<p>Dirty checking :</p>
+<h4 id="infrastructure-de-la-stack-elastic">Infrastructure de la Stack Elastic</h4>
+
+<p>Classiquement, 3 types d&rsquo;outils sont mis en oeuvre :</p>
 
 <ul>
-<li>tout changement est pris en compte dans le composant : <code>ts @Component {..., changeDetection: ChangeDetectionStrategy.Default, ...}</code> =&gt;</li>
-<li>seul les @Input sont raffraichis : <code>ts @Component {..., changeDetection: ChangeDetectionStrategy.OnPush,  ...}</code></li>
+<li>les sondes qui récupèrent de l&rsquo;information à leur source :
+
+<ul>
+<li>Kibana</li>
+<li>Beats</li>
+</ul></li>
+<li>la base de données rassemblant toutes les informations :
+
+<ul>
+<li>ElasticSearch</li>
+<li>Splunk</li>
+</ul></li>
+<li>l&rsquo;outil de visualisation des données : Kibana</li>
 </ul>
 
-<p>Pipes :</p>
+<p>D&rsquo;autres outils sont aussi disponibles :</p>
 
 <ul>
-<li>date, currency, decimal, uppercase, lowercase, slice (slice:start:end), i18nSelect, i18nPlural, percent, json, async</li>
-<li>exemple : <code>{{dateNaissance | date:&quot;dd/MM/yy&quot;}}</code></li>
-<li>exemple : <code>&lt;li *ngFor=&quot;let i of collection | slice:1:3&quot;&gt;{{i}}&lt;/li&gt;</code></li>
-<li>exemple : <code>{{monAttribut | async&quot;}}</code> pour se lier à un Observable et être notifié</li>
-<li>exemple : <code>{{note.valeur | i18nSelect: libellesNote}}</code> avec libellesNote un Objet {&lsquo;clef1&rsquo;:&lsquo;valeur1&rsquo;,&lsquo;clef2&rsquo;:&lsquo;valeur2&rsquo;} et non une Map<string, string></li>
+<li>Kafka qui sert de tampon entre les sondes et ElasticSearch permettant une indisponibilité de ce dernier (mise à jour ou maintenance diverse).</li>
+<li>X-Pack qui apporte à la Stack des fonctionnalités supplémentaires (sécurité, alertes, monitoring, rapports, graphiques et <em>machine learning</em>)</li>
 </ul>
 
-<p>Constante :</p>
+<h4 id="installation-sur-un-poste-windows">Installation sur un poste Windows</h4>
 
 <ul>
-<li>à déclarer dans <code>json providers: [..., {provide: 'maConstante', useValue:'azertyuiop'}, ...]</code></li>
-<li>à utiliser dans <code>json constructor(..., @Inject('maConstante') public maConstante, ...)</code></li>
+<li>Télécharger, depuis <a href="https://www.elastic.co/downloads">le site de téléchargement d&rsquo;Elastic</a>, les outils suivants (en version ZIP pour MS Windows) :
+
+<ul>
+<li>Kibana</li>
+<li>ElasticSearch</li>
+<li>LogStash</li>
+</ul></li>
+<li>Extraire toutes les archives</li>
+<li><em>En option</em>, installer X-Pack en exécutant les commandes :
+
+<ul>
+<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code>ssh bin/elasticsearch-plugin install x-pack</code></li>
+<li>depuis le répertoire d&rsquo;installation de Kibana : <code>ssh bin/kibana-plugin install x-pack</code></li>
+</ul></li>
+<li>Paramétrer les outils :
+
+<ul>
+<li><em>En option</em> pour réaliser un prototype et éviter qu&rsquo;ElasticSearch n&rsquo;hurle en cas de problème de disque (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html">source</a>) :</li>
+<li>éditer le fichier elasticsearch.yml</li>
+<li>ajouter <code>cluster.routing.allocation.disk.threshold_enabled: false</code></li>
+<li>ou ajouter <code>cluster.routing.allocation.disk.watermark.high: 99</code></li>
+</ul></li>
+<li>Démarrer les outils :
+
+<ul>
+<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code>ssh bin/elasticsearch</code></li>
+<li>depuis le répertoire d&rsquo;installation de Kibana : <code>ssh bin/kibana</code></li>
+</ul></li>
+<li>Ouvrir Kibana dans <a href="http://localhost:5601">un navigateur</a></li>
 </ul>
 
-<p>Interfaces implémentables dans un composant : OnInit, AfterContentInit</p>
+<h4 id="paramétrer-une-configuration-basique">Paramétrer une configuration basique</h4>
 
-<p>Exemple de directive : pour logger le clic sur tous un ensemble de boutons</p>
+<p>Les configurations suivantes ont été testées pour une version particulière des outils :</p>
 
 <ul>
-<li><code>html &lt;button [track]=&quot;unBouton&quot;&gt;coucou&lt;/button&gt;</code></li>
-<li><code>ts @Directive({selector: '[track]'}) export class TrackDirective {
-@Input() track;
-@HostListener('click')
-onClick(){ console.log(this.track); }
-}</code></li>
+<li>logstash-5.6.0</li>
+<li>kibana-5.6.0-windows-x86</li>
+<li>filebeat-5.6.0-windows-x86_64</li>
+<li>elasticsearch-5.6.0</li>
 </ul>
 
-<p>Pour faire des checkbox dans un *ngFor : <code>html &lt;div *ngFor=&quot;let aze of azes&quot;&gt;
-  &lt;input [id]=&quot;aze&quot;, name=&quot;monChamp&quot; ngModel [value]=&quot;aze&quot; type=&quot;radio&quot;&gt;&lt;/input&gt;
-  &lt;label [attr.for]=&quot;aze&quot;&gt;{{aze}}&lt;/label&gt;
-&lt;/div&gt;</code></p>
+<p>Un fichier de logs tout bête dans <em>donneesSources\mesLogs.log</em></p>
 
-<p>Ajouter remplacer ngModel par <code>[ngModel]=&quot;azes[0]&quot;</code> pour définir une valeur par défaut</p>
+<pre><code>coucou madame
+bonjour monsieur
+coucou monsieur
+bonjour madame
+hello mademoiselle
+hello mademoiselle
+</code></pre>
 
-<p>Créer une variable locale à la page HTML (sans lien avec un attribut du composant) : <code>#toto=&quot;NgForm&quot;</code> ou <code>#toto=&quot;NgModel&quot;</code></p>
+<p>Une configuration FileBeat dans <em>configFileBeat\mesLogs_filebeat.yml</em> :</p>
 
-<p>Validation de formulaire :</p>
+<pre><code class="language-yaml">filebeat.prospectors:
+- input_type: log
+  # Déclaration des fichiers sources
+  paths:
+    - D:/Projets/Enedis/protoElk/donneesSources/mesLogs.log
+  # Pour ajouter une information dans tous les logs
+  fields:
+   maSource: monFileBeat
+output.logstash:
+  hosts: [&quot;localhost:5043&quot;]
+</code></pre>
+
+<p>Une configuration LogStash dans <em>configLogStash\meslogs_pipeline.conf</em> :</p>
+
+<pre><code>input {
+ # Pour prendre les éléments envoyés par Beats
+ beats { port =&gt; &quot;5043&quot; }
+}
+
+filter {
+
+ # Petit filtre simpliste
+ grok {
+  match =&gt; { &quot;message&quot; =&gt; '%{WORD:formulePolitesse} %{WORD:personneCiblee}' }
+ }
+}
+
+output {
+ # Pour logger le contenu des messages uniquement dans la console de LogStash
+ #stdout { codec =&gt; plain { charset =&gt; &quot;ISO-8859-1&quot; } }
+ # Pour logger les messages avec leurs metadata
+ stdout { codec =&gt; rubydebug }
+ # Pour envoyer les logs à ElasticSearch
+ # @See https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html
+ elasticsearch {
+  hosts =&gt; [ &quot;localhost:9200&quot; ]
+  # Le nom de l'index doit être en minuscule pour elasticsearch
+  index =&gt; &quot;meslogs&quot;
+  template =&gt; &quot;D:/Projets/Enedis/protoElk/configLogStash/meslogs_template.json&quot;
+  template_name =&gt; &quot;meslogs&quot;
+  template_overwrite =&gt; true
+ }
+}
+</code></pre>
+
+<p>Un template LogStash dans <em>configLogStash\meslogs_template.json</em> :</p>
+
+<pre><code>{
+  &quot;template&quot;: &quot;meslogs&quot;,
+  &quot;settings&quot;: {
+     &quot;index.refresh_interval&quot;: &quot;5s&quot;
+  },
+  &quot;mappings&quot;: {
+     &quot;_default_&quot;: {
+        &quot;dynamic_templates&quot;: [
+           {
+              &quot;message_field&quot;: {
+                 &quot;mapping&quot;: {
+                    &quot;index&quot;: &quot;analyzed&quot;,
+                    &quot;omit_norms&quot;: true,
+                    &quot;type&quot;: &quot;string&quot;
+                 },
+                 &quot;match_mapping_type&quot;: &quot;string&quot;,
+                 &quot;match&quot;: &quot;message&quot;
+              }
+           },
+           {
+              &quot;string_fields&quot;: {
+                 &quot;mapping&quot;: {
+                    &quot;index&quot;: &quot;analyzed&quot;,
+                    &quot;omit_norms&quot;: true,
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;fields&quot;: {
+                       &quot;raw&quot;: {
+                          &quot;index&quot;: &quot;not_analyzed&quot;,
+                          &quot;ignore_above&quot;: 256,
+                          &quot;type&quot;: &quot;string&quot;
+                       }
+                    }
+                 },
+                 &quot;match_mapping_type&quot;: &quot;string&quot;,
+                 &quot;match&quot;: &quot;*&quot;
+              }
+           }
+        ],
+        &quot;properties&quot;: {
+           &quot;geoip&quot;: {
+              &quot;dynamic&quot;: true,
+              &quot;properties&quot;: {
+                 &quot;location&quot;: {
+                    &quot;type&quot;: &quot;geo_point&quot;
+                 }
+              },
+              &quot;type&quot;: &quot;object&quot;
+           },
+           &quot;@version&quot;: {
+              &quot;index&quot;: &quot;not_analyzed&quot;,
+              &quot;type&quot;: &quot;string&quot;
+           }
+        },
+        &quot;_all&quot;: {
+           &quot;enabled&quot;: true
+        }
+     }
+  }
+}
+</code></pre>
+
+<p>Et des commandes pour démarrer les outils et nettoyer les répertoires pour répéter le test à l&rsquo;infini :</p>
 
 <ul>
-<li>il faut un form avec les attributs <code>novalidate</code> et <code>#toto=&quot;ngForm&quot;</code></li>
-<li>l&rsquo;attribut <code>required</code> sur les champs obligatoires</li>
-<li>une div avec le message d&rsquo;erreur (pristine = inchangé) : <code>html &lt;div [hidden]=&quot;inputNom.valid || inputNom.pristine&quot; class=&quot;alert alert-danger&quot;&gt;Le nom est obligatoire&lt;/div&gt;</code></li>
+<li>0-resetTouteLaChaine.cmd :</li>
 </ul>
 
-<p>Pour la validation des radios, c&rsquo;est l&rsquo;input qui est invalide et le label est à coté. Astuce CSS : <code>css .ng-invalid + label:after { content:'sélectionne en un'; }</code></p>
+<pre><code class="language-ssh">rmdir filebeat-5.6.0-windows-x86_64\data /Q /S
 
-<p>Faire une boucle *ngFor et avoir l&rsquo;index : <code>*ngFor=&quot;let aze of azes; let i=index&quot;</code></p>
+rmdir logstash-5.6.0\data /Q /S
 
-<p>Afficher/masquer un élément :</p>
+rmdir elasticsearch-5.6.0\data /Q /S
+
+rmdir kibana-5.6.0-windows-x86\data /Q /S
+</code></pre>
 
 <ul>
-<li><code>*ngIf</code> supprime l&rsquo;élément du DOM</li>
-<li><code>[hidden]</code> change la valeur de l&rsquo;attribut display (none/block)</li>
+<li><p>1-elasticsearch.cmd : <code>ssh elasticsearch-5.6.0\bin\elasticsearch</code></p></li>
+
+<li><p>2-kibana.cmd : <code>ssh kibana-5.6.0-windows-x86\bin\kibana</code></p></li>
+
+<li><p>3-startLogStash.cmd :</p></li>
 </ul>
 
-<h4 id="pour-tester-une-application-angular-et-ses-composants">Pour tester une application Angular et ses composants :</h4>
+<pre><code class="language-ssh">title Logstash
 
-<p>Dans les tests, si l&rsquo;erreur <em>Uncaught NetworkError: Failed to execute &lsquo;send&rsquo; on &lsquo;XMLHttpRequest&rsquo;: Failed to load &lsquo;ng:///DynamicTestModule/ComposantNoteComponent.ngfactory.js&rsquo;. thrown</em> survient, c&rsquo;est un problème de données/objets non fournis en entrée d&rsquo;un composant. Par exemple : un composant appel un mock dans le onInit mais le mock a été &lsquo;reset&rsquo; et ne renvoie rien.</p>
-
-<p>Ne jamais oublier de créer l&rsquo;instance après avoir créer le mock avec Mockito</p>
-
-<p>Quelques liens :</p>
+logstash-5.6.0\bin\logstash -f configLogStash/mesLogs_pipeline.conf --config.reload.automatic
+</code></pre>
 
 <ul>
-<li><a href="http://blog.bandzarewicz.com/blog/2012/03/08/jasmine-cheat-sheet/">cheat sheet pour Jasmine</a></li>
-<li><a href="http://blog.mlewandowski.com/Debugging-Karma-tests-with-VSCode.html">débugger des tests Karma depuis VsCode</a></li>
-<li><a href="https://github.com/NagRock/ts-mockito">Mockito</a></li>
+<li>4-startFileBeat.cmd :</li>
 </ul>
 
-<p>Quelques commandes :</p>
+<pre><code class="language-ssh">title FileBeats
+
+filebeat-5.6.0-windows-x86_64\filebeat -e -c configFileBeat/mesLogs_filebeat.yml -d &quot;publish&quot;
+</code></pre>
+
+<p>Une fois la première exécution réalisée sans erreur sur aucune console, sont disponibles :</p>
 
 <ul>
-<li>Pour lancer les tests : <code>sh ng test</code></li>
-<li>Pour lancer les tests avec couverture de code : <code>sh ng test --code-coverage --reporters=coverage-istanbul</code></li>
-<li>Pour lancer les tests avec PhantomJS : <code>sh ng test --config=karma-ic.conf.js</code></li>
+<li><a href="http://localhost:9200/meslogs">les informations de l&rsquo;index dans ElasticSearch</a></li>
+<li><a href="http://localhost:5601/app/kibana">les logs dans Kibana</a> après avoir ajouter l&rsquo;index <em>meslogs</em> (le formulaire d&rsquo;ajout est affiché systématiquement si aucun index n&rsquo;existe)</li>
 </ul>
 
-<h4 id="intégrer-des-frameworks-supplémentaires">Intégrer des frameworks supplémentaires :</h4>
+<p>On obtient ainsi le tableau de bord suivant (après quelques minutes de manipulation dans Kibana) :
+<img src="/images/elastic-kibanaExempleSimpliste.png" alt="elastic-kibanaExempleSimpliste" /></p>
+
+<h4 id="installation-sur-un-ubuntu">Installation sur un Ubuntu</h4>
 
 <ul>
-<li><a href="https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/include-font-awesome.md">Pour AwesomeFont</a></li>
+<li>Voir la <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html">documentation officielle d&rsquo;ElasticSearch</a></li>
+<li>Voir la <a href="https://www.elastic.co/guide/en/kibana/current/deb.html">documentation officielle de Kibana</a></li>
+<li>Voir la <a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation.html">documentation de FileBeat</a></li>
+<li>Voir la <a href="https://www.elastic.co/guide/en/logstash/current/installing-logstash.html">documentation de LogStash</a></li>
 </ul>
 
-<h4 id="quelques-lectures-utiles">Quelques lectures utiles :</h4>
+<h4 id="sources-d-informations">Sources d&rsquo;informations :</h4>
 
 <ul>
-<li><a href="https://stackoverflow.com/questions/30357634/how-do-i-use-namespaces-with-typescript-external-modules">modularité avec TS</a></li>
-<li><a href="http://microsoft.github.io/TypeSearch/">pour trouver un type</a></li>
-</ul>
-
-<h4 id="quelques-commandes-npm-utiles">Quelques commandes NPM utiles :</h4>
+<li>Idées
 
 <ul>
-<li>pour lister les versions d&rsquo;un package : <code>ssh npm show monPackage@* version</code></li>
-<li>pour lister les packages qui ne sont pas en dernière version : <code>ssh npm outdated</code></li>
+<li><a href="http://blog.d2-si.fr/2016/08/23/bonnes-pratiques-elastic-stack/">concepts généraux</a></li>
+<li><a href="https://www.elastic.co/fr/start">guide de démarrage d&rsquo;Elastic</a></li>
+</ul></li>
+<li>Outils
+
+<ul>
+<li><a href="https://www.elastic.co/fr/products/logstash">documentation LogStash</a></li>
+<li><a href="https://www.splunk.com/en_us/solutions/solution-areas/log-management.html">documentation Splunk</a></li>
+<li><a href="https://www.elastic.co/fr/products/kibana">documentation Kibana</a></li>
+<li><a href="https://www.elastic.co/fr/products/beats">documentation Beats</a>
+<br />
+<br /></li>
+</ul></li>
 </ul>
 
 
@@ -1199,26 +1355,6 @@ onClick(){ console.log(this.track); }
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1315,6 +1451,26 @@ onClick(){ console.log(this.track); }
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1416,10 +1572,10 @@ onClick(){ console.log(this.track); }
 
 
         
-            <a class="nav nav-prev" href="/mesidees/15-js/" title="JS"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/mesidees/21-jenkins/" title="Jenkins"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/mesidees/17-installationserveuric/" title="Installation d&#39;un serveur pour une Integration Continue" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/mesidees/99-trucsalire/" title="Trucs à lire" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

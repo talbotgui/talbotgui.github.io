@@ -233,12 +233,21 @@ Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
     </item>
     
     <item>
+      <title>Stack Elastic</title>
+      <link>https://talbotgui.github.io/mesidees/22-elastic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/22-elastic/</guid>
+      <description>A quoi peut servir Elastic Stack (anciennement Stask ELK)  obtenir rapidement les logs d&amp;rsquo;un serveur : pour éviter les demandes à l&amp;rsquo;hébergeur qui, parfois et selon les contrats, peuvent demander 3 jours pour être traitées corréler les logs de plusieurs serveur pour avoir une vision d&amp;rsquo;ensemble d&amp;rsquo;un processus métier : cas classique des micro-services (dont chaque composant crée ses logs) ou des systèmes SOA détecter des problèmes : à partir de données de référence, il est possible de détecter des anomalies (temps de traitement longs, consommation CPU ou mémoire anormale) liées à certains appels au système ou évènement métier  Dans tous les cas, avant de vouloir faire quelque chose d&amp;rsquo;intelligent avec les données collectées, il faut déjà avoir une idée des éléments à collecter :</description>
+    </item>
+    
+    <item>
       <title>Trucs à lire</title>
       <link>https://talbotgui.github.io/mesidees/99-trucsalire/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://talbotgui.github.io/mesidees/99-trucsalire/</guid>
-      <description>Quelques trucs à lire :
+      <description>Quelques trucs à lire
  retour sur le piratage de TV5 Monde: partie1, partie2 le MOOC sur la sécurité informatique proposée par le gouvernement  </description>
     </item>
     

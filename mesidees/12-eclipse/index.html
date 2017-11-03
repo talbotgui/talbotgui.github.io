@@ -13,19 +13,19 @@
     <title>Eclipse :: Guillaume TALBOT</title>
     
     
-    <link href="/css/nucleus.css?1507034225" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1507034225" rel="stylesheet">
-    <link href="/css/hybrid.css?1507034225" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1507034225" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1507034225" rel="stylesheet">
-    <link href="/css/auto-complete.css?1507034225" rel="stylesheet">
-    <link href="/css/theme.css?1507034225" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1507034225" rel="stylesheet">
+    <link href="/css/nucleus.css?1509727770" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1509727770" rel="stylesheet">
+    <link href="/css/hybrid.css?1509727770" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1509727770" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1509727770" rel="stylesheet">
+    <link href="/css/auto-complete.css?1509727770" rel="stylesheet">
+    <link href="/css/theme.css?1509727770" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1509727770" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1507034225" rel="stylesheet">
+      <link href="/css/theme-blue.css?1509727770" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1507034225"></script>
+    <script src="/js/jquery-2.x.min.js?1509727770"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1507034225"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1507034225"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1509727770"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1509727770"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1507034225"></script>
+<script type="text/javascript" src="/js/search.js?1509727770"></script>
 
     
   </div>
@@ -752,6 +752,7 @@
 <li><a href="#les-raccourcis-à-connaître">Les raccourcis à connaître</a></li>
 <li><a href="#les-fonctionnalités-natives-indispensables">Les fonctionnalités natives indispensables</a></li>
 <li><a href="#les-plugins-très-utiles-en-fonction-des-projets">Les plugins très utiles en fonction des projets</a></li>
+<li><a href="#d-autres-outils-bien-utiles">D&rsquo;autres outils bien utiles :</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -775,15 +776,6 @@
 
 
 
-
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#un-outil-mal-sous-utilisé">Un outil mal/sous utilisé</a></li>
-<li><a href="#comment-apprendre-à-utiliser-pleinement-eclipse">Comment apprendre à utiliser pleinement Eclipse ?</a></li>
-<li><a href="#les-raccourcis-à-connaître">Les raccourcis à connaître</a></li>
-<li><a href="#les-fonctionnalités-natives-indispensables">Les fonctionnalités natives indispensables</a></li>
-<li><a href="#les-plugins-très-utiles-en-fonction-des-projets">Les plugins très utiles en fonction des projets</a></li>
-</ul>
 
 <h4 id="introduction">Introduction</h4>
 
@@ -873,6 +865,55 @@ Son but : à chaque sauvegarde d&rsquo;une classe Java, il exécute un certain n
 <p>Le plugin <strong>JBoss Tools</strong> contient les <strong>Hibernate Tools</strong>.
 Ce plugin permet de configurer un éditeur de requête HQL lié à une base de données et une configuration JPA (ou Hibernate) et permet l&rsquo;exécution et le débogage de requêtes.
 (cf. <a href="/mesidees/04-consolehibernate/">billet décrivant l&rsquo;usage de ce plugin</a>)</p>
+
+<h4 id="d-autres-outils-bien-utiles">D&rsquo;autres outils bien utiles :</h4>
+
+<p><strong>SVN stat</strong> analyse les logs SVN d&rsquo;un dépot et génère des rapports d&rsquo;usage de l&rsquo;outil par les développeurs : mots qui reviennent souvent dans les commentaires, volume de code par commit (en ajout ou modification), jour et heure des commits, &hellip;</p>
+
+<p>Ces informations peuvent être utilisées pour vérifier le bon usage de SVN car ce n&rsquo;est pas un outil de sauvegarde de son travail hebdomadaire à utiliser le vendredi soir entre 16h et 18h !</p>
+
+<p>Pour l&rsquo;utiliser : télécharger SvnStat depuis <a href="https://svnstat.sourceforge.net">SourceForge</a> ou <a href="/autres/statsvn.jar">ici</a> et créer un script <em>genereRapport.cmd</em> contenant :</p>
+
+<pre><code>@echo off
+
+set hour=%time:~0,2%
+if &quot;%time:~0,1%&quot;==&quot; &quot; set hour=0%time:~1,1%
+set rapportDir=audit-%date:~6,4%%date:~3,2%%date:~0,2%-%hour%%time:~3,2%
+set PATH=%PATH%;C:\Program Files\VisualSVN Server\bin\
+set svnUrl=http://raptor-chess-interface.googlecode.com/svn/trunk/
+set premierRepertoire=trunk
+
+@REM création des répertoires de l'audit
+echo Etape 1/5 : creation du rapport %rapportDir%
+mkdir %rapportDir%
+cd %rapportDir%
+
+@REM création des sous-répertoires
+mkdir sources
+mkdir rapports
+
+@REM checkout des sources
+echo Etape 2/5 : checkout des sources
+cd sources
+svn co -q %svnUrl%
+
+@REM calcul des logs
+echo Etape 3/5 : calcul des logs
+cd %premierRepertoire%
+svn log -v -q --xml &gt;..\..\logSvn.log
+
+@REM création du rapport
+echo Etape 4/5 : creation du rapport
+cd..
+cd..
+cd rapports
+java -jar ..\..\statsvn.jar ..\logSvn.log ..\sources\%premierRepertoire% &gt;..\logRapports.log
+
+@REM fin
+echo Etape 5/5 : fin
+cd..
+cd..
+</code></pre>
 
 
 <footer class=" footline" >
@@ -1395,20 +1436,20 @@ Ce plugin permet de configurer un éditeur de requête HQL lié à une base de d
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1507034225"></script>
-    <script src="/js/perfect-scrollbar.min.js?1507034225"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1507034225"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1507034225"></script>
-    <script src="/js/featherlight.min.js?1507034225"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1507034225"></script>
-    <script src="/js/highlight.pack.js?1507034225"></script>
+    <script src="/js/clipboard.min.js?1509727770"></script>
+    <script src="/js/perfect-scrollbar.min.js?1509727770"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1509727770"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1509727770"></script>
+    <script src="/js/featherlight.min.js?1509727770"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1509727770"></script>
+    <script src="/js/highlight.pack.js?1509727770"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1507034225"></script>
-    <script src="/js/learn.js?1507034225"></script>
-    <script src="/js/hugo-learn.js?1507034225"></script>
+    <script src="/js/modernizr.custom.71422.js?1509727770"></script>
+    <script src="/js/learn.js?1509727770"></script>
+    <script src="/js/hugo-learn.js?1509727770"></script>
 
-    <link href="/mermaid/mermaid.css?1507034225" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1507034225"></script>
+    <link href="/mermaid/mermaid.css?1509727770" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1509727770"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

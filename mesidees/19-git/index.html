@@ -13,19 +13,19 @@
     <title>Git :: Guillaume TALBOT</title>
     
     
-    <link href="/css/nucleus.css?1507034225" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1507034225" rel="stylesheet">
-    <link href="/css/hybrid.css?1507034225" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1507034225" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1507034225" rel="stylesheet">
-    <link href="/css/auto-complete.css?1507034225" rel="stylesheet">
-    <link href="/css/theme.css?1507034225" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1507034225" rel="stylesheet">
+    <link href="/css/nucleus.css?1509727770" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1509727770" rel="stylesheet">
+    <link href="/css/hybrid.css?1509727770" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1509727770" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1509727770" rel="stylesheet">
+    <link href="/css/auto-complete.css?1509727770" rel="stylesheet">
+    <link href="/css/theme.css?1509727770" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1509727770" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1507034225" rel="stylesheet">
+      <link href="/css/theme-blue.css?1509727770" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1507034225"></script>
+    <script src="/js/jquery-2.x.min.js?1509727770"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1507034225"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1507034225"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1509727770"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1509727770"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1507034225"></script>
+<script type="text/javascript" src="/js/search.js?1509727770"></script>
 
     
   </div>
@@ -750,6 +750,8 @@
 <li><a href="#les-utilitaires">Les utilitaires :</a></li>
 <li><a href="#la-manipulation-d-historique">La manipulation d&rsquo;historique :</a></li>
 <li><a href="#la-manipulation-de-branches">La manipulation de branches :</a></li>
+<li><a href="#ajouter-un-outil-de-diff-pour-les-documents-microsoft-office">Ajouter un outil de DIFF pour les documents Microsoft Office</a></li>
+<li><a href="#ajouter-deux-scripts-avec-alias-pour-activer-désactiver-un-proxy">Ajouter deux scripts (avec alias) pour activer/désactiver un proxy</a></li>
 <li><a href="#articles-utiles">Articles utiles :</a></li>
 </ul></li>
 </ul></li>
@@ -847,14 +849,66 @@
 
 <p>Pour fusionner simplement une branche vers la branche courante : <code>ssh git merge monAutreBranche</code></p>
 
-<p>Pour pousser dans le master les modifications d&rsquo;une autre branche en un seul commit : <code>ssh 
-git checkout master
+<p>Pour pousser dans le master les modifications d&rsquo;une autre branche en un seul commit :</p>
+
+<pre><code>git checkout master
 git merge --no-ff maBrancheFeature
-</code></p>
+</code></pre>
 
 <p>Pour pousser sur le dépot distant toutes les branches : <code>ssh git push --all</code></p>
 
 <p>Pour lier une branche locale à une branche distante existante (après avoir fait un push -all créant une branche par exemple) : <code>ssh git branch --set-upstream-to origin/maBranche</code></p>
+
+<h4 id="ajouter-un-outil-de-diff-pour-les-documents-microsoft-office">Ajouter un outil de DIFF pour les documents Microsoft Office</h4>
+
+<ul>
+<li>Ajouter les lignes suivantes dans le fichier .gitconfig (vi ~/.gitconfig depuis une console gitbash) :</li>
+</ul>
+
+<pre><code>[diff]
+  tool = pdiff
+[difftool &quot;pdiff&quot;]
+  cmd=&quot;wscript.exe \&quot;c:\\Program Files\\TortoiseSVN\\Diff-Scripts\\diff-ppt.js\&quot; \&quot;`pwd`/$REMOTE\&quot; \&quot;$LOCAL\&quot;&quot;
+</code></pre>
+
+<ul>
+<li>Pour tester, exécuter la commande : <code>git difftool -Y -t pdiff maPresentation.pptx</code></li>
+<li>Ajouter un alias pour appeler ce diff (dans la liste des alias existante si besoin) :</li>
+</ul>
+
+<pre><code>[alias]
+    diffP = difftool -Y -t pdiff
+</code></pre>
+
+<ul>
+<li>Pour tester cet alias : <code>git diffP maPresentation.pptx</code></li>
+</ul>
+
+<h4 id="ajouter-deux-scripts-avec-alias-pour-activer-désactiver-un-proxy">Ajouter deux scripts (avec alias) pour activer/désactiver un proxy</h4>
+
+<ul>
+<li>Placer le script suivant dans le script <em>setGitConfigProxy.sh</em> dans le répertoire d&rsquo;installation de GIT</li>
+</ul>
+
+<pre><code class="language-ssh">git config --global http.proxy http://mon.proxy:8080
+git config --global https.proxy https://mon.proxy:8080
+</code></pre>
+
+<ul>
+<li>Placer le script suivant dans le script <em>setGitConfigProxy.sh</em> dans le répertoire d&rsquo;installation de GIT</li>
+</ul>
+
+<pre><code class="language-ssh">git config --global --unset http.proxy
+git config --global --unset https.proxy
+</code></pre>
+
+<ul>
+<li>Exécuter les commandes suivantes :</li>
+</ul>
+
+<pre><code class="language-ssh">git config --global alias.setProxy '!sh $GIT_EXEC_PATH/../../../setGitConfigProxy.sh'
+git config --global alias.unsetProxy '!sh $GIT_EXEC_PATH/../../../unsetGitConfigProxy.sh'
+</code></pre>
 
 <h4 id="articles-utiles">Articles utiles :</h4>
 
@@ -1386,20 +1440,20 @@ git merge --no-ff maBrancheFeature
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1507034225"></script>
-    <script src="/js/perfect-scrollbar.min.js?1507034225"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1507034225"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1507034225"></script>
-    <script src="/js/featherlight.min.js?1507034225"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1507034225"></script>
-    <script src="/js/highlight.pack.js?1507034225"></script>
+    <script src="/js/clipboard.min.js?1509727770"></script>
+    <script src="/js/perfect-scrollbar.min.js?1509727770"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1509727770"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1509727770"></script>
+    <script src="/js/featherlight.min.js?1509727770"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1509727770"></script>
+    <script src="/js/highlight.pack.js?1509727770"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1507034225"></script>
-    <script src="/js/learn.js?1507034225"></script>
-    <script src="/js/hugo-learn.js?1507034225"></script>
+    <script src="/js/modernizr.custom.71422.js?1509727770"></script>
+    <script src="/js/learn.js?1509727770"></script>
+    <script src="/js/hugo-learn.js?1509727770"></script>
 
-    <link href="/mermaid/mermaid.css?1507034225" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1507034225"></script>
+    <link href="/mermaid/mermaid.css?1509727770" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1509727770"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

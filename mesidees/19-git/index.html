@@ -13,19 +13,19 @@
     <title>Git :: Guillaume TALBOT</title>
     
     
-    <link href="/css/nucleus.css?1509727770" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1509727770" rel="stylesheet">
-    <link href="/css/hybrid.css?1509727770" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1509727770" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1509727770" rel="stylesheet">
-    <link href="/css/auto-complete.css?1509727770" rel="stylesheet">
-    <link href="/css/theme.css?1509727770" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1509727770" rel="stylesheet">
+    <link href="/css/nucleus.css?1512114098" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1512114098" rel="stylesheet">
+    <link href="/css/hybrid.css?1512114098" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1512114098" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1512114098" rel="stylesheet">
+    <link href="/css/auto-complete.css?1512114098" rel="stylesheet">
+    <link href="/css/theme.css?1512114098" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1512114098" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1509727770" rel="stylesheet">
+      <link href="/css/theme-blue.css?1512114098" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1509727770"></script>
+    <script src="/js/jquery-2.x.min.js?1512114098"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1509727770"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1509727770"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1512114098"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1512114098"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1509727770"></script>
+<script type="text/javascript" src="/js/search.js?1512114098"></script>
 
     
   </div>
@@ -699,9 +699,9 @@
 
         <section id="body">
         <div id="overlay"></div>
-        <div class="padding highlightable sticky-parent">
+        <div class="padding highlightable">
               
-              <div class="sticky-spacer">
+              <div>
                 <div id="top-bar">
                 
                 
@@ -895,7 +895,7 @@ git config --global https.proxy https://mon.proxy:8080
 </code></pre>
 
 <ul>
-<li>Placer le script suivant dans le script <em>setGitConfigProxy.sh</em> dans le répertoire d&rsquo;installation de GIT</li>
+<li>Placer le script suivant dans le script <em>unsetGitConfigProxy.sh</em> dans le répertoire d&rsquo;installation de GIT</li>
 </ul>
 
 <pre><code class="language-ssh">git config --global --unset http.proxy
@@ -908,6 +908,36 @@ git config --global --unset https.proxy
 
 <pre><code class="language-ssh">git config --global alias.setProxy '!sh $GIT_EXEC_PATH/../../../setGitConfigProxy.sh'
 git config --global alias.unsetProxy '!sh $GIT_EXEC_PATH/../../../unsetGitConfigProxy.sh'
+</code></pre>
+
+<ul>
+<li>Pour manipuler le proxy pour <em>NPM</em> et <em>MAVEN</em> depuis ces scripts, il suffit d&rsquo;ajouter les lignes suivantes :</li>
+</ul>
+
+<pre><code class="language-ssh"># setGitConfigProxy.sh
+# Proxy pour GIT
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+# Proxy pour NPM
+npm config rm proxy
+npm config rm https-proxy
+
+# Proxy pour MAVEN
+sed &quot;s/active&gt;true/active&gt;false/&quot; -i C:/outils/apache-maven-3.5.2/conf/settings.xml```
+</code></pre>
+
+<pre><code class="language-ssh"># unsetGitConfigProxy.sh
+# Proxy pour GIT
+git config --global http.proxy http://fr-proxy.groupinfra.com:3128
+git config --global https.proxy http://fr-proxy.groupinfra.com:3128
+
+# Proxy pour NPM
+npm config set proxy http://fr-proxy.groupinfra.com:3128
+npm config set https-proxy http://fr-proxy.groupinfra.com:3128
+
+# Proxy pour MAVEN
+sed &quot;s/active&gt;false/active&gt;true/&quot; -i C:/outils/apache-maven-3.5.2/conf/settings.xml
 </code></pre>
 
 <h4 id="articles-utiles">Articles utiles :</h4>
@@ -927,6 +957,8 @@ git config --global alias.unsetProxy '!sh $GIT_EXEC_PATH/../../../unsetGitConfig
 
         
         </div> 
+        
+
       </div>
 
     <div id="navigation">
@@ -1440,20 +1472,20 @@ git config --global alias.unsetProxy '!sh $GIT_EXEC_PATH/../../../unsetGitConfig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1509727770"></script>
-    <script src="/js/perfect-scrollbar.min.js?1509727770"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1509727770"></script>
-    <script src="/js/jquery.sticky-kit.min.js?1509727770"></script>
-    <script src="/js/featherlight.min.js?1509727770"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1509727770"></script>
-    <script src="/js/highlight.pack.js?1509727770"></script>
+    <script src="/js/clipboard.min.js?1512114098"></script>
+    <script src="/js/perfect-scrollbar.min.js?1512114098"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1512114098"></script>
+    <script src="/js/jquery.sticky.js?1512114098"></script>
+    <script src="/js/featherlight.min.js?1512114098"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1512114098"></script>
+    <script src="/js/highlight.pack.js?1512114098"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1509727770"></script>
-    <script src="/js/learn.js?1509727770"></script>
-    <script src="/js/hugo-learn.js?1509727770"></script>
+    <script src="/js/modernizr.custom.71422.js?1512114098"></script>
+    <script src="/js/learn.js?1512114098"></script>
+    <script src="/js/hugo-learn.js?1512114098"></script>
 
-    <link href="/mermaid/mermaid.css?1509727770" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1509727770"></script>
+    <link href="/mermaid/mermaid.css?1512114098" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1512114098"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

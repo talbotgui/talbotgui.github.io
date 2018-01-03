@@ -184,9 +184,11 @@ Two way binding :
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://talbotgui.github.io/mesidees/17-installationserveuric/</guid>
-      <description>Création de la machine : Créer une machine de type small chez Amazon EC2 avec l&amp;rsquo;OS Ubuntu 17.04 AMD64 (image AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720). Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)
+      <description>Création de la machine : Créer une machine de type small chez Amazon EC2 avec l&amp;rsquo;OS Ubuntu 17.04 AMD64 (image AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720).
+Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)
+Modification en janvier 2018 : medium avec l&amp;rsquo;image AMI ubuntu/images/hvm-ssd/ubuntu-artful-17.10-amd64-server-20180102
 Mise à jour de la plateforme : Se connecter en SSH et exécuter ssh sudo apt-get update sudo apt-get upgrade
-Installation de Java et Jenkins : sudo apt-get install default-jdk @see http://pkg.jenkins-ci.org/debian/ wget -q -O - https://pkg.</description>
+Installation de Java et Jenkins : sudo apt-get install default-jdk @see http://pkg.</description>
     </item>
     
     <item>

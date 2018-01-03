@@ -13,19 +13,19 @@
     <title>Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT</title>
     
     
-    <link href="/css/nucleus.css?1512114098" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1512114098" rel="stylesheet">
-    <link href="/css/hybrid.css?1512114098" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1512114098" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1512114098" rel="stylesheet">
-    <link href="/css/auto-complete.css?1512114098" rel="stylesheet">
-    <link href="/css/theme.css?1512114098" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1512114098" rel="stylesheet">
+    <link href="/css/nucleus.css?1515001167" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1515001167" rel="stylesheet">
+    <link href="/css/hybrid.css?1515001167" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1515001167" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1515001167" rel="stylesheet">
+    <link href="/css/auto-complete.css?1515001167" rel="stylesheet">
+    <link href="/css/theme.css?1515001167" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1515001167" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1512114098" rel="stylesheet">
+      <link href="/css/theme-blue.css?1515001167" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1512114098"></script>
+    <script src="/js/jquery-2.x.min.js?1515001167"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1512114098"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1512114098"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1515001167"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1515001167"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1512114098"></script>
+<script type="text/javascript" src="/js/search.js?1515001167"></script>
 
     
   </div>
@@ -785,8 +785,11 @@
 
 <h4 id="création-de-la-machine">Création de la machine :</h4>
 
-<p>Créer une machine de type <em>small</em> chez Amazon EC2 avec l&rsquo;OS Ubuntu 17.04 AMD64 (image <em>AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720</em>).
-Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)</p>
+<p>Créer une machine de type <em>small</em> chez Amazon EC2 avec l&rsquo;OS Ubuntu 17.04 AMD64 (image <em>AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720</em>).</p>
+
+<p>Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)</p>
+
+<p>Modification en janvier 2018 : <em>medium</em> avec l&rsquo;image <em>AMI ubuntu/images/hvm-ssd/ubuntu-artful-17.10-amd64-server-20180102</em></p>
 
 <h4 id="mise-à-jour-de-la-plateforme">Mise à jour de la plateforme :</h4>
 
@@ -815,7 +818,7 @@ sudo a2enmod headers
 sudo a2enmod ssl
 </code></pre>
 
-<p>Créer le fichier <em>/etc/apache2/sites-available/monHttp.conf</em></p>
+<p>Créer le fichier <em>/etc/apache2/sites-available/monHttp.conf</em> (ne pas oublier le sudo)</p>
 
 <pre><code>&lt;VirtualHost *:80&gt;
  ServerAdmin webmaster@localhost
@@ -856,8 +859,6 @@ Order deny,allow
 Allow from all
 &lt;/Proxy&gt;
 ProxyPreserveHost on
-ProxyPass /monMariage http://localhost:9090/monMariage
-ProxyPassReverse /monMariage http://locahost:9090/monMariage
 ProxyPass /jenkins http://localhost:8080/jenkins nocanon
 ProxyPassReverse /jenkins http://locahost:8080/jenkins
 ProxyPassReverse /jenkins  http://me.guillaumetalbot.com/jenkins
@@ -889,10 +890,10 @@ sudo rm /var/www/html/index.html
 &lt;html&gt;
  &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot; /&gt;
-  &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=https://me.guillaumetalbot.com/monMariage/login.html&quot; /&gt;
+  &lt;meta http-equiv=&quot;refresh&quot; content=&quot;3; url=https://talbotgui.github.io&quot; /&gt;
  &lt;/head&gt;
  &lt;body&gt;
-  Redirection en cours
+  Redirection en cours...
  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -907,7 +908,7 @@ sudo rm /var/www/html/index.html
 sudo vi /etc/postfix/main.cf
   myhostname = guillaumetalbot.com
 sudo vi /etc/postfix/virtual
-  webmaster@ec2-52-49-145-20.eu-west-1.compute.amazonaws.com ubuntu
+  webmaster@guillaumetalbot.com ubuntu
 sudo postmap /etc/postfix/virtual
 sudo service postfix restart
 </code></pre>
@@ -919,13 +920,13 @@ Modifier le fichier /usr/share/maven/conf/settings.xml pour définir le repo loc
 
 <h4 id="installation-npm-nodejs">Installation NPM &amp; NodeJS</h4>
 
-<pre><code class="language-ssh">curl -sL https://deb.nodesource.com/setup_7.x | sudo bash -
-sudo apt-get install nodejs
+<pre><code class="language-ssh">curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs
 </code></pre>
 
 <h4 id="installation-de-chrome">Installation de Chrome :</h4>
 
-<pre><code class="language-ssh">sh -c 'echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google.list'
+<pre><code class="language-ssh">sudo sh -c 'echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google.list'
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install google-chrome-stable
@@ -1467,20 +1468,20 @@ swapon /var/myswap
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1512114098"></script>
-    <script src="/js/perfect-scrollbar.min.js?1512114098"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1512114098"></script>
-    <script src="/js/jquery.sticky.js?1512114098"></script>
-    <script src="/js/featherlight.min.js?1512114098"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1512114098"></script>
-    <script src="/js/highlight.pack.js?1512114098"></script>
+    <script src="/js/clipboard.min.js?1515001167"></script>
+    <script src="/js/perfect-scrollbar.min.js?1515001167"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1515001167"></script>
+    <script src="/js/jquery.sticky.js?1515001167"></script>
+    <script src="/js/featherlight.min.js?1515001167"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1515001167"></script>
+    <script src="/js/highlight.pack.js?1515001167"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1512114098"></script>
-    <script src="/js/learn.js?1512114098"></script>
-    <script src="/js/hugo-learn.js?1512114098"></script>
+    <script src="/js/modernizr.custom.71422.js?1515001167"></script>
+    <script src="/js/learn.js?1515001167"></script>
+    <script src="/js/hugo-learn.js?1515001167"></script>
 
-    <link href="/mermaid/mermaid.css?1512114098" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1512114098"></script>
+    <link href="/mermaid/mermaid.css?1515001167" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1515001167"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

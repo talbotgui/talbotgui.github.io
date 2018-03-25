@@ -13,19 +13,19 @@
     <title>Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT</title>
     
     
-    <link href="/css/nucleus.css?1516551306" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1516551306" rel="stylesheet">
-    <link href="/css/hybrid.css?1516551306" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1516551306" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1516551306" rel="stylesheet">
-    <link href="/css/auto-complete.css?1516551306" rel="stylesheet">
-    <link href="/css/theme.css?1516551306" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1516551306" rel="stylesheet">
+    <link href="/css/nucleus.css?1522003269" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1522003269" rel="stylesheet">
+    <link href="/css/hybrid.css?1522003269" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1522003269" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1522003269" rel="stylesheet">
+    <link href="/css/auto-complete.css?1522003269" rel="stylesheet">
+    <link href="/css/theme.css?1522003269" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1522003269" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1516551306" rel="stylesheet">
+      <link href="/css/theme-blue.css?1522003269" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1516551306"></script>
+    <script src="/js/jquery-2.x.min.js?1522003269"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1516551306"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1516551306"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1522003269"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1522003269"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1516551306"></script>
+<script type="text/javascript" src="/js/search.js?1522003269"></script>
 
     
   </div>
@@ -523,6 +523,25 @@
  
   
     
+      <li data-nav-id="/mesidees/23-gitetclefssshmultiples/" title="Git et clefs SSH multiples" class="dd-item ">
+        <a href="/mesidees/23-gitetclefssshmultiples/">
+        Git et clefs SSH multiples
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/mesidees/99-trucsalire/" title="Trucs à lire" class="dd-item ">
         <a href="/mesidees/99-trucsalire/">
         Trucs à lire
@@ -759,6 +778,7 @@
 <li><a href="#installation-de-chrome">Installation de Chrome :</a></li>
 <li><a href="#si-la-machine-est-de-type-tiny">Si la machine est de type <em>tiny</em></a></li>
 <li><a href="#les-répertoires-à-vider-pour-récupérer-de-l-espace">Les répertoires à vider pour récupérer de l&rsquo;espace :</a></li>
+<li><a href="#notes-sur-l-installation-d-un-archiva">Notes sur l&rsquo;installation d&rsquo;un Archiva</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -794,13 +814,13 @@
 <h4 id="mise-à-jour-de-la-plateforme">Mise à jour de la plateforme :</h4>
 
 <p>Se connecter en SSH et exécuter
-<code>ssh sudo apt-get update
+<code>sudo apt-get update
 sudo apt-get upgrade</code></p>
 
 <h4 id="installation-de-java-et-jenkins">Installation de Java et Jenkins :</h4>
 
-<pre><code class="language-ssh">sudo apt-get install default-jdk
-    
+<pre><code>sudo apt-get install default-jdk
+	
 @see http://pkg.jenkins-ci.org/debian/
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ &gt;&gt; /etc/apt/sources.list'
@@ -808,11 +828,11 @@ sudo apt-get update
 sudo apt-get install jenkins
 </code></pre>
 
-<p>Pour définir le rootContext de Jenkins, exécuter <code>ssh sudo vi /etc/default/jenkins</code> et modifier la dernière ligne pour ajouter &ldquo;&ndash;prefix=$PREFIX&rdquo;</p>
+<p>Pour définir le rootContext de Jenkins, exécuter <code>sudo vi /etc/default/jenkins</code> et modifier la dernière ligne pour ajouter &ldquo;&ndash;prefix=$PREFIX&rdquo;</p>
 
 <h4 id="installation-apache2">Installation apache2</h4>
 
-<pre><code class="language-ssh">sudo apt-get install apache2
+<pre><code>sudo apt-get install apache2
 sudo a2enmod proxy proxy_http
 sudo a2enmod headers
 sudo a2enmod ssl
@@ -827,7 +847,7 @@ sudo a2enmod ssl
 &lt;/VirtualHost&gt;
 </code></pre>
 
-<pre><code class="language-ssh">sudo a2ensite monHttp
+<pre><code>sudo a2ensite monHttp
 sudo /etc/init.d/apache2 restart
 </code></pre>
 
@@ -837,7 +857,7 @@ sudo /etc/init.d/apache2 restart
 
 <p><strong>Penser à configurer le nom de domaine pour pointer sur la machine auprès du DNS</strong></p>
 
-<pre><code class="language-ssh">sudo apt-get update
+<pre><code>sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
@@ -875,18 +895,17 @@ AllowEncodedSlashes NoDecode
  Header set Strict-Transport-Security &quot;max-age=300; includeSubDomains; preload; always;&quot;
  Header set Public-Key-Pins &quot;pin-sha256=\&quot;base64+primary==\&quot;; pin-sha256=\&quot;base64+backup==\&quot;; max-age=5184000; includeSubDomains&quot;
 &lt;/IfModule&gt;
-
 </code></pre>
 
 <p>Puis exécuter :</p>
 
-<pre><code class="language-ssh">sudo /etc/init.d/apache2 restart
+<pre><code>sudo /etc/init.d/apache2 restart
 sudo rm /var/www/html/index.html
 </code></pre>
 
 <p>Créer le fichier /var/www/html/index.html avec le contenu suivant :</p>
 
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
  &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot; /&gt;
@@ -904,7 +923,7 @@ sudo rm /var/www/html/index.html
 
 <h4 id="installation-email">Installation email :</h4>
 
-<pre><code class="language-ssh">sudo apt-get install postfix
+<pre><code>sudo apt-get install postfix
 sudo vi /etc/postfix/main.cf
   myhostname = guillaumetalbot.com
 sudo vi /etc/postfix/virtual
@@ -915,18 +934,18 @@ sudo service postfix restart
 
 <h4 id="installation-maven">Installation Maven :</h4>
 
-<p><code>ssh sudo apt-get install maven</code>
+<p><code>sudo apt-get install maven</code>
 Modifier le fichier /usr/share/maven/conf/settings.xml pour définir le repo local sans oublier de créer le répertoire avec le droit à tous les utilisateurs (chmod a+w m2repo)</p>
 
 <h4 id="installation-npm-nodejs">Installation NPM &amp; NodeJS</h4>
 
-<pre><code class="language-ssh">curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+<pre><code>curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 </code></pre>
 
 <h4 id="installation-de-chrome">Installation de Chrome :</h4>
 
-<pre><code class="language-ssh">sudo sh -c 'echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google.list'
+<pre><code>sudo sh -c 'echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google.list'
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install google-chrome-stable
@@ -936,7 +955,7 @@ sudo apt-get install google-chrome-stable
 
 <p>La machine va manquer de RAM. Pour ajouter une partition de SWAP (dans un fichier) (<a href="http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/">http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/</a>)</p>
 
-<pre><code class="language-ssh">dd if=/dev/zero of=/var/myswap bs=1M count=2048
+<pre><code>dd if=/dev/zero of=/var/myswap bs=1M count=2048
 mkswap /var/myswap
 swapon /var/myswap
 </code></pre>
@@ -944,6 +963,24 @@ swapon /var/myswap
 <h4 id="les-répertoires-à-vider-pour-récupérer-de-l-espace">Les répertoires à vider pour récupérer de l&rsquo;espace :</h4>
 
 <p>/var/lib/jenkins/.npm/_logs/</p>
+
+<h4 id="notes-sur-l-installation-d-un-archiva">Notes sur l&rsquo;installation d&rsquo;un Archiva</h4>
+
+<p>Ressources :</p>
+
+<ul>
+<li>documentation : <a href="https://archiva.apache.org/docs/2.2.3/quick-start.html">https://archiva.apache.org/docs/2.2.3/quick-start.html</a></li>
+<li>installation : <a href="http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip">http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip</a></li>
+</ul>
+
+<p>Installation :</p>
+
+<ul>
+<li>extraire le contenu de l&rsquo;archive</li>
+<li>si Java9 est le JDK par défaut, modifier le fichier conf/wrapper.conf : <code>wrapper.java.command=C:/Program Files/Java/jdk1.8.0_151/bin/java</code></li>
+<li>sous Windows, dans un interpréteur de commande en mode &ldquo;Admin&rdquo;, exécuter <code>archiva install</code> puis <code>archiva start</code></li>
+<li>Archiva sera disponible à l&rsquo;adresse <a href="http://localhost:8080/">http://localhost:8080/</a></li>
+</ul>
 
 
 <footer class=" footline" >
@@ -1366,6 +1403,22 @@ swapon /var/myswap
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1468,20 +1521,20 @@ swapon /var/myswap
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1516551306"></script>
-    <script src="/js/perfect-scrollbar.min.js?1516551306"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1516551306"></script>
-    <script src="/js/jquery.sticky.js?1516551306"></script>
-    <script src="/js/featherlight.min.js?1516551306"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1516551306"></script>
-    <script src="/js/highlight.pack.js?1516551306"></script>
+    <script src="/js/clipboard.min.js?1522003269"></script>
+    <script src="/js/perfect-scrollbar.min.js?1522003269"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1522003269"></script>
+    <script src="/js/jquery.sticky.js?1522003269"></script>
+    <script src="/js/featherlight.min.js?1522003269"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1522003269"></script>
+    <script src="/js/highlight.pack.js?1522003269"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1516551306"></script>
-    <script src="/js/learn.js?1516551306"></script>
-    <script src="/js/hugo-learn.js?1516551306"></script>
+    <script src="/js/modernizr.custom.71422.js?1522003269"></script>
+    <script src="/js/learn.js?1522003269"></script>
+    <script src="/js/hugo-learn.js?1522003269"></script>
 
-    <link href="/mermaid/mermaid.css?1516551306" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1516551306"></script>
+    <link href="/mermaid/mermaid.css?1522003269" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1522003269"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

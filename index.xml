@@ -172,10 +172,10 @@ Au sommaire :
       
       <guid>https://talbotgui.github.io/mesidees/16-angular/</guid>
       <description>Quelques astuces Angular à retenir : Angular Cheat Sheet
-Au besoin, pour réinstaller Angular/cli : ts npm install -g @angular/cli --no-optional
-Dans une interpolation, pour naviguer sans risque, il suffit d&amp;rsquo;utiliser le Safe Navigation Operator (&amp;lsquo;?.&amp;rsquo;). Exemple : ts unObjet?.unAttributPotentiellementUndefined
+Au besoin, pour réinstaller Angular/cli : npm install -g @angular/cli --no-optional
+Dans une interpolation, pour naviguer sans risque, il suffit d&amp;rsquo;utiliser le Safe Navigation Operator (&amp;lsquo;?.&amp;rsquo;). Exemple : unObjet?.unAttributPotentiellementUndefined
 Two way binding :
- ts [ngModel]=&amp;quot;monAttribut&amp;quot; si la valeur change dans le JS, le DOM est mis à jour ts (ngModel)=&amp;quot;monAttribut&amp;quot; si le DOM change, la valeur du JS est mise à jour  Exemple de binding : html &amp;lt;div [style.</description>
+ [ngModel]=&amp;quot;monAttribut&amp;quot; si la valeur change dans le JS, le DOM est mis à jour (ngModel)=&amp;quot;monAttribut&amp;quot; si le DOM change, la valeur du JS est mise à jour  Exemple de binding : &amp;lt;div [style.</description>
     </item>
     
     <item>
@@ -187,7 +187,7 @@ Two way binding :
       <description>Création de la machine : Créer une machine de type small chez Amazon EC2 avec l&amp;rsquo;OS Ubuntu 17.04 AMD64 (image AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720).
 Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)
 Modification en janvier 2018 : medium avec l&amp;rsquo;image AMI ubuntu/images/hvm-ssd/ubuntu-artful-17.10-amd64-server-20180102
-Mise à jour de la plateforme : Se connecter en SSH et exécuter ssh sudo apt-get update sudo apt-get upgrade
+Mise à jour de la plateforme : Se connecter en SSH et exécuter sudo apt-get update sudo apt-get upgrade
 Installation de Java et Jenkins : sudo apt-get install default-jdk @see http://pkg.</description>
     </item>
     
@@ -206,13 +206,14 @@ Installation de Java et Jenkins : sudo apt-get install default-jdk @see http://p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://talbotgui.github.io/mesidees/19-git/</guid>
-      <description>Les basics : Pour cloner un dépot : ssh git clone https://xxxxxxxxx
-Pour ajouter une modification : ssh git add rep1/monFichier.xxx
-Pour ajouter toutes les modifications : ssh git add -A
-Pour annuler les ADD : ssh git reset
-Pour annuler le ADD d&amp;rsquo;un fichier : ssh git reset rep1/monFichier.xxx
-Pour annuler les modifications d&amp;rsquo;un fichier : ssh git checkout rep1/monFichier.xxx
-Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
+      <description>Les basics : Pour cloner un dépot : git clone https://xxxxxxxxx
+Pour ajouter une modification : git add rep1/monFichier.xxx
+Pour ajouter toutes les modifications : git add -A
+Pour annuler les ADD : git reset
+Pour annuler le ADD d&amp;rsquo;un fichier : git reset rep1/monFichier.xxx
+Pour annuler les modifications d&amp;rsquo;un fichier : git checkout rep1/monFichier.xxx
+Pour commiter : git commit -m &amp;quot;mon message&amp;quot;
+Pour commiter les fichiers modifiés (pas les ajouts) sans faire de ADD : git commit -am &amp;quot;mon message&amp;quot;</description>
     </item>
     
     <item>
@@ -241,6 +242,18 @@ Pour commiter : ssh git commit -m &amp;quot;mon message&amp;quot;</description>
       
       <guid>https://talbotgui.github.io/mesidees/22-elastic/</guid>
       <description>A quoi peut servir Elastic Stack (anciennement Stask ELK)  obtenir rapidement les logs d&amp;rsquo;un serveur : pour éviter les demandes à l&amp;rsquo;hébergeur qui, parfois et selon les contrats, peuvent demander 3 jours pour être traitées corréler les logs de plusieurs serveur pour avoir une vision d&amp;rsquo;ensemble d&amp;rsquo;un processus métier : cas classique des micro-services (dont chaque composant crée ses logs) ou des systèmes SOA détecter des problèmes : à partir de données de référence, il est possible de détecter des anomalies (temps de traitement longs, consommation CPU ou mémoire anormale) liées à certains appels au système ou évènement métier  Dans tous les cas, avant de vouloir faire quelque chose d&amp;rsquo;intelligent avec les données collectées, il faut déjà avoir une idée des éléments à collecter :</description>
+    </item>
+    
+    <item>
+      <title>Git et clefs SSH multiples</title>
+      <link>https://talbotgui.github.io/mesidees/23-gitetclefssshmultiples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesidees/23-gitetclefssshmultiples/</guid>
+      <description>Cas d&amp;rsquo;usage Quand on développe à la maison et au bureau avec Git, rapidement, apparait le besoin de disposer de plusieurs clefs SSH pour s&amp;rsquo;authentifier auprès des serveurs.
+Etapes :  Créer les clefs (en reprenant le chemin complet du fichier proposé !!) :
+ ssh-keygen -t rsa -C &amp;quot;premier@email.com&amp;quot; avec /c/Users/xxxx/.ssh/id_rsa_boulot ssh-keygen -t rsa -C &amp;quot;second@email.com&amp;quot; avec /c/Users/xxxx/.ssh/id_rsa_perso  Créer le fichier ~/.ssh/config avec
+# Compte perso Host github.</description>
     </item>
     
     <item>

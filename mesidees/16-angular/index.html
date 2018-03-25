@@ -13,19 +13,19 @@
     <title>Angular :: Guillaume TALBOT</title>
     
     
-    <link href="/css/nucleus.css?1516551306" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1516551306" rel="stylesheet">
-    <link href="/css/hybrid.css?1516551306" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1516551306" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1516551306" rel="stylesheet">
-    <link href="/css/auto-complete.css?1516551306" rel="stylesheet">
-    <link href="/css/theme.css?1516551306" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1516551306" rel="stylesheet">
+    <link href="/css/nucleus.css?1522003269" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1522003269" rel="stylesheet">
+    <link href="/css/hybrid.css?1522003269" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1522003269" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1522003269" rel="stylesheet">
+    <link href="/css/auto-complete.css?1522003269" rel="stylesheet">
+    <link href="/css/theme.css?1522003269" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1522003269" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1516551306" rel="stylesheet">
+      <link href="/css/theme-blue.css?1522003269" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1516551306"></script>
+    <script src="/js/jquery-2.x.min.js?1522003269"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1516551306"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1516551306"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1522003269"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1522003269"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1516551306"></script>
+<script type="text/javascript" src="/js/search.js?1522003269"></script>
 
     
   </div>
@@ -523,6 +523,25 @@
  
   
     
+      <li data-nav-id="/mesidees/23-gitetclefssshmultiples/" title="Git et clefs SSH multiples" class="dd-item ">
+        <a href="/mesidees/23-gitetclefssshmultiples/">
+        Git et clefs SSH multiples
+        <i class="fa fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/mesidees/99-trucsalire/" title="Trucs à lire" class="dd-item ">
         <a href="/mesidees/99-trucsalire/">
         Trucs à lire
@@ -780,19 +799,19 @@
 <p><strong><a href="https://angular.io/guide/cheatsheet">Angular Cheat Sheet</a></strong></p>
 
 <p>Au besoin, pour réinstaller Angular/cli :
-<code>ts npm install -g @angular/cli --no-optional</code></p>
+<code>npm install -g @angular/cli --no-optional</code></p>
 
 <p>Dans une interpolation, pour naviguer sans risque, il suffit d&rsquo;utiliser le Safe Navigation Operator (&lsquo;?.&rsquo;).
-Exemple : <code>ts unObjet?.unAttributPotentiellementUndefined</code></p>
+Exemple : <code>unObjet?.unAttributPotentiellementUndefined</code></p>
 
 <p>Two way binding :</p>
 
 <ul>
-<li><code>ts [ngModel]=&quot;monAttribut&quot;</code> si la valeur change dans le JS, le DOM est mis à jour</li>
-<li><code>ts (ngModel)=&quot;monAttribut&quot;</code> si le DOM change, la valeur du JS est mise à jour</li>
+<li><code>[ngModel]=&quot;monAttribut&quot;</code> si la valeur change dans le JS, le DOM est mis à jour</li>
+<li><code>(ngModel)=&quot;monAttribut&quot;</code> si le DOM change, la valeur du JS est mise à jour</li>
 </ul>
 
-<p>Exemple de binding : <code>html &lt;div [style.background-color]=&quot;getStyle()&quot;&gt;</code></p>
+<p>Exemple de binding : <code>&lt;div [style.background-color]=&quot;getStyle()&quot;&gt;</code></p>
 
 <p>Évènement :</p>
 
@@ -804,8 +823,8 @@ Exemple : <code>ts unObjet?.unAttributPotentiellementUndefined</code></p>
 <p>Dirty checking :</p>
 
 <ul>
-<li>tout changement est pris en compte dans le composant : <code>ts @Component {..., changeDetection: ChangeDetectionStrategy.Default, ...}</code> =&gt;</li>
-<li>seul les @Input sont raffraichis : <code>ts @Component {..., changeDetection: ChangeDetectionStrategy.OnPush,  ...}</code></li>
+<li>tout changement est pris en compte dans le composant : <code>@Component {..., changeDetection: ChangeDetectionStrategy.Default, ...}</code> =&gt;</li>
+<li>seul les @Input sont raffraichis : <code>@Component {..., changeDetection: ChangeDetectionStrategy.OnPush,  ...}</code></li>
 </ul>
 
 <p>Pipes :</p>
@@ -830,15 +849,15 @@ Exemple : <code>ts unObjet?.unAttributPotentiellementUndefined</code></p>
 <p>Exemple de directive : pour logger le clic sur tous un ensemble de boutons</p>
 
 <ul>
-<li><code>html &lt;button [track]=&quot;unBouton&quot;&gt;coucou&lt;/button&gt;</code></li>
-<li><code>ts @Directive({selector: '[track]'}) export class TrackDirective {
+<li><code>&lt;button [track]=&quot;unBouton&quot;&gt;coucou&lt;/button&gt;</code></li>
+<li><code>@Directive({selector: '[track]'}) export class TrackDirective {
 @Input() track;
 @HostListener('click')
 onClick(){ console.log(this.track); }
 }</code></li>
 </ul>
 
-<p>Pour faire des checkbox dans un *ngFor : <code>html &lt;div *ngFor=&quot;let aze of azes&quot;&gt;
+<p>Pour faire des checkbox dans un *ngFor : <code>&lt;div *ngFor=&quot;let aze of azes&quot;&gt;
   &lt;input [id]=&quot;aze&quot;, name=&quot;monChamp&quot; ngModel [value]=&quot;aze&quot; type=&quot;radio&quot;&gt;&lt;/input&gt;
   &lt;label [attr.for]=&quot;aze&quot;&gt;{{aze}}&lt;/label&gt;
 &lt;/div&gt;</code></p>
@@ -852,7 +871,7 @@ onClick(){ console.log(this.track); }
 <ul>
 <li>il faut un form avec les attributs <code>novalidate</code> et <code>#toto=&quot;ngForm&quot;</code></li>
 <li>l&rsquo;attribut <code>required</code> sur les champs obligatoires</li>
-<li>une div avec le message d&rsquo;erreur (pristine = inchangé) : <code>html &lt;div [hidden]=&quot;inputNom.valid || inputNom.pristine&quot; class=&quot;alert alert-danger&quot;&gt;Le nom est obligatoire&lt;/div&gt;</code></li>
+<li>une div avec le message d&rsquo;erreur (pristine = inchangé) : <code>&lt;div [hidden]=&quot;inputNom.valid || inputNom.pristine&quot; class=&quot;alert alert-danger&quot;&gt;Le nom est obligatoire&lt;/div&gt;</code></li>
 </ul>
 
 <p>Pour la validation des radios, c&rsquo;est l&rsquo;input qui est invalide et le label est à coté. Astuce CSS : <code>css .ng-invalid + label:after { content:'sélectionne en un'; }</code></p>
@@ -883,9 +902,9 @@ onClick(){ console.log(this.track); }
 <p>Quelques commandes :</p>
 
 <ul>
-<li>Pour lancer les tests : <code>sh ng test</code></li>
-<li>Pour lancer les tests avec couverture de code : <code>sh ng test --code-coverage --reporters=coverage-istanbul</code></li>
-<li>Pour lancer les tests avec PhantomJS : <code>sh ng test --config=karma-ic.conf.js</code></li>
+<li>Pour lancer les tests : <code>ng test</code></li>
+<li>Pour lancer les tests avec couverture de code : <code>ng test --code-coverage --reporters=coverage-istanbul</code></li>
+<li>Pour lancer les tests avec PhantomJS : <code>ng test --config=karma-ic.conf.js</code></li>
 </ul>
 
 <p>Pour tester des XPath ou des sélecteurs CSS dans Chrome, il suffit d&rsquo;utiliser $x(&lsquo;//div&rsquo;) ou $$(&lsquo;div.maClass&rsquo;) (<a href="http://yizeng.me/2014/03/23/evaluate-and-validate-xpath-css-selectors-in-chrome-developer-tools/">source</a>).</p>
@@ -906,8 +925,8 @@ onClick(){ console.log(this.track); }
 <h4 id="quelques-commandes-npm-utiles">Quelques commandes NPM utiles :</h4>
 
 <ul>
-<li>pour lister les versions d&rsquo;un package : <code>ssh npm show monPackage@* version</code></li>
-<li>pour lister les packages qui ne sont pas en dernière version : <code>ssh npm outdated</code></li>
+<li>pour lister les versions d&rsquo;un package : <code>npm show monPackage@* version</code></li>
+<li>pour lister les packages qui ne sont pas en dernière version : <code>npm outdated</code></li>
 </ul>
 
 
@@ -1331,6 +1350,22 @@ onClick(){ console.log(this.track); }
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1433,20 +1468,20 @@ onClick(){ console.log(this.track); }
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1516551306"></script>
-    <script src="/js/perfect-scrollbar.min.js?1516551306"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1516551306"></script>
-    <script src="/js/jquery.sticky.js?1516551306"></script>
-    <script src="/js/featherlight.min.js?1516551306"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1516551306"></script>
-    <script src="/js/highlight.pack.js?1516551306"></script>
+    <script src="/js/clipboard.min.js?1522003269"></script>
+    <script src="/js/perfect-scrollbar.min.js?1522003269"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1522003269"></script>
+    <script src="/js/jquery.sticky.js?1522003269"></script>
+    <script src="/js/featherlight.min.js?1522003269"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1522003269"></script>
+    <script src="/js/highlight.pack.js?1522003269"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1516551306"></script>
-    <script src="/js/learn.js?1516551306"></script>
-    <script src="/js/hugo-learn.js?1516551306"></script>
+    <script src="/js/modernizr.custom.71422.js?1522003269"></script>
+    <script src="/js/learn.js?1522003269"></script>
+    <script src="/js/hugo-learn.js?1522003269"></script>
 
-    <link href="/mermaid/mermaid.css?1516551306" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1516551306"></script>
+    <link href="/mermaid/mermaid.css?1522003269" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1522003269"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

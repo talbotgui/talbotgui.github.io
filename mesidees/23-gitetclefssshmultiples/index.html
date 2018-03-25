@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <title>Mes projets :: Guillaume TALBOT</title>
+    <title>Git et clefs SSH multiples :: Guillaume TALBOT</title>
     
     
     <link href="/css/nucleus.css?1522003269" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesprojets/">
+  <body class="" data-url="/mesidees/23-gitetclefssshmultiples/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -79,7 +79,7 @@
   
     
     <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item 
-        
+        parent
         
         
         ">
@@ -523,7 +523,7 @@
  
   
     
-      <li data-nav-id="/mesidees/23-gitetclefssshmultiples/" title="Git et clefs SSH multiples" class="dd-item ">
+      <li data-nav-id="/mesidees/23-gitetclefssshmultiples/" title="Git et clefs SSH multiples" class="dd-item active">
         <a href="/mesidees/23-gitetclefssshmultiples/">
         Git et clefs SSH multiples
         <i class="fa fa-check read-icon"></i>
@@ -569,8 +569,8 @@
   
     
     <li data-nav-id="/mesprojets/" title="Mes projets" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/mesprojets/">
@@ -731,6 +731,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
                   <span class="links">
                     
           
@@ -739,7 +741,13 @@
             
           
           
-            <a href='/'>Guillaume TALBOT</a> > Mes projets
+            
+            
+          
+          
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Git et clefs SSH multiples
+          
+         
           
          
           
@@ -747,42 +755,90 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#cas-d-usage">Cas d&rsquo;usage</a></li>
+<li><a href="#etapes">Etapes :</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>Git et clefs SSH multiples</h1>
           
 
         
 
 
-<p>Mes projets publics en cours :</p>
+
+
+<h3 id="cas-d-usage">Cas d&rsquo;usage</h3>
+
+<p>Quand on développe à la maison et au bureau avec Git, rapidement, apparait le besoin de disposer de plusieurs clefs SSH pour s&rsquo;authentifier auprès des serveurs.</p>
+
+<h3 id="etapes">Etapes :</h3>
 
 <ul>
-<li>une application de gestion des invités à un mariage (<a href="https://github.com/talbotgui/mariage">GitHub</a>)
+<li><p>Créer les clefs (en reprenant le chemin complet du fichier proposé !!) :</p>
 
 <ul>
-<li><a href="/mesprojets/mariage-guidededev/">guide du développeur</a></li>
+<li><code>ssh-keygen -t rsa -C &quot;premier@email.com&quot;</code> avec /c/Users/xxxx/.ssh/id_rsa_boulot</li>
+<li><code>ssh-keygen -t rsa -C &quot;second@email.com&quot;</code> avec /c/Users/xxxx/.ssh/id_rsa_perso</li>
 </ul></li>
-<li>une application de gestion d&rsquo;une classe d&rsquo;école primaire avec les informations sur les élèves, les notes, les compétences à travailler et le cahier journal) (<a href="https://github.com/talbotgui/bulletin-ng">GitHub</a>)
 
-<ul>
-<li><a href="/mesprojets/bulletin-guidededev/">guide du développeur</a></li>
-</ul></li>
-<li>le présent site avec mes notes capitalisant des trucs et astuces utiles (<a href="https://github.com/talbotgui/pages-hugo">GitHub</a>)</li>
+<li><p>Créer le fichier ~/.ssh/config avec</p>
+
+<pre><code># Compte perso
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_perso
+# Compte boulot
+Host qsd.mon.boulot
+HostName qsd.mon.boulot
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_boulot
+</code></pre></li>
+
+<li><p>Pour déclarer les clefs :
+<code>ssh-add ~/.ssh/id_rsa_perso</code>
+<code>ssh-add ~/.ssh/id_rsa_boulot</code></p></li>
+
+<li><p>Pour démarrer l&rsquo;agent SSH (ou s&rsquo;assurer qu&rsquo;il fonctionne)
+<code>eval `ssh-agent -s`</code></p></li>
+
+<li><p>Supprimer le cache des clefs
+<code>ssh-add -D</code></p></li>
 </ul>
+
+<p>Pour tester (si besoin, accepter la connexion en répondant &lsquo;yes&rsquo;) :
+<code>ssh -T git@github.com</code>
+<code>ssh -T git@qsd.mon.boulot</code></p>
+
+<p>ET NE PAS OUBLIER DE FAIRE DES CLONES EN UTILISANT LE PROTOCOLE SSH et non https !!!!</p>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -814,8 +870,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -830,21 +884,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1198,41 +1239,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1249,6 +1255,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1293,6 +1302,54 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1303,10 +1360,10 @@
 
 
         
-            <a class="nav nav-prev" href="/mesidees/99-trucsalire/" title="Trucs à lire"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/mesidees/22-elastic/" title="Stack Elastic"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/mesprojets/bulletin-guidededev/" title="Bulletin NG - Guide du développeur" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/mesidees/99-trucsalire/" title="Trucs à lire" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1336,3 +1393,4 @@
 
   </body>
 </html>
+

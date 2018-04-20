@@ -168,6 +168,20 @@
 	"content": " Cas d\u0026rsquo;usage Quand on développe à la maison et au bureau avec Git, rapidement, apparait le besoin de disposer de plusieurs clefs SSH pour s\u0026rsquo;authentifier auprès des serveurs.\nEtapes :  Créer les clefs (en reprenant le chemin complet du fichier proposé !!) :\n ssh-keygen -t rsa -C \u0026quot;premier@email.com\u0026quot; avec /c/Users/xxxx/.ssh/id_rsa_boulot ssh-keygen -t rsa -C \u0026quot;second@email.com\u0026quot; avec /c/Users/xxxx/.ssh/id_rsa_perso  Créer le fichier ~/.ssh/config avec\n# Compte perso Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_perso # Compte boulot Host qsd.mon.boulot HostName qsd.mon.boulot PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_boulot  Pour déclarer les clefs : ssh-add ~/.ssh/id_rsa_perso ssh-add ~/.ssh/id_rsa_boulot\n Pour démarrer l\u0026rsquo;agent SSH (ou s\u0026rsquo;assurer qu\u0026rsquo;il fonctionne) eval `ssh-agent -s`\n Supprimer le cache des clefs ssh-add -D\n  Pour tester (si besoin, accepter la connexion en répondant \u0026lsquo;yes\u0026rsquo;) : ssh -T git@github.com ssh -T git@qsd.mon.boulot\nET NE PAS OUBLIER DE FAIRE DES CLONES EN UTILISANT LE PROTOCOLE SSH et non https !!!!\n"
 },
 {
+	"uri": "https://talbotgui.github.io/mesidees/24-sftpaws/",
+	"title": "Créer un compte sftp sur AWS",
+	"tags": [],
+	"description": "",
+	"content": " Créer le nouvel utilisateur Exécuter les commandes :\n sudo adduser new_user --disabled-password sudo su new_user cd mkdir .ssh chmod 700 .ssh touch .ssh/authorized_keys chmod 600 .ssh/authorized_keys  Sécuriser l\u0026rsquo;accès  Créer une paire de clef sur la console EC2 d\u0026rsquo;AWS Uploader la clef sur le serveur dans /home/ubuntu La transformer en clef publique RSA : ssh-keygen -f /home/ubuntu/xxx.pem -y \u0026gt;/home/new_user/.ssh/authorized_keys  "
+},
+{
+	"uri": "https://talbotgui.github.io/mesidees/25-featuretoggle/",
+	"title": "Feature toggle",
+	"tags": [],
+	"description": "",
+	"content": "Un tout petit billet pour référencer l\u0026rsquo;article de Fowler sur ce sujet : https://martinfowler.com/articles/feature-toggles.html\nBonnes pratiques d\u0026rsquo;implémentation des toggles à retenir :\n découpler l\u0026rsquo;identifiant du toggle et le code activant (ou pas) la sous-fonctionnalité  remplacer Festures.isFeatureActive(\u0026quot;version-2.0\u0026quot;) par Festures.isEnvoiMailConfirmation() { return isFeatureActive(\u0026quot;version-2.0\u0026quot;); }  limiter au maximum les if. Si plusieurs sont nécessaires, il est préférable de faire des méthodes différentes voire des classes différentes.  "
+},
+{
 	"uri": "https://talbotgui.github.io/mesidees/99-trucsalire/",
 	"title": "Trucs à lire",
 	"tags": [],

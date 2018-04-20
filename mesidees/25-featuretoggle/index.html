@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <title>Mes idées :: Guillaume TALBOT</title>
+    <title>Feature toggle :: Guillaume TALBOT</title>
     
     
     <link href="/css/nucleus.css?1524203724" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/">
+  <body class="" data-url="/mesidees/25-featuretoggle/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -80,7 +80,7 @@
     
     <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item 
         parent
-        active
+        
         
         ">
       <a href="/mesidees/">
@@ -561,7 +561,7 @@
  
   
     
-      <li data-nav-id="/mesidees/25-featuretoggle/" title="Feature toggle" class="dd-item ">
+      <li data-nav-id="/mesidees/25-featuretoggle/" title="Feature toggle" class="dd-item active">
         <a href="/mesidees/25-featuretoggle/">
         Feature toggle
         <i class="fa fa-check read-icon"></i>
@@ -769,6 +769,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
                   <span class="links">
                     
           
@@ -777,7 +779,13 @@
             
           
           
-            <a href='/'>Guillaume TALBOT</a> > Mes idées
+            
+            
+          
+          
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Feature toggle
+          
+         
           
          
           
@@ -785,87 +793,46 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>Feature toggle</h1>
           
 
         
 
 
-<p>Cette partie du site contient des résumés d&rsquo;articles, des opinions, des astuces et des guides sur des sujets très divers :</p>
+<p>Un tout petit billet pour référencer l&rsquo;article de Fowler sur ce sujet : <a href="https://martinfowler.com/articles/feature-toggles.html">https://martinfowler.com/articles/feature-toggles.html</a></p>
+
+<p>Bonnes pratiques d&rsquo;implémentation des toggles à retenir :</p>
 
 <ul>
-<li><p><a href="/mesidees/02-pratiques/">liens vers des pratiques utiles</a></p></li>
-
-<li><p>industrialisation</p>
+<li>découpler l&rsquo;identifiant du toggle et le code activant (ou pas) la sous-fonctionnalité
 
 <ul>
-<li><a href="/mesidees/01-dettetechnique/">dette technique</a></li>
-<li><a href="/mesidees/06-relecturedecode/">relecture de code</a></li>
-<li><a href="/mesidees/14-qualimetrie/">qualimétrie</a></li>
-<li><a href="/mesidees/13-pipeline/">intégration Continue - pipeline</a></li>
-<li><a href="/mesidees/10-guidedudev/">guide du développeur</a></li>
-<li><a href="/mesidees/17-installationserveuric">installation d&rsquo;un serveur pour une IC</a></li>
+<li>remplacer <code>Festures.isFeatureActive(&quot;version-2.0&quot;)</code></li>
+<li>par <code>Festures.isEnvoiMailConfirmation() { return isFeatureActive(&quot;version-2.0&quot;); }</code></li>
 </ul></li>
-
-<li><p>développement - langages / outils</p>
-
-<ul>
-<li><a href="/mesidees/04-consolehibernate/">créer une console Hibernate</a></li>
-<li><a href="/mesidees/12-eclipse/">Eclipse</a></li>
-<li><a href="/mesidees/15-js">quelques incontournables de JS</a></li>
-<li><a href="/mesidees/16-angular">Angular</a></li>
-<li><a href="/mesidees/19-git">Git Cheat Sheet</a></li>
-</ul></li>
-
-<li><p>développement - pratiques &amp; patterns</p>
-
-<ul>
-<li><a href="/mesidees/03-testsdedeveloppement/">tests de développement</a></li>
-<li><a href="/mesidees/10-guidedudev/">guide du développeur</a></li>
-<li><a href="/mesidees/09-objectmother/">object mother - comment créer des jeux de données dans un test</a></li>
-<li><a href="/mesidees/11-programmationdefensive/">programmation défensive</a></li>
-</ul></li>
-
-<li><p>développement - astuces &amp; frameworks</p>
-
-<ul>
-<li><a href="/mesidees/05-retryenjava/">coder des ré-essais en Java</a></li>
-<li><a href="/mesidees/18-licences">gestion des licences</a></li>
-</ul></li>
-
-<li><p>documentation</p>
-
-<ul>
-<li><a href="/mesidees/10-guidedudev/">guide du développeur</a></li>
-<li><a href="/mesidees/08-creationavechugo/">créer un site avec Hugo</a></li>
-<li><a href="/mesidees/07-hugoetgithubpages/">Hugo et GitHub:Pages</a></li>
-</ul></li>
-
-<li><p><a href="/mesidees/99-trucsalire/">liens vers d&rsquo;autres sujets intéressants</a></p></li>
-
-<li><p>site et outils à connaître</p>
-
-<ul>
-<li><a href="https://tools.geekflare.com/tools">vérifier le paramétrage de son site Internet</a></li>
-</ul></li>
+<li>limiter au maximum les <code>if</code>. Si plusieurs sont nécessaires, il est préférable de faire des méthodes différentes voire des classes différentes.</li>
 </ul>
-
-<p><em>La page &lsquo;guide du développeur&rsquo; est présente plusieurs fois dans ce menu car c&rsquo;est un élément central de tout projet.</em></p>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -1298,6 +1265,58 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -1357,54 +1376,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1415,10 +1386,10 @@
 
 
         
-            <a class="nav nav-prev" href="/" title="Guillaume TALBOT"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/mesidees/24-sftpaws/" title="Créer un compte sftp sur AWS"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/mesidees/01-dettetechnique/" title="Dette technique" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/mesidees/99-trucsalire/" title="Trucs à lire" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1448,3 +1419,4 @@
 
   </body>
 </html>
+

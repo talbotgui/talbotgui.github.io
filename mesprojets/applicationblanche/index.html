@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <title>les différents FLOW avec Git :: Guillaume TALBOT</title>
+    <title>Application Blanche :: Guillaume TALBOT</title>
 
     
     <link href="/css/nucleus.css?1539015787" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/20-gitflow/">
+  <body class="" data-url="/mesprojets/applicationblanche/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -79,7 +79,7 @@
   
     
     <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item 
-        parent
+        
         
         
         ">
@@ -466,7 +466,7 @@
  
   
     
-      <li data-nav-id="/mesidees/20-gitflow/" title="les différents FLOW avec Git" class="dd-item active">
+      <li data-nav-id="/mesidees/20-gitflow/" title="les différents FLOW avec Git" class="dd-item ">
         <a href="/mesidees/20-gitflow/">
         les différents FLOW avec Git
         <i class="fas fa-check read-icon"></i>
@@ -626,7 +626,7 @@
   
     
     <li data-nav-id="/mesprojets/" title="Mes projets" class="dd-item 
-        
+        parent
         
         
         ">
@@ -690,7 +690,7 @@
  
   
     
-      <li data-nav-id="/mesprojets/applicationblanche/" title="Application Blanche" class="dd-item ">
+      <li data-nav-id="/mesprojets/applicationblanche/" title="Application Blanche" class="dd-item active">
         <a href="/mesprojets/applicationblanche/">
         Application Blanche
         <i class="fas fa-check read-icon"></i>
@@ -821,7 +821,7 @@
             
           
           
-            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > les différents FLOW avec Git
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesprojets/'>Mes projets</a> > Application Blanche
           
          
           
@@ -837,36 +837,61 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#modèle-1-a-successful-git-branching-model">Modèle 1 : a-successful-git-branching-model</a>
+<li><a href="#exigences">Exigences</a>
 <ul>
 <li>
 <ul>
-<li><a href="#liste-des-branches">Liste des branches :</a></li>
-<li><a href="#règles-à-respecter">Règles à respecter :</a></li>
-<li><a href="#avantages-et-problèmes">Avantages et problèmes :</a></li>
+<li><a href="#métiers">métiers</a></li>
+<li><a href="#techniques">techniques</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#modèle-1-git-flow-l-outil-qui-va-avec">Modèle 1 : Git Flow, l&rsquo;outil qui va avec</a>
+<li><a href="#environnement">Environnement</a></li>
+<li><a href="#architecture-technique">Architecture technique</a></li>
+<li><a href="#tests">Tests</a>
 <ul>
 <li>
 <ul>
-<li><a href="#avantages-et-problèmes-1">Avantages et problèmes :</a></li>
+<li><a href="#que-tester">Que tester</a></li>
+<li><a href="#comment-tester">Comment tester</a></li>
+<li><a href="#avec-quels-outils">Avec quels outils</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#modèle-2">Modèle 2 :</a>
+<li><a href="#règles-de-conception">Règles de conception</a>
 <ul>
 <li>
 <ul>
-<li><a href="#liste-des-branches-1">Liste des branches :</a></li>
-<li><a href="#règles-à-respecter-1">Règles à respecter :</a></li>
-<li><a href="#avantages-et-problèmes-2">Avantages et problèmes :</a></li>
+<li><a href="#persistance">Persistance</a></li>
+<li><a href="#service">Service</a></li>
+<li><a href="#api">API</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#annexes">Annexes :</a></li>
-<li><a href="#mes-propres-questions">Mes propres questions :</a></li>
-<li><a href="#a-lire-et-relire">A lire et relire :</a></li>
+<li><a href="#règles-de-développement">Règles de développement</a>
+<ul>
+<li>
+<ul>
+<li><a href="#langue">Langue</a></li>
+<li><a href="#nommage">Nommage</a></li>
+<li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
+<li><a href="#hql">HQL</a></li>
+<li><a href="#rest">REST</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#processus-de-développement">Processus de développement</a>
+<ul>
+<li>
+<ul>
+<li><a href="#gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle (GCL)</a></li>
+<li><a href="#commit">Commit</a></li>
+<li><a href="#industrialisation">Industrialisation</a>
+<ul>
+<li><a href="#outils">Outils</a></li>
+<li><a href="#processus">Processus</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#installation-des-environnements">Installation des environnements</a>
+<ul>
+<li><a href="#sur-le-serveur-unix">Sur le serveur unix</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -882,7 +907,7 @@
         
         <div id="body-inner">
           
-            <h1>les différents FLOW avec Git</h1>
+            <h1>Application Blanche</h1>
           
 
         
@@ -890,177 +915,297 @@
 
 
 
-<h3 id="modèle-1-a-successful-git-branching-model">Modèle 1 : a-successful-git-branching-model</h3>
+<p>Cette page est un court guide du développeur (<a href="/mesidees/10-guidedudev/">ma définition du guide du développeur</a>) pour un projet assez particulier : une <a href="https://github.com/talbotgui/appliBlanche">Application Blanche</a>.</p>
 
-<p>sources :</p>
+<p>L&rsquo;objectif de l&rsquo;application blanche est de fournir un exemple d&rsquo;application (régulièrement utilisé quand je donne des formations) mais aussi une structure minimale pour créer une nouvelle application. A ce titre, l&rsquo;application doit être particulièrement bien codée (dans le fond comme dans la forme) mais aussi bien documentée (il y a du boulot de ce coté-là).</p>
 
-<ul>
-<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">blog d&rsquo;origine</a></li>
-<li><a href="https://blog.nathanaelcherrier.com/2016/08/03/gerer-plusieurs-versions-avec-gitflow/">comment gérer plusieurs version</a></li>
-</ul>
-
-<h5 id="liste-des-branches">Liste des branches :</h5>
+<p><strong>Sommaire</strong> :</p>
 
 <ul>
-<li>master =&gt; la branche déployable en production à tout instant</li>
-<li>develop =&gt; la branche contenant tous les développements réalisés pour la prochaine release</li>
-<li>feature_XX =&gt; la branche contenant les commits d&rsquo;une fonctionnalités
+<li><a href="#exigences">Exigences</a>
 
 <ul>
-<li>initialisée depuis : DEVELOP</li>
-<li>peut être mergée dans : DEVELOP</li>
+<li><a href="#métiers">Exigences métiers</a></li>
+<li><a href="#techniques">Exigences techniques</a></li>
 </ul></li>
-<li>release_XX =&gt; la branche qui contient les commits d&rsquo;une version précise de l&rsquo;application</li>
-</ul>
-
-<h5 id="règles-à-respecter">Règles à respecter :</h5>
-
-<ul>
-<li>master :
+<li><a href="#environnement">Environnement</a></li>
+<li><a href="#architecture-technique">Architecture technique</a></li>
+<li><a href="#tests">Tests</a>
 
 <ul>
-<li>tout commit sur le MASTER donne lieu à un tag et un déploiement en production</li>
+<li><a href="#que-tester">Que tester</a></li>
+<li><a href="#comment-tester">Comment tester</a></li>
+<li><a href="#avec-quels-outils">Avec quels outils</a></li>
 </ul></li>
-<li>develop :
+<li><a href="#règles-de-conception">Règles de conception</a>
 
 <ul>
-<li>tout développement terminé doit être mergé sur la branche DEVELOP</li>
+<li><a href="#persistance">Persistance</a></li>
+<li><a href="#service">Service</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#web-pages">WEB - Pages</a></li>
 </ul></li>
-<li>feature_XX :
+<li><a href="#règles-de-développement">Règles de développement</a>
 
 <ul>
-<li>à créer depuis DEVELOP</li>
-<li>à merger dans DEVELOP</li>
-<li>à ne jamais pousser sur le repository ORIGIN</li>
-<li>les développeurs peuvent se synchroniser entre eux pour travailler sur une même feature</li>
-<li>ne pousser dans DEVELOP que quand la fonctionnalité est terminée et souhaitée pour la prochaine version (car la branche de la prochaine version sera créée depuis DEVELOP)</li>
+<li><a href="#langue">Langue</a></li>
+<li><a href="#nommage">Nommage</a></li>
+<li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
+<li><a href="#hql">HQL</a></li>
+<li><a href="#angular">Angular</a></li>
+<li><a href="#vuejs">VueJS</a></li>
 </ul></li>
-<li>release_XX :
+<li><a href="#processus-de-développement">Processus de développement</a>
 
 <ul>
-<li>à créer depuis DEVELOP</li>
-<li>à merger dans DEVELOP et MASTER</li>
-<li>quand la plus part des fonctionnalités (voire toutes) ont été intégrées dans DEVELOP, on créer la branche release_XX</li>
-<li>quand la release est terminée et validée, la branche est poussées dans MASTER (pour livraison) et dans DEVELOP (pour y mettre les correctifs)</li>
-<li>toute correction d&rsquo;une fonctionnalité doit être faite sur la branche release_XX</li>
+<li><a href="#gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle</a></li>
+<li><a href="#commit">Commit</a></li>
+<li><a href="#industrialisation">Industrialisation</a></li>
 </ul></li>
-<li>hotFix_XX :<br />
+<li><a href="#Installation-des-environnements">Installation des environnements</a></li>
+</ul>
+
+<h2 id="exigences">Exigences</h2>
+
+<p>Le fichier &ldquo;todoList.txt&rdquo; présent à la racine de la branche <em>master</em> contient une backlog.</p>
+
+<h4 id="métiers">métiers</h4>
+
+<p>L&rsquo;application n&rsquo;a pas d&rsquo;objectif métier.</p>
+
+<h4 id="techniques">techniques</h4>
+
+<p>Les sources évoluent au grès des besoins techniques que je veux prototyper et/ou des nouveaux usages/frameworks que je découvre.</p>
+
+<p>Mais, l&rsquo;application doit tout de même répondre aux exigences suivantes :</p>
 
 <ul>
-<li>à créer depuis MASTER</li>
-<li>à merger dans DEVELOP et MASTER</li>
-<li>si un bug bloquant survient, il est corrigé dans une branche hotFix_XX</li>
-<li>une fois le bug corrigé, la branche hotFix_XX est poussée dans MASTER et DEVELOP</li>
+<li>facilement accessible sur tout support : PC, tablette, téléphone ;</li>
+<li>évolutive : chaque nouveau besoin doit être facilement réalisé (toujours resté sur des solutions simples et efficaces) ;</li>
+<li>fiable (point primordiale) : l&rsquo;application ne doit pas subir de régressions intempestives portant atteinte à son utilisabilité ou à la fiabilité de ses données.</li>
+</ul>
+
+<h2 id="environnement">Environnement</h2>
+
+<p>Ce projet n&rsquo;était pas déployé où que ce soit jusqu&rsquo;en septembre 2018. Avant cette date, seule la PIC démarre l&rsquo;application à travers les tests (unitaires, d&rsquo;intégration et d&rsquo;application).
+Depuis cette date, l&rsquo;application est déployée sur le serveur Unix et sera bientôt déployée sur le cloud de Google (GCP).</p>
+
+<h2 id="architecture-technique">Architecture technique</h2>
+
+<p>Cette application se compose :</p>
+
+<ul>
+<li>d&rsquo;un backend coupé en quatre modules :
+
+<ul>
+<li>un projet contenant les classes réutilisables pour les projets &ldquo;métiers&rdquo;</li>
+<li>un projet contenant les classes réutilisables pour les projets &ldquo;REST&rdquo;</li>
+<li>un projet de services métiers et de persistence</li>
+<li>un projet de composants REST sécurisés (avec JWT)</li>
+</ul></li>
+<li>d&rsquo;une application WEB développée avec Angular</li>
+<li>de la même application WEB (même écrans et fonctionnalités) développée avec VueJS</li>
+<li>de batch (simple en SQL et une autre avec JPA)</li>
+</ul>
+
+<p>Les applications WEB sont simples (voire simpliste) et mettent en oeuvre des composants différents pour faire des tests :</p>
+
+<ul>
+<li>un formulaire Material</li>
+<li>l&rsquo;internationnalisation avec des libellés venant d&rsquo;une API</li>
+<li>une application PWA</li>
+<li>table Material</li>
+<li>&hellip;</li>
+</ul>
+
+<h2 id="tests">Tests</h2>
+
+<h4 id="que-tester">Que tester</h4>
+
+<p>Les cas nominaux de tous les composants doivent être testés ainsi que les cas d&rsquo;erreur principaux.</p>
+
+<p>Aucune exigence n&rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (hors getter, setter, constructeur, code de <a href="/mesidees/11-programmationdefensive/">programmation défensive</a>, &hellip;)</p>
+
+<h4 id="comment-tester">Comment tester</h4>
+
+<p><strong>Les composants métiers</strong> (Service, Repostitory et Entité) doivent être testés avec des tests d&rsquo;intégration. Il n&rsquo;est pas concevable de tester un système entièrement basé sur la notion de transaction et de requêtes SQL (Spring, Hibernate et la BDD) sans une connexion à une base de données et sans activer les commits.</p>
+
+<p>Si certains composants métiers présentent une grande complexité, alors un <a href="/mesidees/03-testsdedeveloppement/">test de granularité unitaire</a> est tout à fait envisageable. Un tel composant n&rsquo;existe pas pour le moment.</p>
+
+<p><strong>Les contrôleurs REST</strong> doivent être testés unitairement. Ces composants ne sont pas transactionnels et les services sont testés par ailleurs. Mais, pour bien vérifier le paramétrage et le code, il est nécessaire de réaliser le test des contrôleurs en démarrant un serveur WEB (l&rsquo;adjectif &ldquo;unitaire&rdquo; utilisé plus tôt est donc discutable - cf. <a href="/mesidees/03-testsdedeveloppement/">test de développement</a>).</p>
+
+<p><strong>Les écrans</strong> de l&rsquo;application sont testés en mode &ldquo;bout en bout&rdquo;. Selenium est utilisé pour piloter le navigateur et un jeu de données est utilisé pour initialiser le test. ATTENTION : les tests Selenium ne sont donc pas tous indépendants les uns des autres. Ce n&rsquo;est pas une bonne pratique mais faire autrement avec un test de bout en bout est trop coûteux.</p>
+
+<h4 id="avec-quels-outils">Avec quels outils</h4>
+
+<p><strong>JUnit</strong> et <strong>TestNG</strong> sont tous deux des exécuteurs de tests. JUnit est utilisé dans les tests des composants métiers. TestNG, étant plus pratique à utiliser avec Mockito, est utilisé pour l&rsquo;exécution des tests des contrôleurs.</p>
+
+<p><strong>Mockito</strong> est donc utilisé pour bouchonner les services métiers dans les tests des contrôleurs.</p>
+
+<p>La classe utilitaire <strong>JdbcTemplate</strong> (fournie par Spring-jdbc) peut être utilisée dans les tests métiers afin d&rsquo;exécuter simplement des requêtes SQL en base de données pour valider le contenu.</p>
+
+<p>La classe utilitaire <strong>RestTemplate</strong> (fournie par Spring-web) peut être utilisée dans les tests des contrôleurs pour réaliser les appels HTTP simplement.</p>
+
+<p><strong>Selenium</strong> est une API très riche. La classe MyDriver rassemble les opérations usuelles utiles aux tests (il est tout à fait possible de l&rsquo;enrichir).
+Les sélecteurs à utiliser dans les tests Selenium sont tous rassemblés dans la classe Selectors. Tous les sélecteurs doivent être rassemblés dans cette classe.
+Cette classe contient une hiérarchie de sous-classes structurée ainsi : NomDeLaPage / TypeDelements / selecteurElement. Exemple : Index.Button.CONFIRMER_SUPPRESSION
+Toute modification d&rsquo;une page HTML doit entraîner l&rsquo;enrichissement de la classe Selectors avec le sélecteur permettant de sélectionner les éléments ajoutés/modifiés/supprimés.</p>
+
+<h2 id="règles-de-conception">Règles de conception</h2>
+
+<h4 id="persistance">Persistance</h4>
+
+<p>Toute requête de recherche sans paramètre optionnel doit être codée dans un repository SpringData.</p>
+
+<h4 id="service">Service</h4>
+
+<p>La gestion des transactions et des erreurs se traite au niveau des services qui sont les points d&rsquo;entrée et de sortie des transactions.</p>
+
+<h4 id="api">API</h4>
+
+<p>Les services ne sont exposés via l&rsquo;API que s&rsquo;ils sont utilisés par l&rsquo;IHM.
+La validation des paramètres d&rsquo;entrée se fait dans le &ldquo;contrôleur&rdquo; et dans l&rsquo;écran.</p>
+
+<h2 id="règles-de-développement">Règles de développement</h2>
+
+<p>Les règles ci-dessous doivent être appliquées par tout développeur souhaitant participer à ce projet (non négociable). <strong>Par contre, il est toujours possible de discuter de la modification d&rsquo;une règle.</strong></p>
+
+<h4 id="langue">Langue</h4>
+
+<p>Les entités, les attributs et les méthodes sont nommés en français.
+Les commentaire sont en français.
+Les préfixes, suffixes et concepts inhérents au langage reste en anglais (get, set, is, iterator, &hellip;)</p>
+
+<h4 id="nommage">Nommage</h4>
+
+<p>Les composants applicatifs sont suffixés en fonction de leur type :</p>
+
+<ul>
+<li>&ldquo;Application&rdquo; pour les configurations SpringBoot,</li>
+<li>&ldquo;Exception&rdquo; pour les exceptions,</li>
+<li>&ldquo;DTO&rdquo; pour les structures de données de transport,</li>
+<li>&ldquo;Service&rdquo; pour les services métiers,</li>
+<li>&ldquo;DAO&rdquo; pour l&rsquo;accès à la persistance,</li>
+<li>&ldquo;REST&rdquo; pour l&rsquo;exposition de service en REST</li>
+<li>et &ldquo;Test&rdquo; pour tous les tests</li>
+</ul>
+
+<p>Les entités métier et les classes utilitaires ne sont pas suffixées mais doivent avoir des noms parlant (l&rsquo;usage du nom d&rsquo;un pattern est utile pour décrire l&rsquo;usage/l&rsquo;utilité du composant)
+Les classes implémentant une interface sont suffixées par &ldquo;IMPL&rdquo;
+Les noms de méthode commence par un verbe à l&rsquo;infinitif</p>
+
+<h4 id="mise-en-forme-des-sources">Mise en forme des sources</h4>
+
+<p>L&rsquo;usage des Save Actions d&rsquo;Eclipse est obligatoire pour conserver l&rsquo;homogénéité du code (cf. [petit tour d&rsquo;Eclipse]())</p>
+
+<p>Le formatage des sources est celui par défaut dans Eclipse (version Oxygen) : 150 caractères par ligne (150 pour les commentaires) et indentation par tabulation.
+Les membres sont triés systématiquement.
+Les lignes ne contenant que des tabulations et/ou des espaces sont vidées.
+Le mot clef &ldquo;final&rdquo; est placé sur toutes les variables affectées une seule fois et sur les paramètres.
+Le mot clef &ldquo;this&rdquo; est utilisé systématiquement.
+Les cast inutiles sont supprimés.</p>
+
+<h4 id="hql">HQL</h4>
+
+<p>Les requêtes HQL simples peuvent être écrites sur une seule ligne. Les plus complexes sont formatées pour être plus lisible. L&rsquo;usage des commentaires &ldquo;//&rdquo; en fin de ligne est autorisé pour forcer Eclipse à conserver à la ligne la chaîne de caractère à concaténer.</p>
+
+<p>Toujours définir par défaut l&rsquo;attribut READ_ONLY à <em>true</em> sur une méthode chargeant des entités persistantes. Seules les entités nécessitant d&rsquo;être &ldquo;managed&rdquo; doivent l&rsquo;être (cf. documentation hibernate sur le cycle de vie des objets dans une session)
+Ne jamais créer un lien entre deux entités en instanciant une entité et ne définissant que son ID. Toujours utiliser <em>EntityManager.getReference</em>
+La gestion des transactions est faite via les annotations Spring. Les exceptions du projet sont <em>runtime</em> et déclenchent donc le rollback. Seuls les composants de type &ldquo;Service&rdquo; et &ldquo;DAO&rdquo; peuvent être transactionnels (par les &ldquo;contrôleur&rdquo;)</p>
+
+<h4 id="rest">REST</h4>
+
+<p>Les méthodes de contrôleur REST retournant uniquement une chaine de caractères doivent retourner la dite chaine entre <em>double quote</em>.</p>
+
+<h2 id="processus-de-développement">Processus de développement</h2>
+
+<h4 id="gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle (GCL)</h4>
+
+<ul>
+<li>Que comprend la GCL :
+
+<ul>
+<li>Les sources applicatives et de test sont dans un repository GIT ;</li>
+<li>Le présent &ldquo;guide du développeur&rdquo; est lui aussi dans un repository GIT mais séparé (pas de gestion de version cohérente nécessaire) ;</li>
+<li>Le bug tracker a utilisé est celui du repository GitHub ;</li>
+<li>Les plans de test &ldquo;métier&rdquo; ne sont pas formalisés. Mais une partie d&rsquo;entre eux sont automatisés avec Selenium.</li>
+</ul></li>
+<li>La gestion de version :
+
+<ul>
+<li>une seule version existe pour le moment (branche &lsquo;master&rsquo;).</li>
+<li>si des POC sont réalisés, ils doivent l&rsquo;être dans une branche dédiée</li>
+<li>aucun TAG n&rsquo;est posé pour le moment (c&rsquo;est une chose à faire prochainement)</li>
 </ul></li>
 </ul>
 
-<h5 id="avantages-et-problèmes">Avantages et problèmes :</h5>
+<h4 id="commit">Commit</h4>
+
+<p>Les messages de commit doivent être explicites. Toute nouvelle fonctionnalité doit être commitée avec un message commençant par &ldquo;[FEATURE]&rdquo; (afin que le commit soit correctement affiché dans la page <em>releaseNote</em> de l&rsquo;application).</p>
+
+<h4 id="industrialisation">Industrialisation</h4>
+
+<h5 id="outils">Outils</h5>
+
+<p>GitHub héberge une partie des outils du projet : repository GIT &amp; guide du développeur, &hellip;
+L&rsquo;outil d&rsquo;intégration continue utilisé est Jenkins (hébergé sur un serveur EC2).
+La qualimétrie est réalisée avec Sonar (hébergée sur le site officiel en ligne).
+Les relectures de code sont possibles avec GitHub mais ne sont pas utilisées actuellement (un seul développeur pour le moment)</p>
+
+<h5 id="processus">Processus</h5>
+
+<p>Quitte à faire un petit projet sympa, autant utiliser les outils correctement. Donc le processus de développement (même s&rsquo;il est minimal) est piloté par un pipeline (cf. <a href="/mesidees/13-pipeline/">pipeline</a>).
+Le pipeline est lui aussi en GCL : dans le <em>JenkinsFile</em>
+Le pipeline commence au commit du code et enchaîne les étapes suivantes : compilation, tests métiers, tests des contrôleurs, packaging, tests IHM, qualimétrie, promotion manuelle et mise en production</p>
+
+<h2 id="installation-des-environnements">Installation des environnements</h2>
+
+<h3 id="sur-le-serveur-unix">Sur le serveur unix</h3>
+
+<p>Le déploiement sur un serveur Unix demande la création
+* d&rsquo;un répertoire hébergeant l&rsquo;application WEB dans un sous répertoire de /var/www/html.
+ * Attention à bien changer le root dans la configuration du build pour prendre en compte le nom du sous répertoire dans /var/www/html/.
+ * De plus, il faut donner les droits à l&rsquo;utilisateur Jenkins d&rsquo;écrire dans ce répertoire.
+ * Enfin, il faut modifier le fichier de configuration Apache pour permettre le chargement du WORKER : <code>Header set Content-Security-Policy &quot;worker-src https://*.guillaumetalbot.com;&quot;</code>
+* d&rsquo;un répertoire hébergeant le Backend
+ * Le répertoire doit contenir des scripts de démarrage et d&rsquo;arrêt (cf. sources de l&rsquo;application)
+ * Le répertoire doit aussi contenir les fichiers de configuration propres à l&rsquo;environnement (log4j2.xml et application.properties)
+ * De plus, il faut donner les droits à l&rsquo;utilisateur Jenkins d&rsquo;écrire dans ce répertoire pour le JAR, les logs et la bases de données (attention aux fichiers créés par un autre compte que Jenkins !).
+ * Il ne faut pas oublier d&rsquo;ajouter les redirections dans la configuration Apache !!</p>
+
+<p>Sujets non traités ici (pour le moment) :</p>
 
 <ul>
-<li>~ flow complexe mais un outil existe pour en simplifier l&rsquo;usage (cf. paragraphe suivant)</li>
-<li>- comment vérifier à chaque instant que les branches feature_XX sont intégrables sans conflit ni régression (chacune avec DEVELOP et toutes les combinaisons de feature_XX avec DEVELOP) ?</li>
-<li>+ permet des relectures de code facilement directement sur la branche feature_XX avant son intégration dans DEVELOP</li>
-<li>- habituellement, MASTER est la branche centrale d&rsquo;un dépot. Autant renommer DEVELOP en MASTER et la notion de MASTER dans ce flow n&rsquo;apporte rien car chaque commit dans MASTER donne lieu à une branche release_XX</li>
-<li>~ qu&rsquo;entend-on par feature ? Si une branche feature_XX a une durée de moins de 5 jours et qu&rsquo;on démarre 4-5 branches le même jour (au début du sprint), les conflits risquent de poser problèmes.</li>
-<li>- ce modèle part du principe qu&rsquo;il n&rsquo;existe qu&rsquo;une version finale à une instant T (le master). Or, dans une prestation de développement d&rsquo;application par une SSII chez un client, l&rsquo;équipe gère une version en qualification interne, une en recette client et une en production (modèle un peu ancien mais encore très vivant). Exemple : On a une version 1.0.3 en production et une 1.1 en &ldquo;recette client&rdquo;. Donc le master est à l&rsquo;image de la 1.1. Comment créer un patch sur la vielle version ???</li>
-</ul>
-
-<h3 id="modèle-1-git-flow-l-outil-qui-va-avec">Modèle 1 : Git Flow, l&rsquo;outil qui va avec</h3>
-
-<p>sources :</p>
+<li>conception
 
 <ul>
-<li><a href="https://jeffkreeftmeijer.com/git-flow/">introduction à GitFlow</a></li>
-<li><a href="https://blog.nathanaelcherrier.com/2016/07/11/gitflow-la-methodologie-et-la-pratique/">Git Flow</a></li>
-<li><a href="https://danielkummer.github.io/git-flow-cheatsheet/index.fr_FR.html">cheat sheet</a></li>
-<li><a href="https://github.com/petervanderdoes/gitflow-avh">documentation</a></li>
-</ul>
-
-<p>Pour simplifier l&rsquo;usage de ce modèle, GitFlow propose de nouvelles commandes qui font les merges, les créations de branche et les cheryPick :</p>
-
-<ul>
-<li>sur le même modèle que la console GIT, GitFlow permet d&rsquo;initialiser un repos et notamment de nommer toutes les branches du modèle : <code>ssh git flow init</code></li>
-<li>pour créer et terminer une feature_XX : <code>ssh git flow feature start maFonctionnalité</code> et <code>ssh git flow feature finish maFonctionnalité</code></li>
-<li>pour créer et terminer une release : <code>ssh git flow release start 0.1.0</code> et <code>ssh git flow release finish 0.1.0</code></li>
-</ul>
-
-<p>Pour traiter le problème &ldquo;multi-version&rdquo; du modèle, gitFlow propose une fonction <code>ssh git flow support</code>. Mais la gestion des cherryPick des bugFixes est à faire manuellement !</p>
-
-<h5 id="avantages-et-problèmes-1">Avantages et problèmes :</h5>
-
-<ul>
-<li>+ l&rsquo;outil simplifie beaucoup l&rsquo;usage du modèle</li>
-<li>- L&rsquo;usage de la fonction <code>ssh git flow hotfix start</code> est impossible (au risque de livrer la 1.1 en production directement).</li>
-</ul>
-
-<h3 id="modèle-2">Modèle 2 :</h3>
-
-<hr />
-
-<p>source :</p>
-
-<ul>
-<li><a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">critique du modèle 1</a></li>
-</ul>
-
-<h5 id="liste-des-branches-1">Liste des branches :</h5>
-
-<ul>
-<li>master =&gt; la branche qui accueille tous les commit de développement</li>
-<li>release_XX =&gt; une branche par livraison</li>
-<li>branchesLocales =&gt; des branches que créent les développeurs mais qu&rsquo;ils ne partagent jamais sur ORIGIN</li>
-</ul>
-
-<h5 id="règles-à-respecter-1">Règles à respecter :</h5>
-
-<ul>
-<li>master :
-
-<ul>
-<li>tout les développements sont commités dans le MASTER</li>
+<li>quels sont les outils de conception et/ou de modélisation ?</li>
+<li>quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?</li>
+<li>règles de conception (programmation défensive, @designByContrat, modularité, &hellip;)</li>
+<li>jeu de données de test</li>
 </ul></li>
-<li>release_XX :
+<li>développement
 
 <ul>
-<li>la branche release_XX est créée au moment de la livraison de l&rsquo;application (en même temps que le tag)</li>
-<li>toute correction d&rsquo;un bug bloquant se fait sur la branche release_XX</li>
-<li>toute correction d&rsquo;un bug bloquant donne lieu à un CHERRY PICK vers le MASTER</li>
+<li>liste des frameworks disponibles, leur usage et le pointeur sur leur documentation</li>
+<li>qualimétrie obligatoire avec le site &ldquo;online&rdquo; (avec sa configuration imposée par la plateforme d&rsquo;où les violations non corrigée qui ne le seront pas)</li>
+<li>HQL propre</li>
+<li>&hellip;</li>
 </ul></li>
-<li>branchesLocales :
+<li>industrialisation :
 
 <ul>
-<li>les branches locales sont une bonne chose à utiliser</li>
-<li>mais elles doivent être très régulièrement mise à jour vis à vis du MASTER</li>
+<li>aucune installation de poste automatique car seul l&rsquo;IDE est nécessaire et l&rsquo;application est autoporteuse</li>
+<li>IC = jenkins toujours à jour avec un pipelineAsCode (lien vers le blog sur le sujet)</li>
+<li>pipeline = git/compile/TU/TI/TA/qualimétrie/promotion/production</li>
+<li>à quand un second développeur et la mise en place des pullrequest et des revues de code ?</li>
 </ul></li>
-</ul>
-
-<h5 id="avantages-et-problèmes-2">Avantages et problèmes :</h5>
+<li>roadmap :
 
 <ul>
-<li>+ flow simple</li>
-<li>- pas de relecture de code possible directement depuis un outil centralisé car les branches locales sont &ldquo;locales&rdquo;</li>
-</ul>
-
-<h3 id="annexes">Annexes :</h3>
-
-<p>sources de réflexion :</p>
-
-<ul>
-<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows#forking-workflow">comparaison de workflow</a></li>
-</ul>
-
-<h3 id="mes-propres-questions">Mes propres questions :</h3>
-
-<p>Les featureBranch sont bien pratiques. Associées aux PullRequest qui permettent une relecture du code, on a un bon process de relecture obligatoire.
-Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rsquo;est pas incompatible avec la featureBranch_zzz d&rsquo;un collègue ?</p>
-
-<h3 id="a-lire-et-relire">A lire et relire :</h3>
-
-<ul>
-<li><a href="http://martinfowler.com/bliki/MoreVersionControl.html">MoreVersionControl par Martin FOWLER</a></li>
-<li><a href="http://martinfowler.com/bliki/FeatureBranch.html">FeatureBranch par Martin FOWLER</a></li>
-<li><a href="http://martinfowler.com/bliki/BranchByAbstraction.html">BranchByAbstraction par Martin FOWLER</a></li>
-<li><a href="http://martinfowler.com/bliki/Subversion.html">Subversion par Martin FOWLER</a></li>
+<li>tag à la promotion (fin du développement au fil de l&rsquo;eau et passage en mode paquet de code)</li>
+<li>&hellip;</li>
+</ul></li>
 </ul>
 
 
@@ -1100,20 +1245,6 @@ Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rs
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1124,9 +1255,6 @@ Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rs
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1421,26 +1549,6 @@ Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rs
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1548,38 +1656,6 @@ Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rs
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1620,6 +1696,78 @@ Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rs
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1654,10 +1802,10 @@ Mais comment s&rsquo;assurer à tout moment que ma branche featureBranch_xx n&rs
 
 
         
-            <a class="nav nav-prev" href="/mesidees/19-git/" title="Git"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/mesidees/21-jenkins/" title="Jenkins" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/moncv/" title="Mon CV" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 

@@ -320,6 +320,16 @@ Sommaire :
     </item>
     
     <item>
+      <title>Application Blanche</title>
+      <link>https://talbotgui.github.io/mesprojets/applicationblanche/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://talbotgui.github.io/mesprojets/applicationblanche/</guid>
+      <description>Cette page est un court guide du développeur (ma définition du guide du développeur) pour un projet assez particulier : une Application Blanche.
+L&amp;rsquo;objectif de l&amp;rsquo;application blanche est de fournir un exemple d&amp;rsquo;application (régulièrement utilisé quand je donne des formations) mais aussi une structure minimale pour créer une nouvelle application. A ce titre, l&amp;rsquo;application doit être particulièrement bien codée (dans le fond comme dans la forme) mais aussi bien documentée (il y a du boulot de ce coté-là).</description>
+    </item>
+    
+    <item>
       <title>Les limites d&#39;un CV</title>
       <link>https://talbotgui.github.io/moncv/01-limitescv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

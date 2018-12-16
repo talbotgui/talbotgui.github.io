@@ -13,19 +13,19 @@
     <title>Application Blanche :: Guillaume TALBOT</title>
 
     
-    <link href="/css/nucleus.css?1539015787" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1539015787" rel="stylesheet">
-    <link href="/css/hybrid.css?1539015787" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1539015787" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1539015787" rel="stylesheet">
-    <link href="/css/auto-complete.css?1539015787" rel="stylesheet">
-    <link href="/css/theme.css?1539015787" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1539015787" rel="stylesheet">
+    <link href="/css/nucleus.css?1544975936" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1544975936" rel="stylesheet">
+    <link href="/css/hybrid.css?1544975936" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1544975936" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1544975936" rel="stylesheet">
+    <link href="/css/auto-complete.css?1544975936" rel="stylesheet">
+    <link href="/css/theme.css?1544975936" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1544975936" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1539015787" rel="stylesheet">
+      <link href="/css/theme-blue.css?1544975936" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1539015787"></script>
+    <script src="/js/jquery-2.x.min.js?1544975936"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1539015787"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1539015787"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1544975936"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1544975936"></script>
 <script type="text/javascript">
     
-        var baseurl = '\/';
+        var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1539015787"></script>
+<script type="text/javascript" src="/js/search.js?1544975936"></script>
 
     
   </div>
@@ -810,6 +810,8 @@
                   <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
                   
                   <span class="links">
+                 
+                 
                     
           
           
@@ -827,7 +829,8 @@
           
          
           
-           
+        
+                 
                   </span>
                 </div>
                 
@@ -873,6 +876,7 @@
 <li><a href="#nommage">Nommage</a></li>
 <li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
 <li><a href="#hql">HQL</a></li>
+<li><a href="#spring-data">Spring Data</a></li>
 <li><a href="#rest">REST</a></li>
 </ul></li>
 </ul></li>
@@ -893,6 +897,7 @@
 <ul>
 <li><a href="#sur-le-serveur-unix">Sur le serveur unix</a></li>
 </ul></li>
+<li><a href="#faq">FAQ</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -951,6 +956,7 @@
 <li><a href="#langue">Langue</a></li>
 <li><a href="#nommage">Nommage</a></li>
 <li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
+<li><a href="#spring-data">Spring Data</a></li>
 <li><a href="#hql">HQL</a></li>
 <li><a href="#angular">Angular</a></li>
 <li><a href="#vuejs">VueJS</a></li>
@@ -963,6 +969,7 @@
 <li><a href="#industrialisation">Industrialisation</a></li>
 </ul></li>
 <li><a href="#Installation-des-environnements">Installation des environnements</a></li>
+<li>[FAQ] {#faq}</li>
 </ul>
 
 <h2 id="exigences">Exigences</h2>
@@ -1113,6 +1120,18 @@ Les cast inutiles sont supprimés.</p>
 Ne jamais créer un lien entre deux entités en instanciant une entité et ne définissant que son ID. Toujours utiliser <em>EntityManager.getReference</em>
 La gestion des transactions est faite via les annotations Spring. Les exceptions du projet sont <em>runtime</em> et déclenchent donc le rollback. Seuls les composants de type &ldquo;Service&rdquo; et &ldquo;DAO&rdquo; peuvent être transactionnels (par les &ldquo;contrôleur&rdquo;)</p>
 
+<h4 id="spring-data">Spring Data</h4>
+
+<p>Les requêtes sont, pour la quasi totalité d&rsquo;entre elles, positionnées dans un Repository Spring Data. Elles sont donc dans les annotations d&rsquo;une interface et non dans une classe.
+L&rsquo;usage de méthode <em>default</em> est interdit sur mon projet. Si je dois coder un algorithme, il doit être dans le service. Si la requête est complèxe (multi-critères optionnels par exemple), il faut créer une classe à part.</p>
+
+<p>Astuces et penses-bêtes :</p>
+
+<ul>
+<li>ne jamais mettre de clause <em>order by</em> dans une requête si la requête est paginée (usage d&rsquo;un paramètre de type org.springframework.data.domain.Pageable)</li>
+<li>toujours définir la requête <em>countQuery</em> d&rsquo;une requête paginée si la requête contient un <em>join fetch</em></li>
+</ul>
+
 <h4 id="rest">REST</h4>
 
 <p>Les méthodes de contrôleur REST retournant uniquement une chaine de caractères doivent retourner la dite chaine entre <em>double quote</em>.</p>
@@ -1205,6 +1224,16 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
 <ul>
 <li>tag à la promotion (fin du développement au fil de l&rsquo;eau et passage en mode paquet de code)</li>
 <li>&hellip;</li>
+</ul></li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+
+<ul>
+<li>Erreur de sérialisation d&rsquo;un attribut @OneToMany dans Jackson à cause d&rsquo;une LazyInitializationException
+
+<ul>
+<li>Utiliser la méthode MutableUtil.getMutable dans le getter</li>
 </ul></li>
 </ul>
 
@@ -1801,12 +1830,15 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
         
 
 
-        
-            <a class="nav nav-prev" href="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur"> <i class="fas fa-chevron-left"></i></a>
-        
-        
-            <a class="nav nav-next" href="/moncv/" title="Mon CV" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
-        
+	 
+	 
+		
+			<a class="nav nav-prev" href="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/moncv/" title="Mon CV" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -1814,20 +1846,20 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1539015787"></script>
-    <script src="/js/perfect-scrollbar.min.js?1539015787"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1539015787"></script>
-    <script src="/js/jquery.sticky.js?1539015787"></script>
-    <script src="/js/featherlight.min.js?1539015787"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1539015787"></script>
-    <script src="/js/highlight.pack.js?1539015787"></script>
+    <script src="/js/clipboard.min.js?1544975936"></script>
+    <script src="/js/perfect-scrollbar.min.js?1544975936"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1544975936"></script>
+    <script src="/js/jquery.sticky.js?1544975936"></script>
+    <script src="/js/featherlight.min.js?1544975936"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1544975936"></script>
+    <script src="/js/highlight.pack.js?1544975936"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1539015787"></script>
-    <script src="/js/learn.js?1539015787"></script>
-    <script src="/js/hugo-learn.js?1539015787"></script>
+    <script src="/js/modernizr.custom.71422.js?1544975936"></script>
+    <script src="/js/learn.js?1544975936"></script>
+    <script src="/js/hugo-learn.js?1544975936"></script>
 
-    <link href="/mermaid/mermaid.css?1539015787" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1539015787"></script>
+    <link href="/mermaid/mermaid.css?1544975936" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1544975936"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

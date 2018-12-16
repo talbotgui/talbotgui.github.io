@@ -13,19 +13,19 @@
     <title>Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT</title>
 
     
-    <link href="/css/nucleus.css?1539015787" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1539015787" rel="stylesheet">
-    <link href="/css/hybrid.css?1539015787" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1539015787" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1539015787" rel="stylesheet">
-    <link href="/css/auto-complete.css?1539015787" rel="stylesheet">
-    <link href="/css/theme.css?1539015787" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1539015787" rel="stylesheet">
+    <link href="/css/nucleus.css?1544975936" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1544975936" rel="stylesheet">
+    <link href="/css/hybrid.css?1544975936" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1544975936" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1544975936" rel="stylesheet">
+    <link href="/css/auto-complete.css?1544975936" rel="stylesheet">
+    <link href="/css/theme.css?1544975936" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1544975936" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1539015787" rel="stylesheet">
+      <link href="/css/theme-blue.css?1544975936" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1539015787"></script>
+    <script src="/js/jquery-2.x.min.js?1544975936"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -55,14 +55,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1539015787"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1539015787"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1544975936"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1544975936"></script>
 <script type="text/javascript">
     
-        var baseurl = '\/';
+        var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1539015787"></script>
+<script type="text/javascript" src="/js/search.js?1544975936"></script>
 
     
   </div>
@@ -810,6 +810,8 @@
                   <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
                   
                   <span class="links">
+                 
+                 
                     
           
           
@@ -827,7 +829,8 @@
           
          
           
-           
+        
+                 
                   </span>
                 </div>
                 
@@ -1088,6 +1091,16 @@ echo &quot;deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main&quot; |
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
 </code></pre>
+
+<p>Connexion :</p>
+
+<ul>
+<li>créer une clef depuis la console GCloud (IAM / comptes de service)</li>
+<li>activer les APIs &ldquo;Cloud Resource Manager API&rdquo; et &ldquo;App Engine Admin API&rdquo; depuis la console GCloud (API / Bibliotheque)</li>
+<li>déposer le fichier JSON sur le serveur</li>
+<li>se connecter une première fois avec <code>gcloud auth activate-service-account --key-file=LE_FICHIER_JSON</code></li>
+<li>exécuter la commande <code>gcloud init</code> et renseigner toutes les informations</li>
+</ul>
 
 
 <footer class=" footline" >
@@ -1679,12 +1692,15 @@ sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
         
 
 
-        
-            <a class="nav nav-prev" href="/mesidees/16-angular/" title="Angular"> <i class="fas fa-chevron-left"></i></a>
-        
-        
-            <a class="nav nav-next" href="/mesidees/18-licences/" title="Licence" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
-        
+	 
+	 
+		
+			<a class="nav nav-prev" href="/mesidees/16-angular/" title="Angular"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/mesidees/18-licences/" title="Licence" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -1692,20 +1708,20 @@ sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1539015787"></script>
-    <script src="/js/perfect-scrollbar.min.js?1539015787"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1539015787"></script>
-    <script src="/js/jquery.sticky.js?1539015787"></script>
-    <script src="/js/featherlight.min.js?1539015787"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1539015787"></script>
-    <script src="/js/highlight.pack.js?1539015787"></script>
+    <script src="/js/clipboard.min.js?1544975936"></script>
+    <script src="/js/perfect-scrollbar.min.js?1544975936"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1544975936"></script>
+    <script src="/js/jquery.sticky.js?1544975936"></script>
+    <script src="/js/featherlight.min.js?1544975936"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1544975936"></script>
+    <script src="/js/highlight.pack.js?1544975936"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1539015787"></script>
-    <script src="/js/learn.js?1539015787"></script>
-    <script src="/js/hugo-learn.js?1539015787"></script>
+    <script src="/js/modernizr.custom.71422.js?1544975936"></script>
+    <script src="/js/learn.js?1544975936"></script>
+    <script src="/js/hugo-learn.js?1544975936"></script>
 
-    <link href="/mermaid/mermaid.css?1539015787" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1539015787"></script>
+    <link href="/mermaid/mermaid.css?1544975936" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1544975936"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

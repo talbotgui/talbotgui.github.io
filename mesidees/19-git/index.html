@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <title>Angular :: Guillaume TALBOT</title>
+    <title>Git :: Guillaume TALBOT</title>
 
     
     <link href="/css/nucleus.css?1545146541" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link href="/css/customHugo.css" rel="stylesheet" />
 
   </head>
-  <body class="" data-url="/mesidees/16-angular/">
+  <body class="" data-url="/mesidees/19-git/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -390,7 +390,7 @@
  
   
     
-      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item active">
+      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item ">
         <a href="/mesidees/16-angular/">
         Angular
         <i class="fas fa-check read-icon"></i>
@@ -447,7 +447,7 @@
  
   
     
-      <li data-nav-id="/mesidees/19-git/" title="Git" class="dd-item ">
+      <li data-nav-id="/mesidees/19-git/" title="Git" class="dd-item active">
         <a href="/mesidees/19-git/">
         Git
         <i class="fas fa-check read-icon"></i>
@@ -823,7 +823,7 @@
             
           
           
-            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Angular
+            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Git
           
          
           
@@ -844,11 +844,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#quelques-astuces-angular-à-retenir">Quelques astuces Angular à retenir :</a></li>
-<li><a href="#pour-tester-une-application-angular-et-ses-composants">Pour tester une application Angular et ses composants :</a></li>
-<li><a href="#intégrer-des-frameworks-supplémentaires">Intégrer des frameworks supplémentaires :</a></li>
-<li><a href="#quelques-lectures-utiles">Quelques lectures utiles :</a></li>
-<li><a href="#quelques-commandes-npm-utiles">Quelques commandes NPM utiles :</a></li>
+<li><a href="#les-basics">Les basics :</a></li>
+<li><a href="#les-utilitaires">Les utilitaires :</a></li>
+<li><a href="#la-manipulation-d-historique">La manipulation d&rsquo;historique :</a></li>
+<li><a href="#la-manipulation-de-branches">La manipulation de branches :</a></li>
+<li><a href="#ajouter-un-outil-de-diff-pour-les-documents-microsoft-office">Ajouter un outil de DIFF pour les documents Microsoft Office</a></li>
+<li><a href="#ajouter-deux-scripts-avec-alias-pour-activer-désactiver-un-proxy">Ajouter deux scripts (avec alias) pour activer/désactiver un proxy</a></li>
+<li><a href="#articles-utiles">Articles utiles :</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -865,7 +867,7 @@
         
         <div id="body-inner">
           
-            <h1>Angular</h1>
+            <h1>Git</h1>
           
 
         
@@ -873,139 +875,177 @@
 
 
 
-<h4 id="quelques-astuces-angular-à-retenir">Quelques astuces Angular à retenir :</h4>
+<h4 id="les-basics">Les basics :</h4>
 
-<p><strong><a href="https://angular.io/guide/cheatsheet">Angular Cheat Sheet</a></strong></p>
+<p>Pour cloner un dépot : <code>git clone https://xxxxxxxxx</code></p>
 
-<p>Au besoin, pour réinstaller Angular/cli :
-<code>npm install -g @angular/cli --no-optional</code></p>
+<p>Pour ajouter une modification : <code>git add rep1/monFichier.xxx</code></p>
 
-<p>Dans une interpolation, pour naviguer sans risque, il suffit d&rsquo;utiliser le Safe Navigation Operator (&lsquo;?.&rsquo;).
-Exemple : <code>unObjet?.unAttributPotentiellementUndefined</code></p>
+<p>Pour ajouter toutes les modifications : <code>git add -A</code></p>
 
-<p>Two way binding :</p>
+<p>Pour annuler les ADD : <code>git reset</code></p>
+
+<p>Pour annuler le ADD d&rsquo;un fichier : <code>git reset rep1/monFichier.xxx</code></p>
+
+<p>Pour annuler les modifications d&rsquo;un fichier : <code>git checkout rep1/monFichier.xxx</code></p>
+
+<p>Pour commiter : <code>git commit -m &quot;mon message&quot;</code></p>
+
+<p>Pour commiter les fichiers modifiés (pas les ajouts) sans faire de ADD : <code>git commit -am &quot;mon message&quot;</code></p>
+
+<p>Pour pousser ces commits sur le repository : <code>git push</code></p>
+
+<p>Pour récupérer toutes les modifications réalisées depuis le dernier PULL  : <code>git pull</code>ou  <code>git pull --rebase</code>si des commits ont été réalisés depuis le dernier PULL</p>
+
+<p>En cas de problème durant un rebase, la commande <code>git rebase --abort</code>annule tout.</p>
+
+<h4 id="les-utilitaires">Les utilitaires :</h4>
+
+<p>Pour voir le statut du dépot local : <code>git status</code></p>
+
+<p>Pour voir les modifications d&rsquo;un fichier : <code>git diff rep1/monFichier.xxx</code></p>
+
+<p>Pour voir toutes les modifications : <code>git diff</code></p>
+
+<p>Pour obtenir les logs : <code>git log</code>ou <code>git log --pretty=oneline</code></p>
+
+<p>Pour afficher les informations du repository distant : <code>git remote show origin</code></p>
+
+<p>Pour sauvegarder dans un espace temporaire des modifications (sans les commiter) : <code>git stash</code></p>
+
+<p>Pour lister les sauvegardes : <code>git stash list</code></p>
+
+<p>Pour récupérer la sauvegarde la plus récente : <code>git stash pop</code></p>
+
+<p>Pour annuler tous les commits locaux : <code>git reset HEAD^</code></p>
+
+<h4 id="la-manipulation-d-historique">La manipulation d&rsquo;historique :</h4>
+
+<p>Pour modifier l&rsquo;historique sur les 5 derniers commits (à ne faire que si aucun push n&rsquo;a été fait depuis) : <code>git rebase --interactive HEAD~5</code></p>
+
+<p>Dans l&rsquo;éditeur qui s&rsquo;ouvre, remplacer les <em>pick</em> par :</p>
 
 <ul>
-<li><code>[ngModel]=&quot;monAttribut&quot;</code> si la valeur change dans le JS, le DOM est mis à jour</li>
-<li><code>(ngModel)=&quot;monAttribut&quot;</code> si le DOM change, la valeur du JS est mise à jour</li>
+<li><em>r</em> pour <em>reword</em> afin de modifier le message du commit (le nouveau message est à saisir après avoir sauvegarder ce premier éditeur de texte)</li>
+<li><em>s</em> pour <em>squash</em> permet de fusionner le commit avec celui qui le précède dans le temps (et fusionne les commentaires des deux commits)</li>
+<li><em>f</em> pour <em>fixup</em> qui fusionne comme le squash mais qui supprime le commentaire</li>
 </ul>
 
-<p>Exemple de binding : <code>&lt;div [style.background-color]=&quot;getStyle()&quot;&gt;</code></p>
+<p>Pour pousser sur le repository distant un rebase qui modifie l&rsquo;historique déjà poussé /!\ attention quand on travaille en équipe /!\ : <code>git push --force</code></p>
 
-<p>Évènement :</p>
+<h4 id="la-manipulation-de-branches">La manipulation de branches :</h4>
+
+<p>Pour lister les branches locales : <code>git branch</code></p>
+
+<p>Pour passer d&rsquo;une branche à l&rsquo;autre : <code>git checkout maBranche</code></p>
+
+<p>Pour créer et passer à une autre branche : <code>git checkout -b maBranche</code></p>
+
+<p>Pour supprimer une branche : <code>git branch -d maBranche</code></p>
+
+<p>Pour afficher les différences entre deux branches : <code>git dif maBranche...lAutreBranche</code></p>
+
+<p>Pour fusionner simplement une branche vers la branche courante : <code>git merge monAutreBranche</code></p>
+
+<p>Pour pousser dans le master les modifications d&rsquo;une autre branche en un seul commit :</p>
+
+<pre><code>git checkout master
+git merge --no-ff maBrancheFeature
+</code></pre>
+
+<p>Pour pousser sur le dépot distant toutes les branches : <code>git push --all</code></p>
+
+<p>Pour lier une branche locale à une branche distante existante (après avoir fait un push -all créant une branche par exemple) : <code>git branch --set-upstream-to origin/maBranche</code></p>
+
+<h4 id="ajouter-un-outil-de-diff-pour-les-documents-microsoft-office">Ajouter un outil de DIFF pour les documents Microsoft Office</h4>
 
 <ul>
-<li>déclencher du code : <code>(click)=&quot;auClick()&quot;</code></li>
-<li>récupérer l&rsquo;event : <code>(click)=&quot;auClick($event)&quot;</code></li>
+<li>Ajouter les lignes suivantes dans le fichier .gitconfig (vi ~/.gitconfig depuis une console gitbash) :</li>
 </ul>
 
-<p>Dirty checking :</p>
+<pre><code>[diff]
+  tool = pdiff
+[difftool &quot;pdiff&quot;]
+  cmd=&quot;wscript.exe \&quot;c:\\Program Files\\TortoiseSVN\\Diff-Scripts\\diff-ppt.js\&quot; \&quot;`pwd`/$REMOTE\&quot; \&quot;$LOCAL\&quot;&quot;
+</code></pre>
 
 <ul>
-<li>tout changement est pris en compte dans le composant : <code>@Component {..., changeDetection: ChangeDetectionStrategy.Default, ...}</code> =&gt;</li>
-<li>seul les @Input sont raffraichis : <code>@Component {..., changeDetection: ChangeDetectionStrategy.OnPush,  ...}</code></li>
+<li>Pour tester, exécuter la commande : <code>git difftool -Y -t pdiff maPresentation.pptx</code></li>
+<li>Ajouter un alias pour appeler ce diff (dans la liste des alias existante si besoin) :</li>
 </ul>
 
-<p>Pipes :</p>
+<pre><code>[alias]
+    diffP = difftool -Y -t pdiff
+</code></pre>
 
 <ul>
-<li>date, currency, decimal, uppercase, lowercase, slice (slice:start:end), i18nSelect, i18nPlural, percent, json, async</li>
-<li>exemple : <code>{{dateNaissance | date:&quot;dd/MM/yy&quot;}}</code></li>
-<li>exemple : <code>&lt;li *ngFor=&quot;let i of collection | slice:1:3&quot;&gt;{{i}}&lt;/li&gt;</code></li>
-<li>exemple : <code>{{monAttribut | async&quot;}}</code> pour se lier à un Observable et être notifié</li>
-<li>exemple : <code>{{note.valeur | i18nSelect: libellesNote}}</code> avec libellesNote un Objet {&lsquo;clef1&rsquo;:&lsquo;valeur1&rsquo;,&lsquo;clef2&rsquo;:&lsquo;valeur2&rsquo;} et non une Map<string, string></li>
+<li>Pour tester cet alias : <code>git diffP maPresentation.pptx</code></li>
 </ul>
 
-<p>Constante :</p>
+<h4 id="ajouter-deux-scripts-avec-alias-pour-activer-désactiver-un-proxy">Ajouter deux scripts (avec alias) pour activer/désactiver un proxy</h4>
 
 <ul>
-<li>à déclarer dans <code>json providers: [..., {provide: 'maConstante', useValue:'azertyuiop'}, ...]</code></li>
-<li>à utiliser dans <code>json constructor(..., @Inject('maConstante') public maConstante, ...)</code></li>
+<li>Placer le script suivant dans le script <em>setGitConfigProxy.sh</em> dans le répertoire d&rsquo;installation de GIT</li>
 </ul>
 
-<p>Interfaces implémentables dans un composant : OnInit, AfterContentInit</p>
-
-<p>Exemple de directive : pour logger le clic sur tous un ensemble de boutons</p>
+<pre><code>git config --global http.proxy http://mon.proxy:8080
+git config --global https.proxy https://mon.proxy:8080
+</code></pre>
 
 <ul>
-<li><code>&lt;button [track]=&quot;unBouton&quot;&gt;coucou&lt;/button&gt;</code></li>
-<li><code>@Directive({selector: '[track]'}) export class TrackDirective {
-@Input() track;
-@HostListener('click')
-onClick(){ console.log(this.track); }
-}</code></li>
+<li>Placer le script suivant dans le script <em>unsetGitConfigProxy.sh</em> dans le répertoire d&rsquo;installation de GIT</li>
 </ul>
 
-<p>Pour faire des checkbox dans un *ngFor : <code>&lt;div *ngFor=&quot;let aze of azes&quot;&gt;
-  &lt;input [id]=&quot;aze&quot;, name=&quot;monChamp&quot; ngModel [value]=&quot;aze&quot; type=&quot;radio&quot;&gt;&lt;/input&gt;
-  &lt;label [attr.for]=&quot;aze&quot;&gt;{{aze}}&lt;/label&gt;
-&lt;/div&gt;</code></p>
-
-<p>Ajouter remplacer ngModel par <code>[ngModel]=&quot;azes[0]&quot;</code> pour définir une valeur par défaut</p>
-
-<p>Créer une variable locale à la page HTML (sans lien avec un attribut du composant) : <code>#toto=&quot;NgForm&quot;</code> ou <code>#toto=&quot;NgModel&quot;</code></p>
-
-<p>Validation de formulaire :</p>
+<pre><code>git config --global --unset http.proxy
+git config --global --unset https.proxy
+</code></pre>
 
 <ul>
-<li>il faut un form avec les attributs <code>novalidate</code> et <code>#toto=&quot;ngForm&quot;</code></li>
-<li>l&rsquo;attribut <code>required</code> sur les champs obligatoires</li>
-<li>une div avec le message d&rsquo;erreur (pristine = inchangé) : <code>&lt;div [hidden]=&quot;inputNom.valid || inputNom.pristine&quot; class=&quot;alert alert-danger&quot;&gt;Le nom est obligatoire&lt;/div&gt;</code></li>
+<li>Exécuter les commandes suivantes :</li>
 </ul>
 
-<p>Pour la validation des radios, c&rsquo;est l&rsquo;input qui est invalide et le label est à coté. Astuce CSS : <code>css .ng-invalid + label:after { content:'sélectionne en un'; }</code></p>
-
-<p>Faire une boucle *ngFor et avoir l&rsquo;index : <code>*ngFor=&quot;let aze of azes; let i=index&quot;</code></p>
-
-<p>Afficher/masquer un élément :</p>
+<pre><code>git config --global alias.setProxy '!sh $GIT_EXEC_PATH/../../../setGitConfigProxy.sh'
+git config --global alias.unsetProxy '!sh $GIT_EXEC_PATH/../../../unsetGitConfigProxy.sh'
+</code></pre>
 
 <ul>
-<li><code>*ngIf</code> supprime l&rsquo;élément du DOM</li>
-<li><code>[hidden]</code> change la valeur de l&rsquo;attribut display (none/block)</li>
+<li>Pour manipuler le proxy pour <em>NPM</em> et <em>MAVEN</em> depuis ces scripts, il suffit d&rsquo;ajouter les lignes suivantes :</li>
 </ul>
 
-<h4 id="pour-tester-une-application-angular-et-ses-composants">Pour tester une application Angular et ses composants :</h4>
+<pre><code># setGitConfigProxy.sh
+# Proxy pour GIT
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 
-<p>Dans les tests, si l&rsquo;erreur <em>Uncaught NetworkError: Failed to execute &lsquo;send&rsquo; on &lsquo;XMLHttpRequest&rsquo;: Failed to load &lsquo;ng:///DynamicTestModule/ComposantNoteComponent.ngfactory.js&rsquo;. thrown</em> survient, c&rsquo;est un problème de données/objets non fournis en entrée d&rsquo;un composant. Par exemple : un composant appel un mock dans le onInit mais le mock a été &lsquo;reset&rsquo; et ne renvoie rien.</p>
+# Proxy pour NPM
+npm config rm proxy
+npm config rm https-proxy
 
-<p>Ne jamais oublier de créer l&rsquo;instance après avoir créer le mock avec Mockito</p>
+# Proxy pour MAVEN
+sed &quot;s/active&gt;true/active&gt;false/&quot; -i C:/outils/apache-maven-3.5.2/conf/settings.xml```
+</code></pre>
 
-<p>Quelques liens :</p>
+<pre><code># unsetGitConfigProxy.sh
+# Proxy pour GIT
+git config --global http.proxy https://mon.proxy:8080
+git config --global https.proxy https://mon.proxy:8080
 
-<ul>
-<li><a href="http://blog.bandzarewicz.com/blog/2012/03/08/jasmine-cheat-sheet/">cheat sheet pour Jasmine</a></li>
-<li><a href="http://blog.mlewandowski.com/Debugging-Karma-tests-with-VSCode.html">débugger des tests Karma depuis VsCode</a></li>
-<li><a href="https://github.com/NagRock/ts-mockito">Mockito</a></li>
-</ul>
+# Proxy pour NPM
+npm config set proxy https://mon.proxy:8080
+npm config set https-proxy https://mon.proxy:8080
 
-<p>Quelques commandes :</p>
+# Proxy pour MAVEN
+sed &quot;s/active&gt;false/active&gt;true/&quot; -i C:/outils/apache-maven-3.5.2/conf/settings.xml
+</code></pre>
 
-<ul>
-<li>Pour lancer les tests : <code>ng test</code></li>
-<li>Pour lancer les tests avec couverture de code : <code>ng test --code-coverage --reporters=coverage-istanbul</code></li>
-<li>Pour lancer les tests avec PhantomJS : <code>ng test --config=karma-ic.conf.js</code></li>
-</ul>
-
-<p>Pour tester des XPath ou des sélecteurs CSS dans Chrome, il suffit d&rsquo;utiliser $x(&lsquo;//div&rsquo;) ou $$(&lsquo;div.maClass&rsquo;) (<a href="http://yizeng.me/2014/03/23/evaluate-and-validate-xpath-css-selectors-in-chrome-developer-tools/">source</a>).</p>
-
-<h4 id="intégrer-des-frameworks-supplémentaires">Intégrer des frameworks supplémentaires :</h4>
-
-<ul>
-<li><a href="https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/include-font-awesome.md">Pour AwesomeFont</a></li>
-</ul>
-
-<h4 id="quelques-lectures-utiles">Quelques lectures utiles :</h4>
+<h4 id="articles-utiles">Articles utiles :</h4>
 
 <ul>
-<li><a href="https://stackoverflow.com/questions/30357634/how-do-i-use-namespaces-with-typescript-external-modules">modularité avec TS</a></li>
-<li><a href="http://microsoft.github.io/TypeSearch/">pour trouver un type</a></li>
-</ul>
-
-<h4 id="quelques-commandes-npm-utiles">Quelques commandes NPM utiles :</h4>
-
-<ul>
-<li>pour lister les versions d&rsquo;un package : <code>npm show monPackage@* version</code></li>
-<li>pour lister les packages qui ne sont pas en dernière version : <code>npm outdated</code></li>
+<li><a href="https://delicious-insights.com/fr/articles/bien-utiliser-git-merge-et-rebase/">merge et rebase</a></li>
+<li><a href="http://xcafebabe.blogspot.fr/2012/09/sexy-comparison-of-word-documents-with.html">git diff de document MS Office</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet">Cheat Sheet d&rsquo;Atlassian</a></li>
+<li><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf">Cheat Sheet de GitHub</a></li>
+<li><a href="https://help.github.com/articles/removing-sensitive-data-from-a-repository/">Supprimer l&rsquo;historique d&rsquo;un fichier contenant malencontreusement des données sensibles</a></li>
 </ul>
 
 
@@ -1302,26 +1342,6 @@ onClick(){ console.log(this.track); }
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1369,6 +1389,26 @@ onClick(){ console.log(this.track); }
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1601,10 +1641,10 @@ onClick(){ console.log(this.track); }
 	 
 	 
 		
-			<a class="nav nav-prev" href="/mesidees/15-js/" title="JS"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/mesidees/18-licences/" title="Licence"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/mesidees/17-installationserveuric/" title="Installation d&#39;un serveur pour une Integration Continue" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/mesidees/20-gitflow/" title="les différents FLOW avec Git" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

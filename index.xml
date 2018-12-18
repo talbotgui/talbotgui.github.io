@@ -201,22 +201,6 @@ Installation de Java et Jenkins : sudo apt-get install default-jdk @see http://p
     </item>
     
     <item>
-      <title>Git</title>
-      <link>https://talbotgui.github.io/mesidees/19-git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://talbotgui.github.io/mesidees/19-git/</guid>
-      <description>Les basics : Pour cloner un dépot : git clone https://xxxxxxxxx
-Pour ajouter une modification : git add rep1/monFichier.xxx
-Pour ajouter toutes les modifications : git add -A
-Pour annuler les ADD : git reset
-Pour annuler le ADD d&amp;rsquo;un fichier : git reset rep1/monFichier.xxx
-Pour annuler les modifications d&amp;rsquo;un fichier : git checkout rep1/monFichier.xxx
-Pour commiter : git commit -m &amp;quot;mon message&amp;quot;
-Pour commiter les fichiers modifiés (pas les ajouts) sans faire de ADD : git commit -am &amp;quot;mon message&amp;quot;</description>
-    </item>
-    
-    <item>
       <title>les différents FLOW avec Git</title>
       <link>https://talbotgui.github.io/mesidees/20-gitflow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

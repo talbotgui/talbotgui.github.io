@@ -13,19 +13,19 @@
     <title>Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT</title>
 
     
-    <link href="/css/nucleus.css?1545146541" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1545146541" rel="stylesheet">
-    <link href="/css/hybrid.css?1545146541" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1545146541" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1545146541" rel="stylesheet">
-    <link href="/css/auto-complete.css?1545146541" rel="stylesheet">
-    <link href="/css/theme.css?1545146541" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1545146541" rel="stylesheet">
+    <link href="/css/nucleus.css?1546436213" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1546436213" rel="stylesheet">
+    <link href="/css/hybrid.css?1546436213" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1546436213" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1546436213" rel="stylesheet">
+    <link href="/css/auto-complete.css?1546436213" rel="stylesheet">
+    <link href="/css/theme.css?1546436213" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1546436213" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1545146541" rel="stylesheet">
+      <link href="/css/theme-blue.css?1546436213" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1545146541"></script>
+    <script src="/js/jquery-2.x.min.js?1546436213"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -51,18 +51,18 @@
     
         <div class="searchbox">
     <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="text" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-close"></i></span>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1545146541"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1545146541"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1546436213"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1546436213"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/talbotgui.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1545146541"></script>
+<script type="text/javascript" src="/js/search.js?1546436213"></script>
 
     
   </div>
@@ -849,6 +849,7 @@
 <li><a href="#installation-de-java-et-jenkins">Installation de Java et Jenkins :</a></li>
 <li><a href="#installation-apache2">Installation apache2</a></li>
 <li><a href="#installation-letsencrypt">Installation LetsEncrypt</a></li>
+<li><a href="#limiter-les-informations-fournies-par-le-serveur">Limiter les informations fournies par le serveur</a></li>
 <li><a href="#activer-les-accès-sécurisés-aux-outils">Activer les accès sécurisés aux outils :</a></li>
 <li><a href="#configuration-jenkins">Configuration Jenkins :</a></li>
 <li><a href="#installation-email">Installation email :</a></li>
@@ -945,6 +946,15 @@ sudo apt-get update
 sudo apt-get install python-certbot-apache 
 sudo certbot --apache
 </code></pre>
+
+<h4 id="limiter-les-informations-fournies-par-le-serveur">Limiter les informations fournies par le serveur</h4>
+
+<p>Modifier le fichier /etc/apache2/conf-available/security et changer les valeurs :</p>
+
+<ul>
+<li>ServerTokens Prod</li>
+<li>ServerSignature Off</li>
+</ul>
 
 <h4 id="activer-les-accès-sécurisés-aux-outils">Activer les accès sécurisés aux outils :</h4>
 
@@ -1708,20 +1718,20 @@ sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1545146541"></script>
-    <script src="/js/perfect-scrollbar.min.js?1545146541"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1545146541"></script>
-    <script src="/js/jquery.sticky.js?1545146541"></script>
-    <script src="/js/featherlight.min.js?1545146541"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1545146541"></script>
-    <script src="/js/highlight.pack.js?1545146541"></script>
+    <script src="/js/clipboard.min.js?1546436213"></script>
+    <script src="/js/perfect-scrollbar.min.js?1546436213"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1546436213"></script>
+    <script src="/js/jquery.sticky.js?1546436213"></script>
+    <script src="/js/featherlight.min.js?1546436213"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1546436213"></script>
+    <script src="/js/highlight.pack.js?1546436213"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1545146541"></script>
-    <script src="/js/learn.js?1545146541"></script>
-    <script src="/js/hugo-learn.js?1545146541"></script>
+    <script src="/js/modernizr.custom.71422.js?1546436213"></script>
+    <script src="/js/learn.js?1546436213"></script>
+    <script src="/js/hugo-learn.js?1546436213"></script>
 
-    <link href="/mermaid/mermaid.css?1545146541" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1545146541"></script>
+    <link href="/mermaid/mermaid.css?1546436213" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1546436213"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

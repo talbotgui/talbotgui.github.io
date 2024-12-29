@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Stack Elastic">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Stack Elastic :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Stack Elastic">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/22-elastic/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Stack Elastic :: Guillaume TALBOT">
+    <meta property="og:description" content="Stack Elastic">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="name" content="Stack Elastic :: Guillaume TALBOT">
+    <meta itemprop="description" content="Stack Elastic">
+    <meta itemprop="dateModified" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="wordCount" content="807">
+    <title>Stack Elastic :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/22-elastic/index.html" rel="canonical" type="text/html" title="Stack Elastic :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-print.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/22-elastic/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Stack Elastic</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/22-elastic/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/21-jenkins/index.html" title="Jenkins (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/23-gitetclefssshmultiples/index.html" title="Git et clefs SSH multiples (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="stack-elastic">Stack Elastic</h1>
+
+<h4 id="a-quoi-peut-servir-elastic-stack-anciennement-stask-elk">A quoi peut servir Elastic Stack (anciennement Stask ELK)</h4>
+<ul>
+<li>obtenir rapidement les logs d&rsquo;un serveur : pour éviter les demandes à l&rsquo;hébergeur qui, parfois et selon les contrats, peuvent demander 3 jours pour être traitées</li>
+<li>corréler les logs de plusieurs serveur pour avoir une vision d&rsquo;ensemble d&rsquo;un processus métier : cas classique des micro-services (dont chaque composant crée ses logs) ou des systèmes SOA</li>
+<li>détecter des problèmes : à partir de données de référence, il est possible de détecter des anomalies (temps de traitement longs, consommation CPU ou mémoire anormale) liées à certains appels au système ou évènement métier</li>
+</ul>
+<p>Dans tous les cas, avant de vouloir faire quelque chose d&rsquo;intelligent avec les données collectées, il faut déjà avoir une idée des éléments à collecter :</p>
+<ul>
+<li>logs applicatifs</li>
+<li>logs d&rsquo;erreur</li>
+<li>logs de requêtes HTTP</li>
+<li>logs de requêtes SQL</li>
+<li>état physique de la machine (TOP en Unix)</li>
+<li>&hellip;</li>
+</ul>
+<h4 id="infrastructure-de-la-stack-elastic">Infrastructure de la Stack Elastic</h4>
+<p>Classiquement, 3 types d&rsquo;outils sont mis en oeuvre :</p>
+<ul>
+<li>les sondes qui récupèrent de l&rsquo;information à leur source :
+<ul>
+<li>Kibana</li>
+<li>Beats</li>
+</ul>
+</li>
+<li>la base de données rassemblant toutes les informations :
+<ul>
+<li>ElasticSearch</li>
+<li>Splunk</li>
+</ul>
+</li>
+<li>l&rsquo;outil de visualisation des données : Kibana</li>
+</ul>
+<p>D&rsquo;autres outils sont aussi disponibles :</p>
+<ul>
+<li>Kafka qui sert de tampon entre les sondes et ElasticSearch permettant une indisponibilité de ce dernier (mise à jour ou maintenance diverse).</li>
+<li>X-Pack qui apporte à la Stack des fonctionnalités supplémentaires (sécurité, alertes, monitoring, rapports, graphiques et <em>machine learning</em>)</li>
+</ul>
+<h4 id="installation-sur-un-poste-windows">Installation sur un poste Windows</h4>
+<ul>
+<li>Télécharger, depuis <a href="https://www.elastic.co/downloads" rel="external" target="_blank">le site de téléchargement d&rsquo;Elastic</a>, les outils suivants (en version ZIP pour MS Windows) :
+<ul>
+<li>Kibana</li>
+<li>ElasticSearch</li>
+<li>LogStash</li>
+</ul>
+</li>
+<li>Extraire toutes les archives</li>
+<li><em>En option</em>, installer X-Pack en exécutant les commandes :
+<ul>
+<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code> bin/elasticsearch-plugin install x-pack</code></li>
+<li>depuis le répertoire d&rsquo;installation de Kibana : <code> bin/kibana-plugin install x-pack</code></li>
+</ul>
+</li>
+<li>Paramétrer les outils :
+<ul>
+<li><em>En option</em> pour réaliser un prototype et éviter qu&rsquo;ElasticSearch n&rsquo;hurle en cas de problème de disque (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html" rel="external" target="_blank">source</a>) :
+<ul>
+<li>éditer le fichier elasticsearch.yml</li>
+<li>ajouter <code>cluster.routing.allocation.disk.threshold_enabled: false</code></li>
+<li>ou ajouter <code>cluster.routing.allocation.disk.watermark.high: 99</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Démarrer les outils :
+<ul>
+<li>depuis le répertoire d&rsquo;installation d&rsquo;ElasticSearch : <code> bin/elasticsearch</code></li>
+<li>depuis le répertoire d&rsquo;installation de Kibana : <code> bin/kibana</code></li>
+</ul>
+</li>
+<li>Ouvrir Kibana dans <a href="http://localhost:5601" rel="external" target="_blank">un navigateur</a></li>
+</ul>
+<h4 id="paramétrer-une-configuration-basique">Paramétrer une configuration basique</h4>
+<p>Les configurations suivantes ont été testées pour une version particulière des outils :</p>
+<ul>
+<li>logstash-5.6.0</li>
+<li>kibana-5.6.0-windows-x86</li>
+<li>filebeat-5.6.0-windows-x86_64</li>
+<li>elasticsearch-5.6.0</li>
+</ul>
+<p>Un fichier de logs tout bête dans <em>donneesSources\mesLogs.log</em></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>coucou madame
+bonjour monsieur
+coucou monsieur
+bonjour madame
+hello mademoiselle
+hello mademoiselle</code></pre></div>
+<p>Une configuration FileBeat dans <em>configFileBeat\mesLogs_filebeat.yml</em> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">filebeat.prospectors</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">input_type</span>: <span style="color:#ae81ff">log</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Déclaration des fichiers sources</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">D:/Projets/Enedis/protoElk/donneesSources/mesLogs.log</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Pour ajouter une information dans tous les logs</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">fields</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">maSource</span>: <span style="color:#ae81ff">monFileBeat</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">output.logstash</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hosts</span>: [<span style="color:#e6db74">&#34;localhost:5043&#34;</span>]</span></span></code></pre></div>
+<p>Une configuration LogStash dans <em>configLogStash\meslogs_pipeline.conf</em> :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>input {
+ # Pour prendre les éléments envoyés par Beats
+ beats { port =&gt; &#34;5043&#34; }
+}
+
+filter {
+
+ # Petit filtre simpliste
+ grok {
+  match =&gt; { &#34;message&#34; =&gt; &#39;%{WORD:formulePolitesse} %{WORD:personneCiblee}&#39; }
+ }
+}
+
+output {
+ # Pour logger le contenu des messages uniquement dans la console de LogStash
+ #stdout { codec =&gt; plain { charset =&gt; &#34;ISO-8859-1&#34; } }
+ # Pour logger les messages avec leurs metadata
+ stdout { codec =&gt; rubydebug }
+ # Pour envoyer les logs à ElasticSearch
+ # @See https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html
+ elasticsearch {
+  hosts =&gt; [ &#34;localhost:9200&#34; ]
+  # Le nom de l&#39;index doit être en minuscule pour elasticsearch
+  index =&gt; &#34;meslogs&#34;
+  template =&gt; &#34;D:/Projets/Enedis/protoElk/configLogStash/meslogs_template.json&#34;
+  template_name =&gt; &#34;meslogs&#34;
+  template_overwrite =&gt; true
+ }
+}</code></pre></div>
+<p>Un template LogStash dans <em>configLogStash\meslogs_template.json</em> :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>{
+  &#34;template&#34;: &#34;meslogs&#34;,
+  &#34;settings&#34;: {
+     &#34;index.refresh_interval&#34;: &#34;5s&#34;
+  },
+  &#34;mappings&#34;: {
+     &#34;_default_&#34;: {
+        &#34;dynamic_templates&#34;: [
+           {
+              &#34;message_field&#34;: {
+                 &#34;mapping&#34;: {
+                    &#34;index&#34;: &#34;analyzed&#34;,
+                    &#34;omit_norms&#34;: true,
+                    &#34;type&#34;: &#34;string&#34;
+                 },
+                 &#34;match_mapping_type&#34;: &#34;string&#34;,
+                 &#34;match&#34;: &#34;message&#34;
+              }
+           },
+           {
+              &#34;string_fields&#34;: {
+                 &#34;mapping&#34;: {
+                    &#34;index&#34;: &#34;analyzed&#34;,
+                    &#34;omit_norms&#34;: true,
+                    &#34;type&#34;: &#34;string&#34;,
+                    &#34;fields&#34;: {
+                       &#34;raw&#34;: {
+                          &#34;index&#34;: &#34;not_analyzed&#34;,
+                          &#34;ignore_above&#34;: 256,
+                          &#34;type&#34;: &#34;string&#34;
+                       }
+                    }
+                 },
+                 &#34;match_mapping_type&#34;: &#34;string&#34;,
+                 &#34;match&#34;: &#34;*&#34;
+              }
+           }
+        ],
+        &#34;properties&#34;: {
+           &#34;geoip&#34;: {
+              &#34;dynamic&#34;: true,
+              &#34;properties&#34;: {
+                 &#34;location&#34;: {
+                    &#34;type&#34;: &#34;geo_point&#34;
+                 }
+              },
+              &#34;type&#34;: &#34;object&#34;
+           },
+           &#34;@version&#34;: {
+              &#34;index&#34;: &#34;not_analyzed&#34;,
+              &#34;type&#34;: &#34;string&#34;
+           }
+        },
+        &#34;_all&#34;: {
+           &#34;enabled&#34;: true
+        }
+     }
+  }
+}</code></pre></div>
+<p>Et des commandes pour démarrer les outils et nettoyer les répertoires pour répéter le test à l&rsquo;infini :</p>
+<ul>
+<li>0-resetTouteLaChaine.cmd :</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>rmdir filebeat-5.6.0-windows-x86_64\data /Q /S
+
+rmdir logstash-5.6.0\data /Q /S
+
+rmdir elasticsearch-5.6.0\data /Q /S
+
+rmdir kibana-5.6.0-windows-x86\data /Q /S</code></pre></div>
+<ul>
+<li>
+<p>1-elasticsearch.cmd : <code>elasticsearch-5.6.0\bin\elasticsearch</code></p>
+</li>
+<li>
+<p>2-kibana.cmd : <code> kibana-5.6.0-windows-x86\bin\kibana</code></p>
+</li>
+<li>
+<p>3-startLogStash.cmd :</p>
+</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>title Logstash
+
+logstash-5.6.0\bin\logstash -f configLogStash/mesLogs_pipeline.conf --config.reload.automatic</code></pre></div>
+<ul>
+<li>4-startFileBeat.cmd :</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>title FileBeats
+
+filebeat-5.6.0-windows-x86_64\filebeat -e -c configFileBeat/mesLogs_filebeat.yml -d &#34;publish&#34;</code></pre></div>
+<p>Une fois la première exécution réalisée sans erreur sur aucune console, sont disponibles :</p>
+<ul>
+<li><a href="http://localhost:9200/meslogs" rel="external" target="_blank">les informations de l&rsquo;index dans ElasticSearch</a></li>
+<li><a href="http://localhost:5601/app/kibana" rel="external" target="_blank">les logs dans Kibana</a> après avoir ajouter l&rsquo;index <em>meslogs</em> (le formulaire d&rsquo;ajout est affiché systématiquement si aucun index n&rsquo;existe)</li>
+</ul>
+<p>On obtient ainsi le tableau de bord suivant (après quelques minutes de manipulation dans Kibana) :
+<a href="#R-image-e0c08c02b5f6e97565034d99999826a1" class="lightbox-link"><img alt="elastic-kibanaExempleSimpliste" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/elastic-kibanaExempleSimpliste.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e0c08c02b5f6e97565034d99999826a1"><img alt="elastic-kibanaExempleSimpliste" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/elastic-kibanaExempleSimpliste.png"></a></p>
+<h4 id="installation-sur-un-ubuntu">Installation sur un Ubuntu</h4>
+<ul>
+<li>Voir la <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html" rel="external" target="_blank">documentation officielle d&rsquo;ElasticSearch</a></li>
+<li>Voir la <a href="https://www.elastic.co/guide/en/kibana/current/deb.html" rel="external" target="_blank">documentation officielle de Kibana</a></li>
+<li>Voir la <a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation.html" rel="external" target="_blank">documentation de FileBeat</a></li>
+<li>Voir la <a href="https://www.elastic.co/guide/en/logstash/current/installing-logstash.html" rel="external" target="_blank">documentation de LogStash</a></li>
+</ul>
+<h4 id="sources-dinformations-">Sources d&rsquo;informations :</h4>
+<ul>
+<li>Idées
+<ul>
+<li><a href="http://blog.d2-si.fr/2016/08/23/bonnes-pratiques-elastic-stack/" rel="external" target="_blank">concepts généraux</a></li>
+<li><a href="https://www.elastic.co/fr/start" rel="external" target="_blank">guide de démarrage d&rsquo;Elastic</a></li>
+</ul>
+</li>
+<li>Outils
+<ul>
+<li><a href="https://www.elastic.co/fr/products/logstash" rel="external" target="_blank">documentation LogStash</a></li>
+<li><a href="https://www.splunk.com/en_us/solutions/solution-areas/log-management.html" rel="external" target="_blank">documentation Splunk</a></li>
+<li><a href="https://www.elastic.co/fr/products/kibana" rel="external" target="_blank">documentation Kibana</a></li>
+<li><a href="https://www.elastic.co/fr/products/beats" rel="external" target="_blank">documentation Beats</a></li>
+</ul>
+</li>
+</ul>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Installer une instance WordPress sur Ubuntu">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Installer une instance WordPress sur Ubuntu :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Installer une instance WordPress sur Ubuntu">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/26-wordpress/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Installer une instance WordPress sur Ubuntu :: Guillaume TALBOT">
+    <meta property="og:description" content="Installer une instance WordPress sur Ubuntu">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="name" content="Installer une instance WordPress sur Ubuntu :: Guillaume TALBOT">
+    <meta itemprop="description" content="Installer une instance WordPress sur Ubuntu">
+    <meta itemprop="dateModified" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="wordCount" content="221">
+    <title>Installer une instance WordPress sur Ubuntu :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/26-wordpress/index.html" rel="canonical" type="text/html" title="Installer une instance WordPress sur Ubuntu :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-print.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/26-wordpress/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prérequis">Prérequis</a></li>
+        <li><a href="#installer-les-outils">Installer les outils</a></li>
+        <li><a href="#créer-la-base-de-données-">Créer la base de données :</a></li>
+        <li><a href="#configurer-apache-">Configurer Apache :</a></li>
+        <li><a href="#installer-wordpress-">Installer WordPress :</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Installer une instance WordPress sur Ubuntu</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/26-wordpress/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/25-featuretoggle/index.html" title="Feature toggle (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/27-transcrypt/index.html" title="Git et les mots de passe (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="installer-une-instance-wordpress-sur-ubuntu">Installer une instance WordPress sur Ubuntu</h1>
+
+<h3 id="prérequis">Prérequis</h3>
+<p>Créer un serveur Ubuntu de type TINY sur Amazon Web Services avec un serveur httpd (cf. <a href="https://talbotgui.github.io/mesidees/17-installationserveuric/" rel="external" target="_blank">https://talbotgui.github.io/mesidees/17-installationserveuric/</a>)</p>
+<h3 id="installer-les-outils">Installer les outils</h3>
+<ul>
+<li>MySQL : <code>sudo apt-get install mysql-server</code></li>
+<li>PHP et ses librairies httpd :
+<ul>
+<li><code>sudo apt-get install php libapache2-mod-php php-mysql</code></li>
+<li><code>sudo apt-get install php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc</code></li>
+<li><code>sudo /etc/init.d/apache2 restart</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="créer-la-base-de-données-">Créer la base de données :</h3>
+<ul>
+<li>se connecter à la base : <code>mysql -u root -p</code></li>
+<li>puis exécuter les commandes :
+<ul>
+<li><code>CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;</code></li>
+<li><code>GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY 'password';</code></li>
+<li><code>FLUSH PRIVILEGES;</code></li>
+<li><code>EXIT;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="configurer-apache-">Configurer Apache :</h3>
+<ul>
+<li>Configurer Apche <code>sudo vi /etc/apache2/apache2.conf</code></li>
+<li>Ajouter la balise <code>AllowOverride All</code> dans &lt;Directory /var/www/html/&gt;</li>
+<li>Activer le mode rewrite <code>sudo a2enmod rewrite</code></li>
+<li>Redémarrer Apache <code>sudo /etc/init.d/apache2 restart</code></li>
+</ul>
+<h3 id="installer-wordpress-">Installer WordPress :</h3>
+<ul>
+<li><code>mkdir tmp</code></li>
+<li><code>cd tmp</code></li>
+<li><code>curl -O https://wordpress.org/latest.tar.gz</code></li>
+<li><code>tar xzvf latest.tar.gz</code></li>
+<li><code>touch wordpress/.htaccess</code></li>
+<li><code>chmod 660 wordpress/.htaccess</code></li>
+<li><code>cp wordpress/wp-config-sample.php wordpress/wp-config.php</code></li>
+<li><code>mkdir wordpress/wp-content/upgrade</code></li>
+<li><code>sudo cp -a wordpress/. /var/www/html</code></li>
+<li><code>sudo chown -R sammy:www-data /var/www/html</code></li>
+<li>editer /var/www/html/.htaccess pour y mettre les lignes :
+<ul>
+<li><code>php_value upload_max_filesize 64M</code></li>
+<li><code>php_value post_max_size 128M</code></li>
+</ul>
+</li>
+<li><code>curl -s https://api.wordpress.org/secret-key/1.1/salt/</code></li>
+<li>éditer le fichier /var/www/html/wp-config.php
+<ul>
+<li>y remplacer les lignes d&rsquo;exemple par les lignes issue de la requête</li>
+<li>paramétrer la base de données</li>
+</ul>
+</li>
+<li><code>sudo chown -R www-data:www-data /var/www/html</code></li>
+<li><code>sudo find /var/www/html -type d -exec chmod g+s {} \;</code></li>
+<li><code>sudo chmod g+w /var/www/html/wp-content</code></li>
+<li><code>sudo chmod -R g+w /var/www/html/wp-content/themes</code></li>
+<li><code>sudo chmod -R g+w /var/www/html/wp-content/plugins</code></li>
+</ul>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

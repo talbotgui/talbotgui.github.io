@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Programmation défensive">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Programmation défensive :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Programmation défensive">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/11-programmationdefensive/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Programmation défensive :: Guillaume TALBOT">
+    <meta property="og:description" content="Programmation défensive">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-28T15:56:52+01:00">
+    <meta itemprop="name" content="Programmation défensive :: Guillaume TALBOT">
+    <meta itemprop="description" content="Programmation défensive">
+    <meta itemprop="dateModified" content="2024-12-28T15:56:52+01:00">
+    <meta itemprop="wordCount" content="347">
+    <title>Programmation défensive :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/11-programmationdefensive/index.html" rel="canonical" type="text/html" title="Programmation défensive :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-print.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/11-programmationdefensive/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Programmation défensive</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/11-programmationdefensive/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/10-guidedudev/index.html" title="Guide Du Développeur (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/12-eclipse/index.html" title="Eclipse (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="programmation-défensive">Programmation défensive</h1>
+
+<p>Lorsqu&rsquo;un développeur code une nouvelle méthode, il doit savoir s&rsquo;il fait confiance au code qui fera appel à cette méthode. Ou pas.</p>
+<ul>
+<li>S&rsquo;il a confiance, il déclarera les conditions d&rsquo;appels à la méthode dans le contrat de sa méthode (dans la Javadoc de sa méthode, dans le WSDL, ou tout autre support d&rsquo;échange avec le client) et ne vérifiera pas les valeurs des paramètres dès le début de sa méthode.</li>
+<li>S&rsquo;il n&rsquo;a pas confiance, les premières lignes de code de la méthode vérifieront que les valeurs des paramètres sont acceptables.
+La seconde option est de la programmation défensive.</li>
+</ul>
+<p>Une méthode peut valider les valeurs des paramètres d&rsquo;entrée. Ce n&rsquo;est pas une mauvaise chose en soit. Bien au contraire dans le cas de la validation des données lues dans un fichier envoyé par une application tierce. Même s&rsquo;il existe un contrat définissant le format des données échangées, personne n&rsquo;a envie d&rsquo;intégrer des données de mauvaise qualité dans son système.
+Mais une question se pose : &ldquo;doit-on utiliser la programmation défensive partout ?&rdquo;. L&rsquo;ajout de code vérifiant chaque paramètre de chaque méthode de chaque composant du système coûte du temps de développement (du code applicatif et des tests associés). De plus chaque ligne de code ajoute potentiellement un bug dans l&rsquo;application. Et surtout la maintenabilité d&rsquo;une application décroit avec l&rsquo;augmentation du volume de code.</p>
+<p>Mais il ne faut pas faire l&rsquo;amalgame entre la programmation défensive et toutes les validations de données. Par exemple, la validation des données d&rsquo;un formulaire saisies par un être humain est réalisée par une méthode dont c&rsquo;est l&rsquo;objectif. Dans ce cas, ce n&rsquo;est pas de la programmation défensive. Mais, si le service métier appelé après la validation du formulaire vérifie lui aussi une donnée, là, ce sera de la programmation défensive.</p>
+<p>Le choix entre programmation défensive et confiance absolue n&rsquo;est pas du seul ressort du développeur. C&rsquo;est un choix fait par l&rsquo;équipe qui prend en compte le type de composant, le type de données, les contraintes techniques, &hellip; Cela doit donner lieu à un chapitre dans le <a href="/mesidees/10-guidedudev/index.html">guide du développeur</a>.</p>
+<p>Références :</p>
+<ul>
+<li><a href="http://etienne.charignon.free.fr/spip/spip.php?article68" rel="external" target="_blank">http://etienne.charignon.free.fr/spip/spip.php?article68</a></li>
+<li><a href="https://martinfowler.com/ieeeSoftware/failFast.pdf" rel="external" target="_blank">https://martinfowler.com/ieeeSoftware/failFast.pdf</a></li>
+<li><a href="https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level" rel="external" target="_blank">https://weblogs.asp.net/fredriknormen/defensive-programming-and-design-by-contract-on-a-routine-level</a></li>
+</ul>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 28, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

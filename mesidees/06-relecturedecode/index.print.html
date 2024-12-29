@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Relecture, revue et audit de code">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Relecture, revue et audit de code :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Relecture, revue et audit de code">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/06-relecturedecode/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Relecture, revue et audit de code :: Guillaume TALBOT">
+    <meta property="og:description" content="Relecture, revue et audit de code">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="name" content="Relecture, revue et audit de code :: Guillaume TALBOT">
+    <meta itemprop="description" content="Relecture, revue et audit de code">
+    <meta itemprop="dateModified" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="wordCount" content="516">
+    <title>Relecture, revue et audit de code :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/06-relecturedecode/index.html" rel="canonical" type="text/html" title="Relecture, revue et audit de code :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-print.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/06-relecturedecode/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Relecture, revue et audit de code</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/06-relecturedecode/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/05-retryenjava/index.html" title="Coder des ré-essais en Java (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/07-hugoetgithubpages/index.html" title="Hugo et GitHub:Pages (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="relecture-revue-et-audit-de-code">Relecture, revue et audit de code</h1>
+
+<h4 id="ma-définition">Ma définition</h4>
+<ul>
+<li>
+<p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple). Une relecture permet de s&rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&rsquo;aucun fichier ne sera intégré au commit pour un simple saut de ligne malencontreux, &hellip;</p>
+</li>
+<li>
+<p><strong>La revue de code</strong> est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&rsquo;intégration du dit code dans les sources de l&rsquo;application. Le processus peut être le suivant :</p>
+<ul>
+<li>Dès qu&rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers</li>
+<li>Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer</li>
+<li>L&rsquo;auditeur parcourt le code et y incruste des remarques</li>
+<li>Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&rsquo;être intégré à la branche principale</li>
+<li>Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&rsquo;il corrige son code</li>
+</ul>
+</li>
+<li>
+<p><strong>L&rsquo;audit de code</strong> est un processus asynchrone qui consiste à faire une relecture de code à tout moment sur le code actuellement intégré à une branche principale. Cette pratique est tout à fait compatible avec les deux autres pratiques précédentes.</p>
+</li>
+</ul>
+<h4 id="le-plus-important">Le plus important</h4>
+<p>Attention, on parle ici de la qualité du code. La conception, les librairies/framework utilisés, &hellip; sont une autre affaire !!</p>
+<p>Quelques soient les pratiques du projet (revue ou audit ou les deux), l&rsquo;élément central et primordial est l&rsquo;échange entre le développeur et le relecteur. C&rsquo;est cet échange qui est le garant du bon fonctionnement de ces pratiques !! Sans lui :</p>
+<ul>
+<li>le relecteur ne verra pas directement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaises relectures ;</li>
+<li>le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&rsquo;interminables envois de mails ;</li>
+<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre que s&rsquo;ils communiquent les yeux dans les yeux.</li>
+</ul>
+<h4 id="pour-se-simplifier-la-vie">Pour se simplifier la vie</h4>
+<p>Certaines règles de développement sont aisément vérifiables (avec une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&rsquo;outil de qualimétrie pour tous les langages.
+Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et de points d&rsquo;attention à contrôler.</p>
+<h4 id="pour-aller-plus-loin">Pour aller plus loin</h4>
+<p>Pour mettre en oeuvre ces bonnes idées en poussant l&rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&rsquo;est du <strong>pair programming</strong> !</p>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><a href="http://blog.8thcolor.com/en/2014/04/5-reasons-you-are-not-doing-code-reviews/" rel="external" target="_blank">5 reasons you are not doing code reviews</a></li>
+<li><a href="http://phinze.github.io/2013/12/08/pairing-vs-code-review.html" rel="external" target="_blank">Pairing vs code review</a></li>
+</ul>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

@@ -1,1109 +1,323 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.26" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="Guillaume TALBOT - mon CV, mes projets et mes idées">
-<meta name="author" content="Guillaume TALBOT">
-
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/17-installationserveuric/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT">
+    <meta property="og:description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-28T15:56:52+01:00">
+    <meta itemprop="name" content="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT">
+    <meta itemprop="description" content="Installation d&#39;un serveur pour une Integration Continue">
+    <meta itemprop="dateModified" content="2024-12-28T15:56:52+01:00">
+    <meta itemprop="wordCount" content="973">
     <title>Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT</title>
+    <link href="/mesidees/17-installationserveuric/index.print.html" rel="alternate" type="text/html" title="Installation d&#39;un serveur pour une Integration Continue :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    
-    <link href="/css/nucleus.css?1546436213" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1546436213" rel="stylesheet">
-    <link href="/css/hybrid.css?1546436213" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1546436213" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1546436213" rel="stylesheet">
-    <link href="/css/auto-complete.css?1546436213" rel="stylesheet">
-    <link href="/css/theme.css?1546436213" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1546436213" rel="stylesheet">
-    
-      <link href="/css/theme-blue.css?1546436213" rel="stylesheet">
-    
-
-    <script src="/js/jquery-2.x.min.js?1546436213"></script>
-
-    <style type="text/css">
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-html.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
       }
-      
-    </style>
-    <link href="/css/customHugo.css" rel="stylesheet" />
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
 
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
   </head>
-  <body class="" data-url="/mesidees/17-installationserveuric/">
-    <nav id="sidebar" class="showVisitedLinks">
-
-
-
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="/">
-  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
-</a>
-
-    </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-times"></i></span>
-</div>
-
-<script type="text/javascript" src="/js/lunr.min.js?1546436213"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1546436213"></script>
-<script type="text/javascript">
-    
-        var baseurl = "https:\/\/talbotgui.github.io\/";
-    
-</script>
-<script type="text/javascript" src="/js/search.js?1546436213"></script>
-
-    
-  </div>
-
-    <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item 
-        parent
-        
-        
-        ">
-      <a href="/mesidees/">
-          Mes idées
-          
-            <i class="fas read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/01-dettetechnique/" title="Dette technique" class="dd-item ">
-        <a href="/mesidees/01-dettetechnique/">
-        Dette technique
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/02-pratiques/" title="Liens sur des pratiques utiles" class="dd-item ">
-        <a href="/mesidees/02-pratiques/">
-        Liens sur des pratiques utiles
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/03-testsdedeveloppement/" title="Tests de développement" class="dd-item ">
-        <a href="/mesidees/03-testsdedeveloppement/">
-        Tests de développement
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/04-consolehibernate/" title="Créer une console Hibernate" class="dd-item ">
-        <a href="/mesidees/04-consolehibernate/">
-        Créer une console Hibernate
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" class="dd-item ">
-        <a href="/mesidees/05-retryenjava/">
-        Coder des ré-essais en Java
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/06-relecturedecode/" title="Relecture, revue et audit de code" class="dd-item ">
-        <a href="/mesidees/06-relecturedecode/">
-        Relecture, revue et audit de code
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/07-hugoetgithubpages/" title="Hugo et GitHub:Pages" class="dd-item ">
-        <a href="/mesidees/07-hugoetgithubpages/">
-        Hugo et GitHub:Pages
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/08-creationavechugo/" title="Création d&#39;un site avec Hugo" class="dd-item ">
-        <a href="/mesidees/08-creationavechugo/">
-        Création d&#39;un site avec Hugo
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/09-objectmother/" title="Object Mother" class="dd-item ">
-        <a href="/mesidees/09-objectmother/">
-        Object Mother
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/10-guidedudev/" title="Guide Du Développeur" class="dd-item ">
-        <a href="/mesidees/10-guidedudev/">
-        Guide Du Développeur
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/11-programmationdefensive/" title="Programmation défensive" class="dd-item ">
-        <a href="/mesidees/11-programmationdefensive/">
-        Programmation défensive
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/12-eclipse/" title="Eclipse" class="dd-item ">
-        <a href="/mesidees/12-eclipse/">
-        Eclipse
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/13-pipeline/" title="Pipeline" class="dd-item ">
-        <a href="/mesidees/13-pipeline/">
-        Pipeline
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/14-qualimetrie/" title="Qualimétrie" class="dd-item ">
-        <a href="/mesidees/14-qualimetrie/">
-        Qualimétrie
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/15-js/" title="JS" class="dd-item ">
-        <a href="/mesidees/15-js/">
-        JS
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item ">
-        <a href="/mesidees/16-angular/">
-        Angular
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/17-installationserveuric/" title="Installation d&#39;un serveur pour une Integration Continue" class="dd-item active">
-        <a href="/mesidees/17-installationserveuric/">
-        Installation d&#39;un serveur pour une Integration Continue
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/18-licences/" title="Licence" class="dd-item ">
-        <a href="/mesidees/18-licences/">
-        Licence
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/19-git/" title="Git" class="dd-item ">
-        <a href="/mesidees/19-git/">
-        Git
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/20-gitflow/" title="les différents FLOW avec Git" class="dd-item ">
-        <a href="/mesidees/20-gitflow/">
-        les différents FLOW avec Git
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/21-jenkins/" title="Jenkins" class="dd-item ">
-        <a href="/mesidees/21-jenkins/">
-        Jenkins
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/22-elastic/" title="Stack Elastic" class="dd-item ">
-        <a href="/mesidees/22-elastic/">
-        Stack Elastic
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/23-gitetclefssshmultiples/" title="Git et clefs SSH multiples" class="dd-item ">
-        <a href="/mesidees/23-gitetclefssshmultiples/">
-        Git et clefs SSH multiples
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/24-sftpaws/" title="Créer un compte sftp sur AWS" class="dd-item ">
-        <a href="/mesidees/24-sftpaws/">
-        Créer un compte sftp sur AWS
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/25-featuretoggle/" title="Feature toggle" class="dd-item ">
-        <a href="/mesidees/25-featuretoggle/">
-        Feature toggle
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/26-wordpress/" title="Installer une instance WordPress sur Ubuntu" class="dd-item ">
-        <a href="/mesidees/26-wordpress/">
-        Installer une instance WordPress sur Ubuntu
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/99-trucsalire/" title="Trucs à lire" class="dd-item ">
-        <a href="/mesidees/99-trucsalire/">
-        Trucs à lire
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/mesprojets/" title="Mes projets" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/mesprojets/">
-          Mes projets
-          
-            <i class="fas read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesprojets/bulletin-guidededev/" title="Bulletin NG - Guide du développeur" class="dd-item ">
-        <a href="/mesprojets/bulletin-guidededev/">
-        Bulletin NG - Guide du développeur
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur" class="dd-item ">
-        <a href="/mesprojets/mariage-guidededev/">
-        Mariage - Guide du développeur
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesprojets/applicationblanche/" title="Application Blanche" class="dd-item ">
-        <a href="/mesprojets/applicationblanche/">
-        Application Blanche
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/moncv/" title="Mon CV" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/moncv/">
-          Mon CV
-          
-            <i class="fas read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/moncv/01-limitescv/" title="Les limites d&#39;un CV" class="dd-item ">
-        <a href="/moncv/01-limitescv/">
-        Les limites d&#39;un CV
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-         
-    </ul>
-
-    
-    
-
-    
-    <section id="prefooter">
-      <hr/>
-      <ul>
-      
-      
-      
-        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-      
-      </ul>
-    </section>
-    
-    <section id="footer">
-      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
-
-    </section>
-  </div>
-</nav>
-
-
-
-
-
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-              <div>
-                <div id="top-bar">
-                
-                
-                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span id="sidebar-toggle-span">
-                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                  
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
-                  <span class="links">
-                 
-                 
-                    
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>Guillaume TALBOT</a> > <a href='/mesidees/'>Mes idées</a> > Installation d'un serveur pour une Integration Continue
-          
-         
-          
-         
-          
-        
-                 
-                  </span>
+  <body class="mobile-support html" data-url="/mesidees/17-installationserveuric/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
                 </div>
-                
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#création-de-la-machine">Création de la machine :</a></li>
-<li><a href="#mise-à-jour-de-la-plateforme">Mise à jour de la plateforme :</a></li>
-<li><a href="#installation-de-java-et-jenkins">Installation de Java et Jenkins :</a></li>
-<li><a href="#installation-apache2">Installation apache2</a></li>
-<li><a href="#installation-letsencrypt">Installation LetsEncrypt</a></li>
-<li><a href="#limiter-les-informations-fournies-par-le-serveur">Limiter les informations fournies par le serveur</a></li>
-<li><a href="#activer-les-accès-sécurisés-aux-outils">Activer les accès sécurisés aux outils :</a></li>
-<li><a href="#configuration-jenkins">Configuration Jenkins :</a></li>
-<li><a href="#installation-email">Installation email :</a></li>
-<li><a href="#installation-maven">Installation Maven :</a></li>
-<li><a href="#installation-npm-nodejs">Installation NPM &amp; NodeJS</a></li>
-<li><a href="#installation-de-chrome">Installation de Chrome :</a></li>
-<li><a href="#si-la-machine-est-de-type-tiny">Si la machine est de type <em>tiny</em></a></li>
-<li><a href="#les-répertoires-à-vider-pour-récupérer-de-l-espace">Les répertoires à vider pour récupérer de l&rsquo;espace :</a></li>
-<li><a href="#notes-sur-l-installation-d-un-archiva">Notes sur l&rsquo;installation d&rsquo;un Archiva</a></li>
-<li><a href="#petites-commandes-pratiques-pour-entretenir-le-serveur">Petites commandes pratiques pour entretenir le serveur :</a></li>
-<li><a href="#installation-du-cloud-sdk">Installation du Cloud SDK</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
-            
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Installation d&#39;un serveur pour une Integration Continue</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/17-installationserveuric/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/15-js/index.html" title="JS (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/18-licences/index.html" title="Licence (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
 
-        
-        <div id="body-inner">
-          
-            <h1>Installation d&#39;un serveur pour une Integration Continue</h1>
-          
+<h1 id="installation-dun-serveur-pour-une-integration-continue">Installation d&#39;un serveur pour une Integration Continue</h1>
 
-        
-
-
-
-
-<h4 id="création-de-la-machine">Création de la machine :</h4>
-
-<p>Créer une machine de type <em>small</em> chez Amazon EC2 avec l&rsquo;OS Ubuntu 17.04 AMD64 (image <em>AMI : ubuntu/images/hvm-ssd/ubuntu-zesty-17.04-amd64-server-20170720</em>).</p>
-
+<h4 id="création-de-la-machine-">Création de la machine :</h4>
+<p>Créer une machine de type <em>small</em> chez Amazon EC2 avec l&rsquo;OS Ubuntu xx.xx de votre choix.</p>
 <p>Dans le groupe de sécurité, ouvrir les ports HTTP HTTPS SSH (ouverts à tous)</p>
-
-<p>Modification en janvier 2018 : <em>medium</em> avec l&rsquo;image <em>AMI ubuntu/images/hvm-ssd/ubuntu-artful-17.10-amd64-server-20180102</em></p>
-
-<h4 id="mise-à-jour-de-la-plateforme">Mise à jour de la plateforme :</h4>
-
-<p>Se connecter en SSH et exécuter
-<code>sudo apt-get update
-sudo apt-get upgrade</code></p>
-
-<h4 id="installation-de-java-et-jenkins">Installation de Java et Jenkins :</h4>
-
-<pre><code>sudo apt-get install default-jdk
+<h4 id="mise-à-jour-de-la-plateforme-">Mise à jour de la plateforme :</h4>
+<p>Se connecter en SSH et exécuter</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo apt-get update
+sudo apt-get -y upgrade</code></pre></div>
+<h4 id="installation-de-java-et-jenkins-">Installation de Java et Jenkins :</h4>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo apt-get -y install default-jdk
 	
-@see http://pkg.jenkins-ci.org/debian/
+@see https://www.jenkins.io/doc/book/installing/linux/#weekly-release
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ &gt;&gt; /etc/apt/sources.list'
+sudo sh -c &#39;echo deb https://pkg.jenkins.io/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#39;
 sudo apt-get update
-sudo apt-get install jenkins
-</code></pre>
-
-<p>Pour définir le rootContext de Jenkins, exécuter <code>sudo vi /etc/default/jenkins</code> et modifier la dernière ligne pour ajouter &ldquo;&ndash;prefix=$PREFIX&rdquo;</p>
-
+sudo apt-get -y install jenkins</code></pre></div>
+<p>Pour définir le rootContext de Jenkins, exécuter <code>sudo vi /etc/default/jenkins</code> et modifier la dernière ligne pour ajouter &ldquo;&ndash;prefix=$PREFIX&rdquo; (attention au double tirets)</p>
+<p>Pour prendre en compte la modification, redémarrer Jenkins</p>
 <h4 id="installation-apache2">Installation apache2</h4>
-
-<pre><code>sudo apt-get install apache2
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo apt-get -y install apache2
 sudo a2enmod proxy proxy_http
 sudo a2enmod headers
-sudo a2enmod ssl
-</code></pre>
-
-<p>Créer le fichier <em>/etc/apache2/sites-available/monHttp.conf</em> (ne pas oublier le sudo)</p>
-
-<pre><code>&lt;VirtualHost *:80&gt;
+sudo a2enmod ssl</code></pre></div>
+<p>Créer le fichier <code>sudo vi /etc/apache2/sites-available/monHttp.conf</code></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>&lt;VirtualHost *:80&gt;
  ServerAdmin webmaster@localhost
  ServerName me.guillaumetalbot.com
  ServerAlias ci
-&lt;/VirtualHost&gt;
-</code></pre>
-
-<pre><code>sudo a2ensite monHttp
-sudo /etc/init.d/apache2 restart
-</code></pre>
-
+&lt;/VirtualHost&gt;</code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo a2ensite monHttp
+sudo /etc/init.d/apache2 restart</code></pre></div>
 <h4 id="installation-letsencrypt">Installation LetsEncrypt</h4>
-
-<p><em>@see <a href="https://certbot.eff.org/#ubuntutzesty-apache">https://certbot.eff.org/#ubuntutzesty-apache</a></em></p>
-
-<p><strong>Penser à configurer le nom de domaine pour pointer sur la machine auprès du DNS</strong></p>
-
-<pre><code>sudo apt-get update
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install python-certbot-apache 
-sudo certbot --apache
-</code></pre>
-
+<p><em>@see <a href="https://certbot.eff.org/instructions" rel="external" target="_blank">https://certbot.eff.org/instructions</a> et sélectionner Apache et le bon OS</em></p>
+<p><strong>Penser à configurer le nom de domaine pour pointer sur la machine auprès du DNS avant</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot --apache</code></pre></div>
 <h4 id="limiter-les-informations-fournies-par-le-serveur">Limiter les informations fournies par le serveur</h4>
-
-<p>Modifier le fichier /etc/apache2/conf-available/security et changer les valeurs :</p>
-
+<p>Modifier le fichier <code>sudo vi /etc/apache2/conf-available/security.conf</code> et changer les valeurs :</p>
 <ul>
 <li>ServerTokens Prod</li>
 <li>ServerSignature Off</li>
 </ul>
+<h4 id="activer-les-accès-sécurisés-aux-outils-">Activer les accès sécurisés aux outils :</h4>
+<p>Modifier le fichier <code>sudo vi /etc/apache2/sites-available/monHttp-le-ssl.conf</code> et y ajouter</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>  DocumentRoot /var/www/html
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+  ProxyRequests Off
+  ProxyVia Off
+  &lt;Proxy *&gt;
+   Order deny,allow
+   Allow from all
+  &lt;/Proxy&gt;
+  ProxyPreserveHost on
+  ProxyPass /jenkins http://localhost:8080/jenkins nocanon
+  ProxyPassReverse /jenkins http://locahost:8080/jenkins
+  ProxyPassReverse /jenkins  http://me.guillaumetalbot.com/jenkins
+  RequestHeader set X-Forwarded-Proto &#34;https&#34;
+  RequestHeader set X-Forwarded-Port &#34;443&#34;
+  AllowEncodedSlashes NoDecode
 
-<h4 id="activer-les-accès-sécurisés-aux-outils">Activer les accès sécurisés aux outils :</h4>
-
-<p>Modifier le fichier /etc/apache2/sites-available/monHttp-le-ssl.conf et y ajouter</p>
-
-<pre><code>DocumentRoot /var/www/html
-ErrorLog ${APACHE_LOG_DIR}/error.log
-CustomLog ${APACHE_LOG_DIR}/access.log combined
-ProxyRequests Off
-ProxyVia Off
-&lt;Proxy *&gt;
-Order deny,allow
-Allow from all
-&lt;/Proxy&gt;
-ProxyPreserveHost on
-ProxyPass /jenkins http://localhost:8080/jenkins nocanon
-ProxyPassReverse /jenkins http://locahost:8080/jenkins
-ProxyPassReverse /jenkins  http://me.guillaumetalbot.com/jenkins
-RequestHeader set X-Forwarded-Proto &quot;https&quot;
-RequestHeader set X-Forwarded-Port &quot;443&quot;
-AllowEncodedSlashes NoDecode
-
-&lt;IfModule mod_headers.c&gt;
- Header set X-Content-Type-Options nosniff
- Header set Content-Security-Policy &quot;child-src 'none'; object-src 'none'&quot;
- Header set X-Permitted-Cross-Domain-Policies &quot;none&quot;
- Header set X-Frame-Options DENY
- Header set X-XSS-Protection &quot;1; mode=block;&quot;
- Header set Strict-Transport-Security &quot;max-age=300; includeSubDomains; preload; always;&quot;
- Header set Public-Key-Pins &quot;pin-sha256=\&quot;base64+primary==\&quot;; pin-sha256=\&quot;base64+backup==\&quot;; max-age=5184000; includeSubDomains&quot;
-&lt;/IfModule&gt;
-</code></pre>
-
+  &lt;IfModule mod_headers.c&gt;
+   Header set X-Content-Type-Options nosniff
+   Header set X-Permitted-Cross-Domain-Policies &#34;none&#34;
+   # pour ne pas bloquer Jenkins
+   # Header set Content-Security-Policy &#34;child-src &#39;none&#39;; object-src &#39;none&#39;&#34;
+   # Header set X-Frame-Options DENY
+   Header set X-XSS-Protection &#34;1; mode=block;&#34;
+   Header set Strict-Transport-Security &#34;max-age=300; includeSubDomains; preload; always;&#34;
+   Header set Public-Key-Pins &#34;pin-sha256=\&#34;base64+primary==\&#34;; pin-sha256=\&#34;base64+backup==\&#34;; max-age=5184000; includeSubDomains&#34;
+  &lt;/IfModule&gt;</code></pre></div>
 <p>Puis exécuter :</p>
-
-<pre><code>sudo /etc/init.d/apache2 restart
-sudo rm /var/www/html/index.html
-</code></pre>
-
-<p>Créer le fichier /var/www/html/index.html avec le contenu suivant :</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo /etc/init.d/apache2 restart
+sudo rm /var/www/html/index.html</code></pre></div>
+<p>Créer le fichier <code>sudo vi /var/www/html/index.html</code> avec le contenu suivant :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
  &lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot; /&gt;
-  &lt;meta http-equiv=&quot;refresh&quot; content=&quot;3; url=https://talbotgui.github.io&quot; /&gt;
+  &lt;meta charset=&#34;utf-8&#34; /&gt;
+  &lt;meta http-equiv=&#34;refresh&#34; content=&#34;3; url=https://talbotgui.github.io&#34; /&gt;
  &lt;/head&gt;
  &lt;body&gt;
   Redirection en cours...
  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<h4 id="configuration-jenkins">Configuration Jenkins :</h4>
-
+&lt;/html&gt;</code></pre></div>
+<h4 id="configuration-jenkins-">Configuration Jenkins :</h4>
 <p>Aller à l&rsquo;adresse https://&hellip;../jenkins et suivre les instructions</p>
-
-<h4 id="installation-email">Installation email :</h4>
-
-<pre><code>sudo apt-get install postfix
+<h4 id="installation-email-">Installation email :</h4>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo apt-get install postfix
+  me.guillaumetalbot.com
 sudo vi /etc/postfix/main.cf
-  myhostname = guillaumetalbot.com
-sudo vi /etc/postfix/virtual
-  webmaster@guillaumetalbot.com ubuntu
-sudo postmap /etc/postfix/virtual
-sudo service postfix restart
-</code></pre>
-
-<h4 id="installation-maven">Installation Maven :</h4>
-
-<p><code>sudo apt-get install maven</code>
-Modifier le fichier /usr/share/maven/conf/settings.xml pour définir le repo local sans oublier de créer le répertoire avec le droit à tous les utilisateurs (chmod a+w m2repo)</p>
-
-<h4 id="installation-npm-nodejs">Installation NPM &amp; NodeJS</h4>
-
-<pre><code>curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-sudo apt-get install -y nodejs
-</code></pre>
-
-<h4 id="installation-de-chrome">Installation de Chrome :</h4>
-
-<pre><code>sudo sh -c 'echo &quot;deb http://dl.google.com/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google.list'
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install google-chrome-stable
-</code></pre>
-
-<h4 id="si-la-machine-est-de-type-tiny">Si la machine est de type <em>tiny</em></h4>
-
-<p>La machine va manquer de RAM. Pour ajouter une partition de SWAP (dans un fichier) (<a href="http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/">http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/</a>)</p>
-
-<pre><code>dd if=/dev/zero of=/var/myswap bs=1M count=2048
-mkswap /var/myswap
-swapon /var/myswap
-</code></pre>
-
-<h4 id="les-répertoires-à-vider-pour-récupérer-de-l-espace">Les répertoires à vider pour récupérer de l&rsquo;espace :</h4>
-
-<p>/var/lib/jenkins/.npm/_logs/</p>
-
-<h4 id="notes-sur-l-installation-d-un-archiva">Notes sur l&rsquo;installation d&rsquo;un Archiva</h4>
-
-<p>Ressources :</p>
-
+  myhostname = me.guillaumetalbot.com
+sudo service postfix restart</code></pre></div>
+<h4 id="installation-maven-">Installation Maven :</h4>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo mkdir /usr/share/m2repo
+sudo chmod a+rw /usr/share/m2repo
+sudo apt-get -y install maven</code></pre></div>
+<p>Modifier le fichier <code>sudo vi /usr/share/maven/conf/settings.xml</code> pour définir le repo local</p>
+<h4 id="installation-npm--nodejs">Installation NPM &amp; NodeJS</h4>
+<p>Vérifier la dernière version disponible du setup et remplacer les YY (version 14 en aout 2021).</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>curl -sL https://deb.nodesource.com/setup_YY.x | sudo -E bash -
+sudo apt-get install -y nodejs</code></pre></div>
+<h4 id="pour-paramétrer-jenkins-avec-une-configuration-de-base">Pour paramétrer Jenkins avec une configuration de base</h4>
+<p>Premier accès et paramétrage de base</p>
 <ul>
-<li>documentation : <a href="https://archiva.apache.org/docs/2.2.3/quick-start.html">https://archiva.apache.org/docs/2.2.3/quick-start.html</a></li>
-<li>installation : <a href="http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip">http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip</a></li>
+<li>accéder au portail pour la première fois</li>
+<li>suivre les instructions pour se connecter en tant qu&rsquo;administrateur</li>
+<li>sélectionner l&rsquo;installation des plugins courants</li>
 </ul>
-
+<p>Installer les plugins nécessaires</p>
+<ul>
+<li>accéder à la partie &ldquo;administrer Jenkins&rdquo; puis &ldquo;gestion des plugins&rdquo;</li>
+<li>dans la liste des plugins disponibles, sélectionner &ldquo;blue ocean&rdquo; et cliquer sur &ldquo;installer sans redémarrer&rdquo;</li>
+<li>dans la liste des plugins disponibles, sélectionner &ldquo;Pipeline Utility Steps&rdquo; et cliquer sur &ldquo;installer sans redémarrer&rdquo;</li>
+<li>une fois les plugins installés, cliquer sur la case &ldquo;redémarrer Jenkins&rdquo; et patienter que Jenkins redémarre</li>
+</ul>
+<p>Déclarer les outils</p>
+<ul>
+<li>accéder à la partie &ldquo;administrer Jenkins&rdquo; puis &ldquo;Configuration globale des outils&rdquo;</li>
+<li>cliquer sur &ldquo;Ajouter JDK&rdquo;, décocher &ldquo;installation automatique&rdquo;, saisir &ldquo;java local&rdquo; et &ldquo;/usr/lib/jvm/java-11-openjdk-amd64/&rdquo;</li>
+<li>cliquer sur &ldquo;Ajouter Maven&rdquo;, décocher &ldquo;installation automatique&rdquo;, saisir &ldquo;M3&rdquo; et &ldquo;/usr/share/maven/&rdquo;</li>
+</ul>
+<p>Déclarer les clefs</p>
+<ul>
+<li>faire le tour de tous vos dépôts et jenkinsFile pour lister les clefs nécessaires à leur bon fonctionnement</li>
+<li>accéder à la partie &ldquo;administrer Jenkins&rdquo; puis &ldquo;Manage credentials&rdquo;</li>
+<li>cliquer sur &ldquo;Jenkins&rdquo; puis &ldquo;identifiants globaux&rdquo;</li>
+<li>cliquer sur &ldquo;Ajouter identifiant&rdquo; et saisir les élements nécessaires</li>
+</ul>
+<h4 id="publication-dapplication">Publication d&rsquo;application</h4>
+<p>Si votre serveur héberge aussi des applications déployées automatiquement depuis votre Jenkins</p>
+<ul>
+<li>faire le tour de tous vos dépôts et jenkinsFile pour lister les clefs nécessaires à leur bon fonctionnement</li>
+<li>exécuter autant de fois que nécessaire les commandes suivantes</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo mkdir /var/www/html/xxx
+sudo chmod a+rw /var/www/html/xxx</code></pre></div>
+<h4 id="si-la-machine-est-de-type-tiny">Si la machine est de type <em>tiny</em></h4>
+<p>La machine va manquer de RAM. Pour ajouter une partition de SWAP (dans un fichier) (<a href="http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/" rel="external" target="_blank">http://tecadmin.net/add-swap-partition-on-ec2-linux-instance/</a>)</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo dd if=/dev/zero of=/var/myswap bs=1M count=2048
+sudo mkswap /var/myswap
+sudo swapon /var/myswap
+sudo chmod 0644 /var/myswap</code></pre></div>
+<h4 id="petits-outils-à-installer">Petits outils à installer</h4>
+<p>Parmis les outils utiles dans les scripts SHELL, il faut bien souvent installer</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>sudo apt-get -y install zip</code></pre></div>
+<h4 id="les-répertoires-à-vider-pour-récupérer-de-lespace-">Les répertoires à vider pour récupérer de l&rsquo;espace :</h4>
+<p>/var/lib/jenkins/.npm/_logs/</p>
+<h4 id="notes-sur-linstallation-dun-archiva">Notes sur l&rsquo;installation d&rsquo;un Archiva</h4>
+<p>Ressources :</p>
+<ul>
+<li>documentation : <a href="https://archiva.apache.org/docs/2.2.3/quick-start.html" rel="external" target="_blank">https://archiva.apache.org/docs/2.2.3/quick-start.html</a></li>
+<li>installation : <a href="http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip" rel="external" target="_blank">http://apache.mirrors.nublue.co.uk/archiva/2.2.3/binaries/apache-archiva-2.2.3-bin.zip</a></li>
+</ul>
 <p>Installation :</p>
-
 <ul>
 <li>extraire le contenu de l&rsquo;archive</li>
 <li>si Java9 est le JDK par défaut, modifier le fichier conf/wrapper.conf : <code>wrapper.java.command=C:/Program Files/Java/jdk1.8.0_151/bin/java</code></li>
 <li>sous Windows, dans un interpréteur de commande en mode &ldquo;Admin&rdquo;, exécuter <code>archiva install</code> puis <code>archiva start</code></li>
-<li>Archiva sera disponible à l&rsquo;adresse <a href="http://localhost:8080/">http://localhost:8080/</a></li>
+<li>Archiva sera disponible à l&rsquo;adresse http://localhost:8080/</li>
 </ul>
-
-<h4 id="petites-commandes-pratiques-pour-entretenir-le-serveur">Petites commandes pratiques pour entretenir le serveur :</h4>
-
+<h4 id="petites-commandes-pratiques-pour-entretenir-le-serveur-">Petites commandes pratiques pour entretenir le serveur :</h4>
 <p>Pour rechercher les répertoires prenant de la place : <code>sudo du -cha --max-depth=1 / | grep -E &quot;[0-9]M|[0-9]G&quot;</code></p>
-
 <p>Et un petit script permettant de faire le ménage régulièrement :</p>
-
-<pre><code>apt clean all
+<div class="highlight wrap-code"><pre tabindex="0"><code>apt clean all
 rm /var/log/**/*.gz
 rm /var/log/journal/*/*-00000*.journal
 rm -rf /var/lib/jenkins/workspace/*
 rm -rf /var/lib/jenkins/.sonar/*
 rm -rf /var/lib/jenkins/.m2/*
-rm -rf /var/lib/jenkins/.npm/*
-</code></pre>
-
+rm -rf /var/lib/jenkins/.npm/*</code></pre></div>
 <h4 id="installation-du-cloud-sdk">Installation du Cloud SDK</h4>
-
 <ul>
-<li>documentation : <a href="https://cloud.google.com/sdk/docs/downloads-apt-get">https://cloud.google.com/sdk/docs/downloads-apt-get</a></li>
+<li>documentation : <a href="https://cloud.google.com/sdk/docs/downloads-apt-get" rel="external" target="_blank">https://cloud.google.com/sdk/docs/downloads-apt-get</a></li>
 </ul>
-
 <p>Installation :</p>
-
-<pre><code>export CLOUD_SDK_REPO=&quot;cloud-sdk-$(lsb_release -c -s)&quot;
-echo &quot;deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+<div class="highlight wrap-code"><pre tabindex="0"><code>export CLOUD_SDK_REPO=&#34;cloud-sdk-$(lsb_release -c -s)&#34;
+echo &#34;deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main&#34; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
-</code></pre>
-
+sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk</code></pre></div>
 <p>Connexion :</p>
-
 <ul>
 <li>créer une clef depuis la console GCloud (IAM / comptes de service)</li>
 <li>activer les APIs &ldquo;Cloud Resource Manager API&rdquo; et &ldquo;App Engine Admin API&rdquo; depuis la console GCloud (API / Bibliotheque)</li>
@@ -1112,631 +326,117 @@ sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
 <li>exécuter la commande <code>gcloud init</code> et renseigner toutes les informations</li>
 </ul>
 
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 28, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
 
-<footer class=" footline" >
-	
-</footer>
-
-
-        
-        </div> 
-        
-
+        </div>
       </div>
-
-    <div id="navigation">
-        
-        
-        
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-        
-        
-
-
-	 
-	 
-		
-			<a class="nav nav-prev" href="/mesidees/16-angular/" title="Angular"> <i class="fa fa-chevron-left"></i></a>
-		
-		
-			<a class="nav nav-next" href="/mesidees/18-licences/" title="Licence" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-		
-	
-    </div>
-
-    </section>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/mesidees/index.html"><a class="padding" href="/mesidees/index.html">Mes idées</a><ul id="R-subsections-f33312b94d7209735d86dea9324bf52f" class="collapsible-menu">
+            <li class="" data-nav-id="/mesidees/01-dettetechnique/index.html"><a class="padding" href="/mesidees/01-dettetechnique/index.html">Dette technique</a></li>
+            <li class="" data-nav-id="/mesidees/02-pratiques/index.html"><a class="padding" href="/mesidees/02-pratiques/index.html">Liens sur des pratiques utiles</a></li>
+            <li class="" data-nav-id="/mesidees/03-testsdedeveloppement/index.html"><a class="padding" href="/mesidees/03-testsdedeveloppement/index.html">Tests de développement</a></li>
+            <li class="" data-nav-id="/mesidees/04-consolehibernate/index.html"><a class="padding" href="/mesidees/04-consolehibernate/index.html">Créer une console Hibernate</a></li>
+            <li class="" data-nav-id="/mesidees/05-retryenjava/index.html"><a class="padding" href="/mesidees/05-retryenjava/index.html">Coder des ré-essais en Java</a></li>
+            <li class="" data-nav-id="/mesidees/06-relecturedecode/index.html"><a class="padding" href="/mesidees/06-relecturedecode/index.html">Relecture, revue et audit de code</a></li>
+            <li class="" data-nav-id="/mesidees/07-hugoetgithubpages/index.html"><a class="padding" href="/mesidees/07-hugoetgithubpages/index.html">Hugo et GitHub:Pages</a></li>
+            <li class="" data-nav-id="/mesidees/08-creationavechugo/index.html"><a class="padding" href="/mesidees/08-creationavechugo/index.html">Création d&#39;un site avec Hugo</a></li>
+            <li class="" data-nav-id="/mesidees/09-objectmother/index.html"><a class="padding" href="/mesidees/09-objectmother/index.html">Object Mother</a></li>
+            <li class="" data-nav-id="/mesidees/10-guidedudev/index.html"><a class="padding" href="/mesidees/10-guidedudev/index.html">Guide Du Développeur</a></li>
+            <li class="" data-nav-id="/mesidees/11-programmationdefensive/index.html"><a class="padding" href="/mesidees/11-programmationdefensive/index.html">Programmation défensive</a></li>
+            <li class="" data-nav-id="/mesidees/12-eclipse/index.html"><a class="padding" href="/mesidees/12-eclipse/index.html">Eclipse</a></li>
+            <li class="" data-nav-id="/mesidees/13-pipeline/index.html"><a class="padding" href="/mesidees/13-pipeline/index.html">Pipeline</a></li>
+            <li class="" data-nav-id="/mesidees/14-qualimetrie/index.html"><a class="padding" href="/mesidees/14-qualimetrie/index.html">Qualimétrie</a></li>
+            <li class="" data-nav-id="/mesidees/15-js/index.html"><a class="padding" href="/mesidees/15-js/index.html">JS</a></li>
+            <li class="active " data-nav-id="/mesidees/17-installationserveuric/index.html"><a class="padding" href="/mesidees/17-installationserveuric/index.html">Installation d&#39;un serveur pour une Integration Continue</a></li>
+            <li class="" data-nav-id="/mesidees/18-licences/index.html"><a class="padding" href="/mesidees/18-licences/index.html">Licence</a></li>
+            <li class="" data-nav-id="/mesidees/19-git/index.html"><a class="padding" href="/mesidees/19-git/index.html">Git</a></li>
+            <li class="" data-nav-id="/mesidees/20-gitflow/index.html"><a class="padding" href="/mesidees/20-gitflow/index.html">les différents FLOW avec Git</a></li>
+            <li class="" data-nav-id="/mesidees/21-jenkins/index.html"><a class="padding" href="/mesidees/21-jenkins/index.html">Jenkins</a></li>
+            <li class="" data-nav-id="/mesidees/22-elastic/index.html"><a class="padding" href="/mesidees/22-elastic/index.html">Stack Elastic</a></li>
+            <li class="" data-nav-id="/mesidees/23-gitetclefssshmultiples/index.html"><a class="padding" href="/mesidees/23-gitetclefssshmultiples/index.html">Git et clefs SSH multiples</a></li>
+            <li class="" data-nav-id="/mesidees/24-sftpaws/index.html"><a class="padding" href="/mesidees/24-sftpaws/index.html">Créer un compte sftp sur AWS</a></li>
+            <li class="" data-nav-id="/mesidees/25-featuretoggle/index.html"><a class="padding" href="/mesidees/25-featuretoggle/index.html">Feature toggle</a></li>
+            <li class="" data-nav-id="/mesidees/26-wordpress/index.html"><a class="padding" href="/mesidees/26-wordpress/index.html">Installer une instance WordPress sur Ubuntu</a></li>
+            <li class="" data-nav-id="/mesidees/27-transcrypt/index.html"><a class="padding" href="/mesidees/27-transcrypt/index.html">Git et les mots de passe</a></li>
+            <li class="" data-nav-id="/mesidees/99-trucsalire/index.html"><a class="padding" href="/mesidees/99-trucsalire/index.html">Trucs à lire</a></li></ul></li>
+            <li class="" data-nav-id="/mesprojets/index.html"><a class="padding" href="/mesprojets/index.html">Mes projets</a><ul id="R-subsections-b42d1fd85e522adc838a3f3f768726d4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/moncv/index.html"><a class="padding" href="/moncv/index.html">Mon CV</a><ul id="R-subsections-8f33c05f2efc4d68dacb20a930b3b91c" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
     
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>
-    <script src="/js/clipboard.min.js?1546436213"></script>
-    <script src="/js/perfect-scrollbar.min.js?1546436213"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1546436213"></script>
-    <script src="/js/jquery.sticky.js?1546436213"></script>
-    <script src="/js/featherlight.min.js?1546436213"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1546436213"></script>
-    <script src="/js/highlight.pack.js?1546436213"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1546436213"></script>
-    <script src="/js/learn.js?1546436213"></script>
-    <script src="/js/hugo-learn.js?1546436213"></script>
-
-    <link href="/mermaid/mermaid.css?1546436213" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1546436213"></script>
-    <script>
-        mermaid.initialize({ startOnLoad: true });
-    </script>
-    
-
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/mesidees/17-installationserveuric/index.html" lang="fr-fr" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-blue" value="blue" selected>Blue</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
   </body>
 </html>
-

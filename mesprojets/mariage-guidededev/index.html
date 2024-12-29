@@ -1,1122 +1,292 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.26" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="Guillaume TALBOT - mon CV, mes projets et mes idées">
-<meta name="author" content="Guillaume TALBOT">
-
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Mariage - Guide du développeur">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mariage - Guide du développeur :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Mariage - Guide du développeur">
+    <meta property="og:url" content="https://talbotgui.github.io/mesprojets/mariage-guidededev/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Mariage - Guide du développeur :: Guillaume TALBOT">
+    <meta property="og:description" content="Mariage - Guide du développeur">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes projets">
+    <meta property="article:modified_time" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="name" content="Mariage - Guide du développeur :: Guillaume TALBOT">
+    <meta itemprop="description" content="Mariage - Guide du développeur">
+    <meta itemprop="dateModified" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="wordCount" content="2183">
     <title>Mariage - Guide du développeur :: Guillaume TALBOT</title>
+    <link href="/mesprojets/mariage-guidededev/index.print.html" rel="alternate" type="text/html" title="Mariage - Guide du développeur :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    
-    <link href="/css/nucleus.css?1546436213" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1546436213" rel="stylesheet">
-    <link href="/css/hybrid.css?1546436213" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1546436213" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1546436213" rel="stylesheet">
-    <link href="/css/auto-complete.css?1546436213" rel="stylesheet">
-    <link href="/css/theme.css?1546436213" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1546436213" rel="stylesheet">
-    
-      <link href="/css/theme-blue.css?1546436213" rel="stylesheet">
-    
-
-    <script src="/js/jquery-2.x.min.js?1546436213"></script>
-
-    <style type="text/css">
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-html.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
       }
-      
-    </style>
-    <link href="/css/customHugo.css" rel="stylesheet" />
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
 
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
   </head>
-  <body class="" data-url="/mesprojets/mariage-guidededev/">
-    <nav id="sidebar" class="showVisitedLinks">
-
-
-
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="/">
-  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
-</a>
-
-    </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-times"></i></span>
-</div>
-
-<script type="text/javascript" src="/js/lunr.min.js?1546436213"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1546436213"></script>
-<script type="text/javascript">
-    
-        var baseurl = "https:\/\/talbotgui.github.io\/";
-    
-</script>
-<script type="text/javascript" src="/js/search.js?1546436213"></script>
-
-    
-  </div>
-
-    <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/mesidees/" title="Mes idées" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/mesidees/">
-          Mes idées
-          
-            <i class="fas read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/01-dettetechnique/" title="Dette technique" class="dd-item ">
-        <a href="/mesidees/01-dettetechnique/">
-        Dette technique
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/02-pratiques/" title="Liens sur des pratiques utiles" class="dd-item ">
-        <a href="/mesidees/02-pratiques/">
-        Liens sur des pratiques utiles
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/03-testsdedeveloppement/" title="Tests de développement" class="dd-item ">
-        <a href="/mesidees/03-testsdedeveloppement/">
-        Tests de développement
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/04-consolehibernate/" title="Créer une console Hibernate" class="dd-item ">
-        <a href="/mesidees/04-consolehibernate/">
-        Créer une console Hibernate
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/05-retryenjava/" title="Coder des ré-essais en Java" class="dd-item ">
-        <a href="/mesidees/05-retryenjava/">
-        Coder des ré-essais en Java
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/06-relecturedecode/" title="Relecture, revue et audit de code" class="dd-item ">
-        <a href="/mesidees/06-relecturedecode/">
-        Relecture, revue et audit de code
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/07-hugoetgithubpages/" title="Hugo et GitHub:Pages" class="dd-item ">
-        <a href="/mesidees/07-hugoetgithubpages/">
-        Hugo et GitHub:Pages
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/08-creationavechugo/" title="Création d&#39;un site avec Hugo" class="dd-item ">
-        <a href="/mesidees/08-creationavechugo/">
-        Création d&#39;un site avec Hugo
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/09-objectmother/" title="Object Mother" class="dd-item ">
-        <a href="/mesidees/09-objectmother/">
-        Object Mother
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/10-guidedudev/" title="Guide Du Développeur" class="dd-item ">
-        <a href="/mesidees/10-guidedudev/">
-        Guide Du Développeur
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/11-programmationdefensive/" title="Programmation défensive" class="dd-item ">
-        <a href="/mesidees/11-programmationdefensive/">
-        Programmation défensive
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/12-eclipse/" title="Eclipse" class="dd-item ">
-        <a href="/mesidees/12-eclipse/">
-        Eclipse
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/13-pipeline/" title="Pipeline" class="dd-item ">
-        <a href="/mesidees/13-pipeline/">
-        Pipeline
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/14-qualimetrie/" title="Qualimétrie" class="dd-item ">
-        <a href="/mesidees/14-qualimetrie/">
-        Qualimétrie
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/15-js/" title="JS" class="dd-item ">
-        <a href="/mesidees/15-js/">
-        JS
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/16-angular/" title="Angular" class="dd-item ">
-        <a href="/mesidees/16-angular/">
-        Angular
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/17-installationserveuric/" title="Installation d&#39;un serveur pour une Integration Continue" class="dd-item ">
-        <a href="/mesidees/17-installationserveuric/">
-        Installation d&#39;un serveur pour une Integration Continue
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/18-licences/" title="Licence" class="dd-item ">
-        <a href="/mesidees/18-licences/">
-        Licence
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/19-git/" title="Git" class="dd-item ">
-        <a href="/mesidees/19-git/">
-        Git
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/20-gitflow/" title="les différents FLOW avec Git" class="dd-item ">
-        <a href="/mesidees/20-gitflow/">
-        les différents FLOW avec Git
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/21-jenkins/" title="Jenkins" class="dd-item ">
-        <a href="/mesidees/21-jenkins/">
-        Jenkins
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/22-elastic/" title="Stack Elastic" class="dd-item ">
-        <a href="/mesidees/22-elastic/">
-        Stack Elastic
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/23-gitetclefssshmultiples/" title="Git et clefs SSH multiples" class="dd-item ">
-        <a href="/mesidees/23-gitetclefssshmultiples/">
-        Git et clefs SSH multiples
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/24-sftpaws/" title="Créer un compte sftp sur AWS" class="dd-item ">
-        <a href="/mesidees/24-sftpaws/">
-        Créer un compte sftp sur AWS
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/25-featuretoggle/" title="Feature toggle" class="dd-item ">
-        <a href="/mesidees/25-featuretoggle/">
-        Feature toggle
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/26-wordpress/" title="Installer une instance WordPress sur Ubuntu" class="dd-item ">
-        <a href="/mesidees/26-wordpress/">
-        Installer une instance WordPress sur Ubuntu
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesidees/99-trucsalire/" title="Trucs à lire" class="dd-item ">
-        <a href="/mesidees/99-trucsalire/">
-        Trucs à lire
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/mesprojets/" title="Mes projets" class="dd-item 
-        parent
-        
-        
-        ">
-      <a href="/mesprojets/">
-          Mes projets
-          
-            <i class="fas read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesprojets/bulletin-guidededev/" title="Bulletin NG - Guide du développeur" class="dd-item ">
-        <a href="/mesprojets/bulletin-guidededev/">
-        Bulletin NG - Guide du développeur
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesprojets/mariage-guidededev/" title="Mariage - Guide du développeur" class="dd-item active">
-        <a href="/mesprojets/mariage-guidededev/">
-        Mariage - Guide du développeur
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mesprojets/applicationblanche/" title="Application Blanche" class="dd-item ">
-        <a href="/mesprojets/applicationblanche/">
-        Application Blanche
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/moncv/" title="Mon CV" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/moncv/">
-          Mon CV
-          
-            <i class="fas read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/moncv/01-limitescv/" title="Les limites d&#39;un CV" class="dd-item ">
-        <a href="/moncv/01-limitescv/">
-        Les limites d&#39;un CV
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-         
-    </ul>
-
-    
-    
-
-    
-    <section id="prefooter">
-      <hr/>
+  <body class="mobile-support html" data-url="/mesprojets/mariage-guidededev/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-gestion-de-projet">1/ Gestion de projet</a></li>
+    <li><a href="#2-exigences">2/ Exigences</a>
       <ul>
-      
-      
-      
-        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-      
+        <li><a href="#21--métiers">2.1/  métiers</a></li>
+        <li><a href="#22-techniques">2.2/ techniques</a></li>
       </ul>
-    </section>
-    
-    <section id="footer">
-      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
-
-    </section>
-  </div>
+    </li>
+    <li><a href="#3-environnement">3/ Environnement</a></li>
+    <li><a href="#4-architecture-technique">4/ Architecture technique</a></li>
+    <li><a href="#5-tests">5/ Tests</a>
+      <ul>
+        <li><a href="#51-que-tester">5.1/ Que tester</a></li>
+        <li><a href="#52-comment-tester">5.2/ Comment tester</a></li>
+        <li><a href="#53-avec-quels-outils">5.3/ Avec quels outils</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-règles-de-conception">6/ Règles de conception</a>
+      <ul>
+        <li><a href="#61-persistance">6.1/ Persistance</a></li>
+        <li><a href="#62-service">6.2/ Service</a></li>
+        <li><a href="#63-api">6.3/ API</a></li>
+        <li><a href="#64-web---pages">6.4/ WEB - Pages</a></li>
+        <li><a href="#65web---js">6.5WEB - JS</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-règles-de-développement">7/ Règles de développement</a>
+      <ul>
+        <li><a href="#71-langue">7.1/ Langue</a></li>
+        <li><a href="#72-nommage">7.2/ Nommage</a></li>
+        <li><a href="#73-mise-en-forme-des-sources">7.3/ Mise en forme des sources</a></li>
+        <li><a href="#74-hql">7.4/ HQL</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-processus-de-développement">8/ Processus de développement</a>
+      <ul>
+        <li><a href="#81-gestion-de-configuration-logicielle-gcl">8.1/ Gestion de configuration logicielle (GCL)</a></li>
+        <li><a href="#82-commit">8.2/ Commit</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-industrialisation">9/ Industrialisation</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
-
-
-
-
-
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-              <div>
-                <div id="top-bar">
-                
-                
-                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span id="sidebar-toggle-span">
-                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                  
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
-                  <span class="links">
-                 
-                 
-                    
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>Guillaume TALBOT</a> > <a href='/mesprojets/'>Mes projets</a> > Mariage - Guide du développeur
-          
-         
-          
-         
-          
-        
-                 
-                  </span>
                 </div>
-                
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#gestion-de-projet">Gestion de projet</a></li>
-<li><a href="#exigences">Exigences</a>
-<ul>
-<li>
-<ul>
-<li><a href="#métiers">métiers</a></li>
-<li><a href="#techniques">techniques</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#environnement">Environnement</a></li>
-<li><a href="#architecture-technique">Architecture technique</a></li>
-<li><a href="#tests">Tests</a>
-<ul>
-<li>
-<ul>
-<li><a href="#que-tester">Que tester</a></li>
-<li><a href="#comment-tester">Comment tester</a></li>
-<li><a href="#avec-quels-outils">Avec quels outils</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#règles-de-conception">Règles de conception</a>
-<ul>
-<li>
-<ul>
-<li><a href="#persistance">Persistance</a></li>
-<li><a href="#service">Service</a></li>
-<li><a href="#api">API</a></li>
-<li><a href="#web-pages">WEB - Pages</a></li>
-<li><a href="#web-js">WEB - JS</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#règles-de-développement">Règles de développement</a>
-<ul>
-<li>
-<ul>
-<li><a href="#langue">Langue</a></li>
-<li><a href="#nommage">Nommage</a></li>
-<li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
-<li><a href="#hql">HQL</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#processus-de-développement">Processus de développement</a>
-<ul>
-<li>
-<ul>
-<li><a href="#gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle (GCL)</a></li>
-<li><a href="#commit">Commit</a></li>
-<li><a href="#industrialisation">Industrialisation</a>
-<ul>
-<li><a href="#outils">Outils</a></li>
-<li><a href="#processus">Processus</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
-            
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesprojets/index.html"><span itemprop="name">Mes projets</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Mariage - Guide du développeur</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesprojets/mariage-guidededev/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesprojets/bulletin-guidededev/index.html" title="Bulletin NG - Guide du développeur (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesprojets/applicationblanche/index.html" title="Application Blanche (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesprojets" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
 
-        
-        <div id="body-inner">
-          
-            <h1>Mariage - Guide du développeur</h1>
-          
+<h1 id="mariage---guide-du-développeur">Mariage - Guide du développeur</h1>
 
-        
-
-
-
-
-<p>Cette page est un court guide du développeur (<a href="/mesidees/10-guidedudev/">ma définition du guide du développeur</a>) pour mon projet <a href="https://github.com/talbotgui/mariage">Mariage</a>.</p>
-
-<p><strong>Sommaire</strong> :</p>
-
-<ul>
-<li><a href="#gestion-de-projet">Gestion de projet</a></li>
-<li><a href="#exigences">Exigences</a>
-
-<ul>
-<li><a href="#métiers">Exigences métiers</a></li>
-<li><a href="#techniques">Exigences techniques</a></li>
-</ul></li>
-<li><a href="#environnement">Environnement</a></li>
-<li><a href="#architecture-technique">Architecture technique</a></li>
-<li><a href="#tests">Tests</a>
-
-<ul>
-<li><a href="#que-tester">Que tester</a></li>
-<li><a href="#comment-tester">Comment tester</a></li>
-<li><a href="#avec-quels-outils">Avec quels outils</a></li>
-</ul></li>
-<li><a href="#règles-de-conception">Règles de conception</a>
-
-<ul>
-<li><a href="#persistance">Persistance</a></li>
-<li><a href="#service">Service</a></li>
-<li><a href="#api">API</a></li>
-<li><a href="#web-pages">WEB - Pages</a></li>
-<li><a href="#web-js">WEB - JS</a></li>
-</ul></li>
-<li><a href="#règles-de-développement">Règles de développement</a>
-
-<ul>
-<li><a href="#langue">Langue</a></li>
-<li><a href="#nommage">Nommage</a></li>
-<li><a href="#mise-en-forme-des-sources">Mise en forme des sources</a></li>
-<li><a href="#hql">HQL</a></li>
-</ul></li>
-<li><a href="#processus-de-développement">Processus de développement</a>
-
-<ul>
-<li><a href="#gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle</a></li>
-<li><a href="#commit">Commit</a></li>
-<li><a href="#industrialisation">Industrialisation</a></li>
-</ul></li>
-</ul>
-
-<h2 id="gestion-de-projet">Gestion de projet</h2>
-
+<p>Cette page est un court guide du développeur (<a href="/mesidees/10-guidedudev/index.html">ma définition du guide du développeur</a>) pour mon projet <a href="https://github.com/talbotgui/mariage" rel="external" target="_blank">Mariage</a>.</p>
+<h2 id="1-gestion-de-projet">1/ Gestion de projet</h2>
 <p>Un suivi minimaliste des tâches est réalisés dans le fichier &ldquo;backlog.txt&rdquo; placé à la racine de la branche &ldquo;master&rdquo;. Cette backlog est alimentée en fonction des besoins métiers exprimés ou des opportunités techniques.</p>
-
-<h2 id="exigences">Exigences</h2>
-
+<h2 id="2-exigences">2/ Exigences</h2>
 <p>Les exigences sont actuellement fournies par la principale utilisatrice. Aucune formalisation n&rsquo;existe en dehors des quelques lignes ci-dessous.</p>
-
-<h4 id="métiers">métiers</h4>
-
+<h3 id="21--métiers">2.1/  métiers</h3>
 <p>Du point de vue métier, le besoin est assez simple : gérer les données d&rsquo;un mariage. Cela comprend :</p>
-
 <ul>
 <li>la gestion de
-
 <ul>
 <li>la liste des invités,</li>
 <li>la liste des différents courriers,</li>
-</ul></li>
+</ul>
+</li>
 <li>le suivi de
-
 <ul>
 <li>l&rsquo;envoi des courriers,</li>
 <li>la réception des réponses,</li>
-</ul></li>
+</ul>
+</li>
 <li>la planification des événements,</li>
 <li>le calcul des statistiques nécessaires aux mariés et prestataires,</li>
 <li>le partage de ces informations avec les proches participants à l&rsquo;organisation (parents, témoins, &hellip;)</li>
 </ul>
-
 <p>Il existe déjà des sites pour faire tout ça. Mais aucun qui nous correspondait exactement. Et tous, systématiquement, sont envahis de publicité (<em>donc, en bon geek, j&rsquo;ai fait le mien</em>).</p>
-
-<h4 id="techniques">techniques</h4>
-
+<h3 id="22-techniques">2.2/ techniques</h3>
 <p>Du point de vue technique, l&rsquo;application doit être</p>
-
 <ul>
 <li>facilement accessible sur tout support : PC, tablette, téléphone ;</li>
-<li>disponible à tout moment : <sup>24</sup>&frasl;<sub>7</sub> sans contrainte temporelle de redémarrage en cas d&rsquo;arrêt ;</li>
+<li>disponible à tout moment : 24/ 7 sans contrainte temporelle de redémarrage en cas d&rsquo;arrêt ;</li>
 <li>évolutive : chaque nouveau besoin doit être facilement réalisé pour fournir le service rapidement à l&rsquo;utilisatrice principale ;</li>
 <li>fiable (point primordiale) : l&rsquo;application ne doit pas subir de régressions intempestives portant atteinte à son utilisabilité ou à la fiabilité de ses données.</li>
 </ul>
-
-<h2 id="environnement">Environnement</h2>
-
+<h2 id="3-environnement">3/ Environnement</h2>
 <p>Ce projet ne compte pas tous les environnements d&rsquo;un projet classique (comprendre &ldquo;projet d&rsquo;une ESN pour un de ses clients&rdquo;). Comme l&rsquo;équipe &ldquo;projet&rdquo; ne comprend qu&rsquo;un seul membre et qu&rsquo;il n&rsquo;existe qu&rsquo;une seule version de l&rsquo;application (pour le moment en tout cas), il n&rsquo;est pas nécessaire de prévoir plus de 3 environnements (un projet classique en comprend au moins 6) :</p>
-
 <ul>
 <li>Développement &amp; tests :
-
 <ul>
 <li>pourquoi : il faut bien coder l&rsquo;application avant de pouvoir l&rsquo;utiliser.</li>
-<li>caractéristiques : poste Windows avec un Eclipse (Néon ou supérieur) avec le plugin HibernateTools (cf. <a href="/mesidees/04-consolehibernate/">billet dédié</a>)</li>
+<li>caractéristiques : poste Windows avec un Eclipse (Néon ou supérieur) avec le plugin HibernateTools (cf. <a href="/mesidees/04-consolehibernate/index.html">billet dédié</a>)</li>
 <li>différences notables avec l&rsquo;environnement de production : OS Windows vs Linux en production, pas de reverse-proxy HTTPd ni de HTTPs, pas de manipulation du cache par les entêtes HTTP</li>
-</ul></li>
+</ul>
+</li>
 <li>Intégration :
-
 <ul>
 <li>pourquoi : aucun développeur, même tout seul, n&rsquo;est infaillible. De temps en temps, une régression peut être introduite ou un défaut de qualité peut échapper à notre vigilance. L&rsquo;intégration continue est mon garde-fou et nécessite un environnement dédié.</li>
 <li>caractéristiques : sur la même VM que la production. Donc l&rsquo;application démarrée durant les tests d&rsquo;intégration doit démarrer sur un autre port que celle en production.</li>
 <li>différences notables avec l&rsquo;environnement de production : pas de reverse-proxy HTTPd ni de HTTPs, pas de manipulation du cache par les entêtes HTTP</li>
-</ul></li>
+</ul>
+</li>
 <li>Production :
-
 <ul>
 <li>pourquoi : pour faire fonctionner l&rsquo;application sur un serveur stable, suffisamment disponible pour répondre aux exigences (cf. ci-dessus) et exposé à Internet</li>
 <li>caractéristiques : Linux maintenu à jour régulièrement sur une VM hébergée par Amazon (EC2)</li>
-</ul></li>
 </ul>
-
-<h2 id="architecture-technique">Architecture technique</h2>
-
+</li>
+</ul>
+<h2 id="4-architecture-technique">4/ Architecture technique</h2>
 <p>En bon développeur Java, l&rsquo;application se base sur Hibernate et Spring. Pour ne pas avoir à installer de composant tiers sur les environnements et parce que les exigences le permettent, l&rsquo;application est autoporteuse avec SpringBoot. Ce dernier démarre un serveur WEB (Tomcat) et une base de données (HSQL) automatiquement.</p>
-
 <p>Pour réduire les bugs, rien de tel que de réduire le volume de code. Donc SpringData pour la persistance. Ce qui impose l&rsquo;usage de JPA à la place de l&rsquo;API Hibernate native.</p>
-
 <p>L&rsquo;exposition des services en API REST avec SpringMVC (pour continuer avec Spring et se faciliter l&rsquo;intégration des composants).</p>
-
 <p>L&rsquo;application WEB est assez simple (voire simpliste) et se compose principalement de tableaux de données chargées depuis l&rsquo;API REST. Une application Angular eut été possible mais, vu le besoin, une simple application avec JQuery, JQueryUI et JQxgrid a été retenue.</p>
-
 <p>Les tests sont cruciaux dans le cadre de cette application. Donc, sans aller jusqu&rsquo;à une couverture de code de 100%/100% (en ligne / en branche), toutes les fonctionnalités doivent être testées sur toutes les couches (cf. paragraphe dédié aux tests).</p>
-
-<h2 id="tests">Tests</h2>
-
-<h4 id="que-tester">Que tester</h4>
-
+<h2 id="5-tests">5/ Tests</h2>
+<h3 id="51-que-tester">5.1/ Que tester</h3>
 <p>Les cas nominaux de tous les composants doivent être testés ainsi que les cas d&rsquo;erreur principaux.</p>
-
-<p>Aucune exigence n&rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (hors getter, setter, constructeur, code de <a href="/mesidees/11-programmationdefensive/">programmation défensive</a>, &hellip;)</p>
-
-<h4 id="comment-tester">Comment tester</h4>
-
+<p>Aucune exigence n&rsquo;impose une couverture de code particulière mais 80% est souhaitable pour tous les composants contenant de la logique (hors getter, setter, constructeur, code de <a href="/mesidees/11-programmationdefensive/index.html">programmation défensive</a>, &hellip;)</p>
+<h3 id="52-comment-tester">5.2/ Comment tester</h3>
 <p><strong>Les composants métiers</strong> (Service, Repostitory et Entité) doivent être testés avec des tests d&rsquo;intégration. Il n&rsquo;est pas concevable de tester un système entièrement basé sur la notion de transaction et de requêtes SQL (Spring, Hibernate et la BDD) sans une connexion à une base de données et sans activer les commits.</p>
-
-<p>Si certains composants métiers présentent une grande complexité, alors un <a href="/mesidees/03-testsdedeveloppement/">test de granularité unitaire</a> est tout à fait envisageable. Un tel composant n&rsquo;existe pas pour le moment.</p>
-
-<p><strong>Les contrôleurs REST</strong> doivent être testés unitairement. Ces composants ne sont pas transactionnels et les services sont testés par ailleurs. Mais, pour bien vérifier le paramétrage et le code, il est nécessaire de réaliser le test des contrôleurs en démarrant un serveur WEB (l&rsquo;adjectif &ldquo;unitaire&rdquo; utilisé plus tôt est donc discutable - cf. <a href="/mesidees/03-testsdedeveloppement/">test de développement</a>).</p>
-
+<p>Si certains composants métiers présentent une grande complexité, alors un <a href="/mesidees/03-testsdedeveloppement/index.html">test de granularité unitaire</a> est tout à fait envisageable. Un tel composant n&rsquo;existe pas pour le moment.</p>
+<p><strong>Les contrôleurs REST</strong> doivent être testés unitairement. Ces composants ne sont pas transactionnels et les services sont testés par ailleurs. Mais, pour bien vérifier le paramétrage et le code, il est nécessaire de réaliser le test des contrôleurs en démarrant un serveur WEB (l&rsquo;adjectif &ldquo;unitaire&rdquo; utilisé plus tôt est donc discutable - cf. <a href="/mesidees/03-testsdedeveloppement/index.html">test de développement</a>).</p>
 <p><strong>Les écrans</strong> de l&rsquo;application sont testés en mode &ldquo;bout en bout&rdquo;. Selenium est utilisé pour piloter le navigateur et un jeu de données est utilisé pour initialiser le test. ATTENTION : les tests Selenium ne sont donc pas tous indépendants les uns des autres. Ce n&rsquo;est pas une bonne pratique mais faire autrement avec un test de bout en bout est trop coûteux.</p>
-
-<h4 id="avec-quels-outils">Avec quels outils</h4>
-
+<h3 id="53-avec-quels-outils">5.3/ Avec quels outils</h3>
 <p><strong>JUnit</strong> et <strong>TestNG</strong> sont tous deux des exécuteurs de tests. JUnit est utilisé dans les tests des composants métiers. TestNG, étant plus pratique à utiliser avec Mockito, est utilisé pour l&rsquo;exécution des tests des contrôleurs.</p>
-
 <p><strong>Mockito</strong> est donc utilisé pour bouchonner les services métiers dans les tests des contrôleurs.</p>
-
 <p>La classe utilitaire <strong>JdbcTemplate</strong> (fournie par Spring-jdbc) peut être utilisée dans les tests métiers afin d&rsquo;exécuter simplement des requêtes SQL en base de données pour valider le contenu.</p>
-
 <p>La classe utilitaire <strong>RestTemplate</strong> (fournie par Spring-web) peut être utilisée dans les tests des contrôleurs pour réaliser les appels HTTP simplement.</p>
-
 <p><strong>Selenium</strong> est une API très riche. La classe MyDriver rassemble les opérations usuelles utiles aux tests (il est tout à fait possible de l&rsquo;enrichir).
 Les sélecteurs à utiliser dans les tests Selenium sont tous rassemblés dans la classe Selectors. Tous les sélecteurs doivent être rassemblés dans cette classe.
 Cette classe contient une hiérarchie de sous-classes structurée ainsi : NomDeLaPage / TypeDelements / selecteurElement. Exemple : Index.Button.CONFIRMER_SUPPRESSION
 Toute modification d&rsquo;une page HTML doit entraîner l&rsquo;enrichissement de la classe Selectors avec le sélecteur permettant de sélectionner les éléments ajoutés/modifiés/supprimés.</p>
-
-<h2 id="règles-de-conception">Règles de conception</h2>
-
-<h4 id="persistance">Persistance</h4>
-
+<h2 id="6-règles-de-conception">6/ Règles de conception</h2>
+<h3 id="61-persistance">6.1/ Persistance</h3>
 <p>Toute requête de recherche sans paramètre optionnel doit être codée dans un repository SpringData.</p>
-
-<h4 id="service">Service</h4>
-
+<h3 id="62-service">6.2/ Service</h3>
 <p>La gestion des transactions et des erreurs se traite au niveau des services qui sont les points d&rsquo;entrée et de sortie des transactions.</p>
-
-<h4 id="api">API</h4>
-
+<h3 id="63-api">6.3/ API</h3>
 <p>Les services ne sont exposés via l&rsquo;API que s&rsquo;ils sont utilisés par l&rsquo;IHM.
 La validation des paramètres d&rsquo;entrée se fait dans le &ldquo;contrôleur&rdquo;.
 La transformation des entités en DTO se fait dans le &ldquo;contrôleur&rdquo; (dont c&rsquo;est la responsabilité).</p>
-
-<h4 id="web-pages">WEB - Pages</h4>
-
+<h3 id="64-web---pages">6.4/ WEB - Pages</h3>
 <p>Les tableaux de données sont réalisés avec le plugin JQxGrid.
 Dans un premier temps, les filtres, paginations et tris sont réalisés du coté client (par le framework).
 Une fois l&rsquo;usage courant du tableau défini, les bons filtres et tris (et donc aussi la pagination) doivent être implémentés coté serveur.</p>
-
-<h4 id="web-js">WEB - JS</h4>
-
+<h3 id="65web---js">6.5WEB - JS</h3>
 <p>Aucun script ne doit être présent dans la page HTML. A chaque page est associé un script. Les éléments communs à toutes les pages sont dans le script <em>common.js</em>.</p>
-
-<h2 id="règles-de-développement">Règles de développement</h2>
-
+<h2 id="7-règles-de-développement">7/ Règles de développement</h2>
 <p>Les règles ci-dessous doivent être appliquées par tout développeur souhaitant participer à ce projet (non négociable). <strong>Par contre, il est toujours possible de discuter de la modification d&rsquo;une règle.</strong></p>
-
-<h4 id="langue">Langue</h4>
-
+<h3 id="71-langue">7.1/ Langue</h3>
 <p>Les entités, les attributs et les méthodes sont nommés en français.
 Les préfixes, suffixes et concepts inhérents au langage reste en anglais (get, set, is, iterator, &hellip;)</p>
-
-<h4 id="nommage">Nommage</h4>
-
+<h3 id="72-nommage">7.2/ Nommage</h3>
 <p>Les composants applicatifs sont suffixés en fonction de leur type :</p>
-
 <ul>
 <li>&ldquo;Application&rdquo; pour les configurations SpringBoot,</li>
 <li>&ldquo;Exception&rdquo; pour les exceptions,</li>
@@ -1126,85 +296,65 @@ Les préfixes, suffixes et concepts inhérents au langage reste en anglais (get,
 <li>&ldquo;contrôleur&rdquo; pour l&rsquo;exposition de service en REST</li>
 <li>et &ldquo;Test&rdquo; pour tous les tests</li>
 </ul>
-
 <p>Les entités métier et les classes utilitaires ne sont pas suffixées mais doivent avoir des noms parlant (l&rsquo;usage du nom d&rsquo;un pattern est utile pour décrire l&rsquo;usage/l&rsquo;utilité du composant)
 Les classes implémentant une interface sont suffixées par &ldquo;IMPL&rdquo;
 Les noms de méthode commence par un verbe à l&rsquo;infinitif</p>
-
-<h4 id="mise-en-forme-des-sources">Mise en forme des sources</h4>
-
-<p>L&rsquo;usage des Save Actions d&rsquo;Eclipse est obligatoire pour conserver l&rsquo;homogénéité du code (cf. [petit tour d&rsquo;Eclipse]())</p>
-
+<h3 id="73-mise-en-forme-des-sources">7.3/ Mise en forme des sources</h3>
+<p>L&rsquo;usage des Save Actions d&rsquo;Eclipse est obligatoire pour conserver l&rsquo;homogénéité du code (cf. <a href="/mesprojets/mariage-guidededev/index.html">petit tour d&rsquo;Eclipse</a>)</p>
 <p>Le formatage des sources est celui par défaut dans Eclipse (version Néon) : 120 caractères par ligne (80 pour les commentaires) et indentation par tabulation.
 Les membres sont triés systématiquement.
 Les lignes ne contenant que des tabulations et/ou des espaces sont vidées.
 Le mot clef &ldquo;final&rdquo; est placé sur toutes les variables affectées une seule fois et sur les paramètres.
 Le mot clef &ldquo;this&rdquo; est utilisé systématiquement.
 Les cast inutiles sont supprimés.</p>
-
-<h4 id="hql">HQL</h4>
-
+<h3 id="74-hql">7.4/ HQL</h3>
 <p>Les requêtes HQL simples peuvent être écrites sur une seule ligne. Les plus complexes sont formatées pour être plus lisible. L&rsquo;usage des commentaires &ldquo;//&rdquo; en fin de ligne est autorisé pour forcer Eclipse à conserver à la ligne la chaîne de caractère à concaténer.</p>
-
 <p>Toujours définir par défaut l&rsquo;attribut READ_ONLY à <em>true</em> sur une méthode chargeant des entités persistantes. Seules les entités nécessitant d&rsquo;être &ldquo;managed&rdquo; doivent l&rsquo;être (cf. documentation hibernate sur le cycle de vie des objets dans une session)
 Ne jamais créer un lien entre deux entités en instanciant une entité et ne définissant que son ID. Toujours utiliser <em>EntityManager.getReference</em>
 La gestion des transactions est faite via les annotations Spring. Les exceptions du projet sont <em>runtime</em> et déclenchent donc le rollback. Seuls les composants de type &ldquo;Service&rdquo; et &ldquo;DAO&rdquo; peuvent être transactionnels (par les &ldquo;contrôleur&rdquo;)</p>
-
-<h2 id="processus-de-développement">Processus de développement</h2>
-
-<h4 id="gestion-de-configuration-logicielle-gcl">Gestion de configuration logicielle (GCL)</h4>
-
+<h2 id="8-processus-de-développement">8/ Processus de développement</h2>
+<h3 id="81-gestion-de-configuration-logicielle-gcl">8.1/ Gestion de configuration logicielle (GCL)</h3>
 <ul>
 <li>Que comprend la GCL :
-
 <ul>
 <li>Les sources applicatives et de test sont dans un repository GIT ;</li>
 <li>Le présent &ldquo;guide du développeur&rdquo; est lui aussi dans un repository GIT mais séparé (pas de gestion de version cohérente nécessaire) ;</li>
 <li>Le bug tracker a utilisé est celui du repository GitHub ;</li>
 <li>Les plans de test &ldquo;métier&rdquo; ne sont pas formalisés. Mais une partie d&rsquo;entre eux sont automatisés avec Selenium.</li>
-</ul></li>
+</ul>
+</li>
 <li>La gestion de version :
-
 <ul>
 <li>une seule version existe pour le moment (branche &lsquo;master&rsquo;).</li>
 <li>si des POC sont réalisés, ils doivent l&rsquo;être dans une branche dédiée</li>
 <li>aucun TAG n&rsquo;est posé pour le moment (c&rsquo;est une chose à faire prochainement)</li>
-</ul></li>
 </ul>
-
-<h4 id="commit">Commit</h4>
-
+</li>
+</ul>
+<h3 id="82-commit">8.2/ Commit</h3>
 <p>Les messages de commit doivent être explicites. Toute nouvelle fonctionnalité doit être commitée avec un message commençant par &ldquo;[FEATURE]&rdquo; (afin que le commit soit correctement affiché dans la page <em>releaseNote</em> de l&rsquo;application).</p>
-
-<h4 id="industrialisation">Industrialisation</h4>
-
-<h5 id="outils">Outils</h5>
-
+<h2 id="9-industrialisation">9/ Industrialisation</h2>
+<h4 id="91-outils">9.1/ Outils</h4>
 <p>La gestion des exigences est totalement informelle. Ce qui ne pose pas de problème pour ce projet car le délai entre l&rsquo;expression du besoin et la mise en production est court et qu&rsquo;aucune contractualisation n&rsquo;existe (ni sur les moyens ni sur le périmètre métier).
 GitHub héberge une partie des outils du projet : repository GIT &amp; guide du développeur, &hellip;
 L&rsquo;outil d&rsquo;intégration continue utilisé est Jenkins (hébergé sur un serveur EC2).
 La qualimétrie est réalisée avec Sonar (hébergée sur le site officiel en ligne).
 Les relectures de code sont possibles avec GitLab mais ne sont pas utilisées actuellement (un seul développeur pour le moment)</p>
-
-<h5 id="processus">Processus</h5>
-
-<p>Quitte à faire un petit projet sympa, autant utiliser les outils correctement. Donc le processus de développement (même s&rsquo;il est minimal) est piloté par un pipeline (cf. <a href="/mesidees/13-pipeline/">pipeline</a>).
+<h4 id="92-processus">9.2/ Processus</h4>
+<p>Quitte à faire un petit projet sympa, autant utiliser les outils correctement. Donc le processus de développement (même s&rsquo;il est minimal) est piloté par un pipeline (cf. <a href="/mesidees/13-pipeline/index.html">pipeline</a>).
 Le pipeline est lui aussi en GCL : dans le <em>JenkinsFile</em>
 Le pipeline commence au commit du code et enchaîne les étapes suivantes : compilation, tests métiers, tests des contrôleurs, packaging, tests IHM, qualimétrie, promotion manuelle et mise en production</p>
-
 <p>Sujets non traités ici (le projet est terminé, ce guide n&rsquo;évoluera plus) :</p>
-
 <ul>
 <li>conception
-
 <ul>
 <li>quels sont les outils de conception et/ou de modélisation ?</li>
 <li>quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?</li>
 <li>règles de conception (programmation défensive, @designByContrat, modularité, &hellip;)</li>
 <li>jeu de données de test</li>
-</ul></li>
+</ul>
+</li>
 <li>développement
-
 <ul>
 <li>liste des frameworks disponibles, leur usage et le pointeur sur leur documentation</li>
 <li>qualimétrie obligatoire avec le site &ldquo;online&rdquo; (avec sa configuration imposée par la plateforme d&rsquo;où les violations non corrigée qui ne le seront pas)</li>
@@ -1213,645 +363,105 @@ Le pipeline commence au commit du code et enchaîne les étapes suivantes : comp
 <li>méthode = verbe à l&rsquo;infinitif</li>
 <li>largeur 120 (on a tous des résolutions d&rsquo;écran suffisante)</li>
 <li>&hellip;</li>
-</ul></li>
+</ul>
+</li>
 <li>industrialisation :
-
 <ul>
 <li>aucune installation de poste automatique car seul l&rsquo;IDE est nécessaire et l&rsquo;application est autoporteuse</li>
 <li>IC = jenkins toujours à jour avec un pipelineAsCode (lien vers le blog sur le sujet)</li>
 <li>pipeline = git/compile/TU/TI/TA/qualimétrie/promotion/production</li>
 <li>à quand un second développeur et la mise en place des pullrequest et des revues de code ?</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
 
-<footer class=" footline" >
-	
-</footer>
-
-
-        
-        </div> 
-        
-
+        </div>
       </div>
-
-    <div id="navigation">
-        
-        
-        
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-        
-        
-
-
-	 
-	 
-		
-			<a class="nav nav-prev" href="/mesprojets/bulletin-guidededev/" title="Bulletin NG - Guide du développeur"> <i class="fa fa-chevron-left"></i></a>
-		
-		
-			<a class="nav nav-next" href="/mesprojets/applicationblanche/" title="Application Blanche" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-		
-	
-    </div>
-
-    </section>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/mesidees/index.html"><a class="padding" href="/mesidees/index.html">Mes idées</a><ul id="R-subsections-f33312b94d7209735d86dea9324bf52f" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/mesprojets/index.html"><a class="padding" href="/mesprojets/index.html">Mes projets</a><ul id="R-subsections-b42d1fd85e522adc838a3f3f768726d4" class="collapsible-menu">
+            <li class="" data-nav-id="/mesprojets/bulletin-guidededev/index.html"><a class="padding" href="/mesprojets/bulletin-guidededev/index.html">Bulletin NG - Guide du développeur</a></li>
+            <li class="active " data-nav-id="/mesprojets/mariage-guidededev/index.html"><a class="padding" href="/mesprojets/mariage-guidededev/index.html">Mariage - Guide du développeur</a></li>
+            <li class="" data-nav-id="/mesprojets/applicationblanche/index.html"><a class="padding" href="/mesprojets/applicationblanche/index.html">Application Blanche</a></li></ul></li>
+            <li class="" data-nav-id="/moncv/index.html"><a class="padding" href="/moncv/index.html">Mon CV</a><ul id="R-subsections-8f33c05f2efc4d68dacb20a930b3b91c" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
     
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>
-    <script src="/js/clipboard.min.js?1546436213"></script>
-    <script src="/js/perfect-scrollbar.min.js?1546436213"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1546436213"></script>
-    <script src="/js/jquery.sticky.js?1546436213"></script>
-    <script src="/js/featherlight.min.js?1546436213"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1546436213"></script>
-    <script src="/js/highlight.pack.js?1546436213"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1546436213"></script>
-    <script src="/js/learn.js?1546436213"></script>
-    <script src="/js/hugo-learn.js?1546436213"></script>
-
-    <link href="/mermaid/mermaid.css?1546436213" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1546436213"></script>
-    <script>
-        mermaid.initialize({ startOnLoad: true });
-    </script>
-    
-
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/mesprojets/mariage-guidededev/index.html" lang="fr-fr" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-blue" value="blue" selected>Blue</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
   </body>
 </html>
-

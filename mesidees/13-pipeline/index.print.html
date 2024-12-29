@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Pipeline">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pipeline :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Pipeline">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/13-pipeline/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Pipeline :: Guillaume TALBOT">
+    <meta property="og:description" content="Pipeline">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-28T15:56:52+01:00">
+    <meta itemprop="name" content="Pipeline :: Guillaume TALBOT">
+    <meta itemprop="description" content="Pipeline">
+    <meta itemprop="dateModified" content="2024-12-28T15:56:52+01:00">
+    <meta itemprop="wordCount" content="808">
+    <title>Pipeline :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/13-pipeline/index.html" rel="canonical" type="text/html" title="Pipeline :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-print.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/13-pipeline/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#définition-de-lintégration-continue-ic-dans-la-suite-du-chapitre">Définition de l&rsquo;Intégration Continue (IC dans la suite du chapitre)</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#les-actions-à-faire-réaliser-par-lic">Les actions à faire réaliser par l&rsquo;IC</a></li>
+    <li><a href="#comment-aller-un-tout-petit-peu-plus-loin">Comment aller un tout petit peu plus loin</a></li>
+    <li><a href="#définition-du-continuous-delivery">Définition du Continuous Delivery</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Pipeline</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/13-pipeline/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/12-eclipse/index.html" title="Eclipse (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/14-qualimetrie/index.html" title="Qualimétrie (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="pipeline">Pipeline</h1>
+
+<ul>
+<li><a href="/mesidees/13-pipeline/index.html#définition-de-l-intégration-continue-ic-dans-la-suite-du-chapitre">Définition de l&rsquo;intégration continue</a></li>
+<li><a href="/mesidees/13-pipeline/index.html#les-actions-à-faire-réaliser-par-l-ic">Les actions à faire réaliser par l&rsquo;IC</a></li>
+<li><a href="/mesidees/13-pipeline/index.html#comment-aller-un-tout-petit-peu-plus-loin">Comment aller un tout petit peu plus loin</a></li>
+<li><a href="/mesidees/13-pipeline/index.html#définition-du-continuous-delivery">Définition du Continuous Delivery</a></li>
+</ul>
+<h2 id="définition-de-lintégration-continue-ic-dans-la-suite-du-chapitre">Définition de l&rsquo;Intégration Continue (IC dans la suite du chapitre)</h2>
+<h4 id="en-une-seule-phrase">En une seule phrase</h4>
+<p><strong>L&rsquo;intégration continue a pour objectif de valider que le code actuellement présent dans le repository de source est valide.</strong></p>
+<p>La fréquence de la validation et même la définition de cette validation sont très variables d&rsquo;un projet à un autre :</p>
+<ul>
+<li>la fréquence peut être :
+<ul>
+<li>1 fois par jour (minimum du minimum)</li>
+<li>2 fois par jour (à 13h et à 23h par exemple)</li>
+<li>quelques fois par jour (toutes les 2 heures par exemple)</li>
+<li>à chaque commit (solution optimum)</li>
+</ul>
+</li>
+<li>la validation peut comprendre :
+<ul>
+<li>la compilation et le packaging de la solution (minimum du minimum)</li>
+<li>l&rsquo;exécution des tests (unitaire &amp; de développement &amp; intégration &amp; bout en bout &amp; non régression)</li>
+<li>l&rsquo;analyse de la qualité du code (Sonar par exemple)</li>
+<li>les tests de performance (non pas pour valider les exigences de performance ou robustesse mais pour valider que les temps d&rsquo;exécution des fonctionnalités importantes ne se dégradent pas pour un jeu de données et une plateforme donnée)</li>
+<li>les tests de sécurité (lister les failles potentielles à partir des dépendances de la solution)</li>
+</ul>
+</li>
+</ul>
+<h4 id="pourquoi--pour-qui-">Pourquoi ? Pour qui ?</h4>
+<p>L&rsquo;erreur est humaine. Un développeur peut, par inadvertance et très rarement (bien entendu), pousser sur le repository du code invalide (qui ne compile pas ou qui casse des tests).</p>
+<p>A cet instant-là, le projet n&rsquo;est plus en mesure de livrer la solution. Ce qui est très gênant pour les projets en MCO dont le délai de livraison d&rsquo;un correctif n&rsquo;est que de quelques heures. Et surtout les autres développeurs de l&rsquo;équipe ne peuvent plus récupérer les modifications poussées sur le repository.</p>
+<p>Il faut donc corriger cette situation au plus vite. Mais encore faut-il détecter le problème. <strong>L&rsquo;Intégration Continue est là pour ça !!</strong></p>
+<h2 id="les-actions-à-faire-réaliser-par-lic">Les actions à faire réaliser par l&rsquo;IC</h2>
+<p>Si l&rsquo;IC est capable d&rsquo;exécuter des tests d&rsquo;intégration voire des tests de bout en bout, elle est donc capable de déployer la solution sur un environnement. Pourquoi ne pas utiliser ce script/outil pour mettre à disposition des testeurs un bouton déclenchant un déploiement de la dernière version du code valide sur l&rsquo;environnement de test de leur choix ?</p>
+<p>Si l&rsquo;IC peut déclencher n&rsquo;importe quel script/outil, pourquoi ne pas automatiser les tâches récurrentes et pénibles comme le déplacement des livrables sur le serveur FTP du client ou l&rsquo;extraction de la liste des bugs corrigés dans une version de la solution ou extraire la liste des commits ou même générer un bon de livraison ?</p>
+<h2 id="comment-aller-un-tout-petit-peu-plus-loin">Comment aller un tout petit peu plus loin</h2>
+<p>Bon, arrivé à ce point, qu&rsquo;a-t-on :</p>
+<ul>
+<li>pour les développeurs, l&rsquo;IC vérifie régulièrement la validité du code</li>
+<li>pour les testeurs, l&rsquo;IC déploie une version de la solution sur l&rsquo;environnement de leur choix</li>
+<li>pour le responsable de la livraison, l&rsquo;IC prépare tous les livrables (ou une grande partie)</li>
+</ul>
+<p>Mais les analystes fonctionnels, les développeurs et les testeurs ont des interactions plus importantes que ça !</p>
+<ul>
+<li>un analyste ne peut-il pas informer les développeurs que son(ses) exigence(s) sont prêtes à être développées (cf. Definition Of Ready) ?</li>
+<li>un développeur ne peut-il pas prévenir un autre développeur que son code est prêt à être relu/revu ?</li>
+<li>un relecteur ne peut-il pas informer un testeur qu&rsquo;une (ou plusieurs) exigence(s) est (sont) terminées (cf. Definition Of Done) et prête(s) à être qualifiée(s) ?</li>
+<li>un testeur ne peut-il informer le responsable des versions qu&rsquo;une (ou plusieurs) exigence(s) est(sont) testée(s) ?</li>
+</ul>
+<p>Et pourtant, le référentiel des exigences existe certainement (HP ALM par exemple), le référentiel des tests existe aussi (encore HP ALM par exemple) et l&rsquo;outil de revu/relecture de code est installé. Il est certainement possible de lier tout ce petit monde.</p>
+<h2 id="définition-du-continuous-delivery">Définition du Continuous Delivery</h2>
+<p>Une fois tous les membres de l&rsquo;équipe outillés, il est possible de décrire le processus de production de l&rsquo;équipe par un tuyau dans lequel entre une (ou un petit groupe d&rsquo;) exigence(s) qui enchaîneront une série d&rsquo;étapes jusqu&rsquo;à être terminées.</p>
+<p>Ce processus dépend totalement de l&rsquo;équipe mais commence toujours avec une exigence (ou un petit paquet). Donc la première étape est toujours la description de cette (ces) exigence(s). Peuvent suivre, la conception détaillée, le développement, la qualification interne, la recette client, le déploiement en pré-production puis celui en production.</p>
+<p>Certaines équipes vont y ajouter de la relecture de code ou des revues de conception ou arrêter leur pipeline à la livraison de leur client (s&rsquo;ils ne gèrent pas ni la recette ni la production).</p>
+<p>Et enfin, chaque exigence ne donnant pas lieu à une mise en production, s&rsquo;ajouteront des étapes conditionnées par une promotion manuelle : une action manuelle qui autorisera une instance du pipeline à avancer.</p>
+<p>Voici un exemple de Pipeline très simple et très singulier : le pipeline de mon projet personnel <a href="/mesprojets/mariage-guidededev/index.html">&lsquo;Mariage&rsquo;</a>
+<a href="#R-image-c7ead2e41f17a99857f6e66562a60ed8" class="lightbox-link"><img alt="pipeline-jenkinsSimple" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/pipeline-jenkinsSimple.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c7ead2e41f17a99857f6e66562a60ed8"><img alt="pipeline-jenkinsSimple" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/pipeline-jenkinsSimple.png"></a></p>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 28, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Git et les mots de passe">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Git et les mots de passe :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Git et les mots de passe">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/27-transcrypt/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Git et les mots de passe :: Guillaume TALBOT">
+    <meta property="og:description" content="Git et les mots de passe">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="name" content="Git et les mots de passe :: Guillaume TALBOT">
+    <meta itemprop="description" content="Git et les mots de passe">
+    <meta itemprop="dateModified" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="wordCount" content="371">
+    <title>Git et les mots de passe :: Guillaume TALBOT</title>
+    <link href="/mesidees/27-transcrypt/index.print.html" rel="alternate" type="text/html" title="Git et les mots de passe :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-html.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support html" data-url="/mesidees/27-transcrypt/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#résumé">Résumé</a></li>
+        <li><a href="#quest-ce-que-transcrypt-">Qu&rsquo;est-ce que Transcrypt ?</a></li>
+        <li><a href="#par-quoi-commencer-">Par quoi commencer ?</a></li>
+        <li><a href="#pour-initialiser-un-dépot-avec-transcrypt">Pour initialiser un dépot avec Transcrypt</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Git et les mots de passe</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/27-transcrypt/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/26-wordpress/index.html" title="Installer une instance WordPress sur Ubuntu (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/99-trucsalire/index.html" title="Trucs à lire (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="git-et-les-mots-de-passe">Git et les mots de passe</h1>
+
+<h3 id="résumé">Résumé</h3>
+<p>La (grande?) majorité des développeurs utilisent aujourd&rsquo;hui GIT pour sauvegarder et partager leurs développements.
+Tout y est stocké. Et, parfois, même les mots de passe (clefs, secrets, &hellip;) !!</p>
+<p>La solution optimale serait de ne pas les insérer dans le dépôt GIT. Mais cela signifie ne plus les partager avec le reste de l&rsquo;équipe.</p>
+<p>Une autre solution consiste à chiffrer ces informations avant de les partager sur le repository commun sans oublier de les déchiffrer sur le repository local.</p>
+<p>Une solution (parmis d&rsquo;autre) est <a href="https://github.com/elasticdog/transcrypt" rel="external" target="_blank">Transcrypt</a>.</p>
+<h3 id="quest-ce-que-transcrypt-">Qu&rsquo;est-ce que Transcrypt ?</h3>
+<p>Transcrypt est un outil permettant d&rsquo;initialiser le chiffrement de certains fichiers dans un dépôt Git.</p>
+<p>Une fois le dépôt paramétré, Transcrypt n&rsquo;est plus nécessaire et peut être désinstallé.</p>
+<p>La liste des fichiers à chiffrer avant (et déchiffrer après) chaque commit est paramétrée dans le fichier .gitattributes</p>
+<h3 id="par-quoi-commencer-">Par quoi commencer ?</h3>
+<p><em>La toute première chose à faire est de faire disparaître de l&rsquo;historique GIT le fichier contenant des mots de passe !!</em>
+Pour cela, il suffit d&rsquo;exécuter les commandes suivantes :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>git filter-branch -f --tree-filter &#39;rm -f projects/coupeDesMaisons/src/environments/environment.ts&#39; HEAD
+git push --force</code></pre></div>
+<p>/!\ Prendre le temps de tester le chemin du fichier permet de ne pas attendre la longue exécution du script sans qu&rsquo;aucun commit ne soit modifié !</p>
+<h3 id="pour-initialiser-un-dépot-avec-transcrypt">Pour initialiser un dépot avec Transcrypt</h3>
+<ul>
+<li>Installer Transcrypt :
+<ul>
+<li>Dans un répertoire d&rsquo;outillage, exécuter la commande suivante pour récupérer la dernière version de l&rsquo;outil :
+<code>git clone https://github.com/elasticdog/transcrypt.git</code></li>
+<li>Ajouter le répertoire nouvellement créé dans la variable d&rsquo;environnement PATH</li>
+<li>Ouvrir une nouvelle invite de commande dans tout autre répertoire (pour être certain que la dernière valeur de PATH est utilisée)</li>
+<li>Y exécuter la commande pour vérifier que le script est bien accessible partout (l&rsquo;aide de Transcrypt doit s&rsquo;afficher)
+<code>transcrypt --help</code></li>
+</ul>
+</li>
+<li>Initialiser le chiffrement dans le dépôt :
+<ul>
+<li>Depuis une invite de commande, se positionner dans le répertoire du dépôt à traiter</li>
+<li>Y exécuter la commande
+<code>transcrypt</code></li>
+<li>Répondre aux questions posées</li>
+<li>Conserver le mot de passe généré (ou saisi) dans votre <a href="https://keepass.fr/" rel="external" target="_blank">Keepass</a></li>
+</ul>
+</li>
+<li>Ajouter un fichier et déclarer qu&rsquo;il doit être chiffré :
+<ul>
+<li>Ajouter le fichier normalement :
+<code>git add le/chemin/du/fichier.extension</code></li>
+<li>Ajouter la ligne suivante dans le fichier .gitattributes
+<code>le/chemin/du/fichier.extension filter=crypt diff=crypt merge=crypt</code></li>
+</ul>
+</li>
+</ul>
+<p>Voici un exemple pour un fichier environment d&rsquo;Angular :
+<code>projects/coupeDesMaisons/src/environments/environment.prod.ts filter=crypt diff=crypt merge=crypt</code></p>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="/">
+  <img id="grav-logo" width="100%" height="100%" src="/images/avatar.png" title="Logo"/>
+</a>
+
+        </div>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/mesidees/index.html"><a class="padding" href="/mesidees/index.html">Mes idées</a><ul id="R-subsections-f33312b94d7209735d86dea9324bf52f" class="collapsible-menu">
+            <li class="" data-nav-id="/mesidees/01-dettetechnique/index.html"><a class="padding" href="/mesidees/01-dettetechnique/index.html">Dette technique</a></li>
+            <li class="" data-nav-id="/mesidees/02-pratiques/index.html"><a class="padding" href="/mesidees/02-pratiques/index.html">Liens sur des pratiques utiles</a></li>
+            <li class="" data-nav-id="/mesidees/03-testsdedeveloppement/index.html"><a class="padding" href="/mesidees/03-testsdedeveloppement/index.html">Tests de développement</a></li>
+            <li class="" data-nav-id="/mesidees/04-consolehibernate/index.html"><a class="padding" href="/mesidees/04-consolehibernate/index.html">Créer une console Hibernate</a></li>
+            <li class="" data-nav-id="/mesidees/05-retryenjava/index.html"><a class="padding" href="/mesidees/05-retryenjava/index.html">Coder des ré-essais en Java</a></li>
+            <li class="" data-nav-id="/mesidees/06-relecturedecode/index.html"><a class="padding" href="/mesidees/06-relecturedecode/index.html">Relecture, revue et audit de code</a></li>
+            <li class="" data-nav-id="/mesidees/07-hugoetgithubpages/index.html"><a class="padding" href="/mesidees/07-hugoetgithubpages/index.html">Hugo et GitHub:Pages</a></li>
+            <li class="" data-nav-id="/mesidees/08-creationavechugo/index.html"><a class="padding" href="/mesidees/08-creationavechugo/index.html">Création d&#39;un site avec Hugo</a></li>
+            <li class="" data-nav-id="/mesidees/09-objectmother/index.html"><a class="padding" href="/mesidees/09-objectmother/index.html">Object Mother</a></li>
+            <li class="" data-nav-id="/mesidees/10-guidedudev/index.html"><a class="padding" href="/mesidees/10-guidedudev/index.html">Guide Du Développeur</a></li>
+            <li class="" data-nav-id="/mesidees/11-programmationdefensive/index.html"><a class="padding" href="/mesidees/11-programmationdefensive/index.html">Programmation défensive</a></li>
+            <li class="" data-nav-id="/mesidees/12-eclipse/index.html"><a class="padding" href="/mesidees/12-eclipse/index.html">Eclipse</a></li>
+            <li class="" data-nav-id="/mesidees/13-pipeline/index.html"><a class="padding" href="/mesidees/13-pipeline/index.html">Pipeline</a></li>
+            <li class="" data-nav-id="/mesidees/14-qualimetrie/index.html"><a class="padding" href="/mesidees/14-qualimetrie/index.html">Qualimétrie</a></li>
+            <li class="" data-nav-id="/mesidees/15-js/index.html"><a class="padding" href="/mesidees/15-js/index.html">JS</a></li>
+            <li class="" data-nav-id="/mesidees/17-installationserveuric/index.html"><a class="padding" href="/mesidees/17-installationserveuric/index.html">Installation d&#39;un serveur pour une Integration Continue</a></li>
+            <li class="" data-nav-id="/mesidees/18-licences/index.html"><a class="padding" href="/mesidees/18-licences/index.html">Licence</a></li>
+            <li class="" data-nav-id="/mesidees/19-git/index.html"><a class="padding" href="/mesidees/19-git/index.html">Git</a></li>
+            <li class="" data-nav-id="/mesidees/20-gitflow/index.html"><a class="padding" href="/mesidees/20-gitflow/index.html">les différents FLOW avec Git</a></li>
+            <li class="" data-nav-id="/mesidees/21-jenkins/index.html"><a class="padding" href="/mesidees/21-jenkins/index.html">Jenkins</a></li>
+            <li class="" data-nav-id="/mesidees/22-elastic/index.html"><a class="padding" href="/mesidees/22-elastic/index.html">Stack Elastic</a></li>
+            <li class="" data-nav-id="/mesidees/23-gitetclefssshmultiples/index.html"><a class="padding" href="/mesidees/23-gitetclefssshmultiples/index.html">Git et clefs SSH multiples</a></li>
+            <li class="" data-nav-id="/mesidees/24-sftpaws/index.html"><a class="padding" href="/mesidees/24-sftpaws/index.html">Créer un compte sftp sur AWS</a></li>
+            <li class="" data-nav-id="/mesidees/25-featuretoggle/index.html"><a class="padding" href="/mesidees/25-featuretoggle/index.html">Feature toggle</a></li>
+            <li class="" data-nav-id="/mesidees/26-wordpress/index.html"><a class="padding" href="/mesidees/26-wordpress/index.html">Installer une instance WordPress sur Ubuntu</a></li>
+            <li class="active " data-nav-id="/mesidees/27-transcrypt/index.html"><a class="padding" href="/mesidees/27-transcrypt/index.html">Git et les mots de passe</a></li>
+            <li class="" data-nav-id="/mesidees/99-trucsalire/index.html"><a class="padding" href="/mesidees/99-trucsalire/index.html">Trucs à lire</a></li></ul></li>
+            <li class="" data-nav-id="/mesprojets/index.html"><a class="padding" href="/mesprojets/index.html">Mes projets</a><ul id="R-subsections-b42d1fd85e522adc838a3f3f768726d4" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/moncv/index.html"><a class="padding" href="/moncv/index.html">Mon CV</a><ul id="R-subsections-8f33c05f2efc4d68dacb20a930b3b91c" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/mesidees/27-transcrypt/index.html" lang="fr-fr" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-blue" value="blue" selected>Blue</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

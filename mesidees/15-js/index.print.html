@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="JS">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JS :: Guillaume TALBOT">
+    <meta name="twitter:description" content="JS">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/15-js/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="JS :: Guillaume TALBOT">
+    <meta property="og:description" content="JS">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="name" content="JS :: Guillaume TALBOT">
+    <meta itemprop="description" content="JS">
+    <meta itemprop="dateModified" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="wordCount" content="498">
+    <title>JS :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/15-js/index.html" rel="canonical" type="text/html" title="JS :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-print.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/15-js/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">JS</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/15-js/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/14-qualimetrie/index.html" title="Qualimétrie (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/17-installationserveuric/index.html" title="Installation d&#39;un serveur pour une Integration Continue (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="js">JS</h1>
+
+<p>Quelques notes sur les incontournables choses à connaître en JS.</p>
+<p>Au sommaire :</p>
+<ul>
+<li><a href="/mesidees/15-js/index.html#les-6-falsies">Les 6 falsies</a></li>
+<li><a href="/mesidees/15-js/index.html#les-paramètres-par-défaut">Les paramètres par défaut</a></li>
+<li><a href="/mesidees/15-js/index.html#les-déclarations-de-variables">Les déclarations de variables</a></li>
+<li><a href="/mesidees/15-js/index.html#déclaration-des-scripts-dans-une-page-html">Déclaration des scripts dans une page HTML</a></li>
+<li><a href="/mesidees/15-js/index.html#les-exceptions-en-js">Les exceptions en JS</a></li>
+<li><a href="/mesidees/15-js/index.html#déclarer-une-classe">Déclarer une classe</a></li>
+<li><a href="/mesidees/15-js/index.html#utiliser-des-getter-setter-en-js">Utiliser des getter / setter en JS</a></li>
+<li><a href="/mesidees/15-js/index.html#déclarer-un-module-encapsulant-du-code">Déclarer un module encapsulant du code</a></li>
+</ul>
+<h4 id="les-6-falsies">Les 6 falsies</h4>
+<ul>
+<li>false</li>
+<li>0</li>
+<li>&rsquo;&rsquo; ou &quot;&quot; string de length 0</li>
+<li>NaN</li>
+<li>undefined</li>
+<li>null</li>
+</ul>
+<p>Astuce :</p>
+<ul>
+<li><em>!!maVariable</em> permet de récupérer un booleen TRUE si la valeur de la variable n&rsquo;est pas l&rsquo;un des falsies</li>
+<li><em>a &amp;&amp; b</em> renvoie <strong>a</strong> s&rsquo;il est un falsie et <strong>b</strong> sinon</li>
+<li><em>a || b</em> renvoie <strong>a</strong> s&rsquo;il n&rsquo;est pas un falsie et <strong>b</strong> sinon</li>
+</ul>
+<h4 id="les-paramètres-par-défaut">Les paramètres par défaut</h4>
+<p>function toto(a = 1, b = 2) { return a * b; }</p>
+<h4 id="les-déclarations-de-variables">Les déclarations de variables</h4>
+<ul>
+<li><em>const</em> permet la déclaration d&rsquo;une variable non ré-affectable (le <em>final</em> de Java)</li>
+<li><em>let</em> permet de déclarer une variable dans un scope précis (sans écraser une variable du même nom dans le scope parent)</li>
+<li><em>var</em> est et reste la déclaration de variables de l&rsquo;époque mais ne devrait plus être utilisé.</li>
+</ul>
+<p>une belle explication <a href="http://putaindecode.io/fr/articles/js/es2015/const-let-var/" rel="external" target="_blank">ici</a></p>
+<h4 id="déclaration-des-scripts-dans-une-page-html">Déclaration des scripts dans une page HTML</h4>
+<p>Un JS ne doit pas être déclaré dans le head mais à la fin du body (<a href="https://openclassrooms.com/courses/bonnes-pratiques-javascript" rel="external" target="_blank">source 1</a>, <a href="https://www.alsacreations.com/astuce/lire/916-librairie-javascript-jquery-script.html" rel="external" target="_blank">source2</a>).</p>
+<p>Au pire, si le JS ne dépend d&rsquo;aucun autre, il peut être chargé avec ASYNC. Mais attention aux dépendances entre scripts d&rsquo;une même page (<a href="https://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html" rel="external" target="_blank">source</a>).</p>
+<h4 id="les-exceptions-en-js">Les exceptions en JS</h4>
+<p>He oui, ça existe. Mais c&rsquo;est pénalisant en performance. Donc à utiliser avec modération.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">throw</span> {<span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;monException&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;momMessage&#34;</span>};
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h4 id="déclarer-une-classe">Déclarer une classe</h4>
+<p>solution 1 : la fonction</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MaClasse</span>(<span style="color:#a6e22e">args</span>){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">args</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">maMethode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prop</span>);
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">monInstance</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MaClasse</span>(<span style="color:#66d9ef">true</span>, <span style="color:#e6db74">&#34;bonjour&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">monInstance</span>.<span style="color:#a6e22e">maMethode</span>();</span></span></code></pre></div>
+<p>solution 2 : la description</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">monInstance</span> <span style="color:#f92672">=</span>  {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">prop</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">args</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">maMethode</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prop</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>solution 3 : le prototype</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MaClasse</span>(<span style="color:#a6e22e">args</span>){ ... }
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MaClasse</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">prop</span> <span style="color:#f92672">=</span> ...;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MaClasse</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">maMethode</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() { <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prop</span>); };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">monInstance</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MaClasse</span>(<span style="color:#66d9ef">true</span>, <span style="color:#e6db74">&#34;bonjour&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">monInstance</span>.<span style="color:#a6e22e">maMethode</span>();</span></span></code></pre></div>
+<p>solution 4 : l&rsquo;héritage</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Type Rectangle avec une largeur et une longueur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Rectangle</span>(<span style="color:#a6e22e">largeur</span>, <span style="color:#a6e22e">longueur</span>) {  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">largeur</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">largeur</span>; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">longueur</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">longueur</span>; };
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Rectangle</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">largeur</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Rectangle</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">longueur</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Rectangle</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">calculSurface</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">largeur</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">longueur</span>; };
+</span></span><span style="display:flex;"><span>			
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Type Carre avec une largeur (la longueur et la largeur sont égales)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Carre</span>(<span style="color:#a6e22e">largeur</span>) { <span style="color:#a6e22e">Rectangle</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">largeur</span>, <span style="color:#a6e22e">largeur</span>); };
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Carre</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">Rectangle</span>.<span style="color:#a6e22e">prototype</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Carre</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Carre</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Test du Rectangle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">monRec</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Rectangle</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">surfaceMonRec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">monRec</span>.<span style="color:#a6e22e">calculSurface</span>(); <span style="color:#75715e">//30
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Test du Carre
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">monCarre</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Carre</span>(<span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">surfaceMonCarre</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">monCarre</span>.<span style="color:#a6e22e">calculSurface</span>(); <span style="color:#75715e">//25
+</span></span></span></code></pre></div>
+<h4 id="utiliser-des-getter--setter-en-js">Utiliser des getter / setter en JS</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">monInstance</span> <span style="color:#f92672">=</span>  {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">get</span> <span style="color:#a6e22e">prop</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> ...;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">prop</span>(<span style="color:#a6e22e">value</span>) {
+</span></span><span style="display:flex;"><span>		...
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Si le getter n&rsquo;existe pas, la valeur retournée est <em>undefined</em></p>
+<h4 id="déclarer-un-module-encapsulant-du-code">Déclarer un module encapsulant du code</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">MonModule</span> <span style="color:#f92672">=</span> ( <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// privé
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">compteur</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maMethodePrivee</span>() {
+</span></span><span style="display:flex;"><span>		...
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// public
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">module</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">methodePublique</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>		...
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">module</span>;
+</span></span><span style="display:flex;"><span>})();</span></span></code></pre></div>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

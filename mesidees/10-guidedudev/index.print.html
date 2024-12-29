@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr-fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.140.1">
+    <meta name="generator" content="Relearn 7.2.1+f1701957c30daae7cd133bec5a7968480563ce9f">
+    <meta name="description" content="Guide Du Développeur">
+    <meta name="author" content="Guillaume TALBOT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guide Du Développeur :: Guillaume TALBOT">
+    <meta name="twitter:description" content="Guide Du Développeur">
+    <meta property="og:url" content="https://talbotgui.github.io/mesidees/10-guidedudev/index.html">
+    <meta property="og:site_name" content="Guillaume TALBOT">
+    <meta property="og:title" content="Guide Du Développeur :: Guillaume TALBOT">
+    <meta property="og:description" content="Guide Du Développeur">
+    <meta property="og:locale" content="fr_fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Mes idées">
+    <meta property="article:modified_time" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="name" content="Guide Du Développeur :: Guillaume TALBOT">
+    <meta itemprop="description" content="Guide Du Développeur">
+    <meta itemprop="dateModified" content="2024-12-29T14:56:21+01:00">
+    <meta itemprop="wordCount" content="826">
+    <title>Guide Du Développeur :: Guillaume TALBOT</title>
+    <link href="https://talbotgui.github.io/mesidees/10-guidedudev/index.html" rel="canonical" type="text/html" title="Guide Du Développeur :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735481378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735481378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735481378" rel="stylesheet">
+    <link href="/css/theme.min.css?1735481378" rel="stylesheet">
+    <link href="/css/format-print.min.css?1735481378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/talbotgui.github.io';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'blue', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style>
+    :root {
+         
+        --MAIN-WIDTH-MAX: 1000rem;
+    }
+
+     
+    footer {
+        border-top: solid 1px;
+    }
+</style>
+  </head>
+  <body class="mobile-support print" data-url="/mesidees/10-guidedudev/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#astuces">Astuces</a></li>
+    <li><a href="#idées-de-sujets-à-intégrer-au-gdd-">Idées de sujets à intégrer au GDD :</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Guillaume TALBOT</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/mesidees/index.html"><span itemprop="name">Mes idées</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Guide Du Développeur</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/10-guidedudev/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/09-objectmother/index.html" title="Object Mother (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/mesidees/11-programmationdefensive/index.html" title="Programmation défensive (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable mesidees" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="guide-du-développeur">Guide Du Développeur</h1>
+
+<p>Le Guide Du Développeur est l&rsquo;espace de partage d&rsquo;une équipe. Il contient toutes les informations utiles aux membres de l&rsquo;équipe.</p>
+<p>Chaque question posée par un collaborateur doit donner lieu à un nouveau paragraphe dans le GDD.</p>
+<p><strong>Il est inutile d&rsquo;imposer un guide du développeur.</strong> Il faut le proposer et le faire adopter. C&rsquo;est un outil pour l&rsquo;équipe construit par l&rsquo;équipe. Si personne ne le consulte avant de se mettre en quête d&rsquo;une réponse (sur Internet ou au près d&rsquo;un leader), alors il est inutile.</p>
+<h2 id="astuces">Astuces</h2>
+<p>La première astuce est à destination des Lead (les membres de l&rsquo;équipe qui ont tout dans la tête). Dès qu&rsquo;un collaborateur vient vous poser une question, demandez-lui s&rsquo;il a consulté le GDD. Si ce n&rsquo;est pas le cas, qu&rsquo;il retourne à son poste pour vérifier si la réponse n&rsquo;est pas dans le GDD (même si vous savez que ce n&rsquo;est pas le cas). Il faut que cela devienne un réflexe pour toute l&rsquo;équipe. Et quand il reviendra vous poser la question et qu&rsquo;il aura obtenu sa réponse, dîtes lui d&rsquo;ajouter un paragraphe dans le GDD !!</p>
+<p>Bien souvent, à ce moment-là, le collaborateur vous dit qu&rsquo;il n&rsquo;a pas le temps. Pour beaucoup de gens, toutes les tâches sont prioritaires à la documentation (même le café). Mais il est vrai qu&rsquo;on n&rsquo;a pas toujours le temps. Pas de soucis, il vous suffit d&rsquo;un tableau blanc (ou d&rsquo;un paperBoard). A chaque réponse obtenue, le collaborateur inscrit son prénom ainsi que les mots clefs de sa question et de sa réponse. Charge à lui de remplir le GDD dans un délai raisonnable puis de venir effacer (ou barrer) son nom.</p>
+<p>Valoriser les contributeurs est aussi une bonne idée. Bien souvent, le dernier arrivé sur le projet est le principal contributeur. Il est aussi celui qui doit s&rsquo;approprier le GDD. Un petit mail avec le meilleur contributeur du mois peut aider à faire adopter le GDD.</p>
+<p>Question outil, un fichier MS Word sur un serveur FTP est une solution à proscrire car l&rsquo;édition à plusieurs est impossible et la gestion des versions (avec un cartouche, &hellip;) est lourde. Un document partagé dans une bonne GED (Gestion Electronique de Documents) est une solution. Mais le plus simple reste un WIKI ou un site statique généré (comme le présent site avec Hugo). Les fonctions nécessaires sont :</p>
+<ul>
+<li>pas de prise de tête avec la mise en forme</li>
+<li>suivi des modifications et consultation possible de l&rsquo;historique</li>
+<li>simplicité de déplacement des paragraphes (pour permettre la réorganisation au fur et à mesure que le GDD s&rsquo;étoffe).</li>
+<li>dans tous les cas :
+<ul>
+<li>l&rsquo;usage de l&rsquo;outil doit être simple</li>
+<li>un moteur de recherche doit être présent</li>
+<li>aucun workflow complexe (relecture, validation, &hellip;) ne doit freiner l&rsquo;enrichissement du GDD</li>
+</ul>
+</li>
+</ul>
+<p>Enfin, il n&rsquo;existe aucun modèle de GDD. Chaque GDD est unique car les préoccupations, les questions et les réponses changent d&rsquo;un projet à un autre (technologies différentes, clients différents, organisations différentes, équipes différentes). Il est préférable de démarrer avec une simple page faisant office de foire aux questions. Quand la page devient indigeste, il suffit de regrouper les questions par thème puis de les extraire dans des pages différentes. Ainsi le GDD émergera petit à petit.</p>
+<h2 id="idées-de-sujets-à-intégrer-au-gdd-">Idées de sujets à intégrer au GDD :</h2>
+<p><strong>Ceci n&rsquo;est pas un menu de GDD mais juste une liste de sujets à traiter sur la plus part des projets ! Votre GDD, vos questions, votre sommaire !!!</strong></p>
+<ul>
+<li>
+<p>référence documentaire</p>
+<ul>
+<li>cahier des charges</li>
+<li>dossier(s) d&rsquo;architecture</li>
+<li>référentiel des exigences</li>
+<li>référentiel des tests</li>
+</ul>
+</li>
+<li>
+<p>exigences</p>
+<ul>
+<li>quel est le niveau de détails des exigences en entrée des développements ?</li>
+<li>quel est le contexte du projet ou de l&rsquo;application ?</li>
+</ul>
+</li>
+<li>
+<p>test</p>
+<ul>
+<li>quel est contractuellement le niveau de détails et le formalisme à livrer en fin de conception ?</li>
+<li>stratégie de test du projet</li>
+<li>types de tests disponibles</li>
+<li>cas de test devant être validés en fin de développement</li>
+<li>cas de test devant être codés dans un composant de test (avec sa granularité et les outils à utiliser)</li>
+</ul>
+</li>
+<li>
+<p>conception</p>
+<ul>
+<li>résumé de l&rsquo;architecture technique</li>
+<li>quels sont les impacts de l’AT sur la conception (BI, ERP ou détails trop fins en xNet) ?</li>
+<li>quel est le niveau de détails attendu en fin de conception (peut-être besoin d’être plus précis que le niveau contractuel en fonction du contexte) ?</li>
+<li>quels sont les outils de conception et/ou de modélisation ?</li>
+<li>quels sont les objectifs des modèles (compréhension, communication, …) et quelle est leur durée de vie ?</li>
+<li>règles de conception (programmation défensive, @designByContrat, modularité, &hellip;)</li>
+<li>jeu de données de test</li>
+</ul>
+</li>
+<li>
+<p>développement</p>
+<ul>
+<li>règles de nommage</li>
+<li>liste des frameworks disponibles, leur usage et le pointeur sur leur documentation</li>
+</ul>
+</li>
+<li>
+<p>industrialisation</p>
+<ul>
+<li>éléments composant la Gestion de Configuration Logicielle (Git, SVN, HP ALM, Archiva, Jira, &hellip;)</li>
+<li>règles d&rsquo;usage de la GCL (flow GIT/SVN, snapshots dans le repository de binaires, &hellip;)</li>
+<li>règles d&rsquo;usage de l&rsquo;intégration continue</li>
+<li>organisation des équipes en amont et en aval des développements (Continuous Delivery)</li>
+</ul>
+</li>
+<li>
+<p>environnements</p>
+<ul>
+<li>installation du poste de développement</li>
+<li>liste et paramètres des environnements de test</li>
+<li>liste des environnements du client</li>
+</ul>
+</li>
+</ul>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
+              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1735481378" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735481378" defer></script>
+    <script src="/js/theme.js?1735481378" defer></script>
+  </body>
+</html>

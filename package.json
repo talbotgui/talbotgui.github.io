@@ -1,0 +1,12 @@
+{
+	"name": "pages-hugo",
+	"version": "1.0",
+	"scripts": {
+		"serve-win": "hugo-0.140.1 serve --bind 0.0.0.0 --enableGitInfo",
+		"build-win": "rm -rf ./docs/* && hugo-0.140.1.exe --enableGitInfo",
+		"blc": "blc http://localhost:1313 -ro"
+	},
+	"dependencies": {
+		"broken-link-checker": "^0.7.8"
+	}
+}

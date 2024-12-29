@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2024-12-29T16:01:52+01:00">
     <meta itemprop="name" content="Git :: Guillaume TALBOT">
     <meta itemprop="description" content="Git">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="750">
+    <meta itemprop="dateModified" content="2024-12-29T16:01:52+01:00">
+    <meta itemprop="wordCount" content="826">
     <title>Git :: Guillaume TALBOT</title>
     <link href="/mesidees/19-git/index.print.html" rel="alternate" type="text/html" title="Git :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1735483912" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735483912" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1735483912" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735483912" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1735483912" rel="stylesheet">
-    <link href="/css/theme.min.css?1735483912" rel="stylesheet">
-    <link href="/css/format-html.min.css?1735483912" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1735484693" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1735484693" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1735484693" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1735484693" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1735484693" rel="stylesheet">
+    <link href="/css/theme.min.css?1735484693" rel="stylesheet">
+    <link href="/css/format-html.min.css?1735484693" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -99,7 +99,23 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-les-basics-">1/ Les basics :</a></li>
+    <li><a href="#2-les-utilitaires-">2/ Les utilitaires :</a></li>
+    <li><a href="#3-la-manipulation-dhistorique">3/ La manipulation d&rsquo;historique</a>
+      <ul>
+        <li><a href="#31-squash--rename-">3.1/ squash &amp; rename :</a></li>
+        <li><a href="#32-la-manipulation-dhistorique---author-">3.2/ La manipulation d&rsquo;historique - author :</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-la-manipulation-de-branches-">4/ La manipulation de branches :</a></li>
+    <li><a href="#5-ajouter-un-outil-de-diff-pour-les-documents-microsoft-office">5/ Ajouter un outil de DIFF pour les documents Microsoft Office</a></li>
+    <li><a href="#6-ajouter-deux-scripts-avec-alias-pour-activerdésactiver-un-proxy">6/ Ajouter deux scripts (avec alias) pour activer/désactiver un proxy</a></li>
+    <li><a href="#7-articles-utiles-">7/ Articles utiles :</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -136,7 +152,7 @@
 
 <h1 id="git">Git</h1>
 
-<h4 id="les-basics-">Les basics :</h4>
+<h2 id="1-les-basics-">1/ Les basics :</h2>
 <p>Pour cloner un dépot : <code>git clone https://xxxxxxxxx</code></p>
 <p>Pour ajouter une modification : <code>git add rep1/monFichier.xxx</code></p>
 <p>Pour ajouter toutes les modifications : <code>git add -A</code></p>
@@ -148,7 +164,7 @@
 <p>Pour pousser ces commits sur le repository : <code>git push </code></p>
 <p>Pour récupérer toutes les modifications réalisées depuis le dernier PULL  : <code>git pull</code>ou  <code>git pull --rebase</code>si des commits ont été réalisés depuis le dernier PULL</p>
 <p>En cas de problème durant un rebase, la commande <code>git rebase --abort</code>annule tout.</p>
-<h4 id="les-utilitaires-">Les utilitaires :</h4>
+<h2 id="2-les-utilitaires-">2/ Les utilitaires :</h2>
 <p>Pour voir le statut du dépot local : <code>git status</code></p>
 <p>Pour voir les modifications d&rsquo;un fichier : <code>git diff rep1/monFichier.xxx</code></p>
 <p>Pour voir toutes les modifications : <code>git diff</code></p>
@@ -158,7 +174,8 @@
 <p>Pour lister les sauvegardes : <code>git stash list</code></p>
 <p>Pour récupérer la sauvegarde la plus récente : <code>git stash pop</code></p>
 <p>Pour annuler tous les commits locaux : <code>git reset HEAD^</code></p>
-<h4 id="la-manipulation-dhistorique-">La manipulation d&rsquo;historique :</h4>
+<h2 id="3-la-manipulation-dhistorique">3/ La manipulation d&rsquo;historique</h2>
+<h3 id="31-squash--rename-">3.1/ squash &amp; rename :</h3>
 <p>Pour modifier l&rsquo;historique sur les 5 derniers commits (à ne faire que si aucun push n&rsquo;a été fait depuis) : <code>git rebase --interactive HEAD~5 </code></p>
 <p>Dans l&rsquo;éditeur qui s&rsquo;ouvre, remplacer les <em>pick</em> par :</p>
 <ul>
@@ -167,7 +184,18 @@
 <li><em>f</em> pour <em>fixup</em> qui fusionne comme le squash mais qui supprime le commentaire</li>
 </ul>
 <p>Pour pousser sur le repository distant un rebase qui modifie l&rsquo;historique déjà poussé /!\ attention quand on travaille en équipe /!\ : <code>git push --force</code></p>
-<h4 id="la-manipulation-de-branches-">La manipulation de branches :</h4>
+<h3 id="32-la-manipulation-dhistorique---author-">3.2/ La manipulation d&rsquo;historique - author :</h3>
+<p>Pour modifier l&rsquo;auteur des commits d&rsquo;un dépôt, il est possible d&rsquo;utiliser la commande suivante :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git filter-branch -f --env-filter <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    GIT_AUTHOR_NAME=&#39;Guillaume TALBOT&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    GIT_AUTHOR_EMAIL=&#39;talbotgui@gmail.com&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    GIT_COMMITTER_NAME=&#39;Guillaume TALBOT&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    GIT_COMMITTER_EMAIL=&#39;talbotgui@gmail.com&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;</span> HEAD</span></span></code></pre></div>
+<p>Mais, ensuite, il ne faut pas oublier de modifier l&rsquo;auteur dans le dépôt (pour ne pas recommencer la même erreur) :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config user.name <span style="color:#e6db74">&#34;Guillaume TALBOT&#34;</span>
+</span></span><span style="display:flex;"><span>git config user.email <span style="color:#e6db74">&#34;talbotgui@gmail.com&#34;</span></span></span></code></pre></div>
+<h2 id="4-la-manipulation-de-branches-">4/ La manipulation de branches :</h2>
 <p>Pour lister les branches locales : <code>git branch</code></p>
 <p>Pour passer d&rsquo;une branche à l&rsquo;autre : <code>git checkout maBranche</code></p>
 <p>Pour créer et passer à une autre branche : <code>git checkout -b maBranche</code></p>
@@ -179,7 +207,7 @@
 git merge --no-ff maBrancheFeature</code></pre></div>
 <p>Pour pousser sur le dépot distant toutes les branches : <code>git push --all</code></p>
 <p>Pour lier une branche locale à une branche distante existante (après avoir fait un push -all créant une branche par exemple) : <code>git branch --set-upstream-to origin/maBranche</code></p>
-<h4 id="ajouter-un-outil-de-diff-pour-les-documents-microsoft-office">Ajouter un outil de DIFF pour les documents Microsoft Office</h4>
+<h2 id="5-ajouter-un-outil-de-diff-pour-les-documents-microsoft-office">5/ Ajouter un outil de DIFF pour les documents Microsoft Office</h2>
 <ul>
 <li>Ajouter les lignes suivantes dans le fichier .gitconfig (vi ~/.gitconfig depuis une console gitbash) :</li>
 </ul>
@@ -196,7 +224,7 @@ git merge --no-ff maBrancheFeature</code></pre></div>
 <ul>
 <li>Pour tester cet alias : <code>git diffP maPresentation.pptx</code></li>
 </ul>
-<h4 id="ajouter-deux-scripts-avec-alias-pour-activerdésactiver-un-proxy">Ajouter deux scripts (avec alias) pour activer/désactiver un proxy</h4>
+<h2 id="6-ajouter-deux-scripts-avec-alias-pour-activerdésactiver-un-proxy">6/ Ajouter deux scripts (avec alias) pour activer/désactiver un proxy</h2>
 <ul>
 <li>Placer le script suivant dans le script <em>setGitConfigProxy.sh</em> dans le répertoire d&rsquo;installation de GIT</li>
 </ul>
@@ -237,7 +265,7 @@ npm config set https-proxy https://mon.proxy:8080
 
 # Proxy pour MAVEN
 sed &#34;s/active&gt;false/active&gt;true/&#34; -i C:/outils/apache-maven-3.5.2/conf/settings.xml</code></pre></div>
-<h4 id="articles-utiles-">Articles utiles :</h4>
+<h2 id="7-articles-utiles-">7/ Articles utiles :</h2>
 <ul>
 <li><a href="https://delicious-insights.com/fr/articles/bien-utiliser-git-merge-et-rebase/" rel="external" target="_blank">merge et rebase</a></li>
 <li><a href="http://xcafebabe.blogspot.fr/2012/09/sexy-comparison-of-word-documents-with.html" rel="external" target="_blank">git diff de document MS Office</a></li>
@@ -355,8 +383,8 @@ sed &#34;s/active&gt;false/active&gt;true/&#34; -i C:/outils/apache-maven-3.5.2/
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1735483912" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1735483912" defer></script>
-    <script src="/js/theme.js?1735483912" defer></script>
+    <script src="/js/clipboard.min.js?1735484693" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1735484693" defer></script>
+    <script src="/js/theme.js?1735484693" defer></script>
   </body>
 </html>

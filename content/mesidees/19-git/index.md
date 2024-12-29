@@ -5,7 +5,7 @@ weight: 119
 ---
 
 
-#### Les basics :
+## 1/ Les basics :
 
 Pour cloner un dépot : ```git clone https://xxxxxxxxx```
 
@@ -29,7 +29,7 @@ Pour récupérer toutes les modifications réalisées depuis le dernier PULL  : 
 
 En cas de problème durant un rebase, la commande ```git rebase --abort```annule tout.
 
-#### Les utilitaires :
+## 2/ Les utilitaires :
 
 Pour voir le statut du dépot local : ```git status```
 
@@ -49,7 +49,8 @@ Pour récupérer la sauvegarde la plus récente : ```git stash pop```
 
 Pour annuler tous les commits locaux : ```git reset HEAD^```
 
-#### La manipulation d'historique :
+## 3/ La manipulation d'historique
+### 3.1/ squash & rename :
 
 Pour modifier l'historique sur les 5 derniers commits (à ne faire que si aucun push n'a été fait depuis) : ```git rebase --interactive HEAD~5 ```
 
@@ -61,7 +62,25 @@ Dans l'éditeur qui s'ouvre, remplacer les *pick* par :
 
 Pour pousser sur le repository distant un rebase qui modifie l'historique déjà poussé /!\ attention quand on travaille en équipe /!\ : ```git push --force```
 
-#### La manipulation de branches :
+### 3.2/ La manipulation d'historique - author :
+
+Pour modifier l'auteur des commits d'un dépôt, il est possible d'utiliser la commande suivante :
+```shell
+git filter-branch -f --env-filter "
+    GIT_AUTHOR_NAME='Guillaume TALBOT'
+    GIT_AUTHOR_EMAIL='talbotgui@gmail.com'
+    GIT_COMMITTER_NAME='Guillaume TALBOT'
+    GIT_COMMITTER_EMAIL='talbotgui@gmail.com'
+  " HEAD
+```
+
+Mais, ensuite, il ne faut pas oublier de modifier l'auteur dans le dépôt (pour ne pas recommencer la même erreur) :
+```shell
+git config user.name "Guillaume TALBOT"
+git config user.email "talbotgui@gmail.com"
+```
+
+## 4/ La manipulation de branches :
 
 Pour lister les branches locales : ```git branch```
 
@@ -85,7 +104,7 @@ Pour pousser sur le dépot distant toutes les branches : ```git push --all```
 
 Pour lier une branche locale à une branche distante existante (après avoir fait un push -all créant une branche par exemple) : ```git branch --set-upstream-to origin/maBranche```
 
-#### Ajouter un outil de DIFF pour les documents Microsoft Office
+## 5/ Ajouter un outil de DIFF pour les documents Microsoft Office
 * Ajouter les lignes suivantes dans le fichier .gitconfig (vi ~/.gitconfig depuis une console gitbash) :
 
 ```
@@ -103,7 +122,7 @@ Pour lier une branche locale à une branche distante existante (après avoir fai
 ```
 * Pour tester cet alias : ```git diffP maPresentation.pptx```
 
-#### Ajouter deux scripts (avec alias) pour activer/désactiver un proxy
+## 6/ Ajouter deux scripts (avec alias) pour activer/désactiver un proxy
 * Placer le script suivant dans le script *setGitConfigProxy.sh* dans le répertoire d'installation de GIT
 
 ```
@@ -153,7 +172,7 @@ npm config set https-proxy https://mon.proxy:8080
 sed "s/active>false/active>true/" -i C:/outils/apache-maven-3.5.2/conf/settings.xml
 ```
 
-#### Articles utiles :
+## 7/ Articles utiles :
 * [merge et rebase](https://delicious-insights.com/fr/articles/bien-utiliser-git-merge-et-rebase/)
 * [git diff de document MS Office](http://xcafebabe.blogspot.fr/2012/09/sexy-comparison-of-word-documents-with.html)
 * [Cheat Sheet d'Atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)

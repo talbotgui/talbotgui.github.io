@@ -15,4 +15,4 @@ Architecte SI, je propose mes idées pour construire de nouveaux pans d'un SI.
 
 Et, dans chacun de ces rôles, je conserve un oeuil sur les aspects contractuels, de sécurité et RGAA.
 
-{{< include-html "docs/moncv/cv.html" >}}
+{{< include-html "content/moncv/cv.html" >}}

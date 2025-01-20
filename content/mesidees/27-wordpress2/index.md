@@ -71,6 +71,11 @@ Pour mettre en place des onglets, il suffit
 * d'ajouter le contenu du second onglet sous le titre du second onglet
 * d'ajouter, à volontée, un titre et un contenu d'onglet avant le dernier *Code court*
 
+Pour permettre de cliquer sur une image pour qu'elle s'affiche en grand, il suffit de 
+* depuis l'éditeur, cliquer sur l'image
+* au dessus de l'image, cliquer sur l'icône *Lien*
+* sélectionner *Agrandir au clic*
+
 ## 5/ Les choses à savoir
 
 Si, après avoir enregistrer des modifications, ces dernières ne sont pas visibles, il suffit de cliquer sur le bouton *Purger le cache" présent tout en haut des pages d'administration de WordPress (hors de l'éditeur de page ou d'article).

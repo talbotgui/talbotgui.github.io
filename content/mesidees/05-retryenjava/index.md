@@ -4,51 +4,16 @@ description: Coder des ré-essais en Java
 weight: 105
 ---
 
-La librairie **guava-retrying** est assez pratique pour définir des méthodes à réessayer en cas d'échec.
+## 1/ Avant : guava-retrying
+A une lontaine époque, la librairie **guava-retrying** était pratique pour définir des méthodes à réessayer en cas d'échec. Mais ce projet n'est plus maintenu.
 
 Documentation : [ici](https://github.com/rholder/guava-retrying)
 
-#### Dépendance
-```xml
-<dependency>
-	<groupId>com.github.rholder</groupId>
-	<artifactId>guava-retrying</artifactId>
-	<version>2.0.0</version>
-	<scope>test</scope>
-</dependency>
-```
+## 2/ en 2025 : spring-retry
+SpringFramework fournit, depuis 2011, une librairie pour faire ça.
 
-#### Exemple
-```java
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
+En voici la documentation : [ici](https://docs.spring.io/spring-batch/docs/latest/reference/html/retry.html)
 
-import org.junit.Assert;
+En voici le projet : [ici](https://github.com/spring-projects/spring-retry)
 
-import com.github.rholder.retry.RetryException;
-import com.github.rholder.retry.Retryer;
-import com.github.rholder.retry.RetryerBuilder;
-import com.github.rholder.retry.StopStrategies;
-import com.github.rholder.retry.WaitStrategies;
-
-public class Test {
-	public void testRetry() throws ExecutionException, RetryException {
-		final int nbEssais = 6;
-		final int tempsEntreDeuxEssaisEnMs = 500;
-
-		final Retryer<Void> retryer = RetryerBuilder.<Void>newBuilder()//
-				.retryIfExceptionOfType(AssertionError.class).retryIfRuntimeException()//
-				.withStopStrategy(StopStrategies.stopAfterAttempt(nbEssais))//
-				.withWaitStrategy(WaitStrategies.fixedWait(tempsEntreDeuxEssaisEnMs, TimeUnit.MILLISECONDS))//
-				.build();
-
-		final Callable<Void> assertion = () -> {
-			Assert.assertNotNull("attendu");
-			return null;
-		};
-
-		retryer.call(assertion);
-	}
-}
-```
+Et, enfin, voici un article Baldung : [ici](https://www.baeldung.com/spring-retry).

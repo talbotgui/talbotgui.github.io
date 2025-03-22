@@ -2,8 +2,8 @@
 	"name": "pages-hugo",
 	"version": "1.0",
 	"scripts": {
-		"serve-win": "hugo-0.140.1 serve --bind 0.0.0.0 --enableGitInfo -d docsServe",
-		"build-win": "rm -rf ./docs/* && hugo-0.140.1.exe --enableGitInfo",
+		"start": "hugo-0.140.1 serve --bind 0.0.0.0 --enableGitInfo -d docsServe",
+		"build": "rm -rf ./docs/* && hugo-0.140.1.exe --enableGitInfo",
 		"blc": "blc http://localhost:1313 -ro"
 	},
 	"dependencies": {

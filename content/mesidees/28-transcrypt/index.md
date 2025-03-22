@@ -4,7 +4,7 @@ description: Git et les mots de passe
 weight: 128
 ---
 
-### Résumé
+### 1/ Résumé
 La (grande?) majorité des développeurs utilisent aujourd'hui GIT pour sauvegarder et partager leurs développements.
 Tout y est stocké. Et, parfois, même les mots de passe (clefs, secrets, ...) !!
 
@@ -14,7 +14,7 @@ Une autre solution consiste à chiffrer ces informations avant de les partager s
 
 Une solution (parmis d'autre) est [Transcrypt](https://github.com/elasticdog/transcrypt).
 
-### Qu'est-ce que Transcrypt ?
+### 2/ Qu'est-ce que Transcrypt ?
 
 Transcrypt est un outil permettant d'initialiser le chiffrement de certains fichiers dans un dépôt Git.
 
@@ -22,18 +22,37 @@ Une fois le dépôt paramétré, Transcrypt n'est plus nécessaire et peut être
 
 La liste des fichiers à chiffrer avant (et déchiffrer après) chaque commit est paramétrée dans le fichier .gitattributes
 
-### Par quoi commencer ?
+### 3/ Par quoi commencer ?
 
-*La toute première chose à faire est de faire disparaître de l'historique GIT le fichier contenant des mots de passe !!*
-Pour cela, il suffit d'exécuter les commandes suivantes :
+* La toute première chose à faire est d'**identifier les fichiers contenant des secrets dans l'historique GIT**. Pour cela, l'outil [GitLeaks](https://github.com/gitleaks/gitleaks?tab=readme-ov-file) est bien utile.
+  * Télécharger une version compatible avec le poste de développement depuis la [page de téléchargement](https://github.com/gitleaks/gitleaks/releases).
+  * Extraire le contenu de l'archive dans un répertoire dédié en dehors du clone du dépôt.
+  * Ouvrir une invite de commande dans le clone à analyser
+  * Exécuter la commande ``````xxx/gitleaks_xxxx/gitleaks.exe git --report-path gitleaks-report.json```
+  * Le fichier **gitleaks-report.json** contient alors tous les secrets détectés
+  * S'assurer que le fichier ne contient aucun caractère # (sinon la commande SED est KO)
+  * Extraire la liste des fichiers et secrets avec le pattern ```^.*"(File|Secret)".*$```
+  * Mettre sur une même ligne le secret et le nom de fichier
+  * Eliminer les doublons
+  * Faire des chemins de fichier des chemins absolus
+  * Mettre en forme chaque ligne pour obtenir ```sed -i "s#LE_SECRET_ISSU_DE_GITLEAK#xxxxxxxx#g" "LE_NOM_DE_FICHIER_ISSU_DE_GITLEAK"```
+  * Sauvegarder l'ensemble des commandes dans un script shell déposé à la racine du dépôt
+  
+* La seconde étape est de faire disparaître de l'historique GIT le(s) secret(s). Pour cela, il suffit 
+  * télécharger l'outil BFG depuis la [page officielle](https://rtyley.github.io/bfg-repo-cleaner/#usage)
+  * créer un fichier contenant, sur une ligne différente, chaque secret venant du fichier généré par GitLeaks
+    * après avoir retiré le caractère = en fin de secret
+    * suffixé par ```==>xxxxxxxx```
+  * exécuter les commandes
 ```
-git filter-branch -f --tree-filter 'rm -f projects/coupeDesMaisons/src/environments/environment.ts' HEAD
-git push --force
+java -jar /d/xxxx/bfg.jar --replace-text /d/xxx/password.txt "/d/cheminVersDepot"
+cd /d/cheminVersDepot
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
 ```
-	
-/!\ Prendre le temps de tester le chemin du fichier permet de ne pas attendre la longue exécution du script sans qu'aucun commit ne soit modifié !
 
-### Pour initialiser un dépot avec Transcrypt
+* Une fois les secrets supprimés, relancer l'analyse avec la commande précédete
+
+### 4/ Pour initialiser un dépot avec Transcrypt
 * Installer Transcrypt :
   * Dans un répertoire d'outillage, exécuter la commande suivante pour récupérer la dernière version de l'outil :
 ```git clone https://github.com/elasticdog/transcrypt.git``` 

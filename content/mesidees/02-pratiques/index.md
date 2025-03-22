@@ -4,26 +4,32 @@ description: Liens sur des pratiques utiles
 weight: 102
 ---
 
-### Pratiques de développement :
-* [Refactoring tips - Martin Fowler](http://fr.slideshare.net/redigon/refactoring-1658371)
+## Pratiques de développement :
+* [Refactoring tips - Martin Fowler](http://fr.slideshare.net/redigon/refactoring-1658371) 
+  * document publié en 2009 mais encore d'actualité
+  * les astuces commencent au slide 14
 * [DesignPattern avec explication et code](https://github.com/iluwatar/java-design-patterns)
+  * l'un des patterns les plus connus est le *singleton*.
+    * Mais il peut être implémenté de [manière simpliste](https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/IvoryTower.java)
+	* Ou [très complexe](https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/ThreadSafeDoubleCheckLocking.java)
+	* Cette version est [un bon compromis](https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/ThreadSafeLazyLoadedIvoryTower.java)
+  * un autre pattern très utile est [le *visiteur*](https://github.com/iluwatar/java-design-patterns/blob/master/visitor/README.md)
+  * moins utilisé, [la gestion d'état](https://github.com/iluwatar/java-design-patterns/tree/master/state)
+  * le [feature-toggle](https://github.com/iluwatar/java-design-patterns/tree/master/feature-toggle)
+  * le [DAO](https://github.com/iluwatar/java-design-patterns/tree/master/data-access-object)
+  * ...
 
-### Documentation d'une solution, d'un langage ou d'un projet :
+## Documentation d'une solution, d'un langage ou d'un projet :
 * Frameworks :
-  * [Liste très riche de frameworks en tout genre](https://github.com/syalioune/awesome-java)
+  * [Liste très riche de frameworks en tout genre](https://github.com/akullpp/awesome-java)
   * [Mock d'un FileSystem](https://github.com/google/jimfs)
-  * [Selenide - sur couche à Selenium simplifiant l'API](http://selenide.org/quick-start.html)
-* Langages :
-  * [JS - les fonctionnalités de l'objet console](https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.sea5g1fuv)
-  * [CSS - les règles de priorité de la cascade](http://openweb.eu.org/articles/cascade_css)
 * Outils :
   * [AsciiDoctor - générer la documentation avec Maven](http://asciidoctor.org/docs/asciidoctor-maven-plugin/)
   * [Hugo](https://gohugo.io/overview/introduction/)
-  * [ELK - installation](http://www.bogotobogo.com/Hadoop/ELK/ELK_ElasticSearch_Logstash_Kibana4.php)
 
-### Pratiques triés par méthode/framework :
+## Pratiques triés par méthode/framework :
 * Scrum :
-  * objectif de sprint
+  * objectifs de sprint
   * sprint backlog
   * product backlog
   * burn-down chart

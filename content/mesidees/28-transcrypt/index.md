@@ -28,7 +28,7 @@ La liste des fichiers à chiffrer avant (et déchiffrer après) chaque commit es
   * Télécharger une version compatible avec le poste de développement depuis la [page de téléchargement](https://github.com/gitleaks/gitleaks/releases).
   * Extraire le contenu de l'archive dans un répertoire dédié en dehors du clone du dépôt.
   * Ouvrir une invite de commande dans le clone à analyser
-  * Exécuter la commande ``````xxx/gitleaks_xxxx/gitleaks.exe git --report-path gitleaks-report.json```
+  * Exécuter la commande ```xxx/gitleaks_xxxx/gitleaks.exe git --report-path gitleaks-report.json```
   * Le fichier **gitleaks-report.json** contient alors tous les secrets détectés
   * S'assurer que le fichier ne contient aucun caractère # (sinon la commande SED est KO)
   * Extraire la liste des fichiers et secrets avec le pattern ```^.*"(File|Secret)".*$```

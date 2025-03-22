@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Relecture, revue et audit de code :: Guillaume TALBOT">
     <meta itemprop="description" content="Relecture, revue et audit de code">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="516">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="587">
     <title>Relecture, revue et audit de code :: Guillaume TALBOT</title>
     <link href="https://talbotgui.github.io/mesidees/06-relecturedecode/index.html" rel="canonical" type="text/html" title="Relecture, revue et audit de code :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-print.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-print.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -99,7 +99,15 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-mes-définitions">1/ Mes définitions</a></li>
+    <li><a href="#2-le-plus-important">2/ Le plus important</a></li>
+    <li><a href="#3-pour-se-simplifier-la-vie">3/ Pour se simplifier la vie</a></li>
+    <li><a href="#4-pour-aller-plus-loin">4/ Pour aller plus loin</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -136,54 +144,54 @@
 
 <h1 id="relecture-revue-et-audit-de-code">Relecture, revue et audit de code</h1>
 
-<h4 id="ma-définition">Ma définition</h4>
+<h2 id="1-mes-définitions">1/ Mes définitions</h2>
+<p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple).</p>
+<p>Une relecture permet de s&rsquo;assurer</p>
 <ul>
-<li>
-<p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple). Une relecture permet de s&rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&rsquo;aucun fichier ne sera intégré au commit pour un simple saut de ligne malencontreux, &hellip;</p>
-</li>
-<li>
-<p><strong>La revue de code</strong> est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&rsquo;intégration du dit code dans les sources de l&rsquo;application. Le processus peut être le suivant :</p>
+<li>que les noms des composants, opérations, attributs, paramètres et variables sont explicites,</li>
+<li>que les commentaires sont utiles et pertinents,</li>
+<li>que le contenu du commit correspond bien aux exigences fournies en entrées (ou au ticket/demande)</li>
+<li>qu&rsquo;aucun fichier ne sera embarqué pour un simple saut de ligne malencontreux,</li>
+<li>&hellip;</li>
+</ul>
+<p><strong>La revue de code</strong> est un processus outillé qui permet de systématiser une relecture de code par un tiers entre la fin du développement et l&rsquo;intégration du dit code dans les sources de l&rsquo;application.</p>
+<p>Le processus peut être le suivant :</p>
 <ul>
-<li>Dès qu&rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers</li>
-<li>Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer</li>
-<li>L&rsquo;auditeur parcourt le code et y incruste des remarques</li>
-<li>Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&rsquo;être intégré à la branche principale</li>
-<li>Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&rsquo;il corrige son code</li>
+<li>Dès qu&rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers.</li>
+<li>Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer.</li>
+<li>L&rsquo;auditeur parcourt le code et y rédige ses remarques.</li>
+<li>Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&rsquo;être intégré à la branche principale.</li>
+<li>Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&rsquo;il corrige son code.</li>
 </ul>
-</li>
-<li>
-<p><strong>L&rsquo;audit de code</strong> est un processus asynchrone qui consiste à faire une relecture de code à tout moment sur le code actuellement intégré à une branche principale. Cette pratique est tout à fait compatible avec les deux autres pratiques précédentes.</p>
-</li>
-</ul>
-<h4 id="le-plus-important">Le plus important</h4>
+<p>Attention, ce processus n&rsquo;intègre pas le build de la branche, le déploiement du(es) livrable(s) généré(s) et les tests à réaliser pour valider le développement réalisé.</p>
+<p><strong>L&rsquo;audit de code</strong> est un processus consistant à faire une relecture de code de tout le code de la branche principale. Ce processus n&rsquo;est pas lié à un développement précis. Mais il peut être judicieux d&rsquo;en réaliser un avant ou après un évènement précis (réversibilité de TMA, montée de version majeure d&rsquo;un framework, &hellip;).</p>
+<p>Cette pratique est tout à fait compatible avec les deux autres pratiques précédentes.</p>
+<h2 id="2-le-plus-important">2/ Le plus important</h2>
 <p>Attention, on parle ici de la qualité du code. La conception, les librairies/framework utilisés, &hellip; sont une autre affaire !!</p>
-<p>Quelques soient les pratiques du projet (revue ou audit ou les deux), l&rsquo;élément central et primordial est l&rsquo;échange entre le développeur et le relecteur. C&rsquo;est cet échange qui est le garant du bon fonctionnement de ces pratiques !! Sans lui :</p>
+<p>Quelques soient les pratiques du projet (revue ou audit ou les deux), l&rsquo;élément central et primordial est l&rsquo;échange entre le développeur et le relecteur. Cet échange est le seul garant du bon fonctionnement de ces pratiques !!</p>
+<p>Sans lui :</p>
 <ul>
-<li>le relecteur ne verra pas directement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaises relectures ;</li>
-<li>le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&rsquo;interminables envois de mails ;</li>
-<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre que s&rsquo;ils communiquent les yeux dans les yeux.</li>
+<li>Le relecteur ne verra pas immédiatement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaises relectures.</li>
+<li>Le développeur recevra une liste de remarque totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Un échange verbal peut éviter d&rsquo;interminables échanges de message.</li>
+<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre que s&rsquo;ils communiquent directement l&rsquo;un avec l&rsquo;autre.</li>
 </ul>
-<h4 id="pour-se-simplifier-la-vie">Pour se simplifier la vie</h4>
+<h2 id="3-pour-se-simplifier-la-vie">3/ Pour se simplifier la vie</h2>
 <p>Certaines règles de développement sont aisément vérifiables (avec une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&rsquo;outil de qualimétrie pour tous les langages.
 Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et de points d&rsquo;attention à contrôler.</p>
-<h4 id="pour-aller-plus-loin">Pour aller plus loin</h4>
+<p>En plus des contrôles de qualité automatiques, les actions automatiques sur le poste du développeur peuvent simplifier les relectures de code. Tous les IDE proposent de formatter le code, réorganiser les imports, &hellip; à chaque sauvegarde de fichier.</p>
+<h2 id="4-pour-aller-plus-loin">4/ Pour aller plus loin</h2>
 <p>Pour mettre en oeuvre ces bonnes idées en poussant l&rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&rsquo;est du <strong>pair programming</strong> !</p>
-<h4 id="sources">Sources</h4>
-<ul>
-<li><a href="http://blog.8thcolor.com/en/2014/04/5-reasons-you-are-not-doing-code-reviews/" rel="external" target="_blank">5 reasons you are not doing code reviews</a></li>
-<li><a href="http://phinze.github.io/2013/12/08/pairing-vs-code-review.html" rel="external" target="_blank">Pairing vs code review</a></li>
-</ul>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
       </main>
     </div>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

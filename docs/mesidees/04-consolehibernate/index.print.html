@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Créer une console Hibernate :: Guillaume TALBOT">
     <meta itemprop="description" content="Créer une console Hibernate">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="335">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="589">
     <title>Créer une console Hibernate :: Guillaume TALBOT</title>
     <link href="https://talbotgui.github.io/mesidees/04-consolehibernate/index.html" rel="canonical" type="text/html" title="Créer une console Hibernate :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-print.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-print.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -102,8 +102,13 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#les-problèmes">Les problèmes</a></li>
-    <li><a href="#les-solutions">Les solutions</a></li>
+    <li><a href="#1-quest-ce-">1/ Qu&rsquo;est-ce ?</a></li>
+    <li><a href="#2-les-problèmes">2/ Les problèmes</a></li>
+    <li><a href="#3-une-solution">3/ Une solution</a></li>
+    <li><a href="#31-étape-1">3.1/ étape 1</a></li>
+    <li><a href="#32-étape-2">3.2/ étape 2</a></li>
+    <li><a href="#33-étape-3">3.3/ étape 3</a></li>
+    <li><a href="#34-étape-4">3.4/ étape 4</a></li>
   </ul>
 </nav>
                 </div>
@@ -142,48 +147,94 @@
 
 <h1 id="créer-une-console-hibernate">Créer une console Hibernate</h1>
 
-<p>Créer une console Hibernate (JBoss Tools) sur un projet SpringBoot+JPA utilisant une HSQLDB</p>
-<h2 id="les-problèmes">Les problèmes</h2>
+<h2 id="1-quest-ce-">1/ Qu&rsquo;est-ce ?</h2>
+<p>Une console Hibernate est un environnement de développement (IDE) permettant de requêter en HQL (ou JPQL) une base de données.</p>
+<p>L&rsquo;intérêt de cette console est de tester une requête HQL sans avoir à déclencher du code Java dans l&rsquo;application ou dans un test de développement.</p>
+<h2 id="2-les-problèmes">2/ Les problèmes</h2>
 <p>Où se trouve la difficulté ? Un peu partout en fait :</p>
 <ul>
-<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude</li>
-<li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude)</li>
-<li>il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB</li>
+<li>Il faut trouver comment installer le plugin Eclipse.</li>
+<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude.</li>
+<li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude).</li>
+<li>il faut paramétrer correctement la connexion à une base de données.</li>
 </ul>
-<h2 id="les-solutions">Les solutions</h2>
-<p>Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue <em>Data Source Explorer</em>. Mais pensez bien à ajouter <em>;readonly=true;files_readonly=true;hsqldb.lock_file=false</em> à la fin de l&rsquo;URL de connexion.</p>
-<p>Quant à la configuration de la console Hibernate, elle demande la création de deux fichiers :</p>
+<h2 id="3-une-solution">3/ Une solution</h2>
+<h2 id="31-étape-1">3.1/ étape 1</h2>
+<p>Pour installer le plugin, démarrer Eclipse puis</p>
+<ul>
+<li>accéder au MarketPlace via le menu <em>Help</em> &gt; <em>Eclipse MarketPlace</em></li>
+<li>faire une recherche avec le mot <em>jboss</em></li>
+<li>sur la ligne <em>JBoss Tools xxx</em>, cliquer sur le bouton <em>install</em></li>
+<li>parmis la liste des fonctionnalités du plugin, ne sélectionner que les packages marqués <em>required</em> et <em>Hibernate Tools</em></li>
+<li>valider toutes les étapes suivantes jusqu&rsquo;au redémarrage d&rsquo;Eclipse (nécessaire pour prendre en compte le nouveau plugin)</li>
+</ul>
+<h2 id="32-étape-2">3.2/ étape 2</h2>
+<p>Pour paramétrer la connexion à la base de données, depuis Eclipse</p>
+<ul>
+<li>ouvrir la perspective <em>Hibernate</em></li>
+<li>afficher la vue <em>Data Source Explorer</em></li>
+<li>faire un clic droit sur <em>Database connexion</em></li>
+<li>cliquer sur <em>new</em></li>
+<li>sélectionner le bon type de base de données et lui fournir un JAR contenant un driver (dans le repository Maven, <em>org.postgresql:postgresql</em> par exemple)</li>
+<li>renseigner les paramètres de connexion</li>
+<li>tester et sauvegarder la connexion</li>
+</ul>
+<h2 id="33-étape-3">3.3/ étape 3</h2>
+<p>Pour rassembler la configuration dans un même endroit, il faut créer un projet Java dans Eclipse utilisant le même JDK que celui utilisé pour démarrer Eclipse.</p>
+<p>La configuration de la console Hibernate  demande la création de deux fichiers. Donc, dans ce projet, créer les deux fichiers :</p>
 <ul>
 <li><em>hibernate.properties</em> qui va rester vide</li>
-<li><em>hibernate.cfg.xml</em> qui va contenir ce code</li>
+<li><em>hibernate.cfg.xml</em> qui va contenir un de ces deux fichiers XML</li>
 </ul>
+<p>Pour une BDD HSQL :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE hibernate-configuration PUBLIC &#34;-//Hibernate/Hibernate Configuration DTD 3.0//EN&#34; &#34;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&#34;&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;hibernate-configuration&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.hsqldb.jdbcDriver<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>username<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.HSQLDialect<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/session-factory&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.hsqldb.jdbcDriver<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>username<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.HSQLDialect<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/session-factory&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/hibernate-configuration&gt;</span></span></span></code></pre></div>
-<p>Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&rsquo;installation), il vous reste à :</p>
+<p>Pour une BDD PostgreSQL :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE hibernate-configuration PUBLIC &#34;-//Hibernate/Hibernate Configuration DTD 3.0//EN&#34; &#34;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;hibernate-configuration&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.postgresql.Driver<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>pwd<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:postgresql://localhost:5432/mybdd<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.PostgreSQL82Dialect<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/session-factory&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/hibernate-configuration&gt;</span></span></span></code></pre></div>
+<p>Toujours dans ce projet, il faut ajouter les répertoires des entités :</p>
 <ul>
-<li>ouvrir la perspective <em>Hibernate</em> (avec le petit bouton <em>Open a perspective</em> en haut à droite)</li>
+<li>faire un clic droit sur le projet</li>
+<li>cliquer sur <em>Properties</em> puis <em>Java Build Path</em></li>
+<li>dans l&rsquo;onglet <em>source</em>, ajouter des <em>Link sources</em> sur les répertoires contenant les classes des entités</li>
+<li>dans l&rsquo;onglet <em>Libraries</em>, ajouter des <em>external jars</em> permettant de faire compiler les sources (hibernate-core, javax-persistence, &hellip; en fonction des besoins)</li>
+</ul>
+<h2 id="34-étape-4">3.4/ étape 4</h2>
+<p>Pour paramétrer la console Hibernate, il reste maintenant à</p>
+<ul>
 <li>dans la vue <em>Hibernate Configurations</em>, faire un clic-droit et un <em>add Configuration&hellip;</em></li>
 <li>renseigner le formulaire avec :
 <ul>
 <li>Nom : ce que vous voulez</li>
 <li>Type : <em>Core</em></li>
 <li>Hibernate version : votre version d&rsquo;Hibernate</li>
-<li>Project : votre projet contenant la persistance</li>
+<li>Project : le projet précédemment créé</li>
 <li>Database Connection : <em>Hibernate configured connection</em></li>
 <li>Property file : le fichier précédemment créé</li>
 <li>Configuration file : le fichier précédemment créé</li>
-<li>Database dialect : HSQL</li>
+<li>Database dialect : HSQL ou PostgreSQL</li>
 </ul>
 </li>
 </ul>
@@ -193,14 +244,14 @@
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
       </main>
     </div>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

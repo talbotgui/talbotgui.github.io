@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2025-01-03T22:43:16+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Git et les mots de passe :: Guillaume TALBOT">
     <meta itemprop="description" content="Git et les mots de passe">
-    <meta itemprop="dateModified" content="2025-01-03T22:43:16+01:00">
-    <meta itemprop="wordCount" content="371">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="543">
     <title>Git et les mots de passe :: Guillaume TALBOT</title>
     <link href="https://talbotgui.github.io/mesidees/28-transcrypt/index.html" rel="canonical" type="text/html" title="Git et les mots de passe :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-print.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-print.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -104,10 +104,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#résumé">Résumé</a></li>
-        <li><a href="#quest-ce-que-transcrypt-">Qu&rsquo;est-ce que Transcrypt ?</a></li>
-        <li><a href="#par-quoi-commencer-">Par quoi commencer ?</a></li>
-        <li><a href="#pour-initialiser-un-dépot-avec-transcrypt">Pour initialiser un dépot avec Transcrypt</a></li>
+        <li><a href="#1-résumé">1/ Résumé</a></li>
+        <li><a href="#2-quest-ce-que-transcrypt-">2/ Qu&rsquo;est-ce que Transcrypt ?</a></li>
+        <li><a href="#3-par-quoi-commencer-">3/ Par quoi commencer ?</a></li>
+        <li><a href="#4-pour-initialiser-un-dépot-avec-transcrypt">4/ Pour initialiser un dépot avec Transcrypt</a></li>
       </ul>
     </li>
   </ul>
@@ -148,23 +148,56 @@
 
 <h1 id="git-et-les-mots-de-passe">Git et les mots de passe</h1>
 
-<h3 id="résumé">Résumé</h3>
+<h3 id="1-résumé">1/ Résumé</h3>
 <p>La (grande?) majorité des développeurs utilisent aujourd&rsquo;hui GIT pour sauvegarder et partager leurs développements.
 Tout y est stocké. Et, parfois, même les mots de passe (clefs, secrets, &hellip;) !!</p>
 <p>La solution optimale serait de ne pas les insérer dans le dépôt GIT. Mais cela signifie ne plus les partager avec le reste de l&rsquo;équipe.</p>
 <p>Une autre solution consiste à chiffrer ces informations avant de les partager sur le repository commun sans oublier de les déchiffrer sur le repository local.</p>
 <p>Une solution (parmis d&rsquo;autre) est <a href="https://github.com/elasticdog/transcrypt" rel="external" target="_blank">Transcrypt</a>.</p>
-<h3 id="quest-ce-que-transcrypt-">Qu&rsquo;est-ce que Transcrypt ?</h3>
+<h3 id="2-quest-ce-que-transcrypt-">2/ Qu&rsquo;est-ce que Transcrypt ?</h3>
 <p>Transcrypt est un outil permettant d&rsquo;initialiser le chiffrement de certains fichiers dans un dépôt Git.</p>
 <p>Une fois le dépôt paramétré, Transcrypt n&rsquo;est plus nécessaire et peut être désinstallé.</p>
 <p>La liste des fichiers à chiffrer avant (et déchiffrer après) chaque commit est paramétrée dans le fichier .gitattributes</p>
-<h3 id="par-quoi-commencer-">Par quoi commencer ?</h3>
-<p><em>La toute première chose à faire est de faire disparaître de l&rsquo;historique GIT le fichier contenant des mots de passe !!</em>
-Pour cela, il suffit d&rsquo;exécuter les commandes suivantes :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>git filter-branch -f --tree-filter &#39;rm -f projects/coupeDesMaisons/src/environments/environment.ts&#39; HEAD
-git push --force</code></pre></div>
-<p>/!\ Prendre le temps de tester le chemin du fichier permet de ne pas attendre la longue exécution du script sans qu&rsquo;aucun commit ne soit modifié !</p>
-<h3 id="pour-initialiser-un-dépot-avec-transcrypt">Pour initialiser un dépot avec Transcrypt</h3>
+<h3 id="3-par-quoi-commencer-">3/ Par quoi commencer ?</h3>
+<ul>
+<li>
+<p>La toute première chose à faire est d&rsquo;<strong>identifier les fichiers contenant des secrets dans l&rsquo;historique GIT</strong>. Pour cela, l&rsquo;outil <a href="https://github.com/gitleaks/gitleaks?tab=readme-ov-file" rel="external" target="_blank">GitLeaks</a> est bien utile.</p>
+<ul>
+<li>Télécharger une version compatible avec le poste de développement depuis la <a href="https://github.com/gitleaks/gitleaks/releases" rel="external" target="_blank">page de téléchargement</a>.</li>
+<li>Extraire le contenu de l&rsquo;archive dans un répertoire dédié en dehors du clone du dépôt.</li>
+<li>Ouvrir une invite de commande dans le clone à analyser</li>
+<li>Exécuter la commande ``````xxx/gitleaks_xxxx/gitleaks.exe git &ndash;report-path gitleaks-report.json```</li>
+<li>Le fichier <strong>gitleaks-report.json</strong> contient alors tous les secrets détectés</li>
+<li>S&rsquo;assurer que le fichier ne contient aucun caractère # (sinon la commande SED est KO)</li>
+<li>Extraire la liste des fichiers et secrets avec le pattern <code>^.*&quot;(File|Secret)&quot;.*$</code></li>
+<li>Mettre sur une même ligne le secret et le nom de fichier</li>
+<li>Eliminer les doublons</li>
+<li>Faire des chemins de fichier des chemins absolus</li>
+<li>Mettre en forme chaque ligne pour obtenir <code>sed -i &quot;s#LE_SECRET_ISSU_DE_GITLEAK#xxxxxxxx#g&quot; &quot;LE_NOM_DE_FICHIER_ISSU_DE_GITLEAK&quot;</code></li>
+<li>Sauvegarder l&rsquo;ensemble des commandes dans un script shell déposé à la racine du dépôt</li>
+</ul>
+</li>
+<li>
+<p>La seconde étape est de faire disparaître de l&rsquo;historique GIT le(s) secret(s). Pour cela, il suffit</p>
+<ul>
+<li>télécharger l&rsquo;outil BFG depuis la <a href="https://rtyley.github.io/bfg-repo-cleaner/#usage" rel="external" target="_blank">page officielle</a></li>
+<li>créer un fichier contenant, sur une ligne différente, chaque secret venant du fichier généré par GitLeaks
+<ul>
+<li>après avoir retiré le caractère = en fin de secret</li>
+<li>suffixé par <code>==&gt;xxxxxxxx</code></li>
+</ul>
+</li>
+<li>exécuter les commandes</li>
+</ul>
+</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>java -jar /d/xxxx/bfg.jar --replace-text /d/xxx/password.txt &#34;/d/cheminVersDepot&#34;
+cd /d/cheminVersDepot
+git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive</code></pre></div>
+<ul>
+<li>Une fois les secrets supprimés, relancer l&rsquo;analyse avec la commande précédete</li>
+</ul>
+<h3 id="4-pour-initialiser-un-dépot-avec-transcrypt">4/ Pour initialiser un dépot avec Transcrypt</h3>
 <ul>
 <li>Installer Transcrypt :
 <ul>
@@ -199,14 +232,14 @@ git push --force</code></pre></div>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Jan 3, 2025
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
       </main>
     </div>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Hugo et GitHub:Pages :: Guillaume TALBOT">
     <meta itemprop="description" content="Hugo et GitHub:Pages">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="50">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="745">
     <title>Hugo et GitHub:Pages :: Guillaume TALBOT</title>
     <link href="https://talbotgui.github.io/mesidees/07-hugoetgithubpages/index.html" rel="canonical" type="text/html" title="Hugo et GitHub:Pages :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-print.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-print.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -102,7 +102,19 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#démarrage">Démarrage</a></li>
+    <li><a href="#1-introduction">1/ Introduction</a></li>
+    <li><a href="#2-objectifs">2/ Objectifs</a></li>
+    <li><a href="#2-la-mise-en-place-de-hugo">2/ La mise en place de Hugo</a></li>
+    <li><a href="#3-créer-le-site-hugo-avec-un-thème">3/ Créer le site HUGO avec un thème</a></li>
+    <li><a href="#4-paramétrer-hugo">4/ Paramétrer HUGO</a>
+      <ul>
+        <li><a href="#41-paramétrage-essentiel">4.1/ Paramétrage essentiel</a></li>
+        <li><a href="#42-paramétrage-propre-au-thème">4.2/ Paramétrage propre au thème</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-créer-un-premier-contenu">5/ Créer un premier contenu</a></li>
+    <li><a href="#6-mettre-en-place-un-build">6/ Mettre en place un build</a></li>
+    <li><a href="#7-publier-dans-github">7/ Publier dans GitHub</a></li>
   </ul>
 </nav>
                 </div>
@@ -141,25 +153,122 @@
 
 <h1 id="hugo-et-githubpages">Hugo et GitHub:Pages</h1>
 
-<h2 id="démarrage">Démarrage</h2>
-<p>Les objectifs sont :</p>
+<h2 id="1-introduction">1/ Introduction</h2>
+<p><em><a href="https://pages.github.com/" rel="external" target="_blank">GitHub:Pages</a></em> est une fonctionnalité très utile de GitHub permettant d&rsquo;héberger un site WEB en le déposant, tout simplement, dans un dépôt Git.</p>
+<p><em><a href="http://gohugo.io/" rel="external" target="_blank">Hugo</a></em> est un outil de génération de site WEB à partir de template et de Markdown.</p>
+<p>Réunis, ces deux outils permettent de réaliser un site très simplement. Les usages sont nombreux. Mais le premier qui me vient est la documentation d&rsquo;un projet : installation du poste, règles de conception/développement/test, pratiques du projet, &hellip; bref, un <a href="/mesidees/10-guidedudev/index.html">guide du développeur</a>.</p>
+<h2 id="2-objectifs">2/ Objectifs</h2>
+<p>Les objectifs de cette page sont :</p>
 <ul>
-<li>de disposer d&rsquo;un repository contenant les sources du site avec des pages en markdown</li>
-<li>d&rsquo;utiliser <a href="http://gohugo.io/" rel="external" target="_blank">Hugo</a> pour réaliser la mise en page et générer le site statique</li>
-<li>de déployer ce site statique dans un repository <a href="https://pages.github.com/" rel="external" target="_blank">GitHub:Pages</a></li>
-<li>d&rsquo;automatiser complètement la génération et le déploiement du site</li>
+<li>de disposer d&rsquo;un repository contenant les sources du site avec des pages en markdown ;</li>
+<li>d&rsquo;utiliser <a href="http://gohugo.io/" rel="external" target="_blank">Hugo</a> pour réaliser la mise en page et générer le site statique ;</li>
+<li>de déployer ce site statique dans un repository <a href="https://pages.github.com/" rel="external" target="_blank">GitHub:Pages</a> ;</li>
+<li>de sipmplifier au maximum la génération et la publication du site.</li>
 </ul>
+<h2 id="2-la-mise-en-place-de-hugo">2/ La mise en place de Hugo</h2>
+<p>Hugo est un exécutable. Il faut donc le télécharger (depuis la <a href="https://github.com/gohugoio/hugo/releases/" rel="external" target="_blank">page officielle</a>) et le déposer dans un répertoire.</p>
+<p>Attention, cet exécutable est dépendant de l&rsquo;OS. Donc, pour construire le site sur Windows et sur Unix, il faut déposer les deux exécutables.</p>
+<p>La première étape est donc de</p>
+<ul>
+<li>créer un répertoire</li>
+<li>y placer l&rsquo;exécutable de Hugo (en conservant ou non le numéro de version dans le nom du fichier)</li>
+</ul>
+<h2 id="3-créer-le-site-hugo-avec-un-thème">3/ Créer le site HUGO avec un thème</h2>
+<p>Pour créer un site avec le thème LEARN (celui utilisé par ce site), exécuter les commandes suivantes (en adaptant le numéro de version si vous souhaitez le conserver dans le nom de fichier) :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo-0.140.1 new site monProjet
+</span></span><span style="display:flex;"><span>cd monProjet
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/McShelby/hugo-theme-relearn.git themes/hugo-theme-relearn
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;theme = &#39;hugo-theme-relearn&#39;&#34;</span> &gt;&gt; hugo.toml
+</span></span><span style="display:flex;"><span>mv ../hugo-0.140.1 ./
+</span></span><span style="display:flex;"><span>hugo-0.140.1 server</span></span></code></pre></div>
+<p>Le site disponible <a href="http://localhost:1313" rel="external" target="_blank">en local</a> n&rsquo;affiche qu&rsquo;une page d&rsquo;accueil vide et aucun contenu.</p>
+<h2 id="4-paramétrer-hugo">4/ Paramétrer HUGO</h2>
+<h3 id="41-paramétrage-essentiel">4.1/ Paramétrage essentiel</h3>
+<p>Le fichier <em>hugo.toml</em> peut être très vide ou très riche selon les besoins. A mon avis, sont obligatoires les informations suivantes :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># L&#39;URL de base du site</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://mon.serveur.de.doc/&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Le nom du thème</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;hugo-theme-relearn&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># La langue du site</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;fr-fr&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Le titre du site</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Mon super site&#34;</span></span></span></code></pre></div>
+<h3 id="42-paramétrage-propre-au-thème">4.2/ Paramétrage propre au thème</h3>
+<p>De plus, chaque thème apporte des fonctionnalités. Voici la <a href="https://mcshelby.github.io/hugo-theme-relearn/introduction/quickstart/index.html" rel="external" target="_blank">documentation du thème relearn</a></p>
+<p>Par exemple, il est utile/possible de :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Thème bleu par défaut mais autres thèmes disponibles</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">themeVariant</span> = [<span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#e6db74">&#39;relearn-light&#39;</span>, <span style="color:#e6db74">&#39;relearn-dark&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Désactiver le lien &#39;Home&#39; dans le menu</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">disableLandingPageButton</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Définir l&#39;auteur</span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">author</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span> = <span style="color:#e6db74">&#39;talbotgui@gmail.com&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#39;Guillaume TALBOT&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Activer l&#39;impression</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">outputs</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">home</span> = [<span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#e6db74">&#39;print&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">page</span> = [<span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#e6db74">&#39;print&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">section</span> = [<span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#e6db74">&#39;print&#39;</span>]</span></span></code></pre></div>
+<h2 id="5-créer-un-premier-contenu">5/ Créer un premier contenu</h2>
+<p>Pour créer une page dans Hugo, il suffit de créer une arboresence dans le répertoire <em>./content</em>.</p>
+<p>Chaque répertoire doit contenir un fichier <em>index.md</em> dont le contenu commence par :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: Titre de ma page
+</span></span><span style="display:flex;"><span>description: La description de ma page
+</span></span><span style="display:flex;"><span>weight: 101
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Voici le premier chapitre de ma page</span></span></code></pre></div>
+<h2 id="6-mettre-en-place-un-build">6/ Mettre en place un build</h2>
+<p>Hugo est un outil de génération et pas un outil de build.</p>
+<p>Pour ne pas avoir à retenir les paramètres de ligne de commande à utiliser pour démarrer un serveur local ou générer l&rsquo;application, il est préférable de stocker les scripts quelque part. Comme un outil de build (Maven ou NPM) est toujours utile, autant en utiliser un. Donc il faut créer un <em>package.json</em> minimal :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;monProjet&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;scripts&#34;</span>: {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;hugo-0.140.1 serve --bind 0.0.0.0 &#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;hugo-0.140.1.exe&#34;</span>
+</span></span><span style="display:flex;"><span>	},
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;dependencies&#34;</span>: {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Pour démarrer le serveur, il suffit donc d&rsquo;exécuter la commande <code>npm run start</code>.</p>
+<p>Pour générer le site, il suffit donc d&rsquo;exécuter la commande <code>npm run build</code>.</p>
+<h2 id="7-publier-dans-github">7/ Publier dans GitHub</h2>
+<p>La plus simple des solutions de publication dans Gitbug-Pages est de créer un répertoire <em>./docs</em> dans la branche principale du dépôt avec le contenu du site.</p>
+<p>Or ce répertoire est utilisé, par défaut, par Hugo, pour stocker les pages HTML générés par le serveur local. Il est donc préférable de séparer ce répertoire de génération temporaire (<em>hugo serve</em>) du répertoire de génération réel (<em>hugo</em>).</p>
+<p>De plus, la génération ajoute ou modifie les fichiers du répertoire <em>./docs</em> mais ne supprime rien. Donc il faut que le répertoire soit vidé avant de faire générer les pages HTML à Hugo.</p>
+<p>Donc le <em>package.json</em> doit être enrichi :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;monProjet&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;scripts&#34;</span>: {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;hugo-0.140.1 serve --bind 0.0.0.0 -d docsServe&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;rm -rf ./docs/* &amp;&amp; hugo-0.140.1.exe&#34;</span>
+</span></span><span style="display:flex;"><span>	},
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;dependencies&#34;</span>: {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
       </main>
     </div>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Coder des ré-essais en Java :: Guillaume TALBOT">
     <meta itemprop="description" content="Coder des ré-essais en Java">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="89">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="65">
     <title>Coder des ré-essais en Java :: Guillaume TALBOT</title>
     <link href="https://talbotgui.github.io/mesidees/05-retryenjava/index.html" rel="canonical" type="text/html" title="Coder des ré-essais en Java :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-print.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-print.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -99,7 +99,13 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-avant--guava-retrying">1/ Avant : guava-retrying</a></li>
+    <li><a href="#2-en-2025--spring-retry">2/ en 2025 : spring-retry</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -136,58 +142,25 @@
 
 <h1 id="coder-des-ré-essais-en-java">Coder des ré-essais en Java</h1>
 
-<p>La librairie <strong>guava-retrying</strong> est assez pratique pour définir des méthodes à réessayer en cas d&rsquo;échec.</p>
+<h2 id="1-avant--guava-retrying">1/ Avant : guava-retrying</h2>
+<p>A une lontaine époque, la librairie <strong>guava-retrying</strong> était pratique pour définir des méthodes à réessayer en cas d&rsquo;échec. Mais ce projet n&rsquo;est plus maintenu.</p>
 <p>Documentation : <a href="https://github.com/rholder/guava-retrying" rel="external" target="_blank">ici</a></p>
-<h4 id="dépendance">Dépendance</h4>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;groupId&gt;</span>com.github.rholder<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;artifactId&gt;</span>guava-retrying<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;version&gt;</span>2.0.0<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span></span></span></code></pre></div>
-<h4 id="exemple">Exemple</h4>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Callable;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.ExecutionException;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.TimeUnit;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Assert;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.RetryException;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.Retryer;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.RetryerBuilder;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.StopStrategies;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.WaitStrategies;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testRetry</span>() <span style="color:#66d9ef">throws</span> ExecutionException, RetryException {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> nbEssais <span style="color:#f92672">=</span> 6;
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> tempsEntreDeuxEssaisEnMs <span style="color:#f92672">=</span> 500;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> Retryer<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> retryer <span style="color:#f92672">=</span> RetryerBuilder.<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>newBuilder()<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">retryIfExceptionOfType</span>(AssertionError.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">retryIfRuntimeException</span>()<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">withStopStrategy</span>(StopStrategies.<span style="color:#a6e22e">stopAfterAttempt</span>(nbEssais))<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">withWaitStrategy</span>(WaitStrategies.<span style="color:#a6e22e">fixedWait</span>(tempsEntreDeuxEssaisEnMs, TimeUnit.<span style="color:#a6e22e">MILLISECONDS</span>))<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">build</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> Callable<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> assertion <span style="color:#f92672">=</span> () <span style="color:#f92672">-&gt;</span> {
-</span></span><span style="display:flex;"><span>			Assert.<span style="color:#a6e22e">assertNotNull</span>(<span style="color:#e6db74">&#34;attendu&#34;</span>);
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>		};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		retryer.<span style="color:#a6e22e">call</span>(assertion);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h2 id="2-en-2025--spring-retry">2/ en 2025 : spring-retry</h2>
+<p>SpringFramework fournit, depuis 2011, une librairie pour faire ça.</p>
+<p>En voici la documentation : <a href="https://docs.spring.io/spring-batch/docs/latest/reference/html/retry.html" rel="external" target="_blank">ici</a></p>
+<p>En voici le projet : <a href="https://github.com/spring-projects/spring-retry" rel="external" target="_blank">ici</a></p>
+<p>Et, enfin, voici un article Baldung : <a href="https://www.baeldung.com/spring-retry" rel="external" target="_blank">ici</a>.</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
       </main>
     </div>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

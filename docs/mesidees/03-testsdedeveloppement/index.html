@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Tests de développement :: Guillaume TALBOT">
     <meta itemprop="description" content="Tests de développement">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="228">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="245">
     <title>Tests de développement :: Guillaume TALBOT</title>
     <link href="/mesidees/03-testsdedeveloppement/index.print.html" rel="alternate" type="text/html" title="Tests de développement :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-html.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-html.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -99,7 +99,13 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-coup-de-gueule-en-introduction">1/ Coup de gueule en introduction</a></li>
+    <li><a href="#2-discutons">2/ Discutons</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -136,15 +142,18 @@
 
 <h1 id="tests-de-développement">Tests de développement</h1>
 
-<p>J&rsquo;en ai ras le bol de ce débat stérile sur les tests unitaires. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&rsquo;adjectif unitaire.</p>
+<h2 id="1-coup-de-gueule-en-introduction">1/ Coup de gueule en introduction</h2>
+<p>J&rsquo;en ai ras le bol de ce débat stérile sur les <em>tests unitaires</em>. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&rsquo;adjectif unitaire.</p>
+<h2 id="2-discutons">2/ Discutons</h2>
 <p>D&rsquo;un côté, les tests sont unitaires quand le SUT (System Under Test) se limite à une classe voire une méthode. L&rsquo;avantage de ces tests est qu&rsquo;ils sont assez simples à rédiger car le code à tester se limite à celui de la classe (inutile de connaître le comportement de tous les autres composants du système qui peuvent être mis en jeu). Le problème est qu&rsquo;il faut justement arriver à isoler le SUT et donc utiliser des techniques de bouchonnage (encore un framework que les collaborateurs du projet doivent apprendre à maîtriser).</p>
-<p>De l&rsquo;autre côté, les tests sont unitaires du moment qu&rsquo;ils participent à la construction de l&rsquo;application durant les travaux du développeur. Et ce quel que soit la granularité du SUT, que les tests soient unitaires (selon la première définition), d&rsquo;intégration ou applicatif (de bout en bout avec tous les composants et systèmes externes).</p>
+<p>De l&rsquo;autre côté, les tests sont unitaires du moment qu&rsquo;ils participent à la construction de l&rsquo;application durant les travaux du développeur (j&rsquo;aime les chefs de projet définissant un nombre de jours de &ldquo;programmation et tests unitaires&rdquo;). Dans cette définition, n&rsquo;est pas pris en compte la granularité du SUT.</p>
+<p>La troisième définition (la pire à mon sens) est le test basé sur JUnit.</p>
 <p>Et si, pour se simplifier la vie, on parlait de tests de développement utilisant des TU, TI et TA ?</p>
 <p>Et là, on me pose la question “Et les tests de non-régression ?”. Ma réponse est simple “Un test de non-régression a été un test de développement mais le développement est fini et le test est resté.”</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
@@ -252,8 +261,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

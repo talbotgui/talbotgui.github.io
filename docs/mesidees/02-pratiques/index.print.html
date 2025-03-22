@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Liens sur des pratiques utiles :: Guillaume TALBOT">
     <meta itemprop="description" content="Liens sur des pratiques utiles">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="315">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="343">
     <title>Liens sur des pratiques utiles :: Guillaume TALBOT</title>
     <link href="https://talbotgui.github.io/mesidees/02-pratiques/index.html" rel="canonical" type="text/html" title="Liens sur des pratiques utiles :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-print.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-print.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -102,13 +102,9 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#pratiques-de-développement-">Pratiques de développement :</a></li>
-        <li><a href="#documentation-dune-solution-dun-langage-ou-dun-projet-">Documentation d&rsquo;une solution, d&rsquo;un langage ou d&rsquo;un projet :</a></li>
-        <li><a href="#pratiques-triés-par-méthodeframework-">Pratiques triés par méthode/framework :</a></li>
-      </ul>
-    </li>
+    <li><a href="#pratiques-de-développement-">Pratiques de développement :</a></li>
+    <li><a href="#documentation-dune-solution-dun-langage-ou-dun-projet-">Documentation d&rsquo;une solution, d&rsquo;un langage ou d&rsquo;un projet :</a></li>
+    <li><a href="#pratiques-triés-par-méthodeframework-">Pratiques triés par méthode/framework :</a></li>
   </ul>
 </nav>
                 </div>
@@ -147,39 +143,51 @@
 
 <h1 id="liens-sur-des-pratiques-utiles">Liens sur des pratiques utiles</h1>
 
-<h3 id="pratiques-de-développement-">Pratiques de développement :</h3>
+<h2 id="pratiques-de-développement-">Pratiques de développement :</h2>
 <ul>
-<li><a href="http://fr.slideshare.net/redigon/refactoring-1658371" rel="external" target="_blank">Refactoring tips - Martin Fowler</a></li>
-<li><a href="https://github.com/iluwatar/java-design-patterns" rel="external" target="_blank">DesignPattern avec explication et code</a></li>
+<li><a href="http://fr.slideshare.net/redigon/refactoring-1658371" rel="external" target="_blank">Refactoring tips - Martin Fowler</a>
+<ul>
+<li>document publié en 2009 mais encore d&rsquo;actualité</li>
+<li>les astuces commencent au slide 14</li>
 </ul>
-<h3 id="documentation-dune-solution-dun-langage-ou-dun-projet-">Documentation d&rsquo;une solution, d&rsquo;un langage ou d&rsquo;un projet :</h3>
+</li>
+<li><a href="https://github.com/iluwatar/java-design-patterns" rel="external" target="_blank">DesignPattern avec explication et code</a>
+<ul>
+<li>l&rsquo;un des patterns les plus connus est le <em>singleton</em>.
+<ul>
+<li>Mais il peut être implémenté de <a href="https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/IvoryTower.java" rel="external" target="_blank">manière simpliste</a></li>
+<li>Ou <a href="https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/ThreadSafeDoubleCheckLocking.java" rel="external" target="_blank">très complexe</a></li>
+<li>Cette version est <a href="https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/ThreadSafeLazyLoadedIvoryTower.java" rel="external" target="_blank">un bon compromis</a></li>
+</ul>
+</li>
+<li>un autre pattern très utile est <a href="https://github.com/iluwatar/java-design-patterns/blob/master/visitor/README.md" rel="external" target="_blank">le <em>visiteur</em></a></li>
+<li>moins utilisé, <a href="https://github.com/iluwatar/java-design-patterns/tree/master/state" rel="external" target="_blank">la gestion d&rsquo;état</a></li>
+<li>le <a href="https://github.com/iluwatar/java-design-patterns/tree/master/feature-toggle" rel="external" target="_blank">feature-toggle</a></li>
+<li>le <a href="https://github.com/iluwatar/java-design-patterns/tree/master/data-access-object" rel="external" target="_blank">DAO</a></li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h2 id="documentation-dune-solution-dun-langage-ou-dun-projet-">Documentation d&rsquo;une solution, d&rsquo;un langage ou d&rsquo;un projet :</h2>
 <ul>
 <li>Frameworks :
 <ul>
-<li><a href="https://github.com/syalioune/awesome-java" rel="external" target="_blank">Liste très riche de frameworks en tout genre</a></li>
+<li><a href="https://github.com/akullpp/awesome-java" rel="external" target="_blank">Liste très riche de frameworks en tout genre</a></li>
 <li><a href="https://github.com/google/jimfs" rel="external" target="_blank">Mock d&rsquo;un FileSystem</a></li>
-<li><a href="http://selenide.org/quick-start.html" rel="external" target="_blank">Selenide - sur couche à Selenium simplifiant l&rsquo;API</a></li>
-</ul>
-</li>
-<li>Langages :
-<ul>
-<li><a href="https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.sea5g1fuv" rel="external" target="_blank">JS - les fonctionnalités de l&rsquo;objet console</a></li>
-<li><a href="http://openweb.eu.org/articles/cascade_css" rel="external" target="_blank">CSS - les règles de priorité de la cascade</a></li>
 </ul>
 </li>
 <li>Outils :
 <ul>
 <li><a href="http://asciidoctor.org/docs/asciidoctor-maven-plugin/" rel="external" target="_blank">AsciiDoctor - générer la documentation avec Maven</a></li>
 <li><a href="https://gohugo.io/overview/introduction/" rel="external" target="_blank">Hugo</a></li>
-<li><a href="http://www.bogotobogo.com/Hadoop/ELK/ELK_ElasticSearch_Logstash_Kibana4.php" rel="external" target="_blank">ELK - installation</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="pratiques-triés-par-méthodeframework-">Pratiques triés par méthode/framework :</h3>
+<h2 id="pratiques-triés-par-méthodeframework-">Pratiques triés par méthode/framework :</h2>
 <ul>
 <li>Scrum :
 <ul>
-<li>objectif de sprint</li>
+<li>objectifs de sprint</li>
 <li>sprint backlog</li>
 <li>product backlog</li>
 <li>burn-down chart</li>
@@ -243,14 +251,14 @@
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
       </main>
     </div>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

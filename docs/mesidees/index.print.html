@@ -23,11 +23,11 @@
     <title>Mes idées :: Guillaume TALBOT</title>
     <link href="https://talbotgui.github.io/mesidees/index.html" rel="canonical" type="text/html" title="Mes idées :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-print.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-print.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -208,37 +208,37 @@
 
 <h1 id="dette-technique">Dette technique</h1>
 
-<h4 id="définitions-sur-le-net">Définitions sur le net</h4>
+<h2 id="1-définitions-sur-le-net">1/ Définitions sur le net</h2>
 <ul>
 <li>Ward Cunningham (1992) : if you develop a program for a long period of time by only adding features and never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer.</li>
 <li>James Shore : the cumulative total of less-than-perfect design and implementation</li>
 <li>Tom Poppendieck : everything that makes your code harder to change</li>
 </ul>
-<h4 id="ma-définition">Ma définition</h4>
+<h2 id="2-ma-définition">2/ Ma définition</h2>
 <p>La dette technique</p>
 <ul>
-<li>est constituée des imperfections du design et du code</li>
-<li>réduit la productivité de l&rsquo;équipe</li>
+<li>est constituée des imperfections de conception et de développement</li>
+<li>nuit la productivité de l&rsquo;équipe</li>
 <li>réduit la maintenabilité</li>
 <li>augmente le nombre d&rsquo;erreurs (bugs dans les nouvelles fonctionnalités et régressions dans le code existant)</li>
-<li>se mesure par l&rsquo;effort qu&rsquo;il faut pour la résorber</li>
+<li>se mesure par l&rsquo;effort qu&rsquo;il faut pour la résorber (c&rsquo;est aussi la <a href="https://docs.sonarsource.com/sonarqube-server/latest/glossary/#t" rel="external" target="_blank">définition de la dette technique de Sonar</a>)</li>
 </ul>
 <p>Ces imperfections/violations se séparent en 3 groupes :</p>
 <ul>
-<li>les imperfections <strong>identifiées et délibérées</strong> : elles sont les preuves de mauvais choix fait en toute connaissance de cause. Ces choix doivent impérativement donner lieu à un plan d&rsquo;action pour résoudre le problème. Exemple : pas de mesure de la couverture de code ni de vérification des exigences qui y sont liées dans un premier temps à cause des délais. Mais on y reviendra juste après la livraison.</li>
-<li>les imperfections <strong>involontaires et relevées par un outil</strong> : elles sont les preuves d&rsquo;une incompétence ou d&rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code &ldquo;commité&rdquo;. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus.</li>
+<li>les imperfections <strong>identifiées et délibérées</strong> : elles sont les preuves de mauvais choix faits en toute connaissance de cause. Ces choix doivent impérativement donner lieu à un plan d&rsquo;action pour résoudre le problème. Exemple : pas de mesure de la couverture de code ni de vérification des exigences qui y sont liées dans un premier temps à cause des délais. Mais on y reviendra juste après la livraison (les promesses n&rsquo;engagent que ceux qui y croient).</li>
+<li>les imperfections <strong>involontaires et relevées par un outil</strong> : elles sont les preuves d&rsquo;une erreur, incompétence ou d&rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code &ldquo;commité&rdquo;. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus (personne n&rsquo;est pas parfait).</li>
 <li>les imperfections <strong>involontaires et non identifiées</strong> : elles sont souvent identifiées durant la résolution d&rsquo;un bug. Le problème est général à tout le code mais c&rsquo;est un code en particulier qui a fait émerger un problème. Il faut alors ajouter une règle de développement sur le projet (documenter la règle et l&rsquo;intégrer dans les outils de vérification). Exemple : un caractère bizarre dans une page WEB va permettre de se rendre compte qu&rsquo;une partie des fichiers &ldquo;source&rdquo; n&rsquo;est pas en UTF8.</li>
 </ul>
-<p>La dette se traite en</p>
+<p>La dette se traite</p>
 <ul>
-<li>définissant au plus tôt des règles de conception, de développement et de test</li>
-<li>mettant en place des outils (sur le poste du développeur et dans l&rsquo;intégration continue)</li>
-<li>sensibilisant/formant les développeurs pour qu&rsquo;ils génèrent moins de dette</li>
-<li>attribuant une priorité à chaque imperfection existante (ou type d&rsquo;imperfections)</li>
-<li>organisant des actions de refactoring pour réduire le nombre d&rsquo;imperfections</li>
-<li>amendant et enrichissant les règles tout au long du projet</li>
+<li>en définissant au plus tôt des règles de conception, de développement et de test</li>
+<li>en mettant en place des outils (sur le poste du développeur et dans l&rsquo;intégration continue)</li>
+<li>en sensibilisant/formant les développeurs pour qu&rsquo;ils génèrent moins de dette</li>
+<li>en attribuant une priorité à chaque imperfection existante (ou type d&rsquo;imperfections)</li>
+<li>en organisant des actions de refactoring pour réduire le nombre d&rsquo;imperfections (investir dans la qualité du code n&rsquo;est pas une perte de temps mais un investissement)</li>
+<li>en amendant et enrichissant les règles tout au long du projet</li>
 </ul>
-<h4 id="sources">Sources</h4>
+<h2 id="3-sources">3/ Sources</h2>
 <ul>
 <li><a href="http://www.c2.com/cgi/wiki?WardExplainsDebtMetaphor" rel="external" target="_blank">Technical debt - Ward Cunningham</a></li>
 <li><a href="https://www.youtube.com/watch?v=pqeJFYwnkjE" rel="external" target="_blank">Technical debt - Ward Cunningham</a></li>
@@ -248,7 +248,7 @@
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -257,39 +257,51 @@
 
 <h1 id="liens-sur-des-pratiques-utiles">Liens sur des pratiques utiles</h1>
 
-<h3 id="pratiques-de-développement-">Pratiques de développement :</h3>
+<h2 id="pratiques-de-développement-">Pratiques de développement :</h2>
 <ul>
-<li><a href="http://fr.slideshare.net/redigon/refactoring-1658371" rel="external" target="_blank">Refactoring tips - Martin Fowler</a></li>
-<li><a href="https://github.com/iluwatar/java-design-patterns" rel="external" target="_blank">DesignPattern avec explication et code</a></li>
+<li><a href="http://fr.slideshare.net/redigon/refactoring-1658371" rel="external" target="_blank">Refactoring tips - Martin Fowler</a>
+<ul>
+<li>document publié en 2009 mais encore d&rsquo;actualité</li>
+<li>les astuces commencent au slide 14</li>
 </ul>
-<h3 id="documentation-dune-solution-dun-langage-ou-dun-projet-">Documentation d&rsquo;une solution, d&rsquo;un langage ou d&rsquo;un projet :</h3>
+</li>
+<li><a href="https://github.com/iluwatar/java-design-patterns" rel="external" target="_blank">DesignPattern avec explication et code</a>
+<ul>
+<li>l&rsquo;un des patterns les plus connus est le <em>singleton</em>.
+<ul>
+<li>Mais il peut être implémenté de <a href="https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/IvoryTower.java" rel="external" target="_blank">manière simpliste</a></li>
+<li>Ou <a href="https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/ThreadSafeDoubleCheckLocking.java" rel="external" target="_blank">très complexe</a></li>
+<li>Cette version est <a href="https://github.com/iluwatar/java-design-patterns/blob/master/singleton/src/main/java/com/iluwatar/singleton/ThreadSafeLazyLoadedIvoryTower.java" rel="external" target="_blank">un bon compromis</a></li>
+</ul>
+</li>
+<li>un autre pattern très utile est <a href="https://github.com/iluwatar/java-design-patterns/blob/master/visitor/README.md" rel="external" target="_blank">le <em>visiteur</em></a></li>
+<li>moins utilisé, <a href="https://github.com/iluwatar/java-design-patterns/tree/master/state" rel="external" target="_blank">la gestion d&rsquo;état</a></li>
+<li>le <a href="https://github.com/iluwatar/java-design-patterns/tree/master/feature-toggle" rel="external" target="_blank">feature-toggle</a></li>
+<li>le <a href="https://github.com/iluwatar/java-design-patterns/tree/master/data-access-object" rel="external" target="_blank">DAO</a></li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h2 id="documentation-dune-solution-dun-langage-ou-dun-projet-">Documentation d&rsquo;une solution, d&rsquo;un langage ou d&rsquo;un projet :</h2>
 <ul>
 <li>Frameworks :
 <ul>
-<li><a href="https://github.com/syalioune/awesome-java" rel="external" target="_blank">Liste très riche de frameworks en tout genre</a></li>
+<li><a href="https://github.com/akullpp/awesome-java" rel="external" target="_blank">Liste très riche de frameworks en tout genre</a></li>
 <li><a href="https://github.com/google/jimfs" rel="external" target="_blank">Mock d&rsquo;un FileSystem</a></li>
-<li><a href="http://selenide.org/quick-start.html" rel="external" target="_blank">Selenide - sur couche à Selenium simplifiant l&rsquo;API</a></li>
-</ul>
-</li>
-<li>Langages :
-<ul>
-<li><a href="https://medium.com/outsystems-experts/beyond-console-debugging-tricks-f7d0d7f5df4#.sea5g1fuv" rel="external" target="_blank">JS - les fonctionnalités de l&rsquo;objet console</a></li>
-<li><a href="http://openweb.eu.org/articles/cascade_css" rel="external" target="_blank">CSS - les règles de priorité de la cascade</a></li>
 </ul>
 </li>
 <li>Outils :
 <ul>
 <li><a href="http://asciidoctor.org/docs/asciidoctor-maven-plugin/" rel="external" target="_blank">AsciiDoctor - générer la documentation avec Maven</a></li>
 <li><a href="https://gohugo.io/overview/introduction/" rel="external" target="_blank">Hugo</a></li>
-<li><a href="http://www.bogotobogo.com/Hadoop/ELK/ELK_ElasticSearch_Logstash_Kibana4.php" rel="external" target="_blank">ELK - installation</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="pratiques-triés-par-méthodeframework-">Pratiques triés par méthode/framework :</h3>
+<h2 id="pratiques-triés-par-méthodeframework-">Pratiques triés par méthode/framework :</h2>
 <ul>
 <li>Scrum :
 <ul>
-<li>objectif de sprint</li>
+<li>objectifs de sprint</li>
 <li>sprint backlog</li>
 <li>product backlog</li>
 <li>burn-down chart</li>
@@ -353,7 +365,7 @@
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -362,15 +374,18 @@
 
 <h1 id="tests-de-développement">Tests de développement</h1>
 
-<p>J&rsquo;en ai ras le bol de ce débat stérile sur les tests unitaires. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&rsquo;adjectif unitaire.</p>
+<h2 id="1-coup-de-gueule-en-introduction">1/ Coup de gueule en introduction</h2>
+<p>J&rsquo;en ai ras le bol de ce débat stérile sur les <em>tests unitaires</em>. Chacun a sa petite définition et, en fonction du contexte, utilise mal l&rsquo;adjectif unitaire.</p>
+<h2 id="2-discutons">2/ Discutons</h2>
 <p>D&rsquo;un côté, les tests sont unitaires quand le SUT (System Under Test) se limite à une classe voire une méthode. L&rsquo;avantage de ces tests est qu&rsquo;ils sont assez simples à rédiger car le code à tester se limite à celui de la classe (inutile de connaître le comportement de tous les autres composants du système qui peuvent être mis en jeu). Le problème est qu&rsquo;il faut justement arriver à isoler le SUT et donc utiliser des techniques de bouchonnage (encore un framework que les collaborateurs du projet doivent apprendre à maîtriser).</p>
-<p>De l&rsquo;autre côté, les tests sont unitaires du moment qu&rsquo;ils participent à la construction de l&rsquo;application durant les travaux du développeur. Et ce quel que soit la granularité du SUT, que les tests soient unitaires (selon la première définition), d&rsquo;intégration ou applicatif (de bout en bout avec tous les composants et systèmes externes).</p>
+<p>De l&rsquo;autre côté, les tests sont unitaires du moment qu&rsquo;ils participent à la construction de l&rsquo;application durant les travaux du développeur (j&rsquo;aime les chefs de projet définissant un nombre de jours de &ldquo;programmation et tests unitaires&rdquo;). Dans cette définition, n&rsquo;est pas pris en compte la granularité du SUT.</p>
+<p>La troisième définition (la pire à mon sens) est le test basé sur JUnit.</p>
 <p>Et si, pour se simplifier la vie, on parlait de tests de développement utilisant des TU, TI et TA ?</p>
 <p>Et là, on me pose la question “Et les tests de non-régression ?”. Ma réponse est simple “Un test de non-régression a été un test de développement mais le développement est fini et le test est resté.”</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -379,48 +394,94 @@
 
 <h1 id="créer-une-console-hibernate">Créer une console Hibernate</h1>
 
-<p>Créer une console Hibernate (JBoss Tools) sur un projet SpringBoot+JPA utilisant une HSQLDB</p>
-<h2 id="les-problèmes">Les problèmes</h2>
+<h2 id="1-quest-ce-">1/ Qu&rsquo;est-ce ?</h2>
+<p>Une console Hibernate est un environnement de développement (IDE) permettant de requêter en HQL (ou JPQL) une base de données.</p>
+<p>L&rsquo;intérêt de cette console est de tester une requête HQL sans avoir à déclencher du code Java dans l&rsquo;application ou dans un test de développement.</p>
+<h2 id="2-les-problèmes">2/ Les problèmes</h2>
 <p>Où se trouve la difficulté ? Un peu partout en fait :</p>
 <ul>
-<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude</li>
-<li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude)</li>
-<li>il faut paramétrer correctement la connexion à une base de données HSQLDB de type FILE qui est déjà démarrée dans une application WEB</li>
+<li>Il faut trouver comment installer le plugin Eclipse.</li>
+<li>La console Hibernate de JBoss Tools utilise encore un fichier <em>hibernate.cfg.xml</em> dont on a plus très souvent l&rsquo;habitude.</li>
+<li>La recherche d&rsquo;entités par présence d&rsquo;annotation n&rsquo;est pas disponible (c&rsquo;est Spring qui le fait d&rsquo;habitude).</li>
+<li>il faut paramétrer correctement la connexion à une base de données.</li>
 </ul>
-<h2 id="les-solutions">Les solutions</h2>
-<p>Si vous voulez exécuter des requêtes SQL depuis votre Eclipse, créez-vous une connexion depuis la vue <em>Data Source Explorer</em>. Mais pensez bien à ajouter <em>;readonly=true;files_readonly=true;hsqldb.lock_file=false</em> à la fin de l&rsquo;URL de connexion.</p>
-<p>Quant à la configuration de la console Hibernate, elle demande la création de deux fichiers :</p>
+<h2 id="3-une-solution">3/ Une solution</h2>
+<h2 id="31-étape-1">3.1/ étape 1</h2>
+<p>Pour installer le plugin, démarrer Eclipse puis</p>
+<ul>
+<li>accéder au MarketPlace via le menu <em>Help</em> &gt; <em>Eclipse MarketPlace</em></li>
+<li>faire une recherche avec le mot <em>jboss</em></li>
+<li>sur la ligne <em>JBoss Tools xxx</em>, cliquer sur le bouton <em>install</em></li>
+<li>parmis la liste des fonctionnalités du plugin, ne sélectionner que les packages marqués <em>required</em> et <em>Hibernate Tools</em></li>
+<li>valider toutes les étapes suivantes jusqu&rsquo;au redémarrage d&rsquo;Eclipse (nécessaire pour prendre en compte le nouveau plugin)</li>
+</ul>
+<h2 id="32-étape-2">3.2/ étape 2</h2>
+<p>Pour paramétrer la connexion à la base de données, depuis Eclipse</p>
+<ul>
+<li>ouvrir la perspective <em>Hibernate</em></li>
+<li>afficher la vue <em>Data Source Explorer</em></li>
+<li>faire un clic droit sur <em>Database connexion</em></li>
+<li>cliquer sur <em>new</em></li>
+<li>sélectionner le bon type de base de données et lui fournir un JAR contenant un driver (dans le repository Maven, <em>org.postgresql:postgresql</em> par exemple)</li>
+<li>renseigner les paramètres de connexion</li>
+<li>tester et sauvegarder la connexion</li>
+</ul>
+<h2 id="33-étape-3">3.3/ étape 3</h2>
+<p>Pour rassembler la configuration dans un même endroit, il faut créer un projet Java dans Eclipse utilisant le même JDK que celui utilisé pour démarrer Eclipse.</p>
+<p>La configuration de la console Hibernate  demande la création de deux fichiers. Donc, dans ce projet, créer les deux fichiers :</p>
 <ul>
 <li><em>hibernate.properties</em> qui va rester vide</li>
-<li><em>hibernate.cfg.xml</em> qui va contenir ce code</li>
+<li><em>hibernate.cfg.xml</em> qui va contenir un de ces deux fichiers XML</li>
 </ul>
+<p>Pour une BDD HSQL :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE hibernate-configuration PUBLIC &#34;-//Hibernate/Hibernate Configuration DTD 3.0//EN&#34; &#34;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&#34;&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;hibernate-configuration&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.hsqldb.jdbcDriver<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>username<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.HSQLDialect<span style="color:#f92672">&lt;/property&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/session-factory&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.hsqldb.jdbcDriver<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:hsqldb:file:C:/monCheminVersMaBaseDeDonnees/idDeMaBase;readonly=true;files_readonly=true;hsqldb.lock_file=false<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>username<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.HSQLDialect<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/session-factory&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/hibernate-configuration&gt;</span></span></span></code></pre></div>
-<p>Une fois les fichiers créés et JBoss Tools installé sur votre Eclipse (ne cocher que Hibernate Tools durant l&rsquo;installation), il vous reste à :</p>
+<p>Pour une BDD PostgreSQL :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE hibernate-configuration PUBLIC &#34;-//Hibernate/Hibernate Configuration DTD 3.0//EN&#34; &#34;http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;hibernate-configuration&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;session-factory</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sessionFactory&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.driver_class&#34;</span><span style="color:#f92672">&gt;</span>org.postgresql.Driver<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.password&#34;</span><span style="color:#f92672">&gt;</span>pwd<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.url&#34;</span><span style="color:#f92672">&gt;</span>jdbc:postgresql://localhost:5432/mybdd<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.connection.username&#34;</span><span style="color:#f92672">&gt;</span>login<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.dialect&#34;</span><span style="color:#f92672">&gt;</span>org.hibernate.dialect.PostgreSQL82Dialect<span style="color:#f92672">&lt;/property&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.MonEntite&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;mapping</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;mon.package.EtToutesMesAutresEntitesSansEnOublier&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/session-factory&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/hibernate-configuration&gt;</span></span></span></code></pre></div>
+<p>Toujours dans ce projet, il faut ajouter les répertoires des entités :</p>
 <ul>
-<li>ouvrir la perspective <em>Hibernate</em> (avec le petit bouton <em>Open a perspective</em> en haut à droite)</li>
+<li>faire un clic droit sur le projet</li>
+<li>cliquer sur <em>Properties</em> puis <em>Java Build Path</em></li>
+<li>dans l&rsquo;onglet <em>source</em>, ajouter des <em>Link sources</em> sur les répertoires contenant les classes des entités</li>
+<li>dans l&rsquo;onglet <em>Libraries</em>, ajouter des <em>external jars</em> permettant de faire compiler les sources (hibernate-core, javax-persistence, &hellip; en fonction des besoins)</li>
+</ul>
+<h2 id="34-étape-4">3.4/ étape 4</h2>
+<p>Pour paramétrer la console Hibernate, il reste maintenant à</p>
+<ul>
 <li>dans la vue <em>Hibernate Configurations</em>, faire un clic-droit et un <em>add Configuration&hellip;</em></li>
 <li>renseigner le formulaire avec :
 <ul>
 <li>Nom : ce que vous voulez</li>
 <li>Type : <em>Core</em></li>
 <li>Hibernate version : votre version d&rsquo;Hibernate</li>
-<li>Project : votre projet contenant la persistance</li>
+<li>Project : le projet précédemment créé</li>
 <li>Database Connection : <em>Hibernate configured connection</em></li>
 <li>Property file : le fichier précédemment créé</li>
 <li>Configuration file : le fichier précédemment créé</li>
-<li>Database dialect : HSQL</li>
+<li>Database dialect : HSQL ou PostgreSQL</li>
 </ul>
 </li>
 </ul>
@@ -430,7 +491,7 @@
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -439,51 +500,18 @@
 
 <h1 id="coder-des-ré-essais-en-java">Coder des ré-essais en Java</h1>
 
-<p>La librairie <strong>guava-retrying</strong> est assez pratique pour définir des méthodes à réessayer en cas d&rsquo;échec.</p>
+<h2 id="1-avant--guava-retrying">1/ Avant : guava-retrying</h2>
+<p>A une lontaine époque, la librairie <strong>guava-retrying</strong> était pratique pour définir des méthodes à réessayer en cas d&rsquo;échec. Mais ce projet n&rsquo;est plus maintenu.</p>
 <p>Documentation : <a href="https://github.com/rholder/guava-retrying" rel="external" target="_blank">ici</a></p>
-<h4 id="dépendance">Dépendance</h4>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;groupId&gt;</span>com.github.rholder<span style="color:#f92672">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;artifactId&gt;</span>guava-retrying<span style="color:#f92672">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;version&gt;</span>2.0.0<span style="color:#f92672">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dependency&gt;</span></span></span></code></pre></div>
-<h4 id="exemple">Exemple</h4>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Callable;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.ExecutionException;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.TimeUnit;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Assert;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.RetryException;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.Retryer;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.RetryerBuilder;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.StopStrategies;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.github.rholder.retry.WaitStrategies;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testRetry</span>() <span style="color:#66d9ef">throws</span> ExecutionException, RetryException {
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> nbEssais <span style="color:#f92672">=</span> 6;
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> tempsEntreDeuxEssaisEnMs <span style="color:#f92672">=</span> 500;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> Retryer<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> retryer <span style="color:#f92672">=</span> RetryerBuilder.<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>newBuilder()<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">retryIfExceptionOfType</span>(AssertionError.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">retryIfRuntimeException</span>()<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">withStopStrategy</span>(StopStrategies.<span style="color:#a6e22e">stopAfterAttempt</span>(nbEssais))<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">withWaitStrategy</span>(WaitStrategies.<span style="color:#a6e22e">fixedWait</span>(tempsEntreDeuxEssaisEnMs, TimeUnit.<span style="color:#a6e22e">MILLISECONDS</span>))<span style="color:#75715e">//</span>
-</span></span><span style="display:flex;"><span>				.<span style="color:#a6e22e">build</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">final</span> Callable<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> assertion <span style="color:#f92672">=</span> () <span style="color:#f92672">-&gt;</span> {
-</span></span><span style="display:flex;"><span>			Assert.<span style="color:#a6e22e">assertNotNull</span>(<span style="color:#e6db74">&#34;attendu&#34;</span>);
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>		};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		retryer.<span style="color:#a6e22e">call</span>(assertion);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h2 id="2-en-2025--spring-retry">2/ en 2025 : spring-retry</h2>
+<p>SpringFramework fournit, depuis 2011, une librairie pour faire ça.</p>
+<p>En voici la documentation : <a href="https://docs.spring.io/spring-batch/docs/latest/reference/html/retry.html" rel="external" target="_blank">ici</a></p>
+<p>En voici le projet : <a href="https://github.com/spring-projects/spring-retry" rel="external" target="_blank">ici</a></p>
+<p>Et, enfin, voici un article Baldung : <a href="https://www.baeldung.com/spring-retry" rel="external" target="_blank">ici</a>.</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -492,47 +520,47 @@
 
 <h1 id="relecture-revue-et-audit-de-code">Relecture, revue et audit de code</h1>
 
-<h4 id="ma-définition">Ma définition</h4>
+<h2 id="1-mes-définitions">1/ Mes définitions</h2>
+<p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple).</p>
+<p>Une relecture permet de s&rsquo;assurer</p>
 <ul>
-<li>
-<p><strong>La relecture de code</strong> est le travail de tout développeur juste avant de commiter son travail. Tous les outils de gestion de version permettent d&rsquo;afficher le contenu du commit (<em>git diff</em> par exemple). Une relecture permet de s&rsquo;assurer que les noms des composants, opérations, attributs, paramètres et variables sont explicites, que les commentaires sont utiles, &hellip; Le développeur pourra aussi en profiter pour vérifier que le contenu du commit correspond bien aux commentaires, qu&rsquo;aucun fichier ne sera intégré au commit pour un simple saut de ligne malencontreux, &hellip;</p>
-</li>
-<li>
-<p><strong>La revue de code</strong> est un processus outillé qui permet de systématiser une relecture de code faite par un tiers entre la fin du développement et l&rsquo;intégration du dit code dans les sources de l&rsquo;application. Le processus peut être le suivant :</p>
+<li>que les noms des composants, opérations, attributs, paramètres et variables sont explicites,</li>
+<li>que les commentaires sont utiles et pertinents,</li>
+<li>que le contenu du commit correspond bien aux exigences fournies en entrées (ou au ticket/demande)</li>
+<li>qu&rsquo;aucun fichier ne sera embarqué pour un simple saut de ligne malencontreux,</li>
+<li>&hellip;</li>
+</ul>
+<p><strong>La revue de code</strong> est un processus outillé qui permet de systématiser une relecture de code par un tiers entre la fin du développement et l&rsquo;intégration du dit code dans les sources de l&rsquo;application.</p>
+<p>Le processus peut être le suivant :</p>
 <ul>
-<li>Dès qu&rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers</li>
-<li>Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer</li>
-<li>L&rsquo;auditeur parcourt le code et y incruste des remarques</li>
-<li>Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&rsquo;être intégré à la branche principale</li>
-<li>Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&rsquo;il corrige son code</li>
+<li>Dès qu&rsquo;un développeur pousse son travail sur le repository, une demande de revue est envoyée à un tiers.</li>
+<li>Ce dernier, en cliquant sur le lien dans le mail, se voit afficher le code à auditer.</li>
+<li>L&rsquo;auditeur parcourt le code et y rédige ses remarques.</li>
+<li>Si le résultat de la revue est satisfaisant, un simple clic permet au commit d&rsquo;être intégré à la branche principale.</li>
+<li>Si le nombre de remarques (ou leur sévérité) est trop élevé, une notification est envoyée au développeur pour qu&rsquo;il corrige son code.</li>
 </ul>
-</li>
-<li>
-<p><strong>L&rsquo;audit de code</strong> est un processus asynchrone qui consiste à faire une relecture de code à tout moment sur le code actuellement intégré à une branche principale. Cette pratique est tout à fait compatible avec les deux autres pratiques précédentes.</p>
-</li>
-</ul>
-<h4 id="le-plus-important">Le plus important</h4>
+<p>Attention, ce processus n&rsquo;intègre pas le build de la branche, le déploiement du(es) livrable(s) généré(s) et les tests à réaliser pour valider le développement réalisé.</p>
+<p><strong>L&rsquo;audit de code</strong> est un processus consistant à faire une relecture de code de tout le code de la branche principale. Ce processus n&rsquo;est pas lié à un développement précis. Mais il peut être judicieux d&rsquo;en réaliser un avant ou après un évènement précis (réversibilité de TMA, montée de version majeure d&rsquo;un framework, &hellip;).</p>
+<p>Cette pratique est tout à fait compatible avec les deux autres pratiques précédentes.</p>
+<h2 id="2-le-plus-important">2/ Le plus important</h2>
 <p>Attention, on parle ici de la qualité du code. La conception, les librairies/framework utilisés, &hellip; sont une autre affaire !!</p>
-<p>Quelques soient les pratiques du projet (revue ou audit ou les deux), l&rsquo;élément central et primordial est l&rsquo;échange entre le développeur et le relecteur. C&rsquo;est cet échange qui est le garant du bon fonctionnement de ces pratiques !! Sans lui :</p>
+<p>Quelques soient les pratiques du projet (revue ou audit ou les deux), l&rsquo;élément central et primordial est l&rsquo;échange entre le développeur et le relecteur. Cet échange est le seul garant du bon fonctionnement de ces pratiques !!</p>
+<p>Sans lui :</p>
 <ul>
-<li>le relecteur ne verra pas directement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaises relectures ;</li>
-<li>le développeur recevra une liste de remarques totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Il faut un échange verbal pour éviter d&rsquo;interminables envois de mails ;</li>
-<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre que s&rsquo;ils communiquent les yeux dans les yeux.</li>
+<li>Le relecteur ne verra pas immédiatement l&rsquo;utilité de son travail. Il s&rsquo;en lassera et fera de mauvaises relectures.</li>
+<li>Le développeur recevra une liste de remarque totalement impersonnelle. De plus, certaines remarques peuvent parfois être injustifiées. Un échange verbal peut éviter d&rsquo;interminables échanges de message.</li>
+<li>le relecteur et le développeur ne pourront apprendre l&rsquo;un de l&rsquo;autre que s&rsquo;ils communiquent directement l&rsquo;un avec l&rsquo;autre.</li>
 </ul>
-<h4 id="pour-se-simplifier-la-vie">Pour se simplifier la vie</h4>
+<h2 id="3-pour-se-simplifier-la-vie">3/ Pour se simplifier la vie</h2>
 <p>Certaines règles de développement sont aisément vérifiables (avec une petite expression régulière par exemple). Pourquoi ne pas utiliser un outil pour contrôler le code ? Il existe quantité d&rsquo;outil de qualimétrie pour tous les langages.
 Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en réduisant le nombre de règles et de points d&rsquo;attention à contrôler.</p>
-<h4 id="pour-aller-plus-loin">Pour aller plus loin</h4>
+<p>En plus des contrôles de qualité automatiques, les actions automatiques sur le poste du développeur peuvent simplifier les relectures de code. Tous les IDE proposent de formatter le code, réorganiser les imports, &hellip; à chaque sauvegarde de fichier.</p>
+<h2 id="4-pour-aller-plus-loin">4/ Pour aller plus loin</h2>
 <p>Pour mettre en oeuvre ces bonnes idées en poussant l&rsquo;interaction un cran plus loin, il faudrait que le relecteur soit à côté du développeur pour réfléchir avec lui. Le relecteur aurait alors la possibilité de faire des remarques de conception aussi. C&rsquo;est du <strong>pair programming</strong> !</p>
-<h4 id="sources">Sources</h4>
-<ul>
-<li><a href="http://blog.8thcolor.com/en/2014/04/5-reasons-you-are-not-doing-code-reviews/" rel="external" target="_blank">5 reasons you are not doing code reviews</a></li>
-<li><a href="http://phinze.github.io/2013/12/08/pairing-vs-code-review.html" rel="external" target="_blank">Pairing vs code review</a></li>
-</ul>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -541,18 +569,115 @@ Ils ne remplacent pas la relecture humaine mais ils peuvent la simplifier en ré
 
 <h1 id="hugo-et-githubpages">Hugo et GitHub:Pages</h1>
 
-<h2 id="démarrage">Démarrage</h2>
-<p>Les objectifs sont :</p>
+<h2 id="1-introduction">1/ Introduction</h2>
+<p><em><a href="https://pages.github.com/" rel="external" target="_blank">GitHub:Pages</a></em> est une fonctionnalité très utile de GitHub permettant d&rsquo;héberger un site WEB en le déposant, tout simplement, dans un dépôt Git.</p>
+<p><em><a href="http://gohugo.io/" rel="external" target="_blank">Hugo</a></em> est un outil de génération de site WEB à partir de template et de Markdown.</p>
+<p>Réunis, ces deux outils permettent de réaliser un site très simplement. Les usages sont nombreux. Mais le premier qui me vient est la documentation d&rsquo;un projet : installation du poste, règles de conception/développement/test, pratiques du projet, &hellip; bref, un <a href="/mesidees/10-guidedudev/index.html">guide du développeur</a>.</p>
+<h2 id="2-objectifs">2/ Objectifs</h2>
+<p>Les objectifs de cette page sont :</p>
 <ul>
-<li>de disposer d&rsquo;un repository contenant les sources du site avec des pages en markdown</li>
-<li>d&rsquo;utiliser <a href="http://gohugo.io/" rel="external" target="_blank">Hugo</a> pour réaliser la mise en page et générer le site statique</li>
-<li>de déployer ce site statique dans un repository <a href="https://pages.github.com/" rel="external" target="_blank">GitHub:Pages</a></li>
-<li>d&rsquo;automatiser complètement la génération et le déploiement du site</li>
+<li>de disposer d&rsquo;un repository contenant les sources du site avec des pages en markdown ;</li>
+<li>d&rsquo;utiliser <a href="http://gohugo.io/" rel="external" target="_blank">Hugo</a> pour réaliser la mise en page et générer le site statique ;</li>
+<li>de déployer ce site statique dans un repository <a href="https://pages.github.com/" rel="external" target="_blank">GitHub:Pages</a> ;</li>
+<li>de sipmplifier au maximum la génération et la publication du site.</li>
 </ul>
+<h2 id="2-la-mise-en-place-de-hugo">2/ La mise en place de Hugo</h2>
+<p>Hugo est un exécutable. Il faut donc le télécharger (depuis la <a href="https://github.com/gohugoio/hugo/releases/" rel="external" target="_blank">page officielle</a>) et le déposer dans un répertoire.</p>
+<p>Attention, cet exécutable est dépendant de l&rsquo;OS. Donc, pour construire le site sur Windows et sur Unix, il faut déposer les deux exécutables.</p>
+<p>La première étape est donc de</p>
+<ul>
+<li>créer un répertoire</li>
+<li>y placer l&rsquo;exécutable de Hugo (en conservant ou non le numéro de version dans le nom du fichier)</li>
+</ul>
+<h2 id="3-créer-le-site-hugo-avec-un-thème">3/ Créer le site HUGO avec un thème</h2>
+<p>Pour créer un site avec le thème LEARN (celui utilisé par ce site), exécuter les commandes suivantes (en adaptant le numéro de version si vous souhaitez le conserver dans le nom de fichier) :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo-0.140.1 new site monProjet
+</span></span><span style="display:flex;"><span>cd monProjet
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/McShelby/hugo-theme-relearn.git themes/hugo-theme-relearn
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;theme = &#39;hugo-theme-relearn&#39;&#34;</span> &gt;&gt; hugo.toml
+</span></span><span style="display:flex;"><span>mv ../hugo-0.140.1 ./
+</span></span><span style="display:flex;"><span>hugo-0.140.1 server</span></span></code></pre></div>
+<p>Le site disponible <a href="http://localhost:1313" rel="external" target="_blank">en local</a> n&rsquo;affiche qu&rsquo;une page d&rsquo;accueil vide et aucun contenu.</p>
+<h2 id="4-paramétrer-hugo">4/ Paramétrer HUGO</h2>
+<h3 id="41-paramétrage-essentiel">4.1/ Paramétrage essentiel</h3>
+<p>Le fichier <em>hugo.toml</em> peut être très vide ou très riche selon les besoins. A mon avis, sont obligatoires les informations suivantes :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># L&#39;URL de base du site</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://mon.serveur.de.doc/&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Le nom du thème</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;hugo-theme-relearn&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># La langue du site</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;fr-fr&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Le titre du site</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Mon super site&#34;</span></span></span></code></pre></div>
+<h3 id="42-paramétrage-propre-au-thème">4.2/ Paramétrage propre au thème</h3>
+<p>De plus, chaque thème apporte des fonctionnalités. Voici la <a href="https://mcshelby.github.io/hugo-theme-relearn/introduction/quickstart/index.html" rel="external" target="_blank">documentation du thème relearn</a></p>
+<p>Par exemple, il est utile/possible de :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Thème bleu par défaut mais autres thèmes disponibles</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">themeVariant</span> = [<span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#e6db74">&#39;relearn-light&#39;</span>, <span style="color:#e6db74">&#39;relearn-dark&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Désactiver le lien &#39;Home&#39; dans le menu</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">disableLandingPageButton</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Définir l&#39;auteur</span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">author</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span> = <span style="color:#e6db74">&#39;talbotgui@gmail.com&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#39;Guillaume TALBOT&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Activer l&#39;impression</span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">outputs</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">home</span> = [<span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#e6db74">&#39;print&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">page</span> = [<span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#e6db74">&#39;print&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">section</span> = [<span style="color:#e6db74">&#39;html&#39;</span>, <span style="color:#e6db74">&#39;print&#39;</span>]</span></span></code></pre></div>
+<h2 id="5-créer-un-premier-contenu">5/ Créer un premier contenu</h2>
+<p>Pour créer une page dans Hugo, il suffit de créer une arboresence dans le répertoire <em>./content</em>.</p>
+<p>Chaque répertoire doit contenir un fichier <em>index.md</em> dont le contenu commence par :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: Titre de ma page
+</span></span><span style="display:flex;"><span>description: La description de ma page
+</span></span><span style="display:flex;"><span>weight: 101
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## Voici le premier chapitre de ma page</span></span></code></pre></div>
+<h2 id="6-mettre-en-place-un-build">6/ Mettre en place un build</h2>
+<p>Hugo est un outil de génération et pas un outil de build.</p>
+<p>Pour ne pas avoir à retenir les paramètres de ligne de commande à utiliser pour démarrer un serveur local ou générer l&rsquo;application, il est préférable de stocker les scripts quelque part. Comme un outil de build (Maven ou NPM) est toujours utile, autant en utiliser un. Donc il faut créer un <em>package.json</em> minimal :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;monProjet&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;scripts&#34;</span>: {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;hugo-0.140.1 serve --bind 0.0.0.0 &#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;hugo-0.140.1.exe&#34;</span>
+</span></span><span style="display:flex;"><span>	},
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;dependencies&#34;</span>: {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Pour démarrer le serveur, il suffit donc d&rsquo;exécuter la commande <code>npm run start</code>.</p>
+<p>Pour générer le site, il suffit donc d&rsquo;exécuter la commande <code>npm run build</code>.</p>
+<h2 id="7-publier-dans-github">7/ Publier dans GitHub</h2>
+<p>La plus simple des solutions de publication dans Gitbug-Pages est de créer un répertoire <em>./docs</em> dans la branche principale du dépôt avec le contenu du site.</p>
+<p>Or ce répertoire est utilisé, par défaut, par Hugo, pour stocker les pages HTML générés par le serveur local. Il est donc préférable de séparer ce répertoire de génération temporaire (<em>hugo serve</em>) du répertoire de génération réel (<em>hugo</em>).</p>
+<p>De plus, la génération ajoute ou modifie les fichiers du répertoire <em>./docs</em> mais ne supprime rien. Donc il faut que le répertoire soit vidé avant de faire générer les pages HTML à Hugo.</p>
+<p>Donc le <em>package.json</em> doit être enrichi :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;monProjet&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;scripts&#34;</span>: {
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;hugo-0.140.1 serve --bind 0.0.0.0 -d docsServe&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&#34;build&#34;</span>: <span style="color:#e6db74">&#34;rm -rf ./docs/* &amp;&amp; hugo-0.140.1.exe&#34;</span>
+</span></span><span style="display:flex;"><span>	},
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;dependencies&#34;</span>: {
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -786,12 +911,12 @@ Mais une question se pose : &ldquo;doit-on utiliser la programmation défensive 
 <h4 id="comment-apprendre-à-utiliser-pleinement-eclipse-">Comment apprendre à utiliser pleinement Eclipse ?</h4>
 <p>A plusieurs occasions, cette question m&rsquo;a été posée &ldquo;Comment apprendre à utiliser pleinement Eclipse ?&rdquo;.</p>
 <p>Ma première réponse était de prendre 30 à 45 minutes pour parcourir les nombreux formulaires de paramétrage d&rsquo;Eclipse pour découvrir toutes les fonctions que l&rsquo;outil propose :
-<a href="#R-image-225825fe2e65dba1d813d31cf4c4498a" class="lightbox-link"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/eclipse-preferences.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-225825fe2e65dba1d813d31cf4c4498a"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/eclipse-preferences.png"></a></p>
+<a href="#R-image-89670b64bbcacc1834fb02dfd282d141" class="lightbox-link"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/eclipse-preferences.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-89670b64bbcacc1834fb02dfd282d141"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/eclipse-preferences.png"></a></p>
 <p>Oui, en effet, il existe un très grand nombre de formulaires de paramétrage. Non, vous n&rsquo;utiliserez certainement jamais toutes les fonctionnalités de l&rsquo;outil mais il faut en connaître un minimum.</p>
 <p>Dernièrement (en mai 2017), un collègue m&rsquo;a fait découvrir MouseFeed. Ce plugin d&rsquo;Eclipse, au clic sur un bouton ou un menu contextuel, affiche quelques instants le raccourci clavier
-<a href="#R-image-6afcd3bb1b43840cf12690f85e824afc" class="lightbox-link"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/eclipse-mousefeed.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6afcd3bb1b43840cf12690f85e824afc"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/eclipse-mousefeed.png"></a></p>
+<a href="#R-image-8c72838d4c153223905bb2fd9d07d097" class="lightbox-link"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/eclipse-mousefeed.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8c72838d4c153223905bb2fd9d07d097"><img alt="eclipse-mousefeed" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/eclipse-mousefeed.png"></a></p>
 <h4 id="les-raccourcis-à-connaître">Les raccourcis à connaître</h4>
 <p>Le minimum du minimum :</p>
 <ul>
@@ -908,8 +1033,8 @@ Ce plugin permet de configurer un éditeur de requête HQL lié à une base de d
 <p>Certaines équipes vont y ajouter de la relecture de code ou des revues de conception ou arrêter leur pipeline à la livraison de leur client (s&rsquo;ils ne gèrent pas ni la recette ni la production).</p>
 <p>Et enfin, chaque exigence ne donnant pas lieu à une mise en production, s&rsquo;ajouteront des étapes conditionnées par une promotion manuelle : une action manuelle qui autorisera une instance du pipeline à avancer.</p>
 <p>Voici un exemple de Pipeline très simple et très singulier : le pipeline de mon projet personnel <a href="/mesprojets/mariage-guidededev/index.html">&lsquo;Mariage&rsquo;</a>
-<a href="#R-image-77f43359a1dc0cf53357158892441739" class="lightbox-link"><img alt="pipeline-jenkinsSimple" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/pipeline-jenkinsSimple.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-77f43359a1dc0cf53357158892441739"><img alt="pipeline-jenkinsSimple" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/pipeline-jenkinsSimple.png"></a></p>
+<a href="#R-image-c5a01c9840af82fce55e290077098d12" class="lightbox-link"><img alt="pipeline-jenkinsSimple" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/pipeline-jenkinsSimple.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c5a01c9840af82fce55e290077098d12"><img alt="pipeline-jenkinsSimple" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/pipeline-jenkinsSimple.png"></a></p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
@@ -1352,8 +1477,8 @@ sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk</code></pre
 <h1 id="licence">Licence</h1>
 
 <p>Source : <a href="https://opensource.stackexchange.com/questions/21/whats-the-difference-between-permissive-and-copyleft-licenses" rel="external" target="_blank">https://opensource.stackexchange.com/questions/21/whats-the-difference-between-permissive-and-copyleft-licenses</a></p>
-<p><a href="#R-image-9bb7c4a01315130926f477cc1b8e0c52" class="lightbox-link"><img alt="licences" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/licences.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9bb7c4a01315130926f477cc1b8e0c52"><img alt="licences" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/licences.png"></a></p>
+<p><a href="#R-image-ff430a7614cb97d3228e5dc73f87b7f6" class="lightbox-link"><img alt="licences" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/licences.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ff430a7614cb97d3228e5dc73f87b7f6"><img alt="licences" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/licences.png"></a></p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
@@ -1930,8 +2055,8 @@ filebeat-5.6.0-windows-x86_64\filebeat -e -c configFileBeat/mesLogs_filebeat.yml
 <li><a href="http://localhost:5601/app/kibana" rel="external" target="_blank">les logs dans Kibana</a> après avoir ajouter l&rsquo;index <em>meslogs</em> (le formulaire d&rsquo;ajout est affiché systématiquement si aucun index n&rsquo;existe)</li>
 </ul>
 <p>On obtient ainsi le tableau de bord suivant (après quelques minutes de manipulation dans Kibana) :
-<a href="#R-image-de6ba03f5cc0fe794982818963929496" class="lightbox-link"><img alt="elastic-kibanaExempleSimpliste" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/elastic-kibanaExempleSimpliste.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-de6ba03f5cc0fe794982818963929496"><img alt="elastic-kibanaExempleSimpliste" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/elastic-kibanaExempleSimpliste.png"></a></p>
+<a href="#R-image-6367ce6e3d6271acd877fec1a4ee8985" class="lightbox-link"><img alt="elastic-kibanaExempleSimpliste" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/elastic-kibanaExempleSimpliste.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6367ce6e3d6271acd877fec1a4ee8985"><img alt="elastic-kibanaExempleSimpliste" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/elastic-kibanaExempleSimpliste.png"></a></p>
 <h4 id="installation-sur-un-ubuntu">Installation sur un Ubuntu</h4>
 <ul>
 <li>Voir la <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html" rel="external" target="_blank">documentation officielle d&rsquo;ElasticSearch</a></li>
@@ -2251,23 +2376,56 @@ sudo chmod -R -wx,u+rwX,g+rX,o+rX /var/www/wordpress</code></pre></div>
 
 <h1 id="git-et-les-mots-de-passe">Git et les mots de passe</h1>
 
-<h3 id="résumé">Résumé</h3>
+<h3 id="1-résumé">1/ Résumé</h3>
 <p>La (grande?) majorité des développeurs utilisent aujourd&rsquo;hui GIT pour sauvegarder et partager leurs développements.
 Tout y est stocké. Et, parfois, même les mots de passe (clefs, secrets, &hellip;) !!</p>
 <p>La solution optimale serait de ne pas les insérer dans le dépôt GIT. Mais cela signifie ne plus les partager avec le reste de l&rsquo;équipe.</p>
 <p>Une autre solution consiste à chiffrer ces informations avant de les partager sur le repository commun sans oublier de les déchiffrer sur le repository local.</p>
 <p>Une solution (parmis d&rsquo;autre) est <a href="https://github.com/elasticdog/transcrypt" rel="external" target="_blank">Transcrypt</a>.</p>
-<h3 id="quest-ce-que-transcrypt-">Qu&rsquo;est-ce que Transcrypt ?</h3>
+<h3 id="2-quest-ce-que-transcrypt-">2/ Qu&rsquo;est-ce que Transcrypt ?</h3>
 <p>Transcrypt est un outil permettant d&rsquo;initialiser le chiffrement de certains fichiers dans un dépôt Git.</p>
 <p>Une fois le dépôt paramétré, Transcrypt n&rsquo;est plus nécessaire et peut être désinstallé.</p>
 <p>La liste des fichiers à chiffrer avant (et déchiffrer après) chaque commit est paramétrée dans le fichier .gitattributes</p>
-<h3 id="par-quoi-commencer-">Par quoi commencer ?</h3>
-<p><em>La toute première chose à faire est de faire disparaître de l&rsquo;historique GIT le fichier contenant des mots de passe !!</em>
-Pour cela, il suffit d&rsquo;exécuter les commandes suivantes :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>git filter-branch -f --tree-filter &#39;rm -f projects/coupeDesMaisons/src/environments/environment.ts&#39; HEAD
-git push --force</code></pre></div>
-<p>/!\ Prendre le temps de tester le chemin du fichier permet de ne pas attendre la longue exécution du script sans qu&rsquo;aucun commit ne soit modifié !</p>
-<h3 id="pour-initialiser-un-dépot-avec-transcrypt">Pour initialiser un dépot avec Transcrypt</h3>
+<h3 id="3-par-quoi-commencer-">3/ Par quoi commencer ?</h3>
+<ul>
+<li>
+<p>La toute première chose à faire est d&rsquo;<strong>identifier les fichiers contenant des secrets dans l&rsquo;historique GIT</strong>. Pour cela, l&rsquo;outil <a href="https://github.com/gitleaks/gitleaks?tab=readme-ov-file" rel="external" target="_blank">GitLeaks</a> est bien utile.</p>
+<ul>
+<li>Télécharger une version compatible avec le poste de développement depuis la <a href="https://github.com/gitleaks/gitleaks/releases" rel="external" target="_blank">page de téléchargement</a>.</li>
+<li>Extraire le contenu de l&rsquo;archive dans un répertoire dédié en dehors du clone du dépôt.</li>
+<li>Ouvrir une invite de commande dans le clone à analyser</li>
+<li>Exécuter la commande ``````xxx/gitleaks_xxxx/gitleaks.exe git &ndash;report-path gitleaks-report.json```</li>
+<li>Le fichier <strong>gitleaks-report.json</strong> contient alors tous les secrets détectés</li>
+<li>S&rsquo;assurer que le fichier ne contient aucun caractère # (sinon la commande SED est KO)</li>
+<li>Extraire la liste des fichiers et secrets avec le pattern <code>^.*&quot;(File|Secret)&quot;.*$</code></li>
+<li>Mettre sur une même ligne le secret et le nom de fichier</li>
+<li>Eliminer les doublons</li>
+<li>Faire des chemins de fichier des chemins absolus</li>
+<li>Mettre en forme chaque ligne pour obtenir <code>sed -i &quot;s#LE_SECRET_ISSU_DE_GITLEAK#xxxxxxxx#g&quot; &quot;LE_NOM_DE_FICHIER_ISSU_DE_GITLEAK&quot;</code></li>
+<li>Sauvegarder l&rsquo;ensemble des commandes dans un script shell déposé à la racine du dépôt</li>
+</ul>
+</li>
+<li>
+<p>La seconde étape est de faire disparaître de l&rsquo;historique GIT le(s) secret(s). Pour cela, il suffit</p>
+<ul>
+<li>télécharger l&rsquo;outil BFG depuis la <a href="https://rtyley.github.io/bfg-repo-cleaner/#usage" rel="external" target="_blank">page officielle</a></li>
+<li>créer un fichier contenant, sur une ligne différente, chaque secret venant du fichier généré par GitLeaks
+<ul>
+<li>après avoir retiré le caractère = en fin de secret</li>
+<li>suffixé par <code>==&gt;xxxxxxxx</code></li>
+</ul>
+</li>
+<li>exécuter les commandes</li>
+</ul>
+</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>java -jar /d/xxxx/bfg.jar --replace-text /d/xxx/password.txt &#34;/d/cheminVersDepot&#34;
+cd /d/cheminVersDepot
+git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive</code></pre></div>
+<ul>
+<li>Une fois les secrets supprimés, relancer l&rsquo;analyse avec la commande précédete</li>
+</ul>
+<h3 id="4-pour-initialiser-un-dépot-avec-transcrypt">4/ Pour initialiser un dépot avec Transcrypt</h3>
 <ul>
 <li>Installer Transcrypt :
 <ul>
@@ -2302,7 +2460,7 @@ git push --force</code></pre></div>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Jan 3, 2025
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
 <article class="default">
@@ -2385,7 +2543,7 @@ git push --force</code></pre></div>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Jan 3, 2025
+              <i class='fa-fw fas fa-calendar'></i> Jan 20, 2025
   </footer>
 </article>
 <article class="default">
@@ -2409,8 +2567,8 @@ git push --force</code></pre></div>
         </div>
       </main>
     </div>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>

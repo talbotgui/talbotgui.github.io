@@ -17,19 +17,19 @@
     <meta property="og:locale" content="fr_fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Mes idées">
-    <meta property="article:modified_time" content="2024-12-29T15:23:22+01:00">
+    <meta property="article:modified_time" content="2025-03-22T09:51:15+01:00">
     <meta itemprop="name" content="Dette technique :: Guillaume TALBOT">
     <meta itemprop="description" content="Dette technique">
-    <meta itemprop="dateModified" content="2024-12-29T15:23:22+01:00">
-    <meta itemprop="wordCount" content="424">
+    <meta itemprop="dateModified" content="2025-03-22T09:51:15+01:00">
+    <meta itemprop="wordCount" content="470">
     <title>Dette technique :: Guillaume TALBOT</title>
     <link href="/mesidees/01-dettetechnique/index.print.html" rel="alternate" type="text/html" title="Dette technique :: Guillaume TALBOT"><link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-    <link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737408343" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737408343" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737408343" rel="stylesheet">
-    <link href="/css/theme.min.css?1737408343" rel="stylesheet">
-    <link href="/css/format-html.min.css?1737408343" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742633485" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742633485" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742633485" rel="stylesheet">
+    <link href="/css/theme.min.css?1742633485" rel="stylesheet">
+    <link href="/css/format-html.min.css?1742633485" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -99,7 +99,14 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-définitions-sur-le-net">1/ Définitions sur le net</a></li>
+    <li><a href="#2-ma-définition">2/ Ma définition</a></li>
+    <li><a href="#3-sources">3/ Sources</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -136,37 +143,37 @@
 
 <h1 id="dette-technique">Dette technique</h1>
 
-<h4 id="définitions-sur-le-net">Définitions sur le net</h4>
+<h2 id="1-définitions-sur-le-net">1/ Définitions sur le net</h2>
 <ul>
 <li>Ward Cunningham (1992) : if you develop a program for a long period of time by only adding features and never reorganizing it to reflect your understanding of those features, then eventually that program simply does not contain any understanding and all efforts to work on it take longer and longer.</li>
 <li>James Shore : the cumulative total of less-than-perfect design and implementation</li>
 <li>Tom Poppendieck : everything that makes your code harder to change</li>
 </ul>
-<h4 id="ma-définition">Ma définition</h4>
+<h2 id="2-ma-définition">2/ Ma définition</h2>
 <p>La dette technique</p>
 <ul>
-<li>est constituée des imperfections du design et du code</li>
-<li>réduit la productivité de l&rsquo;équipe</li>
+<li>est constituée des imperfections de conception et de développement</li>
+<li>nuit la productivité de l&rsquo;équipe</li>
 <li>réduit la maintenabilité</li>
 <li>augmente le nombre d&rsquo;erreurs (bugs dans les nouvelles fonctionnalités et régressions dans le code existant)</li>
-<li>se mesure par l&rsquo;effort qu&rsquo;il faut pour la résorber</li>
+<li>se mesure par l&rsquo;effort qu&rsquo;il faut pour la résorber (c&rsquo;est aussi la <a href="https://docs.sonarsource.com/sonarqube-server/latest/glossary/#t" rel="external" target="_blank">définition de la dette technique de Sonar</a>)</li>
 </ul>
 <p>Ces imperfections/violations se séparent en 3 groupes :</p>
 <ul>
-<li>les imperfections <strong>identifiées et délibérées</strong> : elles sont les preuves de mauvais choix fait en toute connaissance de cause. Ces choix doivent impérativement donner lieu à un plan d&rsquo;action pour résoudre le problème. Exemple : pas de mesure de la couverture de code ni de vérification des exigences qui y sont liées dans un premier temps à cause des délais. Mais on y reviendra juste après la livraison.</li>
-<li>les imperfections <strong>involontaires et relevées par un outil</strong> : elles sont les preuves d&rsquo;une incompétence ou d&rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code &ldquo;commité&rdquo;. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus.</li>
+<li>les imperfections <strong>identifiées et délibérées</strong> : elles sont les preuves de mauvais choix faits en toute connaissance de cause. Ces choix doivent impérativement donner lieu à un plan d&rsquo;action pour résoudre le problème. Exemple : pas de mesure de la couverture de code ni de vérification des exigences qui y sont liées dans un premier temps à cause des délais. Mais on y reviendra juste après la livraison (les promesses n&rsquo;engagent que ceux qui y croient).</li>
+<li>les imperfections <strong>involontaires et relevées par un outil</strong> : elles sont les preuves d&rsquo;une erreur, incompétence ou d&rsquo;une méconnaissance. Exemple : les violations relevées par Sonar sur code &ldquo;commité&rdquo;. Ces violations doivent être traitées au plus vite par leur auteur. Ainsi il apprendra de ses erreurs et ne recommencera plus (personne n&rsquo;est pas parfait).</li>
 <li>les imperfections <strong>involontaires et non identifiées</strong> : elles sont souvent identifiées durant la résolution d&rsquo;un bug. Le problème est général à tout le code mais c&rsquo;est un code en particulier qui a fait émerger un problème. Il faut alors ajouter une règle de développement sur le projet (documenter la règle et l&rsquo;intégrer dans les outils de vérification). Exemple : un caractère bizarre dans une page WEB va permettre de se rendre compte qu&rsquo;une partie des fichiers &ldquo;source&rdquo; n&rsquo;est pas en UTF8.</li>
 </ul>
-<p>La dette se traite en</p>
+<p>La dette se traite</p>
 <ul>
-<li>définissant au plus tôt des règles de conception, de développement et de test</li>
-<li>mettant en place des outils (sur le poste du développeur et dans l&rsquo;intégration continue)</li>
-<li>sensibilisant/formant les développeurs pour qu&rsquo;ils génèrent moins de dette</li>
-<li>attribuant une priorité à chaque imperfection existante (ou type d&rsquo;imperfections)</li>
-<li>organisant des actions de refactoring pour réduire le nombre d&rsquo;imperfections</li>
-<li>amendant et enrichissant les règles tout au long du projet</li>
+<li>en définissant au plus tôt des règles de conception, de développement et de test</li>
+<li>en mettant en place des outils (sur le poste du développeur et dans l&rsquo;intégration continue)</li>
+<li>en sensibilisant/formant les développeurs pour qu&rsquo;ils génèrent moins de dette</li>
+<li>en attribuant une priorité à chaque imperfection existante (ou type d&rsquo;imperfections)</li>
+<li>en organisant des actions de refactoring pour réduire le nombre d&rsquo;imperfections (investir dans la qualité du code n&rsquo;est pas une perte de temps mais un investissement)</li>
+<li>en amendant et enrichissant les règles tout au long du projet</li>
 </ul>
-<h4 id="sources">Sources</h4>
+<h2 id="3-sources">3/ Sources</h2>
 <ul>
 <li><a href="http://www.c2.com/cgi/wiki?WardExplainsDebtMetaphor" rel="external" target="_blank">Technical debt - Ward Cunningham</a></li>
 <li><a href="https://www.youtube.com/watch?v=pqeJFYwnkjE" rel="external" target="_blank">Technical debt - Ward Cunningham</a></li>
@@ -176,7 +183,7 @@
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:talbotgui@gmail.com">Guillaume TALBOT</a>
-              <i class='fa-fw fas fa-calendar'></i> Dec 29, 2024
+              <i class='fa-fw fas fa-calendar'></i> Mar 22, 2025
   </footer>
 </article>
         </div>
@@ -284,8 +291,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1737408343" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737408343" defer></script>
-    <script src="/js/theme.js?1737408343" defer></script>
+    <script src="/js/clipboard.min.js?1742633485" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742633485" defer></script>
+    <script src="/js/theme.js?1742633485" defer></script>
   </body>
 </html>
